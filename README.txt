@@ -24,9 +24,9 @@ Règles v3
 - Jetons Dogzy (monnaie premium SIMULÉE, aucune vraie crypto) : achetés avec des pièces dans la Boutique (🛍).
   Taux : 100 pièces = 1 Dogzy, +2 pièces tous les 5 Dogzy émis par tous les joueurs (max 200). Pas de revente.
   Constantes dans game.js : DOGZY_RATE_BASE / STEP / EVERY / MAX.
-- Boutique d'accessoires (prix en Dogzy seulement) : Bouclier royal 2, Baskets de course (tour bonus) 3, Collier de diamants
-  (+75 au DÉPART) 4, Gants de pickpocket (+50 par vol) 4, Lunettes VIP (+20 % loyers reçus) 6, Casque de chantier (−25 % loyers payés) 6.
-- Accessoires GOLD (8 Dogzy chacun, 5 modèles) : 1 utilisation ; annulent automatiquement un paiement de 50 pièces ou plus
+- Boutique d'accessoires (prix en Dogzy seulement) : 5 Dogzy chacun : Bouclier royal, Baskets de course (tour bonus),
+  Collier de diamants (+75 au DÉPART), Gants de pickpocket (+50 par vol), Lunettes VIP (+20 % loyers reçus), Casque de chantier (−25 % loyers payés).
+- Accessoires GOLD (20 Dogzy chacun, 5 modèles) : 1 utilisation ; annulent automatiquement un paiement de 50 pièces ou plus
   (loyer, taxe du maire, vol, pénalité Chance), puis sont consommés. Compteur ✦ dans la barre du haut.
   Avec 3 accessoires gold ou plus non utilisés : le DÉPART rapporte 600 pièces (le double) au lieu de 300 (+ bonus de niveau et collier).
 - Niveaux : conditions par nombre de commerces seulement (1 / 3 / 5 ou Hôtel de ville + 3).
@@ -34,8 +34,8 @@ Règles v3
   au jeton premium (constante DOGZY_NAME dans game.js) ; ce jeu de table n'a pas encore de jeton premium.
 - Personnages (v5) : seuls les 12 personnages adultes de Dogzy Town sont jouables (joueurs et bots : Bankzy, Lawzy, Securzy, Magiczy…).
   Les ados (The Pyromaniac, Jouzy, Waltzy, Kelzy) appartiennent à The Adoles-chiant of Dogzy Town : ils ne sont plus jouables ici.
-- Boutique > NFT (cartes VIP 100 jetons Dogzy, personnages gold 50, objets de collection SIMULÉS, aucune blockchain, aucun avantage en jeu) :
-  * Cartes NFT VIP : les 4 ados — nom, image, badge « NFT VIP », cadre or, loupe, prix : 100 jetons Dogzy. En tête de section :
+- Boutique > NFT (cartes VIP 1000 jetons Dogzy, personnages gold 50, objets de collection SIMULÉS, aucune blockchain, aucun avantage en jeu) :
+  * Cartes NFT VIP : les 4 ados — nom, image, badge « NFT VIP », cadre or, loupe, prix : 1000 jetons Dogzy. En tête de section :
     « Possède à l'avance ton personnage pour l'univers The Adoles-chiant of Dogzy Town — on double tes jetons Dogzy lors du lancement. »
   * Personnages gold (50 jetons Dogzy) : version dorée de chacun des 12 personnages, mention « NFT — à venir sur Avalanche » et 2 avantages affichés :
     « 15 % de rabais sur l'achat de ce même personnage dans The Adoles-chiant of Dogzy Town, à son lancement. »
@@ -45,5 +45,5 @@ Règles v3
   * Les bots n'achètent pas de NFT.
 - Loupe : toucher une image de personnage (🔍 dans le menu de départ, image dans la boutique et Ma collection) l'agrandit ;
   × ou toucher à côté pour fermer. Le choix / l'achat se fait seulement avec les boutons.
-  Note : 100 Dogzy coûtent environ 11 900 pièces au taux croissant (départ 100, +2 tous les 5) — difficile à atteindre en une partie.
+  Note : 1000 Dogzy (carte VIP) dépassent largement ce qu'on peut gagner en une partie (taux plafonné à 200 pièces : ~187 000 pièces).
   Note : 50 Dogzy (personnage gold) coûtent environ 5 450 pièces au taux croissant.

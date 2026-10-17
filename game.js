@@ -78,22 +78,22 @@ function buyDogzy(p, n){ let cost = 0; for (let k = 0; k < n; k++) { const r = d
 const dogzyCostFor = n => { let c = 0, m = (S.minted || 0); for (let k = 0; k < n; k++, m++) c += Math.min(DOGZY_RATE_MAX, DOGZY_RATE_BASE + DOGZY_RATE_STEP * Math.floor(m / DOGZY_RATE_EVERY)); return c; };
 /* Boutique d'accessoires : prix UNIQUEMENT en jetons Dogzy */
 const SHOP = [
-  {id:'shield', name:'Bouclier royal', d:2, desc:'Bloque le prochain vol contre toi (1 utilisation).', kind:'use'},
-  {id:'spin', name:'Baskets de course', d:3, desc:'Tour bonus : tu fais tourner la grande roue une 2e fois à ton prochain tour.', kind:'use'},
-  {id:'collar', name:'Collier de diamants', d:4, desc:'+75 pièces chaque fois que tu passes au DÉPART (permanent).', kind:'perm'},
-  {id:'gloves', name:'Gants de pickpocket', d:4, desc:'+50 pièces à chacun de tes vols (permanent).', kind:'perm'},
-  {id:'vip', name:'Lunettes VIP', d:6, desc:'+20 % sur les loyers que tu reçois (permanent).', kind:'perm'},
-  {id:'helmet', name:'Casque de chantier', d:6, desc:'−25 % sur les loyers que tu paies (permanent).', kind:'perm'},
-  {id:'g_rolex', name:'Montre Rolex en or', d:8, gold:true},
-  {id:'g_crown', name:'Couronne dorée', d:8, gold:true},
-  {id:'g_chain', name:'Chaîne en or massif', d:8, gold:true},
-  {id:'g_sneak', name:'Baskets en or', d:8, gold:true},
-  {id:'g_pearl', name:'Collier de perles d\u2019or', d:8, gold:true}];
+  {id:'shield', name:'Bouclier royal', d:5, desc:'Bloque le prochain vol contre toi (1 utilisation).', kind:'use'},
+  {id:'spin', name:'Baskets de course', d:5, desc:'Tour bonus : tu fais tourner la grande roue une 2e fois à ton prochain tour.', kind:'use'},
+  {id:'collar', name:'Collier de diamants', d:5, desc:'+75 pièces chaque fois que tu passes au DÉPART (permanent).', kind:'perm'},
+  {id:'gloves', name:'Gants de pickpocket', d:5, desc:'+50 pièces à chacun de tes vols (permanent).', kind:'perm'},
+  {id:'vip', name:'Lunettes VIP', d:5, desc:'+20 % sur les loyers que tu reçois (permanent).', kind:'perm'},
+  {id:'helmet', name:'Casque de chantier', d:5, desc:'−25 % sur les loyers que tu paies (permanent).', kind:'perm'},
+  {id:'g_rolex', name:'Montre Rolex en or', d:20, gold:true},
+  {id:'g_crown', name:'Couronne dorée', d:20, gold:true},
+  {id:'g_chain', name:'Chaîne en or massif', d:20, gold:true},
+  {id:'g_sneak', name:'Baskets en or', d:20, gold:true},
+  {id:'g_pearl', name:'Collier de perles d\u2019or', d:20, gold:true}];
 const GOLD_DESC = 'ACCESSOIRE GOLD · annule un paiement (loyer, taxe, vol, pénalité Chance) puis il est consommé. Avec 3 accessoires gold ou plus, le DÉPART rapporte 600 pièces au lieu de 300.';
 const golds = p => (p.gold || []).length;
 const hasPerk = (p, id) => !!(p.perks && p.perks[id]);
 /* ---------- Personnages gold NFT (cosmétiques, simulés, aucune blockchain) ---------- */
-const NFT_KEY = 'dogzy-family-universe-nft', NFT_PRICE = 50, VIP_PRICE = 100;
+const NFT_KEY = 'dogzy-family-universe-nft', NFT_PRICE = 50, VIP_PRICE = 1000;
 const NFT_LABEL = 'NFT — à venir sur Avalanche';
 // Cartes NFT VIP : les 4 ados (univers The Adoles-chiant of Dogzy Town), à collectionner seulement, non jouables ici.
 // img : mettre le chemin du portrait quand l'art sera fourni (assets/vip/<id>.jpg) ; sinon carte dorée provisoire.
