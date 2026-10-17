@@ -17,23 +17,26 @@
       <div class="stat" title="Shield"><i class="ico shield"></i><b id="hShield">OFF</b></div>
       <div class="stat" title="Level"><i class="ico lvl"></i><b id="hLevel">1</b></div>
     </div>
-    <div class="substats"><span id="hMult"></span><span id="hRival"></span><span id="hTurn"></span></div>
+    <div class="substats"><span id="hMult"></span><span id="hGoal"></span><span id="hTurn"></span></div>
+    <div id="leader" aria-label="Leaderboard"></div>
   </header>
 
   <main id="boardWrap">
     <div id="board">
       <img id="boardImg" src="assets/board-level1.png" alt="Dogzy Town Level 1 board" draggable="false">
       <div id="wpLayer"></div>
-      <div id="pawn"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="url(#pg)" stroke="#fff3c4" stroke-width="3"/><defs><radialGradient id="pg" cx="35%" cy="30%"><stop offset="0" stop-color="#fff1a8"/><stop offset=".55" stop-color="#d4a017"/><stop offset="1" stop-color="#7a5200"/></radialGradient></defs><g fill="#140e02"><ellipse cx="32" cy="40" rx="11" ry="9"/><ellipse cx="19" cy="27" rx="5" ry="6.5"/><ellipse cx="27" cy="19" rx="5" ry="6.5"/><ellipse cx="37" cy="19" rx="5" ry="6.5"/><ellipse cx="45" cy="27" rx="5" ry="6.5"/></g></svg></div>
+      <div id="pawns"></div>
     </div>
   </main>
 
+  <div id="botPanel" class="hidden"><img id="bpImg" alt=""><div class="bpText"><b id="bpName"></b><span id="bpMsg"></span></div><div id="bpWheel"></div><button class="btn" id="bpSkip">SKIP ⏭</button></div>
   <div id="log"></div>
 
   <nav id="controls">
     <button class="btn ghost" id="btnLevels">LEVELS</button>
     <button class="btn spin" id="btnSpin">SPIN</button>
     <button class="btn ghost" id="btnBag">BAG</button>
+    <button class="btn ghost speed" id="btnSpeed" title="Bot speed">1x</button>
   </nav>
 </div>
 
@@ -44,6 +47,7 @@
 <div id="toast"></div>
 
 <script src="data.js"></script>
+<script src="chars.js"></script>
 <script src="game.js"></script>
 </body>
 </html>
