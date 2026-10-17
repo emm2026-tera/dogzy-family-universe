@@ -20,7 +20,7 @@ Règles v3
   Paiement impossible -> vente automatique des commerces à la banque à 50 % (prix + améliorations), du moins cher au plus cher ;
   toujours insuffisant -> FAILLITE : éliminé, le créancier reçoit ce qui reste, les commerces retournent à la banque.
   Sécurité : à 150 tours, la plus grosse fortune gagne. Loyers : 25 % du prix x [1; 2,5; 4; 6; 8; 11] selon les améliorations,
-  x(1 + 15 % par tour) d'inflation pour que la partie finisse. Départ : 1200 pièces.
+  x(1 + 15 % par tour) d'inflation pour que la partie finisse. Argent de départ : 1200 pièces. Passage au DÉPART : 300 pièces.
 - Jetons Dogzy (monnaie premium SIMULÉE, aucune vraie crypto) : achetés avec des pièces dans la Boutique (🛍).
   Taux : 100 pièces = 1 Dogzy, +2 pièces tous les 5 Dogzy émis par tous les joueurs (max 200). Pas de revente.
   Constantes dans game.js : DOGZY_RATE_BASE / STEP / EVERY / MAX.
@@ -28,7 +28,7 @@ Règles v3
   (+75 au DÉPART) 4, Gants de pickpocket (+50 par vol) 4, Lunettes VIP (+20 % loyers reçus) 6, Casque de chantier (−25 % loyers payés) 6.
 - Accessoires GOLD (8 Dogzy chacun, 5 modèles) : 1 utilisation ; annulent automatiquement un paiement de 50 pièces ou plus
   (loyer, taxe du maire, vol, pénalité Chance), puis sont consommés. Compteur ✦ dans la barre du haut.
-  Avec 3 accessoires gold ou plus non utilisés : le DÉPART rapporte 600 pièces au lieu de 200 (+ bonus de niveau et collier).
+  Avec 3 accessoires gold ou plus non utilisés : le DÉPART rapporte 600 pièces (le double) au lieu de 300 (+ bonus de niveau et collier).
 - Niveaux : conditions par nombre de commerces seulement (1 / 3 / 5 ou Hôtel de ville + 3).
 - Monnaie : la monnaie de jeu s'appelle « pièces » (icône pièce d'or). Le nom « Dogzy » (jetons Dogzy) est réservé
   au jeton premium (constante DOGZY_NAME dans game.js) ; ce jeu de table n'a pas encore de jeton premium.

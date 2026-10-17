@@ -69,7 +69,7 @@ const PERSONA = {
   balanced:  {label:'Équilibré · joue de façon constante', buy:0, upgrade:0, shield:0, reserveX:1, target:'smart'}};
 /* Monnaie de jeu = « pièces » (icône pièce d'or). « Dogzy » (jetons Dogzy) est réservé au jeton premium — aucun jeton premium n'existe encore dans ce jeu de table. */
 const COIN_NAME = 'pièces', DOGZY_NAME = 'Dogzy';
-const START_TOKENS = 1200, START_BONUS = 200, START_GOLD_BONUS = 600, GOLD_FOR_BONUS = 3;
+const START_TOKENS = 1200, START_BONUS = 300, START_GOLD_BONUS = 600, GOLD_FOR_BONUS = 3;
 /* ---------- jetons Dogzy (monnaie premium simulée, aucune vraie crypto) ---------- */
 const DOGZY_RATE_BASE = 100, DOGZY_RATE_STEP = 2, DOGZY_RATE_EVERY = 5, DOGZY_RATE_MAX = 200; // 100 pièces = 1 Dogzy, +2 tous les 5 Dogzy émis
 const dogzyRate = () => Math.min(DOGZY_RATE_MAX, DOGZY_RATE_BASE + DOGZY_RATE_STEP * Math.floor(((S && S.minted) || 0) / DOGZY_RATE_EVERY));
@@ -89,7 +89,7 @@ const SHOP = [
   {id:'g_chain', name:'Chaîne en or massif', d:8, gold:true},
   {id:'g_sneak', name:'Baskets en or', d:8, gold:true},
   {id:'g_pearl', name:'Collier de perles d\u2019or', d:8, gold:true}];
-const GOLD_DESC = 'ACCESSOIRE GOLD · annule un paiement (loyer, taxe, vol, pénalité Chance) puis il est consommé. Avec 3 accessoires gold ou plus, le DÉPART rapporte 600 pièces.';
+const GOLD_DESC = 'ACCESSOIRE GOLD · annule un paiement (loyer, taxe, vol, pénalité Chance) puis il est consommé. Avec 3 accessoires gold ou plus, le DÉPART rapporte 600 pièces au lieu de 300.';
 const golds = p => (p.gold || []).length;
 const hasPerk = (p, id) => !!(p.perks && p.perks[id]);
 const charById = id => CH.all.find(c => c.id === id);
