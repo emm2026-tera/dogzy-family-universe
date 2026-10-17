@@ -92,7 +92,33 @@ const SHOP = [
 const GOLD_DESC = 'ACCESSOIRE GOLD · annule un paiement (loyer, taxe, vol, pénalité Chance) puis il est consommé. Avec 3 accessoires gold ou plus, le DÉPART rapporte 600 pièces au lieu de 300.';
 const golds = p => (p.gold || []).length;
 const hasPerk = (p, id) => !!(p.perks && p.perks[id]);
+/* ---------- Personnages gold NFT (cosmétiques, simulés, aucune blockchain) ---------- */
+const NFT_KEY = 'dogzy-family-universe-nft', NFT_PRICE = 15;
+const NFT_LABEL = 'NFT — à venir sur Avalanche';
+// Cartes NFT VIP : les 4 ados (univers The Adoles-chiant of Dogzy Town), à collectionner seulement, non jouables ici.
+// img : mettre le chemin du portrait quand l'art sera fourni (assets/vip/<id>.jpg) ; sinon carte dorée provisoire.
+const VIP_NFT = [
+  {id:'vip-pyromaniac', name:'The Pyromaniac', img:'assets/portraits/pyromaniac.jpg'}, {id:'vip-jouzy', name:'Jouzy', img:'assets/portraits/jouzy.jpg'},
+  {id:'vip-waltzy', name:'Waltzy', img:'assets/portraits/waltzy.jpg'}, {id:'vip-kelzy', name:'Kelzy', img:'assets/portraits/kelzy.jpg'}];
+const vipImg = v => v.img || 'data:image/svg+xml;utf8,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff3b0"/><stop offset=".5" stop-color="#d4af37"/><stop offset="1" stop-color="#8a6a12"/></linearGradient></defs><rect width="300" height="300" fill="#0b0905"/><rect x="8" y="8" width="284" height="284" rx="20" fill="none" stroke="url(#g)" stroke-width="6"/><g fill="url(#g)" transform="translate(150 120) scale(2.6) translate(-32 -30)"><ellipse cx="32" cy="40" rx="11" ry="9"/><ellipse cx="19" cy="27" rx="5" ry="6.5"/><ellipse cx="27" cy="19" rx="5" ry="6.5"/><ellipse cx="37" cy="19" rx="5" ry="6.5"/><ellipse cx="45" cy="27" rx="5" ry="6.5"/></g><text x="150" y="250" text-anchor="middle" font-family="Georgia,serif" font-weight="bold" font-size="34" fill="url(#g)">${v.name.toUpperCase()}</text></svg>`);
+function vipCard(v, canBuy){
+  const own = nftOwned(v.id);
+  return `<div class="nftCard vip${own ? ' own' : ''}"><div class="nftImg"><img class="zoomable" src="${vipImg(v)}" alt="${esc(v.name)}" data-cap="${esc(v.name)} · NFT VIP"><span class="vipBadge">NFT VIP</span></div>
+    <b>${esc(v.name)}</b>${own ? '<span class="nftOwn">✓</span>' : `<button class="btn buyNft" data-v="${v.id}" ${canBuy ? '' : 'disabled'}><i class="ico dz"></i> ${NFT_PRICE}</button>`}</div>`;
+}
+const NFT_PERKS = ['15 % de rabais sur l\u2019achat de ce même personnage dans The Adoles-chiant of Dogzy Town, à son lancement.',
+  '+ 1 000 jetons Dogzy offerts au lancement de The Adoles-chiant of Dogzy Town.'];
+const nftColl = () => { try { return JSON.parse(localStorage.getItem(NFT_KEY)) || {owned:[]}; } catch(e) { return {owned:[]}; } };
+const nftOwned = id => nftColl().owned.includes(id);
+function nftAdd(id){ const c = nftColl(); if (!c.owned.includes(id)) c.owned.push(id); localStorage.setItem(NFT_KEY, JSON.stringify(c)); }
+const isGold = p => !!(p && p.goldSkin && nftOwned(p.char));
+// <img> d'un portrait de joueur (version gold si équipée)
+const pimg = (p, cls) => `src="${charById(p.char).portrait}" class="${(cls || '') + (isGold(p) ? ' gsk' : '')}"`;
 const charById = id => CH.all.find(c => c.id === id);
+// Les ados appartiennent à The Adoles-chiant of Dogzy Town : ce jeu n'utilise que les personnages adultes (joueurs ET bots)
+const PLAYABLE = CH.basic;
+const BOT_POOL = ['bankzy','lawzy','securzy','magiczy','gentlezy','doczy','buildzy','cashzy','sportzy','chefzy','waitzy','barzy'];
+const BOT_PERSONA = ['aggressive','risky','strategist','balanced'];
 
 /* ---------- state ---------- */
 let S = load();
@@ -107,9 +133,10 @@ const NEW_PLAYER = (c, i, bot, persona) => ({name:c.name, char:c.id, color:COLOR
   acc:[], career:{lvl:1, items:[]}, skip:false, mult:1, extra:false, rank:0, dogzy:0, gold:[], perks:{}, spins:0, out:false});
 function newGame(cfg){
   const seats = (cfg.mode === 'local' ? (cfg.chars || []).slice(0, cfg.humans || 2) : [cfg.charId]).map(id => charById(id) || CH.basic[0]);
-  const order = ['pyromaniac','jouzy','waltzy','kelzy'].filter(id => !seats.some(c => c.id === id)).slice(0, cfg.bots);
+  const order = BOT_POOL.filter(id => !seats.some(c => c.id === id)).slice(0, cfg.bots);
   const players = seats.map((c, k) => NEW_PLAYER(c, k, false));
-  order.forEach((id, k) => { const c = charById(id); players.push(NEW_PLAYER(c, players.length, true, c.persona)); });
+  players.forEach(p => { p.goldSkin = nftOwned(p.char); }); // avatar gold équipé si possédé
+  order.forEach((id, k) => { const c = charById(id); players.push(NEW_PLAYER(c, players.length, true, BOT_PERSONA[k % 4])); });
   S = {v:4, minted:0, outOrder:[], cfg, players, owners:{}, round:1, cur:0, view:0, over:false, levelKeys:0, stats:{rent:0}};
   save(); renderPawns(); hud(); layout(); log(`Tour 1 · à ${youName(me()) === 'Toi' ? 'toi' : me().name} de jouer. Appuie sur TOURNER.`);
 }
@@ -193,7 +220,7 @@ function hud(){
   const rank = ranking();
   $('#leader').innerHTML = S.players.map((q, i) => {
     const c = charById(q.char), pos = rank.indexOf(q) + 1;
-    return `<div class="lb${i === S.cur && !S.over ? ' cur' : ''}${q.out ? ' out' : ''}" style="--pc:${q.color}" data-i="${i}"><b class="rk">${pos}</b><img src="${c.portrait}" alt=""><span class="nm">${esc(youName(q))}</span><span class="tk">${q.out ? 'FAILLITE' : q.tokens}</span>${golds(q) ? `<span class="gd" title="Accessoires gold">✦${golds(q)}</span>` : ''}${q.shield ? '<i class="ico shield" title="Bouclier"></i>' : ''}<span class="bz" title="Commerces · niveau">🏢${owned(q).length} ★${(q.rank || 0) + 1}</span></div>`;
+    return `<div class="lb${i === S.cur && !S.over ? ' cur' : ''}${q.out ? ' out' : ''}" style="--pc:${q.color}" data-i="${i}"><b class="rk">${pos}</b><img ${pimg(q)} alt=""><span class="nm">${esc(youName(q))}</span><span class="tk">${q.out ? 'FAILLITE' : q.tokens}</span>${golds(q) ? `<span class="gd" title="Accessoires gold">✦${golds(q)}</span>` : ''}${q.shield ? '<i class="ico shield" title="Bouclier"></i>' : ''}<span class="bz" title="Commerces · niveau">🏢${owned(q).length} ★${(q.rank || 0) + 1}</span></div>`;
   }).join('');
   save();
 }
@@ -201,7 +228,7 @@ function ranking(){ const oo = S.outOrder || []; return [...S.players].sort((a, 
 function log(t){ $('#log').textContent = t; }
 let toastT;
 function toast(t, p){
-  const el = $('#toast'); el.innerHTML = (p ? `<img src="${charById(p.char).portrait}" alt="">` : '') + `<span>${esc(t)}</span>`;
+  const el = $('#toast'); el.innerHTML = (p ? `<img ${pimg(p)} alt="">` : '') + `<span>${esc(t)}</span>`;
   el.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove('show'), p && p.bot ? Math.max(900, 1700 / speedF()) : 1900);
 }
 function say(p, t, important){
@@ -253,7 +280,7 @@ async function showNotices(){
   for (const x of hum) { const q = S.players[x.p];
     if (prefs.speed === 'skip' && q.bot && humans() && S.players.some(z => !z.bot && !z.out)) { toast(x.m, q); continue; }
     if (!S.players.some(z => !z.bot && !z.out) && q.bot) continue;
-    await info(x.bk ? '💀 FAILLITE' : '🏦 VENTE À LA BANQUE', `<img class="passImg" src="${charById(q.char).portrait}" alt=""><p>${esc(x.m)}</p>`); }
+    await info(x.bk ? '💀 FAILLITE' : '🏦 VENTE À LA BANQUE', `<img ${pimg(q, "passImg")} alt=""><p>${esc(x.m)}</p>`); }
 }
 
 /* ---------- bot speed ---------- */
@@ -269,7 +296,7 @@ const board = $('#board'), wrap = $('#boardWrap'), pawnsEl = $('#pawns');
 const PAW = col => `<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="${col}" stroke="#fff3c4" stroke-width="3"/><circle cx="24" cy="20" r="14" fill="rgba(255,255,255,.35)"/><g fill="#140e02"><ellipse cx="32" cy="40" rx="11" ry="9"/><ellipse cx="19" cy="27" rx="5" ry="6.5"/><ellipse cx="27" cy="19" rx="5" ry="6.5"/><ellipse cx="37" cy="19" rx="5" ry="6.5"/><ellipse cx="45" cy="27" rx="5" ry="6.5"/></g></svg>`;
 function renderPawns(){
   if (!S) return;
-  pawnsEl.innerHTML = S.players.map((p, i) => `<div class="pawn" id="pawn${i}" style="--pc:${p.color}">${PAW(p.color)}<span class="plabel"><img src="${charById(p.char).portrait}" alt="">${esc(youName(p).replace('The ', ''))}</span></div>`).join('');
+  pawnsEl.innerHTML = S.players.map((p, i) => `<div class="pawn${isGold(p) ? ' goldPawn' : ''}" id="pawn${i}" style="--pc:${p.color}">${PAW(p.color)}<span class="plabel"><img ${pimg(p)} alt="">${esc(youName(p).replace('The ', ''))}</span></div>`).join('');
   S.players.forEach((p, i) => placePawn(i, true));
 }
 function layout(){
@@ -410,7 +437,7 @@ async function passDevice(){
   if (!S || S.over || humans() < 2) return;
   const p = S.players[S.cur]; if (p.bot || S.view === S.cur) return;
   S.view = S.cur; hud();
-  open(`<span class="tag">MULTIJOUEUR LOCAL</span><img class="passImg" src="${charById(p.char).portrait}" alt=""><h2>À ${esc(p.name.toUpperCase())} DE JOUER</h2><p>Passe l\u2019appareil à <b style="color:${p.color}">${esc(p.name)}</b>.</p><button class="btn primary" id="ok">JE SUIS PRÊT</button>`);
+  open(`<span class="tag">MULTIJOUEUR LOCAL</span><img ${pimg(p, "passImg")} alt=""><h2>À ${esc(p.name.toUpperCase())} DE JOUER</h2><p>Passe l\u2019appareil à <b style="color:${p.color}">${esc(p.name)}</b>.</p><button class="btn primary" id="ok">JE SUIS PRÊT</button>`);
   await waitClick('#ok'); close(); follow(p.pos);
 }
 function renderLeaderCur(){ S.players.forEach((p, i) => placePawn(i, true)); }
@@ -425,7 +452,7 @@ async function runBots(){
   skipNow = false; hideBotPanel();
   if (S && !S.over) { await passDevice(); follow(me().pos); log(`Tour ${S.round} · ${humans() > 1 ? 'à ' + me().name : 'à toi'} de jouer. Appuie sur TOURNER.`); }
 }
-function showBotPanel(p){ const c = charById(p.char); $('#botPanel').classList.remove('hidden'); document.body.classList.add('botTurn'); $('#botPanel').style.setProperty('--pc', p.color); $('#bpImg').src = c.portrait; $('#bpName').textContent = `Tour de ${p.name}`; $('#bpMsg').textContent = PERSONA[p.persona].label; $('#bpWheel').innerHTML = ''; hud(); }
+function showBotPanel(p){ const c = charById(p.char); $('#botPanel').classList.remove('hidden'); document.body.classList.add('botTurn'); $('#botPanel').style.setProperty('--pc', p.color); $('#bpImg').src = c.portrait; $('#bpImg').classList.toggle('gsk', isGold(p)); $('#bpName').textContent = `Tour de ${p.name}`; $('#bpMsg').textContent = PERSONA[p.persona].label; $('#bpWheel').innerHTML = ''; hud(); }
 function hideBotPanel(){ $('#botPanel').classList.add('hidden'); document.body.classList.remove('botTurn'); }
 const ROUND_CAP = 150; // sécurité : au-delà, la plus grosse fortune gagne
 function checkWin(){
@@ -435,9 +462,9 @@ function checkWin(){
 function finish(capped){
   S.over = true; skipNow = false; hud(); hideBotPanel(); $('#btnSpin').disabled = true;
   const r = ranking(), place = r.indexOf(me()) + 1, multi = humans() > 1, w = r[0];
-  open(`<span class="tag">PARTIE TERMINÉE · TOUR ${S.round}</span><img class="winImg" src="${charById(w.char).portrait}" alt=""><h2>${multi || w.bot ? `🏆 ${esc(w.name.toUpperCase())} GAGNE !` : '🏆 TU GAGNES !'}</h2>
+  open(`<span class="tag">PARTIE TERMINÉE · TOUR ${S.round}</span><img ${pimg(w, "winImg")} alt=""><h2>${multi || w.bot ? `🏆 ${esc(w.name.toUpperCase())} GAGNE !` : '🏆 TU GAGNES !'}</h2>
     <p>${capped ? `Limite de ${ROUND_CAP} tours atteinte : la plus grosse fortune gagne.` : 'Dernier joueur en lice : tous les autres ont fait faillite.'} · ${DIFF_FR[S.cfg.diff] || ''}${!multi && w.bot ? ` · tu termines #${place}` : ''}</p>
-    <div class="rankList">${r.map((p, k) => `<div class="${!p.bot ? 'me' : ''}${p.out ? ' out' : ''}" style="--pc:${p.color}"><b>${k + 1}</b><img src="${charById(p.char).portrait}" alt=""><span>${esc(p.bot ? p.name : (multi ? p.name : 'Toi (' + p.name + ')'))}<small>${p.out ? `Faillite (${k + 1}e)` : `${RANKS[p.rank || 0].t} · ${owned(p).length} commerces · ✦${golds(p)} gold · ${p.dogzy || 0} Dogzy`}</small></span><em>${p.out ? '💀' : p.tokens}</em></div>`).join('')}</div>
+    <div class="rankList">${r.map((p, k) => `<div class="${!p.bot ? 'me' : ''}${p.out ? ' out' : ''}" style="--pc:${p.color}"><b>${k + 1}</b><img ${pimg(p)} alt=""><span>${esc(p.bot ? p.name : (multi ? p.name : 'Toi (' + p.name + ')'))}<small>${p.out ? `Faillite (${k + 1}e)` : `${RANKS[p.rank || 0].t} · ${owned(p).length} commerces · ✦${golds(p)} gold · ${p.dogzy || 0} Dogzy`}</small></span><em>${p.out ? '💀' : p.tokens}</em></div>`).join('')}</div>
     <button class="btn primary" id="again">REJOUER</button><button class="btn" id="view" style="margin-top:8px;width:100%">VOIR LE PLATEAU</button>`);
   sheet.querySelector('#again').onclick = () => setupScreen();
   sheet.querySelector('#view').onclick = close;
@@ -536,7 +563,7 @@ async function steal(p, n, label){
   if (hasPerk(p, 'gloves')) n += 50;
   if (!p.bot) {
     open(`<span class="tag">${label || 'VOL'}</span><h2>CHOISIS TA CIBLE</h2><p>Vole jusqu\u2019à <b>${n}</b> pièces. Un bouclier bloque le vol.</p>
-      <div class="opts">${others.map(q => `<button class="btn tgt" data-v="${idxOf(q)}" style="--pc:${q.color}"><img src="${charById(q.char).portrait}" alt="">${esc(q.name)} · ${q.tokens} ${q.shield ? '🛡️' : ''}</button>`).join('')}</div>`);
+      <div class="opts">${others.map(q => `<button class="btn tgt" data-v="${idxOf(q)}" style="--pc:${q.color}"><img ${pimg(q)} alt="">${esc(q.name)} · ${q.tokens} ${q.shield ? '🛡️' : ''}</button>`).join('')}</div>`);
     target = S.players[+(await choose('.tgt'))]; close();
   } else target = pickTarget(p);
   if (!target) return;
@@ -763,7 +790,7 @@ function setupScreen(){
   const cfg = Object.assign({mode:'bots', charId:'chefzy', chars:['chefzy','waitzy','barzy','doczy'], humans:2, bots:3, diff:'hard'}, last); delete cfg.goalType; delete cfg.goal;
   if (!cfg.chars) cfg.chars = ['chefzy','waitzy','barzy','doczy'];
   let seat = 0;
-  const tile = c => `<button class="charTile" data-v="${c.id}"><img src="${c.portrait}" alt="${esc(c.name)}"><b>${esc(c.name)}</b><small>${esc(c.career ? CH.careers[c.career].title : jf(c.job))}</small><i class="seatTag"></i></button>`;
+  const tile = c => `<button class="charTile" data-v="${c.id}"><img src="${c.portrait}" alt="${esc(c.name)}"><span class="zoomBtn" data-zoom="${c.portrait}" data-cap="${esc(c.name)}" role="button" aria-label="Agrandir">🔍</span><b>${esc(c.name)}</b><small>${esc(c.career ? CH.careers[c.career].title : jf(c.job))}</small><i class="seatTag"></i></button>`;
   open(`<div class="logo">DOGZY <span>FAMILY</span> UNIVERSE</div><h2>NOUVELLE PARTIE</h2>
     <span class="tag">1 · MODE DE JEU</span><div class="seg col" id="sMode">
       <button class="btn" data-v="bots">🤖 CONTRE LES BOTS</button>
@@ -772,8 +799,7 @@ function setupScreen(){
     <div id="localBox"><span class="tag">JOUEURS HUMAINS</span><div class="seg" id="sHum">${[2,3,4].map(n => `<button class="btn" data-v="${n}">${n}</button>`).join('')}</div>
       <div class="seg" id="sSeat"></div></div>
     <span class="tag">2 · CHOISIS TON PERSONNAGE</span>
-    <p class="sm">Personnages de Dogzy Town</p><div class="charGrid" id="cg">${CH.basic.map(tile).join('')}</div>
-    <p class="sm">Les ados</p><div class="charGrid" id="cg2">${CH.teens.map(tile).join('')}</div>
+    <p class="sm">Personnages de Dogzy Town</p><div class="charGrid" id="cg">${PLAYABLE.map(tile).join('')}</div>
     <p id="charInfo" class="sm"></p>
     <span class="tag">3 · BOTS ADVERSAIRES</span><div class="seg" id="sBots"></div>
     <p class="sm" id="botNames"></p>
@@ -798,7 +824,7 @@ function setupScreen(){
     sheet.querySelectorAll('#sDiff .btn').forEach(b => b.classList.toggle('on', b.dataset.v === cfg.diff));
     const c = charById(local ? cfg.chars[seat] : cfg.charId);
     sheet.querySelector('#charInfo').innerHTML = `<b>${esc(c.name)}</b> · ${esc(jf(c.job))} · ${c.career ? 'Carrière : ' + CH.careers[c.career].title + ' (5 niveaux)' : c.cardItems ? 'Carrière : ' + esc(jf(c.job)) + ' → ' + esc(c.boss) : 'Métier à définir'}`;
-    const bots = ['pyromaniac','jouzy','waltzy','kelzy'].filter(id => !sel.includes(id)).slice(0, cfg.bots).map(id => { const b = charById(id); return `${b.name} (${PERSONA[b.persona].label.split(' ·')[0]})`; });
+    const bots = BOT_POOL.filter(id => !sel.includes(id)).slice(0, cfg.bots).map((id, k) => `${charById(id).name} (${PERSONA[BOT_PERSONA[k % 4]].label.split(' ·')[0]})`);
     sheet.querySelector('#botNames').textContent = bots.length ? 'Adversaires : ' + bots.join(', ') : 'Aucun bot';
   };
   sheet.querySelectorAll('.charTile').forEach(b => b.onclick = () => {
@@ -837,17 +863,18 @@ $('#btnBag').onclick = () => {
   if (!S) { setupScreen(); return; }
   const p = me(), c = charById(p.char), myTurn = S.players[S.cur] === p;
   const biz = owned(p).map(([f, o]) => { const b = D.buildings.find(x => x.file === f); return `<span>${bn(b)} ${o.lvl}/5 · loyer ${rentOf(b, o)}${profMatch(p, b) ? ' ★' : ''}</span>`; }).join('') || '<span>Aucun pour l\u2019instant</span>';
-  open(`<div class="prof"><img src="${c.portrait}" alt=""><div><h2>${esc(c.name)}</h2><p>Niveau ${(p.rank || 0) + 1} · ${RANKS[p.rank || 0].t}<br><small>${esc(careerTitle(p))}</small></p></div></div>
+  open(`<div class="prof"><img ${pimg(p, "zoomable")} alt=""><div><h2>${esc(c.name)}</h2><p>Niveau ${(p.rank || 0) + 1} · ${RANKS[p.rank || 0].t}<br><small>${esc(careerTitle(p))}</small></p></div></div>
     <p>Pièces <b>${p.tokens}</b> · Bouclier <b>${p.shield ? 'OUI' : 'NON'}</b></p>
     <p>Jetons Dogzy <b>${p.dogzy || 0}</b> · Accessoires gold <b>✦${golds(p)}</b>${golds(p) ? ' (' + p.gold.map(esc).join(', ') + ')' : ''}</p>
     <p class="sm">Avantages : ${Object.keys(p.perks || {}).map(k => SHOP.find(x => x.id === k).name).join(', ') || 'aucun'}${p.spins ? ` · tours bonus ${p.spins}` : ''}</p>
-    <button class="btn" id="shield" style="width:100%">🛍 BOUTIQUE D\u2019ACCESSOIRES</button>
+    <button class="btn" id="shield" style="width:100%">🛍 BOUTIQUE D\u2019ACCESSOIRES</button><button class="btn" id="coll2" style="width:100%;margin-top:6px">🗂 MA COLLECTION GOLD NFT</button>
     ${careerHTML(p)}
     <span class="tag">ACCESSOIRES</span><div class="bagGrid">${p.acc.map(a => `<span>${esc(a)}</span>`).join('') || '<span>Aucun pour l\u2019instant</span>'}</div>
     <span class="tag">TES COMMERCES (★ bonus métier)</span><div class="bagGrid">${biz}</div>
     <button class="btn primary" id="ok">RETOUR</button><button class="btn" id="ng" style="margin-top:10px;width:100%">NOUVELLE PARTIE</button><button class="btn" id="rs" style="margin-top:10px;width:100%">EFFACER LA PROGRESSION</button>`, true);
   waitClick('#ok').then(close);
   sheet.querySelector('#shield').onclick = () => { close(); shopScreen(); };
+  sheet.querySelector('#coll2').onclick = () => collectionScreen();
   sheet.querySelector('#ng').onclick = () => { if (!busy) setupScreen(); };
   sheet.querySelector('#rs').onclick = () => { if (confirm('Effacer toute la progression ?')) window.DZ.reset(); };
 };
@@ -877,12 +904,57 @@ function shopScreen(){
     <span class="tag">2 · ACCESSOIRES (prix en jetons Dogzy)</span><div class="shopList">${SHOP.filter(x => !x.gold).map(item).join('')}</div>
     <span class="tag gold">✦ ACCESSOIRES GOLD · 1 utilisation chacun</span><p class="sm">Annule automatiquement un paiement de 50 pièces ou plus (loyer, taxe, vol, pénalité) puis disparaît. ${GOLD_FOR_BONUS}+ accessoires gold = DÉPART à ${START_GOLD_BONUS} pièces.</p>
     <div class="shopList">${SHOP.filter(x => x.gold).map(item).join('')}</div>
+    <span class="tag nft">◆ NFT · ${NFT_PRICE} jetons Dogzy · ${NFT_LABEL}</span>
+    <p class="sm">Objets de collection simulés (aucune blockchain), purement cosmétiques dans ce jeu : avatar et pion dorés. Conservés d\u2019une partie à l\u2019autre. Touche une image pour l\u2019agrandir.</p>
+    <button class="btn" id="coll" style="width:100%;margin-bottom:6px">🗂 MA COLLECTION (${nftColl().owned.filter(id => charById(id) ? PLAYABLE.includes(charById(id)) : VIP_NFT.some(v => v.id === id)).length})</button>
+    <p class="vipHead">Possède à l\u2019avance ton personnage pour l\u2019univers The Adoles-chiant of Dogzy Town — on double tes jetons Dogzy lors du lancement.</p>
+    <span class="tag nft">★ CARTES NFT VIP</span>
+    <div class="nftGrid">${VIP_NFT.map(v => vipCard(v, can && !nftOwned(v.id) && p.dogzy >= NFT_PRICE)).join('')}</div>
+    <span class="tag nft">◆ PERSONNAGES GOLD</span>
+    <div class="nftGrid">${PLAYABLE.map(c => nftCard(c, can && !nftOwned(c.id) && p.dogzy >= NFT_PRICE)).join('')}</div>
     ${can ? '' : '<p class="sm">La boutique est ouverte seulement pendant ton tour, avant de tourner la roue.</p>'}
     <button class="btn primary" id="ok">RETOUR</button>`, true);
   sheet.querySelectorAll('.exch').forEach(b => b.onclick = () => { const n = +b.dataset.v; const c = buyDogzy(p, n); toast(`+${n} Dogzy pour ${c} pièces`); shopScreen(); });
   sheet.querySelectorAll('.buyIt').forEach(b => b.onclick = () => { applyShop(p, SHOP.find(x => x.id === b.dataset.v)); shopScreen(); });
+  sheet.querySelectorAll('.buyNft').forEach(b => b.onclick = () => { if (p.dogzy < NFT_PRICE || nftOwned(b.dataset.v)) return; p.dogzy -= NFT_PRICE; nftAdd(b.dataset.v);
+    if (b.dataset.v === p.char) { p.goldSkin = true; renderPawns(); } hud(); toast(`◆ ${(charById(b.dataset.v) || VIP_NFT.find(v => v.id === b.dataset.v)).name} ajouté à ta collection !`); shopScreen(); });
+  sheet.querySelector('#coll').onclick = () => collectionScreen(shopScreen);
   sheet.querySelector('#ok').onclick = close;
 }
+function nftCard(c, canBuy){
+  const own = nftOwned(c.id);
+  return `<div class="nftCard${own ? ' own' : ''}"><div class="nftImg"><img class="gsk zoomable" src="${c.portrait}" alt="${esc(c.name)} gold" data-cap="${esc(c.name)} · gold NFT"><span class="nftBadge">GOLD</span></div>
+    <b>${esc(c.name)}</b><small class="nftLbl">${NFT_LABEL}</small>
+    <ul class="nftPerks">${NFT_PERKS.map(t => `<li>${esc(t)}</li>`).join('')}</ul>
+    ${own ? '<span class="nftOwn">✓ DANS TA COLLECTION</span>' : `<button class="btn buyNft" data-v="${c.id}" ${canBuy ? '' : 'disabled'}><i class="ico dz"></i> ${NFT_PRICE}</button>`}</div>`;
+}
+function collectionScreen(back){
+  const owned = nftColl().owned.map(charById).filter(c => c && PLAYABLE.includes(c)), p = S ? me() : null;
+  const vips = VIP_NFT.filter(v => nftOwned(v.id));
+  open(`<span class="tag nft">MA COLLECTION · PERSONNAGES GOLD NFT</span><h2>🗂 MA COLLECTION</h2><p class="sm">${NFT_LABEL} · objets simulés, sans avantage en jeu.</p>
+    ${vips.length ? `<span class="tag nft">★ CARTES NFT VIP</span><div class="nftGrid">${vips.map(v => vipCard(v, false)).join('')}</div>` : ''}
+    ${owned.length || vips.length ? '' : '<p>Aucun NFT pour l\u2019instant. Achète-les dans la Boutique avec des jetons Dogzy.</p>'}
+    ${owned.length ? `<span class="tag nft">◆ PERSONNAGES GOLD</span><div class="nftGrid">${owned.map(c => `<div class="nftCard own"><div class="nftImg"><img class="gsk zoomable" src="${c.portrait}" alt="${esc(c.name)} gold" data-cap="${esc(c.name)} · gold NFT"><span class="nftBadge">GOLD</span></div><b>${esc(c.name)}</b>
+      <ul class="nftPerks">${NFT_PERKS.map(t => `<li>${esc(t)}</li>`).join('')}</ul>
+      ${p && p.char === c.id && !p.bot ? `<button class="btn skin" data-v="${c.id}">${p.goldSkin ? 'AVATAR GOLD : OUI ✓' : 'UTILISER COMME AVATAR'}</button>` : ''}</div>`).join('')}</div>` : ''}
+    <button class="btn primary" id="ok">RETOUR</button>`, true);
+  sheet.querySelectorAll('.skin').forEach(b => b.onclick = () => { p.goldSkin = !p.goldSkin; renderPawns(); hud(); collectionScreen(back); });
+  sheet.querySelector('#ok').onclick = () => back ? back() : close();
+}
+/* ---------- loupe : agrandir une image de personnage ---------- */
+const lb = document.createElement('div'); lb.id = 'lightbox'; lb.className = 'hidden';
+lb.innerHTML = '<button class="lbClose" aria-label="Fermer">×</button><img alt=""><p></p>'; document.body.appendChild(lb);
+function zoom(src, cap, gold){ const im = lb.querySelector('img'); im.src = src; im.className = gold ? 'gsk' : ''; lb.querySelector('p').textContent = cap || ''; lb.classList.remove('hidden'); }
+lb.addEventListener('click', e => { if (e.target.tagName !== 'IMG') lb.classList.add('hidden'); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.add('hidden'); });
+// capture : la loupe passe avant la sélection / l'achat
+document.addEventListener('click', e => {
+  const z = e.target.closest('.zoomBtn, img.zoomable'); if (!z) return;
+  e.preventDefault(); e.stopPropagation();
+  if (z.classList.contains('zoomBtn')) zoom(z.dataset.zoom, z.dataset.cap, false);
+  else zoom(z.src, z.dataset.cap || z.alt, z.classList.contains('gsk'));
+}, true);
+window.DZ.zoom = zoom; window.DZ.collection = () => collectionScreen();
 $('#btnShop').onclick = shopScreen;
 window.DZ.shop = shopScreen;
 window.DZ.endAndRun = async () => { await showNotices(); await endTurn(); await runBots(); };
