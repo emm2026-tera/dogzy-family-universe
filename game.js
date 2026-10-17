@@ -67,6 +67,8 @@ const PERSONA = {
   risky:     {label:'Imprévisible · paris risqués', buy:0, upgrade:0, shield:-.05, reserveX:.6, target:'random', wild:true},
   strategist:{label:'Stratège · économise, améliore, se protège', buy:-.1, upgrade:+.3, shield:+.35, reserveX:1.5, target:'smart'},
   balanced:  {label:'Équilibré · joue de façon constante', buy:0, upgrade:0, shield:0, reserveX:1, target:'smart'}};
+/* Monnaie de jeu = « pièces » (icône pièce d'or). « Dogzy » (jetons Dogzy) est réservé au jeton premium — aucun jeton premium n'existe encore dans ce jeu de table. */
+const COIN_NAME = 'pièces', DOGZY_NAME = 'Dogzy';
 const SHIELD_COST = 150, START_TOKENS = 1000, START_BONUS = 200;
 const charById = id => CH.all.find(c => c.id === id);
 
@@ -161,7 +163,7 @@ function hud(){
   $('#hShield').style.color = p.shield ? '#9ff58a' : '';
   $('#hLevel').textContent = (p.rank || 0) + 1;
   $('#hMult').textContent = (humans() > 1 ? p.name + ' · ' : '') + (p.mult > 1 ? `Prochaine récompense x${p.mult}` : RANKS[p.rank || 0].t);
-  $('#hGoal').textContent = S.cfg.goalType === 'tokens' ? `But : premier à ${S.cfg.goal}` : `But : le plus de jetons après ${S.cfg.goal} tours`;
+  $('#hGoal').textContent = S.cfg.goalType === 'tokens' ? `But : premier à ${S.cfg.goal}` : `But : le plus de pièces après ${S.cfg.goal} tours`;
   $('#hTurn').textContent = `Tour ${S.round}${S.cfg.goalType === 'rounds' ? '/' + S.cfg.goal : ''}`;
   const rank = ranking();
   $('#leader').innerHTML = S.players.map((q, i) => {
@@ -183,7 +185,7 @@ function say(p, t, important){
 }
 function addTokens(p, n, why){
   p.tokens = Math.max(0, p.tokens + n); hud();
-  say(p, `${n >= 0 ? '+' : ''}${n} jetons${why ? ' · ' + why : ''}`);
+  say(p, `${n >= 0 ? '+' : ''}${n} pièces${why ? ' · ' + why : ''}`);
 }
 function reward(p, base, mult, why){ const m = (mult || 1) * p.mult; p.mult = 1; addTokens(p, base * m, why + (m > 1 ? ` (x${m})` : '')); return base * m; }
 
@@ -362,7 +364,7 @@ function finish(){
   S.over = true; hud(); hideBotPanel(); $('#btnSpin').disabled = true;
   const r = ranking(), place = r.indexOf(me()) + 1, multi = humans() > 1;
   open(`<span class="tag">PARTIE TERMINÉE · TOUR ${S.round}</span><h2>${multi ? `🏆 ${esc(r[0].name.toUpperCase())} GAGNE !` : place === 1 ? '🏆 TU GAGNES !' : `TU TERMINES #${place}`}</h2>
-    <p>${S.cfg.goalType === 'tokens' ? `Premier à ${S.cfg.goal} jetons` : `Le plus de jetons après ${S.cfg.goal} tours`} · ${DIFF_FR[S.cfg.diff] || ''}</p>
+    <p>${S.cfg.goalType === 'tokens' ? `Premier à ${S.cfg.goal} pièces` : `Le plus de pièces après ${S.cfg.goal} tours`} · ${DIFF_FR[S.cfg.diff] || ''}</p>
     <div class="rankList">${r.map((p, k) => `<div class="${!p.bot ? 'me' : ''}" style="--pc:${p.color}"><b>${k + 1}</b><img src="${charById(p.char).portrait}" alt=""><span>${esc(p.bot ? p.name : (multi ? p.name : 'Toi (' + p.name + ')'))}<small>${RANKS[p.rank || 0].t} · ${owned(p).length} commerces · ${p.acc.length} accessoires</small></span><em>${p.tokens}</em></div>`).join('')}</div>
     <button class="btn primary" id="again">REJOUER</button><button class="btn" id="view" style="margin-top:8px;width:100%">VOIR LE PLATEAU</button>`);
   sheet.querySelector('#again').onclick = () => setupScreen();
@@ -397,7 +399,7 @@ function botWantsBuy(p, b){
   const bb = bp(p), pr = price(b);
   if (p.tokens < pr) return false;
   if (!bb.expert) return (p.tokens - pr >= bb.reserve || (bb.wild && chance(.4))) && chance(bb.buy + (profMatch(p, b) ? .15 : 0));
-  // but en jetons : ne pas dépenser si on est proche de gagner
+  // but en pièces : ne pas dépenser si on est proche de gagner
   if (goalGap(p) < 450) return false;
   const danger = Math.max(150, ...S.players.filter(q => q !== p).flatMap(q => owned(q).map(([f, o]) => rentOf(D.buildings.find(x => x.file === f), o))));
   if (p.tokens - pr < Math.min(bb.reserve + danger * .5, 400)) return false;
@@ -408,7 +410,7 @@ function pickTarget(p){
   if (!others.length) return null;
   const b = p.bot ? bp(p) : null;
   if (!b || b.target === 'random' || !chance(b.smart)) return pick(others);
-  if (b.expert) { // vise la meilleure prise : joueur sans bouclier, proche du but, avec beaucoup de jetons
+  if (b.expert) { // vise la meilleure prise : joueur sans bouclier, proche du but, avec beaucoup de pièces
     const score = q => (q.shield ? -1000 : 0) + Math.min(150, q.tokens) + (S.cfg.goalType === 'tokens' ? Math.max(0, 600 - goalGap(q)) : 0) + (q === ranking()[0] ? 120 : 0) + (!q.bot ? 40 : 0);
     return [...others].sort((x, y) => score(y) - score(x))[0]; }
   if (b.target === 'leader') return others.sort((x, y) => y.tokens - x.tokens)[0];
@@ -423,16 +425,16 @@ async function resolveSpace(p){
   if (!SPECIAL.has(t)) { if (t === 'empty' && !p.bot) log('Case vide — on continue.'); return; }
   const i2 = wIdx('w2', W2.length);
   if (p.bot) await botWheel(p, W2.map(s => s.label), i2, 'Roue bonus');
-  else await spinWheel('ROUE BONUS', `Tu es sur une case <b>${TFR[t]}</b>. Fais tourner la deuxième roue : visites, vol de jetons, x2 ou x3 !`, W2.map(s => s.label), i2, true);
+  else await spinWheel('ROUE BONUS', `Tu es sur une case <b>${TFR[t]}</b>. Fais tourner la deuxième roue : visites, vol de pièces, x2 ou x3 !`, W2.map(s => s.label), i2, true);
   const eff = W2[i2], mult = eff.k === 'mult' ? eff.v : 1;
   if (t === 'building') await buildingVisit(p, mult);
   else if (t === 'search') await hiddenObject(p, mult);
   else if (t === 'quiz') await quiz(p, mult);
-  else if (t === 'coin') { const g = reward(p, 150, mult, 'Case pièces'); await tell(p, 'CASE PIÈCES', `<p>Tu ramasses <b>${g}</b> jetons.</p>`, `ramasse ${g} jetons`); }
+  else if (t === 'coin') { const g = reward(p, 150, mult, 'Case pièces'); await tell(p, 'CASE PIÈCES', `<p>Tu ramasses <b>${g}</b> pièces.</p>`, `ramasse ${g} pièces`); }
   else if (t === 'penalty') {
     addTokens(p, -50, 'Pénalité');
     if (mult > 1) { p.mult = Math.max(p.mult, mult); hud(); }
-    await tell(p, 'PÉNALITÉ', `<p>Tu perds <b>50</b> jetons.</p>${mult > 1 ? `<p>Coup de chance : ton x${mult} est gardé pour ta prochaine récompense.</p>` : ''}`, 'paie une pénalité de 50 jetons');
+    await tell(p, 'PÉNALITÉ', `<p>Tu perds <b>50</b> pièces.</p>${mult > 1 ? `<p>Coup de chance : ton x${mult} est gardé pour ta prochaine récompense.</p>` : ''}`, 'paie une pénalité de 50 pièces');
   }
   if (S.over) return;
   if (eff.k === 'visit') { for (let k = 0; k < eff.v; k++) await buildingVisit(p, 1, `Visite ${k + 1}/${eff.v}`); }
@@ -445,7 +447,7 @@ async function steal(p, n, label){
   let target;
   const others = S.players.filter(q => q !== p);
   if (!p.bot) {
-    open(`<span class="tag">${label || 'VOL'}</span><h2>CHOISIS TA CIBLE</h2><p>Vole jusqu\u2019à <b>${n}</b> jetons. Un bouclier bloque le vol.</p>
+    open(`<span class="tag">${label || 'VOL'}</span><h2>CHOISIS TA CIBLE</h2><p>Vole jusqu\u2019à <b>${n}</b> pièces. Un bouclier bloque le vol.</p>
       <div class="opts">${others.map(q => `<button class="btn tgt" data-v="${idxOf(q)}" style="--pc:${q.color}"><img src="${charById(q.char).portrait}" alt="">${esc(q.name)} · ${q.tokens} ${q.shield ? '🛡️' : ''}</button>`).join('')}</div>`);
     target = S.players[+(await choose('.tgt'))]; close();
   } else target = pickTarget(p);
@@ -457,8 +459,8 @@ async function steal(p, n, label){
     return;
   }
   const got = Math.min(n, target.tokens); target.tokens -= got; p.tokens += got; hud();
-  if (!p.bot) await info(label || 'VOL !', `<p>Tu attaques le village de <b>${esc(target.name)}</b> et tu voles <b>${got}</b> jetons.</p>`);
-  else { say(p, `vole ${got} jetons à ${youName(target)}`, true); await pause(p, 1000); }
+  if (!p.bot) await info(label || 'VOL !', `<p>Tu attaques le village de <b>${esc(target.name)}</b> et tu voles <b>${got}</b> pièces.</p>`);
+  else { say(p, `vole ${got} pièces à ${youName(target)}`, true); await pause(p, 1000); }
 }
 
 /* ---------- buildings / businesses ---------- */
@@ -482,7 +484,7 @@ async function buildingVisit(p, mult, label){
     p.tokens -= paid; owner.tokens += paid; S.stats.rent += paid; hud();
     if (!p.bot) {
       open(`${bizCard(b, o, (label || 'COMMERCE') + ' · LOYER')}
-        <div class="progress">${bars(o.lvl)}</div><p>Appartient à <b style="color:${owner.color}">${esc(owner.name)}</b> (${RANKS[owner.rank || 0].t}) · améliorations ${o.lvl}/5</p><p class="big">Tu paies <b>${paid}</b> jetons de loyer.</p><button class="btn primary" id="ok">PAYER LE LOYER</button>`);
+        <div class="progress">${bars(o.lvl)}</div><p>Appartient à <b style="color:${owner.color}">${esc(owner.name)}</b> (${RANKS[owner.rank || 0].t}) · améliorations ${o.lvl}/5</p><p class="big">Tu paies <b>${paid}</b> pièces de loyer.</p><button class="btn primary" id="ok">PAYER LE LOYER</button>`);
       await waitClick('#ok'); close();
     } else { say(p, `paie ${paid} de loyer à ${youName(owner)} (${bn(b)})`, true); await pause(p, 1000); }
     // taxe du maire
@@ -495,8 +497,8 @@ async function buildingVisit(p, mult, label){
     const cost = upgradeCost(p, b), can = o.lvl < 5 && p.tokens >= cost;
     if (!p.bot) {
       open(`${bizCard(b, o, label || 'TON COMMERCE')}
-        <div class="progress">${bars(o.lvl)}</div><p>Ton commerce te rapporte <b>${g}</b> jetons. Améliorations ${o.lvl}/5${profMatch(p, b) ? ' · <b>bonus métier</b>' : ''}</p>
-        ${o.lvl < 5 ? `<button class="btn primary" id="up" ${can ? '' : 'disabled'}>AMÉLIORER · ${cost} jetons (loyer ${rentOf(b, {p:i, lvl:o.lvl + 1})})</button>` : '<p><b>Amélioré au maximum</b></p>'}
+        <div class="progress">${bars(o.lvl)}</div><p>Ton commerce te rapporte <b>${g}</b> pièces. Améliorations ${o.lvl}/5${profMatch(p, b) ? ' · <b>bonus métier</b>' : ''}</p>
+        ${o.lvl < 5 ? `<button class="btn primary" id="up" ${can ? '' : 'disabled'}>AMÉLIORER · ${cost} pièces (loyer ${rentOf(b, {p:i, lvl:o.lvl + 1})})</button>` : '<p><b>Amélioré au maximum</b></p>'}
         <button class="btn" id="no" style="margin-top:8px;width:100%">CONTINUER</button>`);
       const v = await new Promise(r => { const u = sheet.querySelector('#up'); if (u) u.onclick = () => r('up'); sheet.querySelector('#no').onclick = () => r('no'); });
       if (v === 'up' && can) { p.tokens -= cost; o.lvl++; hud(); toast(`${bn(b)} amélioré à ${o.lvl}/5`); }
@@ -515,9 +517,9 @@ async function buildingVisit(p, mult, label){
   const pr = price(b);
   if (!p.bot) {
     open(`${bizCard(b, null, label || 'VISITE DE COMMERCE')}
-      <p>Tâche accomplie : <b>${task}</b> · +${g} jetons${item ? ` · accessoire <b>${esc(item)}</b>` : ''}</p>
+      <p>Tâche accomplie : <b>${task}</b> · +${g} pièces${item ? ` · accessoire <b>${esc(item)}</b>` : ''}</p>
       ${profMatch(p, b) ? '<p class="good">C\u2019est ton métier : +50 % de loyer et −25 % sur les améliorations si tu l\u2019achètes.</p>' : ''}
-      <button class="btn primary" id="buy" ${p.tokens >= pr ? '' : 'disabled'}>ACHETER CE COMMERCE · ${pr} jetons</button>
+      <button class="btn primary" id="buy" ${p.tokens >= pr ? '' : 'disabled'}>ACHETER CE COMMERCE · ${pr} pièces</button>
       <button class="btn" id="no" style="margin-top:8px;width:100%">PAS MAINTENANT</button>`);
     const v = await new Promise(r => { sheet.querySelector('#buy').onclick = () => r('buy'); sheet.querySelector('#no').onclick = () => r('no'); });
     if (v === 'buy' && p.tokens >= pr) { p.tokens -= pr; S.owners[b.file] = {p:i, lvl:0}; hud(); toast(`${bn(b)} t\u2019appartient maintenant !`); checkRank(p); }
@@ -547,7 +549,7 @@ async function quiz(p, mult, careerOnly){
     close(); pass = score >= 2;
     if (!pass) { await info('QUIZ RATÉ', `<p>${score}/3 bonnes réponses. Il en faut 2 pour gagner un accessoire.</p>`); return; }
     const a = giveAccessory(p); const g = careerOnly ? 0 : reward(p, 75, mult, 'Quiz');
-    await info('QUIZ RÉUSSI', `<p>${score}/3 bonnes réponses.</p><p>Tu gagnes l\u2019accessoire <b>${esc(a)}</b>${g ? ` et ${g} jetons` : ''}.</p>`);
+    await info('QUIZ RÉUSSI', `<p>${score}/3 bonnes réponses.</p><p>Tu gagnes l\u2019accessoire <b>${esc(a)}</b>${g ? ` et ${g} pièces` : ''}.</p>`);
     return;
   }
   if (pass) { const a = giveAccessory(p); if (!careerOnly) reward(p, 75, mult, 'Quiz'); say(p, `gagne l\u2019accessoire : ${a}`); await pause(p, 600); }
@@ -600,7 +602,7 @@ async function drawCareer(p){
   switch (c.n) {
     case 1: { const pr = promote(p); if (pr) { hud(); say(p, `Promotion : ${pr} !`, true); } else reward(p, 150, 1, 'Déjà au sommet'); break; }
     case 2: case 9: {
-      if (c.n === 9) { const poor = S.players.filter(q => q !== p).sort((a, b) => a.tokens - b.tokens)[0]; if (poor) { const g = Math.min(50, p.tokens); p.tokens -= g; poor.tokens += g; say(p, `donne ${g} jetons à ${youName(poor)}`); } }
+      if (c.n === 9) { const poor = S.players.filter(q => q !== p).sort((a, b) => a.tokens - b.tokens)[0]; if (poor) { const g = Math.min(50, p.tokens); p.tokens -= g; poor.tokens += g; say(p, `donne ${g} pièces à ${youName(poor)}`); } }
       const a = giveAccessory(p); say(p, 'Accessoire de carrière : ' + a); break; }
     case 3: if (p.shield) { p.shield = false; say(p, 'Le bouclier sauve ton uniforme'); } else { const it = loseCareerItem(p); say(p, it ? 'Perdu : ' + it : 'Aucune pièce à perdre'); } hud(); break;
     case 4: reward(p, 150, 1, 'Journée de formation'); break;
@@ -661,7 +663,7 @@ async function hiddenObject(p, mult){
   const win = await done; clearInterval(iv);
   await sleep(500); close();
   const n = objs.reduce((s, o) => s + o.found, 0), tot = objs.reduce((s, o) => s + o.total, 0);
-  if (win) { const a = giveAccessory(p); const g = reward(p, 100, mult, 'Search'); await info('TOUT TROUVÉ !', `<p>Tu as trouvé les ${tot} objets avec ${left} s de reste.</p><p>Tu gagnes l\u2019accessoire <b>${esc(a)}</b> et ${g} jetons.</p>`); }
+  if (win) { const a = giveAccessory(p); const g = reward(p, 100, mult, 'Search'); await info('TOUT TROUVÉ !', `<p>Tu as trouvé les ${tot} objets avec ${left} s de reste.</p><p>Tu gagnes l\u2019accessoire <b>${esc(a)}</b> et ${g} pièces.</p>`); }
   else await info('TEMPS ÉCOULÉ', `<p>Tu as trouvé ${n}/${tot} objets. Trouve-les tous en 90 secondes pour gagner un accessoire.</p>`);
 }
 
@@ -672,7 +674,7 @@ function setupScreen(){
   if (!cfg.chars) cfg.chars = ['chefzy','waitzy','barzy','doczy'];
   let seat = 0;
   const tile = c => `<button class="charTile" data-v="${c.id}"><img src="${c.portrait}" alt="${esc(c.name)}"><b>${esc(c.name)}</b><small>${esc(c.career ? CH.careers[c.career].title : jf(c.job))}</small><i class="seatTag"></i></button>`;
-  const goalOpts = [['tokens',2500,'Premier à 2500 jetons'],['rounds',10,'Le plus de jetons · 10 tours'],['rounds',20,'Le plus de jetons · 20 tours']];
+  const goalOpts = [['tokens',2500,'Premier à 2500 pièces'],['rounds',10,'Le plus de pièces · 10 tours'],['rounds',20,'Le plus de pièces · 20 tours']];
   open(`<div class="logo">DOGZY <span>FAMILY</span> UNIVERSE</div><h2>NOUVELLE PARTIE</h2>
     <span class="tag">1 · MODE DE JEU</span><div class="seg col" id="sMode">
       <button class="btn" data-v="bots">🤖 CONTRE LES BOTS</button>
@@ -748,8 +750,8 @@ $('#btnBag').onclick = () => {
   const p = me(), c = charById(p.char), myTurn = S.players[S.cur] === p;
   const biz = owned(p).map(([f, o]) => { const b = D.buildings.find(x => x.file === f); return `<span>${bn(b)} ${o.lvl}/5 · loyer ${rentOf(b, o)}${profMatch(p, b) ? ' ★' : ''}</span>`; }).join('') || '<span>Aucun pour l\u2019instant</span>';
   open(`<div class="prof"><img src="${c.portrait}" alt=""><div><h2>${esc(c.name)}</h2><p>Niveau ${(p.rank || 0) + 1} · ${RANKS[p.rank || 0].t}<br><small>${esc(careerTitle(p))}</small></p></div></div>
-    <p>Jetons <b>${p.tokens}</b> · Bouclier <b>${p.shield ? 'OUI' : 'NON'}</b></p>
-    <button class="btn" id="shield" ${p.shield || p.tokens < SHIELD_COST || !myTurn || busy ? 'disabled' : ''} style="width:100%">ACHETER UN BOUCLIER · ${SHIELD_COST} jetons</button>
+    <p>Pièces <b>${p.tokens}</b> · Bouclier <b>${p.shield ? 'OUI' : 'NON'}</b></p>
+    <button class="btn" id="shield" ${p.shield || p.tokens < SHIELD_COST || !myTurn || busy ? 'disabled' : ''} style="width:100%">ACHETER UN BOUCLIER · ${SHIELD_COST} pièces</button>
     ${careerHTML(p)}
     <span class="tag">ACCESSOIRES</span><div class="bagGrid">${p.acc.map(a => `<span>${esc(a)}</span>`).join('') || '<span>Aucun pour l\u2019instant</span>'}</div>
     <span class="tag">TES COMMERCES (★ bonus métier)</span><div class="bagGrid">${biz}</div>
