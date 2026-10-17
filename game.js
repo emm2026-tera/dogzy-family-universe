@@ -907,7 +907,7 @@ function shopScreen(){
     <span class="tag nft">◆ NFT · ${NFT_LABEL}</span>
     <p class="sm">Objets de collection simulés (aucune blockchain), purement cosmétiques dans ce jeu : avatar et pion dorés. Conservés d\u2019une partie à l\u2019autre. Touche une image pour l\u2019agrandir.</p>
     <button class="btn" id="coll" style="width:100%;margin-bottom:6px">🗂 MA COLLECTION (${nftColl().owned.filter(id => charById(id) ? PLAYABLE.includes(charById(id)) : VIP_NFT.some(v => v.id === id)).length})</button>
-    <p class="vipHead">Possède à l\u2019avance ton personnage pour l\u2019univers The Adoles-chiant of Dogzy Town — on double tes jetons Dogzy lors du lancement.</p>
+    <p class="vipHead">Possède à l\u2019avance ton personnage pour l\u2019univers The Adoles-chiant of Dogzy Town.</p>
     <span class="tag nft">★ CARTES NFT VIP</span>
     <div class="nftGrid">${VIP_NFT.map(v => vipCard(v, can && !nftOwned(v.id) && p.dogzy >= VIP_PRICE)).join('')}</div>
     <span class="tag nft">◆ PERSONNAGES GOLD</span>

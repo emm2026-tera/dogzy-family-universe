@@ -36,7 +36,7 @@ Règles v3
   Les ados (The Pyromaniac, Jouzy, Waltzy, Kelzy) appartiennent à The Adoles-chiant of Dogzy Town : ils ne sont plus jouables ici.
 - Boutique > NFT (cartes VIP 1000 jetons Dogzy, personnages gold 50, objets de collection SIMULÉS, aucune blockchain, aucun avantage en jeu) :
   * Cartes NFT VIP : les 4 ados — nom, image, badge « NFT VIP », cadre or, loupe, prix : 1000 jetons Dogzy. En tête de section :
-    « Possède à l'avance ton personnage pour l'univers The Adoles-chiant of Dogzy Town — on double tes jetons Dogzy lors du lancement. »
+    « Possède à l'avance ton personnage pour l'univers The Adoles-chiant of Dogzy Town. »
   * Personnages gold (50 jetons Dogzy) : version dorée de chacun des 12 personnages, mention « NFT — à venir sur Avalanche » et 2 avantages affichés :
     « 15 % de rabais sur l'achat de ce même personnage dans The Adoles-chiant of Dogzy Town, à son lancement. »
     « + 1 000 jetons Dogzy offerts au lancement de The Adoles-chiant of Dogzy Town. »
