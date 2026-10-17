@@ -148,3 +148,31 @@ html,body{margin:0;height:100%;background:#000;color:#f3e7c1;font-family:Georgia
 .career li.got{color:#9ff58a}
 .career li.got::marker{content:'✓ '}
 body.botTurn #toast{bottom:calc(150px + env(safe-area-inset-bottom))}
+
+/* ---- v3 Dogzy Family Universe : cartes noir et or, commerce + métier, menu ---- */
+.logo{font-weight:bold;letter-spacing:.14em;font-size:22px;background:linear-gradient(90deg,#a87d1c,#f9e7a1,#a87d1c);-webkit-background-clip:text;background-clip:text;color:transparent;margin:4px 0}
+.logo span{font-style:italic;letter-spacing:.02em}
+.dzCard{position:relative;width:min(82vw,320px);aspect-ratio:5/7;margin:6px auto;border-radius:18px;padding:18px 16px;background:radial-gradient(ellipse at 50% 35%,#1c160a,#000 75%);
+  border:3px solid #d4af37;box-shadow:inset 0 0 0 6px #000,inset 0 0 0 8px #8a6a12,0 0 26px rgba(212,175,55,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.dzPaw{position:absolute;top:12px;font-size:18px;filter:sepia(1) saturate(4) hue-rotate(5deg)}
+.dzPaw.tl{left:14px}.dzPaw.tr{right:14px}
+.dzCrown{color:#d4af37;font-size:26px;line-height:1}
+.dzDeck{font-size:clamp(26px,9vw,40px);font-weight:bold;letter-spacing:.06em;background:linear-gradient(#fbe9a6,#d4af37 55%,#8a6a12);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.dzNo{font-size:11px;color:#d4af37;letter-spacing:.15em}
+.dzQ{width:64px;height:64px;border-radius:50%;border:3px solid #d4af37;display:flex;align-items:center;justify-content:center;font-size:38px;font-weight:bold;color:#f6dd8a;box-shadow:0 0 14px rgba(212,175,55,.5)}
+.dzTitle{font-size:20px;font-weight:bold;color:#f6dd8a;letter-spacing:.06em}
+.dzCat{font-size:10px;color:#7cd36b;letter-spacing:.15em}
+.dzBadge{background:linear-gradient(#fbe9a6,#d4af37 50%,#8a6a12);color:#1a1204;font-weight:bold;border-radius:22px;padding:6px 18px;font-size:15px;border:1px solid #fff1b8}
+.dzText{font-size:13.5px!important;color:#f3e7c1}
+.dzFoot{position:absolute;bottom:12px;left:0;right:0;font-size:10px;letter-spacing:.2em;color:#d4af37}
+.dzMini{width:38px;height:52px;border:2px solid #d4af37;border-radius:5px;background:#000;color:#f6dd8a;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:22px}
+.bizCard{border:2px solid #d4af37;border-radius:14px;padding:8px;margin-top:6px;background:linear-gradient(#0f0c06,#000);box-shadow:inset 0 0 0 4px #000,inset 0 0 0 5px #8a6a12}
+.bcHead{font-weight:bold;letter-spacing:.08em;font-size:18px;color:#f6dd8a;border-bottom:1px solid var(--line);padding-bottom:4px}
+.bcJob{margin-top:6px;border-radius:10px;padding:6px;background:linear-gradient(#fbe9a6,#d4af37 50%,#8a6a12);color:#1a1204}
+.bcJob small{display:block;font-size:9px;letter-spacing:.16em}
+.bcJob b{font-size:16px}
+.charTile{position:relative}
+.seatTag{position:absolute;top:4px;left:4px;font-style:normal;font-weight:bold;font-size:11px;color:#1a1204;background:#f6dd8a;border-radius:6px;padding:0 4px}
+.seatTag:empty{display:none}
+.passImg{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);display:block;margin:8px auto}
+.btn[disabled].on{opacity:.45}

@@ -10,7 +10,7 @@ const careers = {
       {name:'Head Barmaid', sub:'Supervisor', env:'Premium Bar · VIP Lounge', items:['Supervisor jacket','Tablet (inventory)','Earpiece / communication','Staff schedule','Key to bar']},
       {name:'Bar Manager', sub:'Operations', env:'Bar Operations · Staff & Management', items:['Manager suit','Management tablet','Keys (bar & stock)','Staff handbook','Budget planner']},
       {name:'Bar Owner', sub:'Bar Chain / Franchise', env:'Bar Chain · Franchise', items:['Logo & branding','Delivery truck','New bar location','Marketing campaign','Franchise contract']}]},
-  server: {title:'Server', sheet:'assets/careers/server.png', motto:'From first table to your own restaurant.',
+  server: {title:'Serveur', sheet:'assets/careers/server.png', motto:'From first table to your own restaurant.',
     levels:[
       {name:'Server', sub:'Apprentice', env:'Casual Restaurant', items:['Basic uniform (shirt + apron)','Tray','Order pad','Pen','Non-slip shoes']},
       {name:'Specialized Server', sub:'Bar & Drinks', env:'Bar / Lounge', items:['Vest (specialized uniform)','Bar tools (shaker, jigger)','Cocktail glasses set','Wine opener','Drink menu']},
