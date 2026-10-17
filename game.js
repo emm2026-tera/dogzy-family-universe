@@ -93,7 +93,7 @@ const GOLD_DESC = 'ACCESSOIRE GOLD · annule un paiement (loyer, taxe, vol, pén
 const golds = p => (p.gold || []).length;
 const hasPerk = (p, id) => !!(p.perks && p.perks[id]);
 /* ---------- Personnages gold NFT (cosmétiques, simulés, aucune blockchain) ---------- */
-const NFT_KEY = 'dogzy-family-universe-nft', NFT_PRICE = 15, VIP_PRICE = 100;
+const NFT_KEY = 'dogzy-family-universe-nft', NFT_PRICE = 50, VIP_PRICE = 100;
 const NFT_LABEL = 'NFT — à venir sur Avalanche';
 // Cartes NFT VIP : les 4 ados (univers The Adoles-chiant of Dogzy Town), à collectionner seulement, non jouables ici.
 // img : mettre le chemin du portrait quand l'art sera fourni (assets/vip/<id>.jpg) ; sinon carte dorée provisoire.
