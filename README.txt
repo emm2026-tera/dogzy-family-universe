@@ -34,8 +34,8 @@ Règles v3
   au jeton premium (constante DOGZY_NAME dans game.js) ; ce jeu de table n'a pas encore de jeton premium.
 - Personnages (v5) : seuls les 12 personnages adultes de Dogzy Town sont jouables (joueurs et bots : Bankzy, Lawzy, Securzy, Magiczy…).
   Les ados (The Pyromaniac, Jouzy, Waltzy, Kelzy) appartiennent à The Adoles-chiant of Dogzy Town : ils ne sont plus jouables ici.
-- Boutique > NFT (15 jetons Dogzy chacun, objets de collection SIMULÉS, aucune blockchain, aucun avantage en jeu) :
-  * Cartes NFT VIP : les 4 ados — nom, image, badge « NFT VIP », cadre or, loupe, prix. En tête de section :
+- Boutique > NFT (cartes VIP 100 jetons Dogzy, personnages gold 15, objets de collection SIMULÉS, aucune blockchain, aucun avantage en jeu) :
+  * Cartes NFT VIP : les 4 ados — nom, image, badge « NFT VIP », cadre or, loupe, prix : 100 jetons Dogzy. En tête de section :
     « Possède à l'avance ton personnage pour l'univers The Adoles-chiant of Dogzy Town — on double tes jetons Dogzy lors du lancement. »
   * Personnages gold : version dorée de chacun des 12 personnages, mention « NFT — à venir sur Avalanche » et 2 avantages affichés :
     « 15 % de rabais sur l'achat de ce même personnage dans The Adoles-chiant of Dogzy Town, à son lancement. »
@@ -45,3 +45,4 @@ Règles v3
   * Les bots n'achètent pas de NFT.
 - Loupe : toucher une image de personnage (🔍 dans le menu de départ, image dans la boutique et Ma collection) l'agrandit ;
   × ou toucher à côté pour fermer. Le choix / l'achat se fait seulement avec les boutons.
+  Note : 100 Dogzy coûtent environ 11 900 pièces au taux croissant (départ 100, +2 tous les 5) — difficile à atteindre en une partie.

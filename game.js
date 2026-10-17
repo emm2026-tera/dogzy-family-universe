@@ -93,7 +93,7 @@ const GOLD_DESC = 'ACCESSOIRE GOLD · annule un paiement (loyer, taxe, vol, pén
 const golds = p => (p.gold || []).length;
 const hasPerk = (p, id) => !!(p.perks && p.perks[id]);
 /* ---------- Personnages gold NFT (cosmétiques, simulés, aucune blockchain) ---------- */
-const NFT_KEY = 'dogzy-family-universe-nft', NFT_PRICE = 15;
+const NFT_KEY = 'dogzy-family-universe-nft', NFT_PRICE = 15, VIP_PRICE = 100;
 const NFT_LABEL = 'NFT — à venir sur Avalanche';
 // Cartes NFT VIP : les 4 ados (univers The Adoles-chiant of Dogzy Town), à collectionner seulement, non jouables ici.
 // img : mettre le chemin du portrait quand l'art sera fourni (assets/vip/<id>.jpg) ; sinon carte dorée provisoire.
@@ -104,7 +104,7 @@ const vipImg = v => v.img || 'data:image/svg+xml;utf8,' + encodeURIComponent(`<s
 function vipCard(v, canBuy){
   const own = nftOwned(v.id);
   return `<div class="nftCard vip${own ? ' own' : ''}"><div class="nftImg"><img class="zoomable" src="${vipImg(v)}" alt="${esc(v.name)}" data-cap="${esc(v.name)} · NFT VIP"><span class="vipBadge">NFT VIP</span></div>
-    <b>${esc(v.name)}</b>${own ? '<span class="nftOwn">✓</span>' : `<button class="btn buyNft" data-v="${v.id}" ${canBuy ? '' : 'disabled'}><i class="ico dz"></i> ${NFT_PRICE}</button>`}</div>`;
+    <b>${esc(v.name)}</b>${own ? '<span class="nftOwn">✓</span>' : `<button class="btn buyNft" data-v="${v.id}" ${canBuy ? '' : 'disabled'}><i class="ico dz"></i> ${VIP_PRICE}</button>`}</div>`;
 }
 const NFT_PERKS = ['15 % de rabais sur l\u2019achat de ce même personnage dans The Adoles-chiant of Dogzy Town, à son lancement.',
   '+ 1 000 jetons Dogzy offerts au lancement de The Adoles-chiant of Dogzy Town.'];
@@ -904,19 +904,19 @@ function shopScreen(){
     <span class="tag">2 · ACCESSOIRES (prix en jetons Dogzy)</span><div class="shopList">${SHOP.filter(x => !x.gold).map(item).join('')}</div>
     <span class="tag gold">✦ ACCESSOIRES GOLD · 1 utilisation chacun</span><p class="sm">Annule automatiquement un paiement de 50 pièces ou plus (loyer, taxe, vol, pénalité) puis disparaît. ${GOLD_FOR_BONUS}+ accessoires gold = DÉPART à ${START_GOLD_BONUS} pièces.</p>
     <div class="shopList">${SHOP.filter(x => x.gold).map(item).join('')}</div>
-    <span class="tag nft">◆ NFT · ${NFT_PRICE} jetons Dogzy · ${NFT_LABEL}</span>
+    <span class="tag nft">◆ NFT · ${NFT_LABEL}</span>
     <p class="sm">Objets de collection simulés (aucune blockchain), purement cosmétiques dans ce jeu : avatar et pion dorés. Conservés d\u2019une partie à l\u2019autre. Touche une image pour l\u2019agrandir.</p>
     <button class="btn" id="coll" style="width:100%;margin-bottom:6px">🗂 MA COLLECTION (${nftColl().owned.filter(id => charById(id) ? PLAYABLE.includes(charById(id)) : VIP_NFT.some(v => v.id === id)).length})</button>
     <p class="vipHead">Possède à l\u2019avance ton personnage pour l\u2019univers The Adoles-chiant of Dogzy Town — on double tes jetons Dogzy lors du lancement.</p>
     <span class="tag nft">★ CARTES NFT VIP</span>
-    <div class="nftGrid">${VIP_NFT.map(v => vipCard(v, can && !nftOwned(v.id) && p.dogzy >= NFT_PRICE)).join('')}</div>
+    <div class="nftGrid">${VIP_NFT.map(v => vipCard(v, can && !nftOwned(v.id) && p.dogzy >= VIP_PRICE)).join('')}</div>
     <span class="tag nft">◆ PERSONNAGES GOLD</span>
     <div class="nftGrid">${PLAYABLE.map(c => nftCard(c, can && !nftOwned(c.id) && p.dogzy >= NFT_PRICE)).join('')}</div>
     ${can ? '' : '<p class="sm">La boutique est ouverte seulement pendant ton tour, avant de tourner la roue.</p>'}
     <button class="btn primary" id="ok">RETOUR</button>`, true);
   sheet.querySelectorAll('.exch').forEach(b => b.onclick = () => { const n = +b.dataset.v; const c = buyDogzy(p, n); toast(`+${n} Dogzy pour ${c} pièces`); shopScreen(); });
   sheet.querySelectorAll('.buyIt').forEach(b => b.onclick = () => { applyShop(p, SHOP.find(x => x.id === b.dataset.v)); shopScreen(); });
-  sheet.querySelectorAll('.buyNft').forEach(b => b.onclick = () => { if (p.dogzy < NFT_PRICE || nftOwned(b.dataset.v)) return; p.dogzy -= NFT_PRICE; nftAdd(b.dataset.v);
+  sheet.querySelectorAll('.buyNft').forEach(b => b.onclick = () => { const pr = b.dataset.v.startsWith('vip-') ? VIP_PRICE : NFT_PRICE; if (p.dogzy < pr || nftOwned(b.dataset.v)) return; p.dogzy -= pr; nftAdd(b.dataset.v);
     if (b.dataset.v === p.char) { p.goldSkin = true; renderPawns(); } hud(); toast(`◆ ${(charById(b.dataset.v) || VIP_NFT.find(v => v.id === b.dataset.v)).name} ajouté à ta collection !`); shopScreen(); });
   sheet.querySelector('#coll').onclick = () => collectionScreen(shopScreen);
   sheet.querySelector('#ok').onclick = close;
