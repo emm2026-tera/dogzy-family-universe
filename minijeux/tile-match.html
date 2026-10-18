@@ -57,6 +57,7 @@ h1.gt em{font-style:normal;color:#6ad8ff;text-shadow:0 3px 0 #0a3a8a,0 0 14px rg
 </div></div>
 
 <script src="mj.js"></script>
+<script src="intro.js"></script>
 <script>
 (() => {
   const COLS = 7, ROWS = 7, DUR = 45, GOAL = 80, RAINBOW = 5;
@@ -212,7 +213,7 @@ h1.gt em{font-style:normal;color:#6ad8ff;text-shadow:0 3px 0 #0a3a8a,0 0 14px rg
     res.sort((x,y) => (y.id===winnerId)-(x.id===winnerId) || y.v-x.v || x.id-y.id);
     res.forEach(x => x.label = x.v+' / '+GOAL);
     const w = res[0].id, msg = winnerId ? 'P'+w+' atteint l\'objectif en premier.' : 'Temps écoulé : P'+w+' est le plus avancé.';
-    MJ.showEnd(w===1 ? 'Tu gagnes la manche !' : 'Manche terminée', msg, res, start);
+    MJ.showEnd(w===1 ? 'Tu gagnes la manche !' : 'Manche terminée', msg, res, launch);
   }
   function unselect(){ if (sel){ const t=B[sel[0]][sel[1]]; t && t.el.classList.remove('sel'); sel=null; } }
   function start(){
@@ -227,7 +228,9 @@ h1.gt em{font-style:normal;color:#6ad8ff;text-shadow:0 3px 0 #0a3a8a,0 0 14px rg
     }, () => finish(0));
   }
   bots = [0,1,2].map(()=>MJ.bot(GOAL,DUR)); cleared = 0; layout(); fill(); refreshPlayers();
-  document.getElementById('go').onclick = () => { document.getElementById('ovStart').classList.add('hidden'); start(); };
+  function launch(){ MJIntro.play({titre:'TILE MATCH', onDone:start}); }
+  MJIntro.decor();
+  document.getElementById('go').onclick = () => { document.getElementById('ovStart').classList.add('hidden'); launch(); };
 
   // Contrôles : glisser ou toucher deux tuiles
   let down = null;

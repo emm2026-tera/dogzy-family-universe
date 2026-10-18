@@ -74,6 +74,7 @@ body{--bg:url(img/2048-fond.jpg)}
 </div></div>
 
 <script src="mj.js"></script>
+<script src="intro.js"></script>
 <script>
 (() => {
   const R = 2, DUR = 60;
@@ -180,7 +181,7 @@ body{--bg:url(img/2048-fond.jpg)}
     const win = res[0].id === 1;
     MJ.showEnd(win ? 'Tu gagnes la manche !' : 'Manche terminée',
       (stuck ? 'Plus aucun mouvement possible. ' : 'Temps écoulé. ') + (win ? 'Meilleur score des 4 joueurs.' : 'P'+res[0].id+' a le meilleur score.'),
-      res, start);
+      res, launch);
   }
   function start(){
     gridEl.querySelectorAll('.tile').forEach(e=>e.remove());
@@ -192,7 +193,9 @@ body{--bg:url(img/2048-fond.jpg)}
   }
   tiles = []; layout();
   bots = [0,1,2].map(()=>MJ.bot(0,DUR)); refreshPlayers();
-  document.getElementById('go').onclick = () => { document.getElementById('ovStart').classList.add('hidden'); start(); };
+  function launch(){ MJIntro.play({titre:'2048 HEXA', onDone:start}); }
+  MJIntro.decor();
+  document.getElementById('go').onclick = () => { document.getElementById('ovStart').classList.add('hidden'); launch(); };
 
   // Contrôles
   const KEYS = {ArrowUp:0,w:0,W:0,'8':0,e:1,E:1,'9':1,d:2,D:2,'3':2,ArrowDown:3,s:3,S:3,'2':3,a:4,A:4,'1':4,q:5,Q:5,'7':5};
