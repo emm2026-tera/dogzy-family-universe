@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0905">
+<title>Mini-jeux | Dogzy Family Universe</title>
+<link rel="stylesheet" href="mj.css">
+<style>
+body{--bg:url(img/2048-fond.jpg)}
+.intro{text-align:center;max-width:640px;margin:0 auto 14px;font-size:15px;line-height:1.45;color:#e7d397}
+.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{display:flex;flex-direction:column;text-decoration:none;color:inherit;border-radius:20px;padding:10px;background:linear-gradient(145deg,#a8742a,#5a3a12 40%,#c8923a 70%,#4a2e0e);box-shadow:0 0 24px rgba(255,190,60,.25);transition:transform .15s}
+.card:hover{transform:translateY(-3px)}
+.card .in{background:linear-gradient(#1a140a,#0b0905);border-radius:14px;overflow:hidden;flex:1;display:flex;flex-direction:column}
+.card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.card h2{margin:10px 12px 4px;color:var(--gold2);font-size:21px;letter-spacing:.04em}
+.card p{margin:0 12px 8px;font-size:14px;line-height:1.4}
+.card .meta{display:flex;gap:6px;flex-wrap:wrap;margin:0 12px 10px}
+.card .meta span{font-size:11px;letter-spacing:.08em;border:1px solid var(--line);border-radius:20px;padding:2px 8px;color:#bfa55c}
+.card .btn{margin:auto 12px 12px;text-align:center}
+.note{text-align:center;font-size:12px;color:#9c8a55;margin-top:16px}
+</style>
+</head>
+<body>
+<header class="top"><a href="../">← Démo</a><div class="brand">DOGZY <span>Family</span> UNIVERSE</div><span style="width:60px"></span></header>
+<main>
+  <h1 class="gt"><i class="paw"></i> MINI-JEUX <i class="paw"></i></h1>
+  <p class="intro">À la fin de chaque tour, les 4 joueurs s'affrontent dans un mini-jeu chronométré. Chacun joue sur sa propre grille, tout le monde part en même temps, et le gagnant remporte un accessoire.</p>
+  <div class="games">
+    <a class="card" href="2048-hex.html"><div class="in">
+      <img src="img/2048-vignette.jpg" alt="Visuel du 2048 en hexagones">
+      <h2>2048 en hexagones</h2>
+      <p>Fais glisser les tuiles dans les 6 directions et fusionne les chiffres pareils : 2, 4, 8, 16, 32… Le meilleur score gagne.</p>
+      <div class="meta"><span>4 JOUEURS</span><span>60 S</span><span>MEILLEUR SCORE</span></div>
+      <span class="btn primary">JOUER</span>
+    </div></a>
+    <a class="card" href="tile-match.html"><div class="in">
+      <img src="img/tile-vignette.jpg" alt="Visuel du Tile Match">
+      <h2>Tile Match</h2>
+      <p>Échange les tuiles Dogzy (patte, os, maison, étoile, cœur) pour en aligner 3. Le premier à faire disparaître 80 tuiles gagne.</p>
+      <div class="meta"><span>4 JOUEURS</span><span>45 S</span><span>PREMIER À L'OBJECTIF</span></div>
+      <span class="btn primary">JOUER</span>
+    </div></a>
+  </div>
+  <p class="note">Prototype de démonstration. Les joueurs P2 à P4 sont simulés par l'ordinateur.</p>
+</main>
+<footer>© 2026 Sania Labbé (Valkyrie). Tous droits réservés.</footer>
+</body>
+</html>

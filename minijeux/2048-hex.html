@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0905">
+<title>2048 en hexagones | Mini-jeux Dogzy</title>
+<link rel="stylesheet" href="mj.css">
+<style>
+body{--bg:url(img/2048-fond.jpg)}
+.cell,.tile{position:absolute;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%)}
+.cell{background:linear-gradient(160deg,#3a3d48,#1c1e25);}
+.cell::after{content:"";position:absolute;inset:3px;clip-path:inherit;background:radial-gradient(#2b2d36,#16171d)}
+.tile{display:flex;align-items:center;justify-content:center;font:900 var(--fs,28px)/1 "Arial Black",Arial,sans-serif;color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.45);transition:transform .11s ease-out;will-change:transform;z-index:2}
+.tile::before{content:"";position:absolute;inset:0;clip-path:inherit;background:linear-gradient(170deg,rgba(255,255,255,.55),transparent 38%,transparent 70%,rgba(0,0,0,.3));pointer-events:none}
+.tile span{position:relative;transition:transform .12s}
+.tile.new span{animation:appear .18s ease-out}
+.tile.pop span{animation:pop .2s ease-out}
+.tile.dead{z-index:1}
+@keyframes appear{from{transform:scale(0)}to{transform:scale(1)}}
+@keyframes pop{50%{transform:scale(1.35)}}
+.v2{background:linear-gradient(#5ab8ff,#1663d8)}.v4{background:linear-gradient(#ffbe4a,#f07a10)}
+.v8{background:linear-gradient(#ff6a6a,#d0182a)}.v16{background:linear-gradient(#7af06a,#1a9a2a)}
+.v32{background:linear-gradient(#c87aff,#7a22d0)}.v64{background:linear-gradient(#ff7ad8,#d01e8e)}
+.v128{background:linear-gradient(#5af0e8,#0e9a9a)}.v256{background:linear-gradient(#fff07a,#d4a40e)}
+.v512{background:linear-gradient(#ffa07a,#c0401a)}.v1024{background:linear-gradient(#ffffff,#9aa4c8);color:#1a1a40}
+.v2048,.vbig{background:linear-gradient(#fff1b8,#d4af37 45%,#8a6a12);color:#2a1a00}
+.pad{position:relative;width:180px;height:150px;margin:6px auto 0}
+.pad button{position:absolute;width:62px;height:44px;border-radius:12px;border:1px solid var(--gold);background:#120e06;color:var(--gold2);font-size:22px;cursor:pointer}
+.pad button:active{background:#2a2110}
+.pad .c{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:radial-gradient(#3b2a12,#120c05);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center}
+.help{font-size:12px;color:#bfa55c;text-align:center;margin:4px 0}
+@media (min-width:860px){.help{font-size:13px}}
+</style>
+</head>
+<body>
+<header class="top"><a href="./">← Mini-jeux</a><div class="brand">DOGZY <span>Family</span> UNIVERSE</div><a href="../">Démo</a></header>
+<main>
+  <h1 class="gt">2048 HEXA</h1>
+  <div class="arena">
+    <div class="players" id="players"></div>
+    <div class="board">
+      <div class="timerBox"><span class="pawb"><i class="paw"></i></span><span class="t" id="timer">01:00</span><span class="pawb"><i class="paw"></i></span></div>
+      <div class="frame" id="frame"><div class="inner" id="grid"></div></div>
+      <div class="hud2"><span>Score : <b id="score">0</b></span><span>Meilleure tuile : <b id="best">2</b></span></div>
+      <div class="pad" id="pad">
+        <button data-d="0" style="left:59px;top:0" aria-label="Haut">▲</button>
+        <button data-d="1" style="right:0;top:28px" aria-label="Haut droite">◥</button>
+        <button data-d="2" style="right:0;top:78px" aria-label="Bas droite">◢</button>
+        <button data-d="3" style="left:59px;top:106px" aria-label="Bas">▼</button>
+        <button data-d="4" style="left:0;top:78px" aria-label="Bas gauche">◣</button>
+        <button data-d="5" style="left:0;top:28px" aria-label="Haut gauche">◤</button>
+        <span class="c"><i class="paw"></i></span>
+      </div>
+      <p class="help">Glisse le doigt sur le plateau, touche les flèches, ou utilise le clavier : ↑ ↓ et Q E A D (ou W S).</p>
+    </div>
+  </div>
+</main>
+<footer>© 2026 Sania Labbé (Valkyrie). Tous droits réservés.</footer>
+
+<div class="ov" id="ovStart"><div class="sheet">
+  <h2><i class="paw"></i> 2048 en hexagones</h2>
+  <ul>
+    <li>Fais glisser toutes les tuiles dans une des 6 directions du plateau.</li>
+    <li>Deux tuiles pareilles qui se touchent fusionnent : 2+2 = 4, 4+4 = 8, 8+8 = 16…</li>
+    <li>Chaque fusion ajoute sa valeur à ton score.</li>
+    <li>Tu as <b>60 secondes</b>. Le meilleur score des 4 joueurs gagne la manche.</li>
+  </ul>
+  <div class="row"><button class="btn primary" id="go">JOUER</button></div>
+</div></div>
+<div class="ov hidden" id="ovEnd"><div class="sheet">
+  <h2></h2><p class="msg" style="text-align:center"></p><ol class="rank"></ol>
+  <div class="row"><button class="btn primary replay">REJOUER</button><a class="btn" href="./">MINI-JEUX</a></div>
+</div></div>
+
+<script src="mj.js"></script>
+<script>
+(() => {
+  const R = 2, DUR = 60;
+  // Hexagones à sommet plat, coordonnées axiales (q, r). Directions : N, NE, SE, S, SO, NO.
+  const DIRS = [[0,-1],[1,-1],[1,0],[0,1],[-1,1],[-1,0]];
+  const CELLS = [];
+  for (let q=-R;q<=R;q++) for (let r=-R;r<=R;r++) if (Math.abs(q+r)<=R) CELLS.push([q,r]);
+  const K = (q,r) => q+','+r, ON = (q,r) => Math.abs(q)<=R && Math.abs(r)<=R && Math.abs(q+r)<=R;
+  const gridEl = document.getElementById('grid'), frame = document.getElementById('frame');
+  let S, W, H, grid, tiles, nextId, score, playing, clock, bots, ended;
+
+  MJ.renderPlayers(document.getElementById('players'));
+
+  function layout(){
+    const maxW = Math.min(window.innerWidth - 50, 470);
+    const maxH = Math.max(260, window.innerHeight - (window.innerWidth>=860 ? 330 : 470));
+    S = Math.min(maxW/8.2, maxH/(Math.sqrt(3)*5+0.2));
+    S = Math.max(S, 30);
+    W = S*8; H = Math.sqrt(3)*S*5;
+    gridEl.style.width = W+'px'; gridEl.style.height = H+'px';
+    gridEl.querySelectorAll('.cell').forEach(c => c.remove());
+    for (const [q,r] of CELLS){
+      const c = document.createElement('div'); c.className='cell'; place(c,q,r,0.96); gridEl.prepend(c);
+    }
+    tiles.forEach(t => place(t.el,t.q,t.r,0.9));
+  }
+  function px(q,r){ return [W/2 + S*1.5*q, H/2 + S*Math.sqrt(3)*(r+q/2)]; }
+  function place(el,q,r,k){
+    const w = 2*S*k, h = Math.sqrt(3)*S*k, [x,y] = px(q,r);
+    el.style.width = w+'px'; el.style.height = h+'px';
+    el.style.transform = `translate(${x-w/2}px,${y-h/2}px)`;
+    el.style.setProperty('--fs', Math.round(S*(String(el.dataset.v||'').length>3?0.5:0.7))+'px');
+  }
+  function setVal(t){
+    t.el.className = 'tile ' + (t.v<=2048 ? 'v'+t.v : 'vbig');
+    t.el.dataset.v = t.v; t.el.querySelector('span').textContent = t.v;
+    place(t.el,t.q,t.r,0.9);
+  }
+  function spawn(){
+    const free = CELLS.filter(([q,r]) => !grid[K(q,r)]);
+    if (!free.length) return;
+    const [q,r] = free[Math.floor(Math.random()*free.length)];
+    const t = {id:nextId++, q, r, v: Math.random()<0.9?2:4, el: document.createElement('div')};
+    t.el.innerHTML = '<span></span>'; setVal(t); t.el.classList.add('new');
+    gridEl.appendChild(t.el); grid[K(q,r)] = t; tiles.push(t);
+  }
+  function move(d){
+    if (!playing) return;
+    const [dq,dr] = DIRS[d];
+    let moved = false; const dead = [];
+    for (const [q0,r0] of CELLS){
+      if (ON(q0-dq, r0-dr)) continue;            // début de ligne
+      const line = [];
+      for (let q=q0,r=r0; ON(q,r); q+=dq, r+=dr) line.push([q,r]);
+      line.reverse();                              // de l'extrémité vers l'arrière
+      const items = line.map(([q,r]) => grid[K(q,r)]).filter(Boolean);
+      line.forEach(([q,r]) => grid[K(q,r)] = null);
+      let pos = -1, last = null, lastMerged = false;
+      for (const t of items){
+        if (last && last.v === t.v && !lastMerged){
+          last.v *= 2; score += last.v; lastMerged = true;
+          t.q = last.q; t.r = last.r; dead.push(t); last.pop = true; moved = true;
+        } else {
+          pos++; const [q,r] = line[pos];
+          if (t.q!==q || t.r!==r) moved = true;
+          t.q = q; t.r = r; grid[K(q,r)] = t; last = t; lastMerged = false;
+        }
+      }
+    }
+    if (!moved) return;
+    tiles = tiles.filter(t => !dead.includes(t));
+    dead.forEach(t => { t.el.classList.add('dead'); place(t.el,t.q,t.r,0.9); setTimeout(()=>t.el.remove(),120); });
+    tiles.forEach(t => {
+      t.el.classList.remove('new');
+      if (t.pop){ t.pop=false; const el=t.el; place(el,t.q,t.r,0.9); setTimeout(()=>{ setVal(t); el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop'); },100); }
+      else place(t.el,t.q,t.r,0.9);
+    });
+    setTimeout(spawnAfter, 110);
+    hold = true;
+    updateHud();
+  }
+  let hold = false;
+  function spawnAfter(){ hold=false; if(!playing) return; spawn(); updateHud(); if (!canMove()) finish(true); }
+  function canMove(){
+    if (CELLS.some(([q,r]) => !grid[K(q,r)])) return true;
+    return CELLS.some(([q,r]) => DIRS.some(([dq,dr]) => { const n = grid[K(q+dq,r+dr)]; return n && n.v === grid[K(q,r)].v; }));
+  }
+  function updateHud(){
+    document.getElementById('score').textContent = score;
+    document.getElementById('best').textContent = Math.max(2, ...tiles.map(t=>t.v));
+    refreshPlayers();
+  }
+  function refreshPlayers(){
+    const all = [score, ...bots.map(b=>b.v)], mx = Math.max(1, ...all);
+    all.forEach((v,i) => MJ.setPlayer(i+1, v, v/mx*100));
+    const lead = all.indexOf(mx); MJ.setLeader(mx>0 ? lead+1 : 0);
+  }
+  function finish(stuck){
+    if (ended) return; ended = true; playing = false; clock && clock.stop();
+    if (stuck) bots.forEach(b => b.tick(DUR));  // les bots terminent leurs 60 s
+    refreshPlayers();
+    const res = [{id:1,v:score}, ...bots.map((b,i)=>({id:i+2,v:b.v}))].sort((a,b)=>b.v-a.v || a.id-b.id);
+    res.forEach(r => r.label = r.v + ' pts');
+    const win = res[0].id === 1;
+    MJ.showEnd(win ? 'Tu gagnes la manche !' : 'Manche terminée',
+      (stuck ? 'Plus aucun mouvement possible. ' : 'Temps écoulé. ') + (win ? 'Meilleur score des 4 joueurs.' : 'P'+res[0].id+' a le meilleur score.'),
+      res, start);
+  }
+  function start(){
+    gridEl.querySelectorAll('.tile').forEach(e=>e.remove());
+    grid = {}; tiles = []; nextId = 1; score = 0; ended = false; hold = false;
+    bots = [0,1,2].map(() => MJ.bot(Math.round((1400 + Math.random()*2400)/4)*4, DUR));
+    layout(); spawn(); spawn(); updateHud();
+    playing = true;
+    clock = MJ.timer(document.getElementById('timer'), DUR, el => { bots.forEach(b=>b.tick(el)); refreshPlayers(); }, () => finish(false));
+  }
+  tiles = []; layout();
+  bots = [0,1,2].map(()=>MJ.bot(0,DUR)); refreshPlayers();
+  document.getElementById('go').onclick = () => { document.getElementById('ovStart').classList.add('hidden'); start(); };
+
+  // Contrôles
+  const KEYS = {ArrowUp:0,w:0,W:0,'8':0,e:1,E:1,'9':1,d:2,D:2,'3':2,ArrowDown:3,s:3,S:3,'2':3,a:4,A:4,'1':4,q:5,Q:5,'7':5};
+  window.addEventListener('keydown', ev => { if (ev.key in KEYS){ ev.preventDefault(); move(KEYS[ev.key]); } });
+  document.getElementById('pad').addEventListener('click', ev => { const b = ev.target.closest('button'); if (b) move(+b.dataset.d); });
+  let sx=null, sy=null;
+  frame.addEventListener('pointerdown', ev => { sx=ev.clientX; sy=ev.clientY; });
+  frame.addEventListener('pointerup', ev => {
+    if (sx===null) return; const dx=ev.clientX-sx, dy=ev.clientY-sy; sx=null;
+    if (Math.hypot(dx,dy) < 22) return;
+    const ang = Math.atan2(dy,dx)*180/Math.PI;     // -90 = haut
+    const targets = [-90,-30,30,90,150,-150];
+    let best=0, bd=1e9; targets.forEach((a,i)=>{ let diff=Math.abs(((ang-a+540)%360)-180); if(diff<bd){bd=diff;best=i;} });
+    move(best);
+  });
+  window.addEventListener('resize', () => layout());
+  window.__mj2048 = { move, get score(){return score;}, get tiles(){return tiles.length;} };
+})();
+</script>
+</body>
+</html>
