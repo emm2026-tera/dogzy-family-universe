@@ -240,3 +240,10 @@ img.zoomable{cursor:zoom-in}
 .nftCard.vip .nftImg img{outline:2px solid #ffd54a;outline-offset:-2px}
 .vipHead{border:1px solid #ffd54a;border-radius:10px;padding:8px;color:#ffd54a!important;font-weight:bold;background:linear-gradient(90deg,#2a1e04,#0b0905);text-align:center}
 #lightbox img{width:min(90vw,80vh,640px);height:auto}
+
+/* sélecteur de langue FR / EN */
+#hud{position:relative}
+.langSw{position:absolute;top:calc(4px + env(safe-area-inset-top));right:8px;display:flex;gap:2px;font:bold 11px/1 Georgia,serif;z-index:3}
+.langSw a,.langSw b{padding:3px 6px;border:1px solid var(--line);border-radius:6px;text-decoration:none}
+.langSw b{background:linear-gradient(#fff3b0,#d4af37);color:#1a1204}
+.langSw a{color:#f6dd8a;background:#0f0c06}

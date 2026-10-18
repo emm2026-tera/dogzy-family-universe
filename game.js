@@ -106,8 +106,7 @@ function vipCard(v, canBuy){
   return `<div class="nftCard vip${own ? ' own' : ''}"><div class="nftImg"><img class="zoomable" src="${vipImg(v)}" alt="${esc(v.name)}" data-cap="${esc(v.name)} · NFT VIP"><span class="vipBadge">NFT VIP</span></div>
     <b>${esc(v.name)}</b>${own ? '<span class="nftOwn">✓</span>' : `<button class="btn buyNft" data-v="${v.id}" ${canBuy ? '' : 'disabled'}><i class="ico dz"></i> ${VIP_PRICE}</button>`}</div>`;
 }
-const NFT_PERKS = ['15 % de rabais sur l\u2019achat de ce même personnage dans The Adoles-chiant of Dogzy Town, à son lancement.',
-  '+ 1 000 jetons Dogzy offerts au lancement de The Adoles-chiant of Dogzy Town.'];
+const NFT_PERKS = ['15 % de rabais sur l\u2019achat de ce même personnage dans The Adoles-chiant of Dogzy Town, à son lancement.'];
 const nftColl = () => { try { return JSON.parse(localStorage.getItem(NFT_KEY)) || {owned:[]}; } catch(e) { return {owned:[]}; } };
 const nftOwned = id => nftColl().owned.includes(id);
 function nftAdd(id){ const c = nftColl(); if (!c.owned.includes(id)) c.owned.push(id); localStorage.setItem(NFT_KEY, JSON.stringify(c)); }
