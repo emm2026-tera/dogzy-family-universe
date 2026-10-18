@@ -386,7 +386,7 @@ function startGame(){
   newLevel(1); running=true;
 }
 // Intro de Bubbles : mettre ici le fichier d'animation de Sania (ex. 'img/intro-bubbles.mp4') pour remplacer l'intro standard.
-const BUBBLES_INTRO = '';
+const BUBBLES_INTRO = 'img/bubbles-intro.mp4';
 MJIntro.decor();
 document.getElementById('ovBtn').addEventListener('click', ()=>{ document.getElementById('overlay').classList.add('hidden'); MJIntro.play({titre:'DOGZY BUBBLES', media:BUBBLES_INTRO, onDone:startGame}); });
 
