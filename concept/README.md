@@ -29,11 +29,16 @@ Les mini-jeux font partie du board : ils se lancent directement pendant la parti
 
 - Les 4 joueurs jouent en même temps, chacun sur sa propre map, et ils partent tous au même signal.
 - Le premier qui termine gagne.
+**Tile Match** : les 4 joueurs Dogzy jouent en même temps, avec un minuteur de 45 secondes. Chacun a sa propre grille de tuiles Dogzy (pattes, os, maisons, étoiles, cœurs) et doit aligner au moins 3 tuiles pareilles pour les faire disparaître. La tuile arc-en-ciel est un bonus. Une barre montre la progression de chaque joueur, et le premier qui vide sa grille gagne.
+
+![Mini-jeu Tile Match à 4 joueurs Dogzy](minijeu-tile-match.png)
+
 - Les mini-jeux prévus :
   - **Trace sans lever** : retracer une image d'un seul trait, sans lever le doigt et sans croiser la ligne.
   - **Rush de bulles** : une image se sépare en 4 écrans, et chaque joueur fait éclater les bulles de sa couleur en évitant celles des autres.
   - **Puzzle style Tetris** : placer des pièces pour faire correspondre les images.
   - **2048 hexagones** : voir plus haut.
+  - **Tile Match** : voir plus haut.
   - **Mahjong** : associer les tuiles identiques.
   - Ce qui existe déjà et peut servir : la course aux objets cachés et le puzzle d'hexagones.
 
