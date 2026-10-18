@@ -32,6 +32,7 @@ canvas{display:block;width:100%;border:1px solid var(--line);border-radius:16px;
 .btn:active{transform:scale(.97)}
 .hint{font-size:12px;color:#8a7648;margin-top:10px;text-align:center;max-width:420px}
 #heroFace{width:112px;height:112px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);box-shadow:0 0 22px rgba(212,175,55,.5);margin-bottom:8px}
+#heroName{color:var(--gold2);letter-spacing:.3em;font-size:15px;font-weight:bold;margin:2px 0 8px}
 </style>
 </head>
 <body>
@@ -40,7 +41,8 @@ canvas{display:block;width:100%;border:1px solid var(--line);border-radius:16px;
 <div id="wrap">
   <canvas id="game" width="480" height="700"></canvas>
   <div id="overlay">
-    <img id="heroFace" alt="Personnage Dogzy">
+    <img id="heroFace" alt="Coraltzy">
+    <div id="heroName">CORALTZY</div>
     <h2 id="ovTitle">DOGZY BUBBLES</h2>
     <p id="ovText">Vise avec ton doigt ou ta souris, touche pour tirer.<br>Aligne 3 bulles ou plus pour les éclater !</p>
     <button class="btn" id="ovBtn">JOUER</button>
@@ -117,7 +119,7 @@ function newLevel(lv){
   const rows = Math.min(5 + lv, 9);
   for (let r=0; r<rows; r++){
     const row = [];
-    for (let c=0; c<rowLen(r); c++) row.push(rnd(palette.length));
+    for (let c=0; c<rowLen(r); c++) row.push(Math.random()<0.14 && r>1 ? -1 : rnd(palette.length));
     grid.push(row);
   }
   padRows();
@@ -206,6 +208,8 @@ function draw(){
     ctx.restore();
     ctx.strokeStyle='#d4af37'; ctx.lineWidth=3;
     ctx.beginPath(); ctx.arc(hx+hs/2, hy+hs/2, hs/2, 0, 7); ctx.stroke();
+    ctx.fillStyle='#f6dd8a'; ctx.font='bold 12px Georgia'; ctx.textAlign='center';
+    ctx.fillText('CORALTZY', hx+hs/2, hy-8);
   }
 }
 
@@ -228,6 +232,21 @@ function snapToGrid(px, py, hitR, hitC){
   }
   if (!best){ // repli : la case vide la plus proche
     for (let r=0;r<grid.length;r++) for (let c=0;c<rowLen(r);c++) consider(r,c);
+  }
+  if (!best){
+    // grille pleine : on ajoute une rangée vide en haut pour que le tir
+    // ait toujours où se fixer (sinon la bulle disparaît dans le vide)
+    const newParity = 1 - topParity;
+    const row = [];
+    for (let c=0; c < (newParity===0?COLS:COLS-1); c++) row.push(-1);
+    grid.unshift(row); topParity = newParity;
+    for (let c=0;c<rowLen(0);c++) consider(0,c);
+    // la descente d'une rangée peut faire perdre la partie
+    let dead=false;
+    for (let r=0; r<grid.length && !dead; r++)
+      for (let c=0; c<rowLen(r); c++)
+        if (grid[r][c] >= 0 && cellXY(r,c)[1] + R >= DEADLINE){ dead=true; break; }
+    if (dead) gameOver();
   }
   return best;
 }
@@ -296,8 +315,8 @@ function step(){
   // plafond
   if (proj.y <= TOP + R*0.4){
     const cell = snapToGrid(proj.x, proj.y, null);
-    if (cell){ grid[cell[0]][cell[1]] = proj.col; proj=null; afterSnap(cell[0],cell[1]); }
-    else proj=null;
+    const col = proj.col; proj=null;
+    if (cell && !over){ grid[cell[0]][cell[1]] = col; afterSnap(cell[0],cell[1]); }
     return;
   }
   // collision avec une bulle
@@ -309,8 +328,8 @@ function step(){
       const dx=proj.x-x, dy=proj.y-y;
       if (dx*dx+dy*dy < (2*R-3)*(2*R-3)){
         const cell = snapToGrid(proj.x, proj.y, r, c);
-        if (cell){ grid[cell[0]][cell[1]] = proj.col; proj=null; afterSnap(cell[0],cell[1]); }
-        else proj=null;
+        const col = proj.col; proj=null;
+        if (cell && !over){ grid[cell[0]][cell[1]] = col; afterSnap(cell[0],cell[1]); }
         break outer;
       }
     }
@@ -372,7 +391,8 @@ MJIntro.decor();
 document.getElementById('ovBtn').addEventListener('click', ()=>{ document.getElementById('overlay').classList.add('hidden'); MJIntro.play({titre:'DOGZY BUBBLES', media:BUBBLES_INTRO, onDone:startGame}); });
 
 // écran d'accueil (la grille doit exister avant le premier dessin)
-score=0; level=1; particles=[]; newLevel(1);
+score=0; level=1; particles=[]; over=false; running=false;
+newLevel(1);
 draw();
 requestAnimationFrame(loop);
 </script>
