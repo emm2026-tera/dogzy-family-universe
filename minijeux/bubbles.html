@@ -53,6 +53,8 @@ canvas{display:block;width:100%;border:1px solid var(--line);border-radius:16px;
 </div>
 <p class="hint">Éclate les grappes de 3+ bulles de la même couleur. Les bulles détachées tombent. Attention : une nouvelle rangée descend tous les 6 tirs !</p>
 
+<footer style="margin-top:14px;font-size:12px;color:#bfa55c;text-align:center">© 2026 Sania Labbé (Valkyrie). Tous droits réservés.</footer>
+
 <script>
 "use strict";
 /* ================= DOGZY BUBBLES — bubble shooter ================= */
@@ -69,6 +71,7 @@ const SHOOT_Y = H - 64;             // lanceur
 const DEADLINE = H - 132;           // ligne de danger
 const ROW_EVERY = 6;                // une rangée ajoutée tous les X tirs
 const SPEED = 10;
+const MAX_ROWS = Math.ceil((DEADLINE - TOP) / ROW_H) + 2; // rangées (vides comprises) jusqu'à la ligne de danger
 
 const PALETTES = [
   ['#e74c3c','#f1c40f','#2ecc71','#3498db'],
@@ -97,6 +100,10 @@ function neighborCells(r, c){
 const rnd = n => Math.floor(Math.random()*n);
 const pick = a => a[rnd(a.length)];
 
+// complète la grille avec des rangées vides (-1) pour que les tirs puissent s'y poser
+function padRows(){
+  while (grid.length < MAX_ROWS){ const r = grid.length; grid.push(new Array(rowLen(r)).fill(-1)); }
+}
 function colorsOnBoard(){
   const s = new Set();
   for (const row of grid) for (const v of row) if (v >= 0) s.add(v);
@@ -112,6 +119,7 @@ function newLevel(lv){
     for (let c=0; c<rowLen(r); c++) row.push(rnd(palette.length));
     grid.push(row);
   }
+  padRows();
   shots = 0;
   const avail = colorsOnBoard();
   current = pick(avail); nextCol = pick(avail);
@@ -125,6 +133,7 @@ function addRow(){
   const newParity = 1 - topParity;
   for (let c=0; c < (newParity===0?COLS:COLS-1); c++) row.push(rnd(palette.length));
   grid.unshift(row); topParity = newParity;
+  padRows();
   // partie perdue si ça touche la ligne ?
   for (let r=0; r<grid.length; r++)
     for (let c=0; c<rowLen(r); c++)
@@ -268,6 +277,9 @@ function afterSnap(r,c){
     setTimeout(()=>{ if(running) newLevel(level); }, 1200);
     return;
   }
+  for (let rr=0; rr<grid.length; rr++)
+    for (let cc=0; cc<rowLen(rr); cc++)
+      if (grid[rr][cc] >= 0 && cellXY(rr,cc)[1] + R >= DEADLINE) return gameOver();
   shots++; updateHud();
   if (shots % ROW_EVERY === 0) addRow();
   const avail = colorsOnBoard();
@@ -336,7 +348,7 @@ function setAim(clientX, clientY){
   aim = Math.max(min, Math.min(max, a));
 }
 cv.addEventListener('mousemove', e=>setAim(e.clientX,e.clientY));
-cv.addEventListener('click', ()=>shoot());
+cv.addEventListener('click', e=>{ setAim(e.clientX,e.clientY); shoot(); });
 cv.addEventListener('touchstart', e=>{ e.preventDefault(); setAim(e.touches[0].clientX,e.touches[0].clientY); },{passive:false});
 cv.addEventListener('touchmove', e=>{ e.preventDefault(); setAim(e.touches[0].clientX,e.touches[0].clientY); },{passive:false});
 cv.addEventListener('touchend', e=>{ e.preventDefault(); shoot(); },{passive:false});
@@ -355,7 +367,8 @@ function startGame(){
 }
 document.getElementById('ovBtn').addEventListener('click', startGame);
 
-// écran d'accueil
+// écran d'accueil (la grille doit exister avant le premier dessin)
+score=0; level=1; particles=[]; newLevel(1);
 draw();
 requestAnimationFrame(loop);
 </script>
