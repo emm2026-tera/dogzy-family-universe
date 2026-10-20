@@ -342,12 +342,11 @@
     {
       "id": "PE41",
       "titre": "Même case !",
-      "texte": "Garde cette carte : le prochain joueur qui arrive exactement sur la même case que toi reçoit 50 tokens de ta part.",
+      "texte": "Si un autre joueur se trouve sur la même case que toi, donne-lui 50 tokens.",
       "effet": {
-        "pay_on_shared_square": 50,
-        "to": "arriving_player",
-        "keep": true,
-        "times": 1
+        "if_shared_square_pay": 50,
+        "to": "player_on_same_square",
+        "timing": "immediate"
       }
     }
   ]
