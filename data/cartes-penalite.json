@@ -373,6 +373,15 @@
         "coins": -250,
         "to": "bank"
       }
+    },
+    {
+      "id": "PE45",
+      "titre": "Tournée des taxes",
+      "texte": "Avance de 4 cases et paie la taxe de chaque commerce sur lequel tu passes pendant ces 4 cases.",
+      "effet": {
+        "move": 4,
+        "pay_commerce_tax_each_square_passed": true
+      }
     }
   ]
 }
