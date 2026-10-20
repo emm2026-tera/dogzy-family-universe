@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Duel – The Adoles-chiant of Dogzy Town</title>
+<link rel="stylesheet" href="mj.css">
+<style>
+body{--bg:url(img/2048-fond.jpg)}
+.intro{text-align:center;max-width:620px;margin:4px auto 12px;font-size:15px;line-height:1.4}
+.step{max-width:620px;margin:0 auto 14px;padding:12px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(rgba(26,20,10,.92),rgba(11,9,5,.92));box-shadow:0 0 22px rgba(255,64,176,.18);text-align:center}
+.step h2{margin:0 0 8px;font-size:18px;letter-spacing:.08em;color:#ff7ad0;text-shadow:0 0 10px rgba(255,64,176,.6)}
+.step.off{opacity:.4;pointer-events:none}
+.vs{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:10px}
+.vs .pl{width:120px}
+.vs .x{font:bold 30px Georgia;color:#ff4fb8;text-shadow:0 0 14px #ff4fb8}
+.vs .pl.q img{filter:grayscale(1) brightness(.4)}
+.vs .pl.pop{animation:pop .5s}
+@keyframes pop{50%{transform:scale(1.15)}}
+.diebox{display:flex;align-items:center;justify-content:center;gap:12px}
+.die{width:64px;height:64px;border-radius:14px;background:linear-gradient(#fff6d0,#d4af37);color:#1a1204;font:bold 34px Georgia;display:flex;align-items:center;justify-content:center;border:2px solid #fff1b8;box-shadow:0 0 18px rgba(212,175,55,.6)}
+.die.roll{animation:roll .25s linear infinite}
+@keyframes roll{0%{transform:rotate(0) scale(1)}50%{transform:rotate(180deg) scale(.9)}100%{transform:rotate(360deg) scale(1)}}
+.mepick{font-size:13px;margin-bottom:8px;color:#e7d397}
+.mepick select{font-family:inherit;background:#120e06;color:var(--gold2);border:1px solid var(--gold);border-radius:8px;padding:3px}
+.slot{position:relative;width:min(340px,90%);height:180px;margin:0 auto 10px;border-radius:16px;overflow:hidden;padding:0;background:#0b0a08;border:3px solid var(--gold);box-shadow:0 0 0 3px #3a0a2a,0 0 26px rgba(255,64,176,.45),inset 0 0 22px #000}
+.slot::before,.slot::after{content:"";position:absolute;left:0;right:0;height:60px;z-index:2;pointer-events:none}
+.slot::before{top:0;background:linear-gradient(#0b0a08,transparent)}
+.slot::after{bottom:0;background:linear-gradient(transparent,#0b0a08)}
+.slot .win{position:absolute;left:6px;right:6px;top:60px;height:60px;border-top:2px solid #ff4fb8;border-bottom:2px solid #ff4fb8;z-index:3;pointer-events:none;box-shadow:0 0 14px rgba(255,79,184,.6)}
+.reel{position:absolute;left:0;right:0;top:0;will-change:transform}
+.reel div{height:60px;display:flex;align-items:center;justify-content:center;font:bold 20px Georgia;letter-spacing:.04em;color:#ffe08a;text-shadow:0 0 10px rgba(255,190,60,.5)}
+.reel div.w{color:#7dff9a}.reel div.l{color:#ff6a5a}
+.res{display:none}
+.res.on{display:block;animation:pop .5s}
+.res .big{font-size:24px;color:var(--gold2);margin:6px 0}
+</style>
+</head>
+<body>
+<header class="top"><a href="index.html">← Mini-jeux</a><div class="brand">DOGZY <span>Family</span> UNIVERSE</div><span style="width:60px"></span></header>
+<main>
+  <h1 class="gt"><i class="paw"></i> CASE DUEL <i class="paw"></i></h1>
+  <p class="intro">Tu es tombé sur une case Duel ! Lance le dé pour savoir qui t'affronte, puis la roue décide du mini-jeu… ou du sort.</p>
+
+  <section class="step" id="s1">
+    <h2>1. LE DÉ CHOISIT TON ADVERSAIRE</h2>
+    <div class="mepick">Joueur actuel : <select id="me"></select></div>
+    <div class="vs"><div class="pl" id="pa"></div><div class="x">VS</div><div class="pl q" id="pb"></div></div>
+    <div class="diebox"><div class="die" id="die">?</div><button class="btn primary" id="bDie">LANCER LE DÉ</button></div>
+  </section>
+
+  <section class="step off" id="s2">
+    <h2>2. LA ROUE DES DUELS</h2>
+    <div class="slot"><div class="reel" id="reel"></div><div class="win"></div></div>
+    <button class="btn primary" id="bSpin">FAIRE TOURNER</button>
+  </section>
+
+  <section class="step res" id="s3">
+    <h2>3. RÉSULTAT</h2>
+    <div class="big" id="rt"></div>
+    <p id="rd" style="text-align:center"></p>
+    <div class="row" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+      <a class="btn primary" id="bPlay" href="#">JOUER</a>
+      <button class="btn" id="bAgain">NOUVEAU DUEL</button>
+    </div>
+  </section>
+</main>
+<footer>© 2026 Sania Labbé (Valkyrie). Tous droits réservés.</footer>
+<script>
+const P=[{id:1,nm:'Toi',img:'../assets/portraits/pyromaniac.jpg'},{id:2,nm:'Jouzy',img:'../assets/portraits/jouzy.jpg'},{id:3,nm:'Kelzy',img:'../assets/portraits/kelzy.jpg'},{id:4,nm:'Waltzy',img:'../assets/portraits/waltzy.jpg'}];
+const G=[{nm:'2048 Hex',href:'2048-hex.html'},{nm:'Tile Match',href:'tile-match.html'},{nm:'Bubbles',href:'bubbles.html'},{nm:'Gagnant tout de suite',cls:'w'},{nm:'Perdant tout de suite',cls:'l'}];
+const $=id=>document.getElementById(id);
+let me=1,opp=null,busy=false;
+P.forEach(p=>{const o=document.createElement('option');o.value=p.id;o.textContent='Joueur '+p.id+' – '+p.nm;$('me').appendChild(o)});
+function card(el,p,q){el.className='pl p'+(p?p.id:1)+(q?' q':'');el.innerHTML=p?`<span class="tag">J${p.id}</span><img src="${p.img}" alt="${p.nm}"><span class="nm">${p.nm}</span>`:`<span class="tag">?</span><img src="${P[0].img}" alt=""><span class="nm">???</span>`}
+function reset(){opp=null;card($('pa'),P[me-1]);card($('pb'),null,true);$('die').textContent='?';$('s2').classList.add('off');$('s3').classList.remove('on');$('bDie').disabled=false;buildReel(0)}
+$('me').onchange=e=>{me=+e.target.value;reset()};
+$('bDie').onclick=()=>{if(busy)return;busy=true;$('bDie').disabled=true;const others=P.filter(p=>p.id!==me);const d=$('die');d.classList.add('roll');let n=0;
+ const t=setInterval(()=>{const r=others[Math.floor(Math.random()*others.length)];d.textContent=r.id;card($('pb'),r,true);if(++n>=16){clearInterval(t);d.classList.remove('roll');opp=r;d.textContent=r.id;card($('pb'),r);$('pb').classList.add('pop');$('s2').classList.remove('off');busy=false}},90)};
+const H=60,REP=12;let pos=0;
+function buildReel(){const r=$('reel');r.innerHTML='';for(let k=0;k<REP;k++)G.forEach(g=>{const d=document.createElement('div');d.textContent=g.nm;if(g.cls)d.className=g.cls;r.appendChild(d)});pos=0;r.style.transform=`translateY(${H}px)`}
+$('bSpin').onclick=()=>{if(busy||!opp)return;busy=true;$('bSpin').disabled=true;buildReel();const pick=Math.floor(Math.random()*G.length);const target=(REP-2)*G.length+pick;
+ const dist=target*H,dur=3800+Math.random()*1200,t0=performance.now(),r=$('reel');
+ (function f(now){let k=Math.min(1,(now-t0)/dur);const e=1-Math.pow(1-k,4);r.style.transform=`translateY(${H-dist*e}px)`;if(k<1)requestAnimationFrame(f);else done(pick)})(t0)};
+function done(i){const g=G[i],a=P[me-1];busy=false;$('bSpin').disabled=false;const b=$('bPlay');
+ if(g.href){$('rt').textContent='Duel : '+g.nm;$('rd').textContent=`${a.nm} affronte ${opp.nm} au ${g.nm}. Le meilleur remporte le duel !`;b.style.display='';b.href=g.href+'?duel=1&j='+a.id+'&vs='+opp.id}
+ else if(g.cls==='w'){$('rt').textContent='🏆 GAGNANT TOUT DE SUITE !';$('rd').textContent=`La chance sourit à ${a.nm} : victoire immédiate contre ${opp.nm} !`;b.style.display='none'}
+ else{$('rt').textContent='💀 PERDANT TOUT DE SUITE…';$('rd').textContent=`Pas de chance : ${a.nm} perd le duel contre ${opp.nm} sans jouer.`;b.style.display='none'}
+ $('s3').classList.add('on');$('s3').scrollIntoView({behavior:'smooth'})}
+$('bAgain').onclick=reset;
+reset();
+</script>
+</body>
+</html>
