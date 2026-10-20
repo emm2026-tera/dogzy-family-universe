@@ -247,3 +247,6 @@ img.zoomable{cursor:zoom-in}
 .langSw a,.langSw b{padding:3px 6px;border:1px solid var(--line);border-radius:6px;text-decoration:none}
 .langSw b{background:linear-gradient(#fff3b0,#d4af37);color:#1a1204}
 .langSw a{color:#f6dd8a;background:#0f0c06}
+.duelMark{position:absolute;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;display:grid;place-items:center;font-size:18px;background:radial-gradient(#ff40b0,#7a0050);border:2px solid #ffd54a;box-shadow:0 0 12px #ff40b0;z-index:3}
+.duelFrame{width:100%;height:62vh;border:0;border-radius:14px;background:#000;margin:8px 0}
+.packImg{display:block;max-width:150px;margin:6px auto;border-radius:10px}

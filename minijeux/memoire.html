@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0905">
+<title>Mémoire NFT | Mini-jeux Dogzy</title>
+<link rel="stylesheet" href="mj.css">
+<style>
+h1.gt{font-family:"Arial Black",Arial,sans-serif;color:#ffd23a;text-shadow:0 3px 0 #a0400a,0 0 14px rgba(255,120,40,.6);text-align:center;margin:10px 0 4px}
+h1.gt em{font-style:normal;color:#ff6ad0;text-shadow:0 3px 0 #7a0a5a,0 0 14px rgba(255,80,200,.6)}
+.hud{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:6px 0}
+.hud div{border:1px solid var(--line);border-radius:12px;padding:4px 12px;background:rgba(11,9,5,.8);font-size:15px}
+.hud b{color:var(--gold2)}
+.duo{display:none;justify-content:center;gap:12px;margin:6px 0}
+.duo.on{display:flex}
+.duo .pj{display:flex;align-items:center;gap:8px;border:2px solid var(--line);border-radius:14px;padding:4px 10px 4px 4px;background:rgba(11,9,5,.85);opacity:.55;transition:.2s}
+.duo .pj.cur{opacity:1;border-color:#ff6ad0;box-shadow:0 0 16px #ff6ad0}
+.duo .pj img{width:42px;height:42px;border-radius:50%;object-fit:cover}
+.duo .pj b{color:var(--gold2);font-size:18px}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;max-width:760px;margin:8px auto;padding:0 8px;perspective:900px}
+@media (max-aspect-ratio:1/1){.grid{grid-template-columns:repeat(4,1fr);max-width:440px}}
+.c{aspect-ratio:5/8;position:relative;cursor:pointer;transform-style:preserve-3d;transition:transform .45s}
+.c.up,.c.ok{transform:rotateY(180deg)}
+.c>div{position:absolute;inset:0;border-radius:10px;backface-visibility:hidden;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.6)}
+.c .bk{background:radial-gradient(circle at 50% 40%,#5a2a8a,#1a0a2e 70%);border:2px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.c .bk i{font-size:28px;filter:drop-shadow(0 0 6px #ffd23a)}
+.c .bk span{font:bold 10px Arial;letter-spacing:.15em;color:var(--gold2)}
+.c .fr{transform:rotateY(180deg);border:2px solid #ff6ad0;background:#000}
+.c .fr img{width:100%;height:100%;object-fit:cover;display:block}
+.c.ok .fr{border-color:#5af05a;box-shadow:0 0 14px #5af05a}
+.help{font-size:12px;color:#bfa55c;text-align:center;margin:6px 0}
+</style>
+</head>
+<body>
+<header class="top"><a href="./">← Mini-jeux</a><div class="brand">DOGZY <span>Family</span> UNIVERSE</div><a href="../">Démo</a></header>
+<main>
+  <h1 class="gt">MÉMOIRE <em>NFT</em></h1>
+  <div class="duo" id="duo"></div>
+  <div class="hud"><div>⏱ <b id="tm">00:00</b></div><div>Essais : <b id="tr">0</b></div><div>Paires : <b id="pr">0</b> / 12</div></div>
+  <div class="grid" id="grid"></div>
+  <p class="help">Retourne deux cartes à la fois. Retiens où sont les personnages pour former les 12 paires !</p>
+</main>
+<footer>© 2026 Sania Labbé (Valkyrie). Tous droits réservés.</footer>
+
+<div class="ov" id="ovStart"><div class="sheet">
+  <h2>🃏 Mémoire NFT</h2>
+  <ul>
+    <li>24 cartes NFT Dogzy sont <b>face cachée</b> : 12 personnages, chacun en double.</li>
+    <li>Retourne <b>deux cartes</b>. Si c'est le même personnage, la paire reste visible. Sinon, elles se retournent.</li>
+    <li>Les personnages changent à chaque partie !</li>
+    <li id="ruleDuel" style="display:none">En duel : chacun son tour. Une paire trouvée = <b>tu rejoues</b>. Le joueur avec le plus de paires gagne.</li>
+  </ul>
+  <div class="row"><button class="btn primary" id="go">JOUER</button></div>
+</div></div>
+<div class="ov hidden" id="ovEnd"><div class="sheet">
+  <h2 id="eT"></h2><p class="msg" id="eM" style="text-align:center"></p>
+  <div class="row"><button class="btn primary" id="again">REJOUER</button><a class="btn" href="./">MINI-JEUX</a></div>
+</div></div>
+
+<script>
+const NFT=['01-philzy:Philzy','02-martzy:Martzy','03-the-twins:The Twins','04-playmate:Playmate','05-pum-pum-girl:Pum Pum Girl','06-the-psychopath:The Psychopath','07-flayez:Flayez','08-la-playmate:La Playmate','09-rihanzy:Rihanzy','10-jouzy:Jouzy','11-waltzy:Waltzy','12-bobzy:Bobzy','13-sassy:Sassy','14-lolly:Lolly','15-ziggy:Ziggy','16-rocky:Rocky','17-chyna:Chyna','18-tito:Tito','19-bb:BB','20-doc:Doc','21-veda:Veda','22-jet:Jet','23-criminal:Criminal'].map(s=>{const[f,n]=s.split(':');return{f:'img/nft/'+f+'.jpg',n}});
+const P=[{id:1,nm:'Toi',img:'../assets/portraits/pyromaniac.jpg'},{id:2,nm:'Jouzy',img:'../assets/portraits/jouzy.jpg'},{id:3,nm:'Kelzy',img:'../assets/portraits/kelzy.jpg'},{id:4,nm:'Waltzy',img:'../assets/portraits/waltzy.jpg'}];
+const $=id=>document.getElementById(id),q=new URLSearchParams(location.search);
+const duel=q.get('duel')==='1';
+const pl=duel?[P[(+q.get('j')||1)-1]||P[0],P[(+q.get('vs')||2)-1]||P[1]]:null;
+if(pl&&pl[0]===pl[1])pl[1]=P.find(p=>p!==pl[0]);
+let first=null,lock=false,tries=0,pairs=0,t0=0,tick=null,cur=0,sc=[0,0];
+const shuf=a=>{for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+function duo(){if(!duel)return;$('duo').classList.add('on');$('duo').innerHTML=pl.map((p,i)=>`<div class="pj${i===cur?' cur':''}"><img src="${p.img}" alt=""><span>${p.nm}</span><b>${sc[i]}</b></div>`).join('')}
+function fmt(s){return String(s/60|0).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
+function deal(){
+ const pick=shuf(NFT.slice()).slice(0,12),deck=shuf([...pick,...pick]);
+ first=null;lock=false;tries=0;pairs=0;cur=0;sc=[0,0];$('tr').textContent=0;$('pr').textContent=0;$('tm').textContent='00:00';duo();
+ $('grid').innerHTML='';
+ deck.forEach(k=>{const c=document.createElement('div');c.className='c';c.dataset.n=k.n;
+  c.innerHTML=`<div class="bk"><i>🐾</i><span>DOGZY</span></div><div class="fr"><img src="${k.f}" alt="${k.n}"></div>`;
+  c.onclick=()=>flip(c);$('grid').appendChild(c)});
+ clearInterval(tick);t0=Date.now();tick=setInterval(()=>$('tm').textContent=fmt((Date.now()-t0)/1000|0),250);
+}
+function flip(c){
+ if(lock||c.classList.contains('up')||c.classList.contains('ok'))return;
+ c.classList.add('up');
+ if(!first){first=c;return}
+ tries++;$('tr').textContent=tries;const a=first;first=null;
+ if(a.dataset.n===c.dataset.n){a.classList.replace('up','ok');c.classList.replace('up','ok');pairs++;$('pr').textContent=pairs;if(duel)sc[cur]++;duo();if(pairs===12)setTimeout(end,600)}
+ else{lock=true;setTimeout(()=>{a.classList.remove('up');c.classList.remove('up');lock=false;if(duel){cur=1-cur;duo()}},1000)}
+}
+function end(){clearInterval(tick);const tm=$('tm').textContent;
+ if(duel){if(sc[0]===sc[1]){$('eT').textContent='🤝 Égalité !';$('eM').textContent=`${pl[0].nm} ${sc[0]} – ${sc[1]} ${pl[1].nm}`}
+  else{const w=sc[0]>sc[1]?0:1;$('eT').textContent='🏆 '+pl[w].nm+' gagne le duel !';$('eM').textContent=`${pl[0].nm} ${sc[0]} paires – ${sc[1]} paires ${pl[1].nm} · ${tries} essais · ${tm}`}}
+ else{$('eT').textContent='🏆 Bravo, 12 paires !';$('eM').textContent=`Trouvées en ${tries} essais et ${tm}.`}
+ $('ovEnd').classList.remove('hidden')}
+if(duel)$('ruleDuel').style.display='';
+$('go').onclick=()=>{$('ovStart').classList.add('hidden');deal()};
+$('again').onclick=()=>{$('ovEnd').classList.add('hidden');deal()};
+</script>
+</body>
+</html>

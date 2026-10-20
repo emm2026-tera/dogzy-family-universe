@@ -5,6 +5,8 @@
 const D = window.DZ_DATA, CH = window.DZ_CHARS, FR = window.DZ_FR;
 const bn = b => FR.bld[b.name] || b.name, jf = j => FR.job[j] || j;
 const WP = D.board.waypoints;
+/* Case Duel : 2 maximum par map (règle du board Level 1) */
+const DUEL_SPACES = [13, 37]; DUEL_SPACES.forEach(i => { if (WP[i] && WP[i].type === 'empty') WP[i].type = 'duel'; });
 const SAVE_KEY = 'dogzy-family-universe-v3-en', PREF_KEY = 'dogzy-family-universe-prefs';
 const $ = s => document.querySelector(s);
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -143,7 +145,7 @@ function newGame(cfg){
 
 /* debug hooks (used by tests): DZ.force = {w1, w2, chance, career, building, ho, quiz} */
 const force = {};
-window.DZ = {state:()=>S, force, data:D, chars:CH, newGame:cfg => { newGame(cfg); },
+window.DZ = {state:()=>S, force, data:D, chars:CH, newGame:cfg => { newGame(cfg); }, space:i => { const p = S.players[S.cur]; p.pos = i; placePawn(S.cur, true); return resolveSpace(p); },
   reset:()=>{ localStorage.removeItem(SAVE_KEY); location.reload(); }, prefs};
 
 /* ---------- careers ---------- */
@@ -323,6 +325,7 @@ function follow(pos, instant){
   const bw = board.clientWidth, target = WP[pos].x / D.board.w * bw - wrap.clientWidth / 2;
   wrap.style.scrollBehavior = instant ? 'auto' : 'smooth'; wrap.scrollLeft = target;
 }
+WP.forEach(w => { if (w.type === 'duel') { const d = document.createElement('div'); d.className = 'duelMark'; d.textContent = '⚔️'; d.style.left = w.x / D.board.w * 100 + '%'; d.style.top = w.y / D.board.h * 100 + '%'; $('#wpLayer').appendChild(d); } });
 if (params.has('debug')) {
   const L = $('#wpLayer'); L.classList.add('debug');
   WP.forEach((p, i) => { const d = document.createElement('div'); d.className = 'wp'; d.style.left = p.x / D.board.w * 100 + '%'; d.style.top = p.y / D.board.h * 100 + '%'; d.innerHTML = `<span>${i}${p.type[0]}</span>`; L.appendChild(d); });
@@ -534,8 +537,13 @@ function pickTarget(p){
 /* ---------- spaces ---------- */
 async function resolveSpace(p){
   const t = WP[p.pos].type;
-  const TFR = {building:'BUSINESS', search:'SEARCH', quiz:'QUIZ', coin:'COINS', penalty:'PENALTY', start:'START', empty:'EMPTY'};
+  const TFR = {building:'BUSINESS', search:'SEARCH', quiz:'QUIZ', coin:'COINS', penalty:'PENALTY', duel:'DUEL', start:'START', empty:'EMPTY'};
   if (!p.bot) log(`Space ${p.pos}: ${TFR[t] || t}`);
+  if (t === 'duel') {
+    if (p.bot) { say(p, 'lands on a DUEL space!', true); await pause(p, 1100); return; }
+    open(`<h2>⚔️ DUEL!</h2><p>Roll the die to pick your opponent (up to 4 players), then the casino reel picks the mini-game.</p><iframe class="duelFrame" src="minijeux/duel.html?embed=1" title="Duel"></iframe><button class="btn primary" id="ok">END DUEL</button>`, true);
+    await waitClick('#ok'); close(); return;
+  }
   if (!SPECIAL.has(t)) { if (t === 'empty' && !p.bot) log('Empty space — moving on.'); return; }
   const i2 = wIdx('w2', W2.length);
   if (p.bot) await botWheel(p, W2.map(s => s.label), i2, 'Bonus wheel');
@@ -548,7 +556,7 @@ async function resolveSpace(p){
   else if (t === 'penalty') {
     addTokens(p, -50, 'Penalty');
     if (mult > 1) { p.mult = Math.max(p.mult, mult); hud(); }
-    await tell(p, 'PENALTY', `<p>You lose <b>50</b> coins.</p>${mult > 1 ? `<p>Lucky break: your x${mult} is saved for your next reward.</p>` : ''}`, 'pays a 50-coin penalty');
+    await tell(p, 'PENALTY', `<img class="packImg" src="assets/board-v2/carte-penalty.jpg" alt="Penalty"><p>You lose <b>50</b> coins.</p>${mult > 1 ? `<p>Lucky break: your x${mult} is saved for your next reward.</p>` : ''}`, 'pays a 50-coin penalty');
   }
   if (S.over || p.out) return;
   if (eff.k === 'visit') { for (let k = 0; k < eff.v && !p.out; k++) await buildingVisit(p, 1, `Visit ${k + 1}/${eff.v}`); }
@@ -687,7 +695,7 @@ async function showCard(p, html, tag, alt, btn){
 async function drawChance(p){
   const c = force.chance != null ? D.chance.find(x => x.n === force.chance) : pick(D.chance); delete force.chance;
   const f = FR.chance[c.n];
-  await showCard(p, cardHTML('CHANCE', c.n, f[0], f[1], f[2], f[3], 16), 'a CHANCE card', f[1], f[2]);
+  await showCard(p, '<img class="packImg" src="assets/board-v2/carte-chance.jpg" alt="Chance">' + cardHTML('CHANCE', c.n, f[0], f[1], f[2], f[3], 16), 'a CHANCE card', f[1], f[2]);
   switch (c.n) {
     case 1: p.extra = true; say(p, 'Spin again!'); break;
     case 2: reward(p, 200, 1, 'Golden Paw'); break;
