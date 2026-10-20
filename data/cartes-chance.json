@@ -365,14 +365,6 @@
         "nft_random": 1,
         "pool": "vip-23"
       }
-    },
-    {
-      "id": "CH44",
-      "titre": "Commerce gratuit",
-      "texte": "Choisis un commerce libre sur le plateau : il est à toi gratuitement !",
-      "effet": {
-        "free_commerce": 1
-      }
     }
   ]
 }
