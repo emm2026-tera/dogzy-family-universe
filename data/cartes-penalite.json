@@ -356,6 +356,14 @@
       "effet": {
         "move": -5
       }
+    },
+    {
+      "id": "PE43",
+      "titre": "La Banque refuse",
+      "texte": "Pendant 3 tours, la Banque refuse de te vendre un commerce, même si tu tombes sur une case Commerce.",
+      "effet": {
+        "no_commerce_purchase_turns": 3
+      }
     }
   ]
 }
