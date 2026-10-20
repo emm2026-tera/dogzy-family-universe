@@ -338,6 +338,17 @@
       "effet": {
         "others_move": 1
       }
+    },
+    {
+      "id": "PE41",
+      "titre": "Même case !",
+      "texte": "Garde cette carte : le prochain joueur qui arrive exactement sur la même case que toi reçoit 50 tokens de ta part.",
+      "effet": {
+        "pay_on_shared_square": 50,
+        "to": "arriving_player",
+        "keep": true,
+        "times": 1
+      }
     }
   ]
 }
