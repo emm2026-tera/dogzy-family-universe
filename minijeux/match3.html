@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0905">
+<title>Match 3 | Mini-jeux Dogzy</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="mj.css">
+<style>
+body{--bg:url(img/tile-fond.jpg)}
+h1.gt{font-family:"Arial Black",Arial,sans-serif;color:#ffd23a;text-shadow:0 3px 0 #a0400a,0 0 14px rgba(255,120,40,.6)}
+h1.gt em{font-style:normal;color:#6ad8ff;text-shadow:0 3px 0 #0a3a8a,0 0 14px rgba(60,160,255,.6)}
+.tl{position:absolute;display:flex;align-items:center;justify-content:center;border-radius:22%;font-size:var(--fs,26px);line-height:1;transition:transform .2s ease-in,opacity .2s;cursor:pointer;user-select:none;box-shadow:inset 0 -4px 0 rgba(0,0,0,.28),inset 0 3px 0 rgba(255,255,255,.35),0 2px 4px rgba(0,0,0,.6)}
+.tl::after{content:"";position:absolute;left:10%;right:10%;top:6%;height:30%;border-radius:40%;background:linear-gradient(rgba(255,255,255,.45),transparent);pointer-events:none}
+.tl span{filter:drop-shadow(0 2px 1px rgba(0,0,0,.4));pointer-events:none}
+.tl.sel{outline:3px solid #fff;outline-offset:-1px;box-shadow:0 0 16px #fff,inset 0 -4px 0 rgba(0,0,0,.28)}
+.tl.gone{opacity:0;transform:var(--pos) scale(.2)!important}
+.t0{background:linear-gradient(#ff6a5a,#c41a1a)}.t1{background:linear-gradient(#5ab0ff,#1450c8)}
+.t2{background:linear-gradient(#6ae05a,#178a22)}.t3{background:linear-gradient(#ffe46a,#e09a0a)}
+.t4{background:linear-gradient(#d68aff,#7a28c8)}.t5{background:linear-gradient(#ff9ad6,#d02a8a)}
+.t6{background:conic-gradient(#ff4a4a,#ffd23a,#5af05a,#3ab0ff,#c05aff,#ff4a4a);border-radius:50%;animation:glow 1.2s infinite alternate}
+@keyframes glow{to{box-shadow:0 0 18px #fff,0 0 30px #ffd23a}}
+.goal{text-align:center;font-size:14px;color:#e7d397;margin:4px 0}
+.goal b{color:var(--gold2)}
+.help{font-size:12px;color:#bfa55c;text-align:center;margin:6px 0}
+</style>
+</head>
+<body>
+<header class="top"><a href="./">← Mini-jeux</a><div class="brand">DOGZY <span>Family</span> UNIVERSE</div><a href="../">Démo</a></header>
+<main>
+  <h1 class="gt">MATCH <em>3</em></h1>
+  <div class="arena">
+    <div class="players" id="players"></div>
+    <div class="board">
+      <div class="timerBox"><span class="pawb"><i class="paw"></i></span><span class="t" id="timer">00:45</span><span class="pawb"><i class="paw"></i></span></div>
+      <div class="frame" id="frame"><div class="inner" id="grid"></div></div>
+      <div class="goal">Score : <b id="cleared">0</b> / <b id="goalN">1500</b> points &nbsp; Combo : <b id="combo">x1</b></div>
+      <p class="help">Glisse une tuile vers sa voisine, ou touche deux tuiles côte à côte pour les échanger. Aligne 3 icônes Dogzy pareilles ou plus : les chutes en cascade rapportent plus !</p>
+    </div>
+  </div>
+</main>
+<footer>© 2026 Sania Labbé (Valkyrie). Tous droits réservés.</footer>
+
+<div class="ov" id="ovStart"><div class="sheet">
+  <h2><i class="paw"></i> Match 3</h2>
+  <ul>
+    <li>Échange deux tuiles voisines pour aligner <b>3 tuiles pareilles ou plus</b> (patte, os, couronne, cœur, étoile, maison).</li>
+    <li>Un alignement de 4 ou plus crée une <b>bulle arc-en-ciel 🌈</b> : échange-la avec une tuile pour faire disparaître toutes les tuiles de cette couleur.</li>
+    <li>Chaque tuile vaut <b>10 points</b>, multipliés par le combo des <b>cascades</b>. Premier à <b>1500 points</b> gagne. Tu as <b>60 secondes</b>.</li>
+    <li>Si personne n'atteint l'objectif, le meilleur score gagne.</li>
+  </ul>
+  <div class="row"><button class="btn primary" id="go">JOUER</button></div>
+</div></div>
+<div class="ov hidden" id="ovEnd"><div class="sheet">
+  <h2></h2><p class="msg" style="text-align:center"></p><ol class="rank"></ol>
+  <div class="row"><button class="btn primary replay">REJOUER</button><a class="btn" href="./">MINI-JEUX</a></div>
+</div></div>
+
+<script src="mj.js"></script>
+<script src="intro.js"></script>
+<script src="mj-duel.js"></script>
+<script>
+(() => {
+  const COLS = 8, ROWS = 8, DUR = 60, GOAL = 1500, RAINBOW = 6;
+  const EMO = ['🐾','🦴','👑','⭐','💜','🏠','🌈'];
+  const gridEl = document.getElementById('grid'), frame = document.getElementById('frame');
+  document.getElementById('goalN').textContent = GOAL;
+  let B, SZ, GAP, busy, playing, ended, cleared, clock, bots, sel, nextId = 1, combo = 1;
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+  const G = MJDuel.setup(document.getElementById('players')), OPP = G.ids.filter(i => i !== G.human);
+
+  function layout(){
+    const maxW = Math.min(window.innerWidth - 50, 500);
+    const maxH = Math.max(260, window.innerHeight - (window.innerWidth>=860 ? 330 : 440));
+    const side = Math.min(maxW, maxH);
+    GAP = Math.max(3, Math.round(side/90));
+    SZ = Math.max(34, Math.floor((side - GAP*(COLS+1))/COLS));
+    gridEl.style.width = (COLS*SZ + GAP*(COLS+1))+'px';
+    gridEl.style.height = (ROWS*SZ + GAP*(ROWS+1))+'px';
+    if (B) for (let r=0;r<ROWS;r++) for (let c=0;c<COLS;c++) if (B[r][c]) pos(B[r][c], r, c);
+  }
+  function xy(r,c){ return [GAP + c*(SZ+GAP), GAP + r*(SZ+GAP)]; }
+  function pos(t, r, c){
+    t.r = r; t.c = c;
+    const [x,y] = xy(r,c), p = `translate(${x}px,${y}px)`;
+    t.el.style.setProperty('--pos', p); t.el.style.transform = p;
+    t.el.style.width = t.el.style.height = SZ+'px';
+    t.el.style.setProperty('--fs', Math.round(SZ*0.58)+'px');
+  }
+  function mk(type, r, c, fromRow){
+    const t = {id: nextId++, type, el: document.createElement('div')};
+    t.el.className = 'tl t'+type; t.el.innerHTML = '<span>'+EMO[type]+'</span>';
+    t.el.dataset.id = t.id;
+    gridEl.appendChild(t.el);
+    if (fromRow !== undefined){ t.el.style.transition='none'; pos(t, fromRow, c); void t.el.offsetWidth; t.el.style.transition=''; }
+    pos(t, r, c);
+    return t;
+  }
+  function setType(t, type){ t.type = type; t.el.className = 'tl t'+type; t.el.querySelector('span').textContent = EMO[type]; }
+  const rnd = () => Math.floor(Math.random()*6);
+
+  function fill(){
+    gridEl.querySelectorAll('.tl').forEach(e=>e.remove());
+    B = Array.from({length:ROWS}, () => Array(COLS).fill(null));
+    for (let r=0;r<ROWS;r++) for (let c=0;c<COLS;c++){
+      let t; do { t = rnd(); } while ((c>=2 && B[r][c-1].type===t && B[r][c-2].type===t) || (r>=2 && B[r-1][c].type===t && B[r-2][c].type===t));
+      B[r][c] = mk(t, r, c, r-ROWS);
+    }
+    if (!hasMove()) fill();
+  }
+  // Retourne les suites de 3+ (horizontales et verticales)
+  function runs(){
+    const out = [];
+    for (let r=0;r<ROWS;r++){ let s=0; for (let c=1;c<=COLS;c++){ if (c<COLS && B[r][c].type===B[r][s].type && B[r][s].type!==RAINBOW) continue; if (c-s>=3) out.push(Array.from({length:c-s},(_,i)=>[r,s+i])); s=c; } }
+    for (let c=0;c<COLS;c++){ let s=0; for (let r=1;r<=ROWS;r++){ if (r<ROWS && B[r][c].type===B[s][c].type && B[s][c].type!==RAINBOW) continue; if (r-s>=3) out.push(Array.from({length:r-s},(_,i)=>[s+i,c])); s=r; } }
+    return out;
+  }
+  function swapCells(a, b){
+    const ta = B[a[0]][a[1]], tb = B[b[0]][b[1]];
+    B[a[0]][a[1]] = tb; B[b[0]][b[1]] = ta; pos(tb, a[0], a[1]); pos(ta, b[0], b[1]);
+  }
+  function hasMove(){
+    for (let r=0;r<ROWS;r++) for (let c=0;c<COLS;c++){
+      if (B[r][c].type===RAINBOW) return true;
+      for (const [dr,dc] of [[0,1],[1,0]]){
+        const r2=r+dr, c2=c+dc; if (r2>=ROWS||c2>=COLS) continue;
+        const a=B[r][c], b=B[r2][c2]; B[r][c]=b; B[r2][c2]=a;
+        const ok = runs().length>0; B[r][c]=a; B[r2][c2]=b;
+        if (ok) return true;
+      }
+    }
+    return false;
+  }
+  async function clearSet(set, keep){
+    let n = 0;
+    for (const k of set){
+      const [r,c] = k.split(',').map(Number);
+      if (keep && keep.has(k)) continue;
+      const t = B[r][c]; if (!t) continue;
+      t.el.classList.add('gone'); B[r][c] = null; n++;
+      setTimeout(()=>t.el.remove(), 230);
+    }
+    addCleared(n);
+    await sleep(210);
+    gravity();
+    await sleep(230);
+  }
+  function gravity(){
+    for (let c=0;c<COLS;c++){
+      let w = ROWS-1;
+      for (let r=ROWS-1;r>=0;r--) if (B[r][c]){ const t=B[r][c]; B[r][c]=null; B[w][c]=t; pos(t,w,c); w--; }
+      const missing = w+1;
+      for (let r=w;r>=0;r--) B[r][c] = mk(rnd(), r, c, r-missing);
+    }
+  }
+  async function cascade(origin){
+    combo = 1;
+    while (playing){
+      const rs = runs(); if (!rs.length) break;
+      const set = new Set(), keep = new Set();
+      rs.forEach(run => run.forEach(([r,c]) => set.add(r+','+c)));
+      rs.filter(run => run.length>=4).forEach(run => {
+        let k = run.map(([r,c])=>r+','+c).find(x => origin && origin.includes(x)) || run[Math.floor(run.length/2)].join(',');
+        if (!keep.has(k)){ keep.add(k); const [r,c]=k.split(',').map(Number); setType(B[r][c], RAINBOW); }
+      });
+      if (combo>1) MJ.toast(gridEl, 'Combo x'+combo+' !', '#ffd23a');
+      document.getElementById('combo').textContent = 'x'+combo;
+      await clearSet(set, keep);
+      combo++; origin = null;
+    }
+    if (playing && !hasMove()){ MJ.toast(gridEl, 'Mélange !', '#6ad8ff'); await sleep(300); fill(); }
+  }
+  async function rainbowSwap(a, b){
+    const ta = B[a[0]][a[1]], tb = B[b[0]][b[1]], set = new Set();
+    if (ta.type===RAINBOW && tb.type===RAINBOW){
+      for (let r=0;r<ROWS;r++) for (let c=0;c<COLS;c++) set.add(r+','+c);
+      MJ.toast(gridEl, 'Super arc-en-ciel !', '#fff');
+    } else {
+      const rb = ta.type===RAINBOW ? a : b, other = ta.type===RAINBOW ? tb : ta;
+      for (let r=0;r<ROWS;r++) for (let c=0;c<COLS;c++) if (B[r][c].type===other.type) set.add(r+','+c);
+      set.add(rb.join(','));
+      MJ.toast(gridEl, 'Arc-en-ciel !', '#fff');
+    }
+    await clearSet(set);
+    await cascade();
+  }
+  async function trySwap(a, b){
+    if (busy || !playing) return;
+    if (Math.abs(a[0]-b[0]) + Math.abs(a[1]-b[1]) !== 1) return;
+    busy = true; unselect();
+    const ta = B[a[0]][a[1]], tb = B[b[0]][b[1]];
+    if (ta.type===RAINBOW || tb.type===RAINBOW){ swapCells(a,b); await sleep(200); await rainbowSwap(b, a); busy=false; return; }
+    swapCells(a, b); await sleep(210);
+    if (!runs().length){ swapCells(a, b); await sleep(210); busy=false; return; }
+    await cascade([a.join(','), b.join(',')]);
+    busy = false;
+  }
+  function addCleared(n){
+    cleared += n * 10 * combo;
+    document.getElementById('cleared').textContent = Math.min(cleared, GOAL);
+    refreshPlayers();
+    if (cleared >= GOAL) finish(G.human);
+  }
+  function refreshPlayers(){
+    const ids = [G.human, ...OPP], all = [cleared, ...bots.map(b=>b.v)];
+    all.forEach((v,i) => MJ.setPlayer(ids[i], v, v/GOAL*100, Math.min(v,GOAL)+' pts'));
+    const mx = Math.max(...all); MJ.setLeader(mx>0 ? ids[all.indexOf(mx)] : 0);
+  }
+  function finish(winnerId){
+    if (ended) return; ended = true; playing = false; clock && clock.stop(); unselect();
+    refreshPlayers();
+    const res = [{id:G.human,v:cleared}, ...bots.map((b,i)=>({id:OPP[i],v:b.v}))].map(x=>({...x, v:Math.min(x.v,GOAL)}));
+    res.sort((x,y) => (y.id===winnerId)-(x.id===winnerId) || y.v-x.v || x.id-y.id);
+    res.forEach(x => x.label = x.v+' pts');
+    const w = res[0].id, msg = winnerId ? 'P'+w+' atteint l\'objectif en premier.' : 'Temps écoulé : P'+w+' est le plus avancé.';
+    MJ.showEnd(w===G.human ? 'Tu gagnes la manche !' : 'Manche terminée', msg, res, launch);
+  }
+  function unselect(){ if (sel){ const t=B[sel[0]][sel[1]]; t && t.el.classList.remove('sel'); sel=null; } }
+  function start(){
+    cleared = 0; ended = false; busy = false; sel = null;
+    document.getElementById('cleared').textContent = 0; document.getElementById('combo').textContent = 'x1';
+    bots = OPP.map(() => MJ.bot(GOAL, 48 + Math.random()*40));
+    layout(); fill(); refreshPlayers();
+    playing = true;
+    clock = MJ.timer(document.getElementById('timer'), DUR, el => {
+      bots.forEach(b=>b.tick(el)); refreshPlayers();
+      const done = bots.findIndex(b => b.v >= GOAL); if (done>=0) finish(OPP[done]);
+    }, () => finish(0));
+  }
+  bots = OPP.map(()=>MJ.bot(GOAL,DUR)); cleared = 0; layout(); fill(); refreshPlayers();
+  function launch(){ MJIntro.play({titre:'MATCH 3', onDone:start}); }
+  MJIntro.decor();
+  document.getElementById('go').onclick = () => { document.getElementById('ovStart').classList.add('hidden'); launch(); };
+
+  // Contrôles : glisser ou toucher deux tuiles
+  let down = null;
+  function cellAt(ev){
+    const rect = gridEl.getBoundingClientRect();
+    const c = Math.floor((ev.clientX-rect.left-GAP/2)/(SZ+GAP)), r = Math.floor((ev.clientY-rect.top-GAP/2)/(SZ+GAP));
+    return (r>=0&&r<ROWS&&c>=0&&c<COLS) ? [r,c] : null;
+  }
+  gridEl.addEventListener('pointerdown', ev => { if (!playing||busy) return; const cell = cellAt(ev); if (!cell) return; down = {cell, x:ev.clientX, y:ev.clientY, done:false}; ev.preventDefault(); });
+  window.addEventListener('pointermove', ev => {
+    if (!down || down.done) return;
+    const dx = ev.clientX-down.x, dy = ev.clientY-down.y;
+    if (Math.hypot(dx,dy) < SZ*0.35) return;
+    down.done = true;
+    const [r,c] = down.cell, t = Math.abs(dx)>Math.abs(dy) ? [r, c+Math.sign(dx)] : [r+Math.sign(dy), c];
+    if (t[0]>=0&&t[0]<ROWS&&t[1]>=0&&t[1]<COLS) trySwap(down.cell, t);
+  });
+  window.addEventListener('pointerup', () => {
+    if (!down) return; const d = down; down = null;
+    if (d.done || busy || !playing) return;
+    const cell = d.cell;
+    if (sel && Math.abs(sel[0]-cell[0])+Math.abs(sel[1]-cell[1])===1){ trySwap(sel, cell); return; }
+    if (sel && sel[0]===cell[0] && sel[1]===cell[1]){ unselect(); return; }
+    unselect(); sel = cell; B[cell[0]][cell[1]].el.classList.add('sel');
+  });
+  window.addEventListener('resize', layout);
+  window.__mjMatch3 = { trySwap, get cleared(){return cleared;}, get busy(){return busy;}, board: () => B.map(row=>row.map(t=>t.type)), hasMove };
+})();
+</script>
+</body>
+</html>

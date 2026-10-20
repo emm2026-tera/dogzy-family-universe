@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0905">
+<title>Hexa Puzzle | Mini-jeux Dogzy</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="mj.css">
+<style>
+body{--bg:url(img/2048-fond.jpg)}
+h1.gt{font-family:"Arial Black",Arial,sans-serif;color:#ffd23a;text-shadow:0 3px 0 #7a3a00,0 0 14px rgba(255,160,40,.6)}
+h1.gt em{font-style:normal;color:#ff7ad0;text-shadow:0 3px 0 #6a0a4a,0 0 14px rgba(255,64,176,.6)}
+#bd{position:relative;touch-action:none}
+.hx{position:absolute;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;align-items:center;justify-content:center;user-select:none}
+.hx.cell{background:radial-gradient(#3a3020,#18130a);box-shadow:inset 0 0 8px #000}
+.hx.cell::before{content:"";position:absolute;inset:6%;clip-path:inherit;background:radial-gradient(#2a2418,#14100a)}
+.hx.pc{box-shadow:inset 0 -5px 0 rgba(0,0,0,.25);cursor:grab}
+.hx.pc::after{content:"";position:absolute;left:18%;right:18%;top:10%;height:26%;border-radius:50%;background:linear-gradient(rgba(255,255,255,.5),transparent)}
+.hx span{position:relative;z-index:1;font-size:var(--fs);filter:drop-shadow(0 1px 1px rgba(0,0,0,.5));pointer-events:none}
+.c0{background:linear-gradient(#ff7ad0,#d0108a)}.c1{background:linear-gradient(#7ae8ff,#0a7ad0)}.c2{background:linear-gradient(#fff08a,#e0a010)}
+.c3{background:linear-gradient(#c88aff,#6a10d0)}.c4{background:linear-gradient(#8aff9a,#10a040)}.c5{background:linear-gradient(#ff9a6a,#e03a10)}
+.c6{background:linear-gradient(#6affea,#0aa08a)}.c7{background:linear-gradient(#ffd23a,#a06a00)}
+#bd{filter:drop-shadow(0 0 6px rgba(255,64,176,.55)) drop-shadow(0 0 12px rgba(212,175,55,.35))}
+.hx.cell{background:radial-gradient(#ffd23a,#8a6a12)}
+#tray{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:10px auto 0;max-width:520px;min-height:80px;touch-action:none}
+.pz{position:relative;padding:4px;border-radius:12px;border:1px dashed rgba(212,175,55,.35);background:rgba(10,8,4,.6);cursor:grab;touch-action:none}
+.pz.hide{visibility:hidden}
+.drag{position:fixed;left:0;top:0;z-index:40;pointer-events:none;filter:drop-shadow(0 8px 10px rgba(0,0,0,.6))}
+.goal{text-align:center;font-size:14px;color:#e7d397;margin:4px 0}.goal b{color:var(--gold2)}
+.help{font-size:12px;color:#bfa55c;text-align:center;margin:6px 0}
+</style>
+</head>
+<body>
+<header class="top"><a href="./">← Mini-jeux</a><div class="brand">DOGZY <span>Family</span> UNIVERSE</div><a href="../">Démo</a></header>
+<main>
+  <h1 class="gt">HEXA <em>PUZZLE</em></h1>
+  <div class="arena">
+    <div class="players" id="players"></div>
+    <div class="board">
+      <div class="timerBox"><span class="pawb"><i class="paw"></i></span><span class="t" id="timer">02:00</span><span class="pawb"><i class="paw"></i></span></div>
+      <div class="frame"><div class="inner" style="padding:12px"><div id="bd"></div></div></div>
+      <div class="goal">Niveau <b id="lvl">1</b> &nbsp; Cases : <b id="fill">0</b> / <b id="tot">0</b> &nbsp; Réussis : <b id="won">0</b></div>
+      <div id="tray"></div>
+      <p class="help">Glisse les pièces sur le plateau pour remplir toute la forme hexagonale. Touche une pièce posée pour la reprendre.</p>
+    </div>
+  </div>
+</main>
+<footer>© 2026 Sania Labbé (Valkyrie). Tous droits réservés.</footer>
+
+<div class="ov" id="ovStart"><div class="sheet">
+  <h2><i class="paw"></i> Hexa Puzzle</h2>
+  <ul>
+    <li>Glisse les <b>pièces hexagonales</b> du bas sur le plateau.</li>
+    <li>Remplis <b>toutes les cases</b> de la forme pour réussir le niveau. Les pièces ne tournent pas : trouve leur bonne place !</li>
+    <li>Touche une pièce déjà posée pour la reprendre.</li>
+    <li>Réussis le plus de niveaux possible en <b>2 minutes</b>. Les plateaux ont la forme d'un cœur, d'un os, d'une patte, d'une couronne et d'une tête de chien Dogzy.</li>
+  </ul>
+  <div class="row"><button class="btn primary" id="go">JOUER</button></div>
+</div></div>
+<div class="ov hidden" id="ovEnd"><div class="sheet">
+  <h2></h2><p class="msg" style="text-align:center"></p><ol class="rank"></ol>
+  <div class="row"><button class="btn primary replay">REJOUER</button><a class="btn" href="./">MINI-JEUX</a></div>
+</div></div>
+
+<script src="mj.js"></script>
+<script src="intro.js"></script>
+<script src="mj-duel.js"></script>
+<script>
+(() => {
+  const DUR = 120, BOT_TARGET = 5, ICO = ['🐾','👑','🐾','👑','🦴','🐾','👑','🐶'];
+  const $ = id => document.getElementById(id), bd = $('bd'), tray = $('tray');
+  const G = MJDuel.setup($('players'));
+  const DIRS = [[1,0],[1,-1],[0,-1],[-1,0],[-1,1],[0,1]], K = (q,r) => q+','+r;
+  let R, S, cells, pieces, owner, level, won, playing = false, ended, clock, bots, drag = null;
+
+  // Niveaux : plateau hexagonal de rayon 1, 2, 2, 3... découpé au hasard en pièces de 2 à 5 cases.
+  // Silhouettes Dogzy (cases hexagonales, lignes décalées) : chaque forme est d'un seul tenant.
+  const SHAPES = [
+    {nm:'Cœur', m:[".##.##.","#######","#######",".#####.","..###..","...#..."]},
+    {nm:'Os', m:["##...##","#######",".#####.","#######","##...##"]},
+    {nm:'Patte', m:["..#.#..",".##.##.","#.###.#","##.#.##",".#####.",".#####.","..###.."]},
+    {nm:'Couronne', m:["#..#..#","##.#.##","#######","#######","#######"]},
+    {nm:'Tête de chien', m:["#.....#","##...##","#######","#######",".#####.","..###.."]},
+  ];
+  let shapeName = '', OX = 0, OY = 0;
+  function gen(lv){
+    const sh = SHAPES[lv % SHAPES.length]; shapeName = sh.nm; cells = [];
+    sh.m.forEach((row, rr) => [...row].forEach((ch, col) => { if (ch === '#') cells.push([col - ((rr - (rr&1)) >> 1), rr]); }));
+    const set = new Set(cells.map(c=>K(...c))), free = new Set(set);
+    const minS = 3, maxS = lv < 2 ? 4 : 5;
+    pieces = [];
+    while (free.size){
+      const startK = [...free][(Math.random()*free.size)|0], grp = [startK]; free.delete(startK);
+      const size = minS + ((Math.random()*(maxS-minS+1))|0);
+      while (grp.length < size){
+        const fr = [];
+        grp.forEach(k => { const [q,r] = k.split(',').map(Number); DIRS.forEach(([dq,dr]) => { const n = K(q+dq,r+dr); if (free.has(n) && !fr.includes(n)) fr.push(n); }); });
+        if (!fr.length) break;
+        const n = fr[(Math.random()*fr.length)|0]; grp.push(n); free.delete(n);
+      }
+      pieces.push(grp.map(k => k.split(',').map(Number)));
+    }
+    // fusionne les pièces d'une seule case avec une voisine
+    for (let i=pieces.length-1;i>=0;i--) if (pieces[i].length===1){
+      const [q,r] = pieces[i][0];
+      const j = pieces.findIndex((p,jj) => jj!==i && p.some(([a,b]) => DIRS.some(([dq,dr]) => a===q+dq && b===r+dr)));
+      if (j>=0){ pieces[j].push(pieces[i][0]); pieces.splice(i,1); }
+    }
+    pieces = pieces.map((cs,i) => ({id:i, col:i%8, cells:cs.map(([q,r]) => [q-cs[0][0], r-cs[0][1]]), sol:cs[0], at:null}))
+                   .sort(() => Math.random()-.5);
+    owner = {};
+  }
+  function px(q,r,s){ return [s*Math.sqrt(3)*(q + r/2), s*1.5*r]; }
+  function hexEl(cls, s, x, y, ico){
+    const e = document.createElement('div'); e.className = 'hx '+cls;
+    e.style.width = (s*Math.sqrt(3)-1)+'px'; e.style.height = (s*2-1)+'px';
+    e.style.left = (x - s*Math.sqrt(3)/2)+'px'; e.style.top = (y - s)+'px';
+    if (ico){ e.innerHTML = '<span>'+ico+'</span>'; e.style.setProperty('--fs', Math.round(s*0.8)+'px'); }
+    return e;
+  }
+  function layout(){
+    const side = Math.max(240, Math.min(window.innerWidth - 60, 440, window.innerHeight - (window.innerWidth>=860?360:520)));
+    const [a,b,c,d] = bbox(cells, 1), uw = c-a+Math.sqrt(3), uh = d-b+2;
+    S = Math.min(side/uw, side/uh); R = [a,b,uw,uh];
+    render();
+  }
+  function bbox(cs, s){ const ps = cs.map(([q,r]) => px(q,r,s)); return [Math.min(...ps.map(p=>p[0])), Math.min(...ps.map(p=>p[1])), Math.max(...ps.map(p=>p[0])), Math.max(...ps.map(p=>p[1]))]; }
+  function render(){
+    const w = R[2]*S, h = R[3]*S;
+    bd.style.width = w+'px'; bd.style.height = h+'px'; bd.innerHTML = '';
+    const ox = OX = -R[0]*S + S*Math.sqrt(3)/2, oy = OY = -R[1]*S + S;
+    cells.forEach(([q,r]) => { const [x,y] = px(q,r,S); const e = hexEl('cell', S, ox+x, oy+y); e.dataset.k = K(q,r); bd.appendChild(e); });
+    pieces.forEach(p => { if (!p.at) return;
+      p.cells.forEach(([dq,dr]) => { const q = p.at[0]+dq, r = p.at[1]+dr, [x,y] = px(q,r,S);
+        const e = hexEl('pc c'+p.col, S, ox+x, oy+y, ICO[p.col]); e.dataset.pid = p.id; bd.appendChild(e); }); });
+    tray.innerHTML = '';
+    const ts = Math.min(S*0.62, 20);
+    pieces.forEach(p => { if (p.at) return;
+      const [x0,y0,x1,y1] = bbox(p.cells, ts), box = document.createElement('div');
+      box.className = 'pz'; box.dataset.pid = p.id;
+      box.style.width = (x1-x0+ts*Math.sqrt(3)+8)+'px'; box.style.height = (y1-y0+ts*2+8)+'px';
+      p.cells.forEach(([q,r]) => { const [x,y] = px(q,r,ts); box.appendChild(hexEl('pc c'+p.col, ts, x-x0+ts*Math.sqrt(3)/2+4, y-y0+ts+4, ICO[p.col])); });
+      tray.appendChild(box); });
+    const filled = Object.keys(owner).length;
+    $('fill').textContent = filled; $('tot').textContent = cells.length;
+  }
+  function newLevel(){ gen(level); $('lvl').textContent = (level+1)+' : '+shapeName; layout(); }
+  function boardCellAt(cx, cy){
+    const rc = bd.getBoundingClientRect(), x = cx - rc.left - OX, y = cy - rc.top - OY;
+    let best = null, bdist = S*1.0;
+    cells.forEach(([q,r]) => { const [hx,hy] = px(q,r,S), d = Math.hypot(hx-x, hy-y); if (d < bdist){ bdist = d; best = [q,r]; } });
+    return best;
+  }
+  function fits(p, at){
+    const set = new Set(cells.map(c=>K(...c)));
+    return p.cells.every(([dq,dr]) => { const k = K(at[0]+dq, at[1]+dr); return set.has(k) && owner[k]===undefined; });
+  }
+  function place(p, at){
+    p.at = at; p.cells.forEach(([dq,dr]) => owner[K(at[0]+dq, at[1]+dr)] = p.id); render();
+    if (Object.keys(owner).length === cells.length) solved();
+    return true;
+  }
+  function unplace(p){ p.cells.forEach(([dq,dr]) => delete owner[K(p.at[0]+dq, p.at[1]+dr)]); p.at = null; render(); }
+  function solved(){
+    won++; $('won').textContent = won; refresh();
+    MJ.toast(bd, 'Parfait ! ⬢', '#ffd23a');
+    setTimeout(() => { level++; playing && newLevel(); }, 700);
+  }
+  // Glisser-déposer (souris et tactile via Pointer Events)
+  function startDrag(p, ev, grabIdx){
+    const el = document.createElement('div'); el.className = 'drag';
+    const [x0,y0,x1,y1] = bbox(p.cells, S);
+    p.cells.forEach(([q,r]) => { const [x,y] = px(q,r,S); el.appendChild(hexEl('pc c'+p.col, S, x-x0+S*Math.sqrt(3)/2, y-y0+S, ICO[p.col])); });
+    const g = px(...p.cells[grabIdx], S);
+    drag = {p, el, grabIdx, offX: g[0]-x0+S*Math.sqrt(3)/2, offY: g[1]-y0+S};
+    document.body.appendChild(el); moveDrag(ev);
+  }
+  function moveDrag(ev){ if (!drag) return; drag.el.style.transform = `translate(${ev.clientX-drag.offX}px,${ev.clientY-drag.offY-S*1.6}px)`; drag.cx = ev.clientX; drag.cy = ev.clientY - S*1.6; }
+  function endDrag(){
+    if (!drag) return; const d = drag; drag = null; d.el.remove();
+    const tgt = boardCellAt(d.cx, d.cy);
+    if (tgt){ const g = d.p.cells[d.grabIdx], at = [tgt[0]-g[0], tgt[1]-g[1]]; if (fits(d.p, at)) return place(d.p, at); }
+    render();
+  }
+  tray.addEventListener('pointerdown', ev => {
+    if (!playing) return; const box = ev.target.closest('.pz'); if (!box) return; ev.preventDefault();
+    const p = pieces.find(x => x.id === +box.dataset.pid);
+    // case de la pièce la plus proche du doigt
+    const hs = [...box.children]; let gi = 0, bdd = 1e9;
+    hs.forEach((h,i) => { const r = h.getBoundingClientRect(), dd = Math.hypot(r.left+r.width/2-ev.clientX, r.top+r.height/2-ev.clientY); if (dd < bdd){ bdd = dd; gi = i; } });
+    box.classList.add('hide'); startDrag(p, ev, gi);
+  });
+  bd.addEventListener('pointerdown', ev => {
+    if (!playing) return; const h = ev.target.closest('.pc'); if (!h) return; ev.preventDefault();
+    unplace(pieces.find(x => x.id === +h.dataset.pid));
+  });
+  window.addEventListener('pointermove', moveDrag);
+  window.addEventListener('pointerup', endDrag); window.addEventListener('pointercancel', endDrag);
+
+  function scores(){ return G.ids.map((id,i) => id===G.human ? won : bots[i].v); }
+  function refresh(){
+    const s = scores();
+    G.ids.forEach((id,i) => MJ.setPlayer(id, s[i], s[i]/BOT_TARGET*100, s[i]+' niveau'+(s[i]>1?'x':'')));
+    const mx = Math.max(...s); MJ.setLeader(mx>0 ? G.ids[s.indexOf(mx)] : 0);
+  }
+  function finish(){
+    if (ended) return; ended = true; playing = false; clock && clock.stop(); if (drag){ drag.el.remove(); drag = null; }
+    const s = scores(), res = G.ids.map((id,i) => ({id, v:s[i], label: s[i]+' niveau'+(s[i]>1?'x':'')}));
+    res.sort((a,b) => b.v-a.v || (b.id===G.human)-(a.id===G.human));
+    const w = res[0].id;
+    MJ.showEnd(w===G.human ? 'Tu gagnes la manche !' : 'Manche terminée', 'Temps écoulé : P'+w+' a rempli le plus de plateaux.', res, launch);
+  }
+  function start(){
+    level = 0; won = 0; ended = false; $('won').textContent = 0;
+    bots = G.ids.map(() => MJ.bot(BOT_TARGET - 1 + (Math.random()*3|0), DUR));
+    newLevel(); refresh(); playing = true;
+    clock = MJ.timer($('timer'), DUR, el => { bots.forEach(b => b.tick(el)); refresh(); }, finish);
+  }
+  bots = G.ids.map(() => MJ.bot(BOT_TARGET, DUR)); won = 0; level = 0; newLevel(); refresh();
+  function launch(){ MJIntro.play({titre:'HEXA PUZZLE', onDone:start}); }
+  MJIntro.decor();
+  $('go').onclick = () => { $('ovStart').classList.add('hidden'); launch(); };
+  window.addEventListener('resize', layout);
+  // Accès pour les tests : pièces et position de solution d'origine
+  window.__mjHexa = { get pieces(){return pieces;}, get playing(){return playing;}, get won(){return won;}, get level(){return level;}, bd, get ox(){return OX;}, get oy(){return OY;}, px:(q,r)=>px(q,r,S), get S(){return S;} };
+})();
+</script>
+</body>
+</html>
