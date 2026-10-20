@@ -70,7 +70,13 @@ body{--bg:url(img/2048-fond.jpg)}
 const P=[{id:1,nm:'Toi',img:'../assets/portraits/pyromaniac.jpg'},{id:2,nm:'Jouzy',img:'../assets/portraits/jouzy.jpg'},{id:3,nm:'Kelzy',img:'../assets/portraits/kelzy.jpg'},{id:4,nm:'Waltzy',img:'../assets/portraits/waltzy.jpg'}];
 const G=[{nm:'2048 Hex',href:'2048-hex.html'},{nm:'Tile Match',href:'tile-match.html'},{nm:'Bubbles',href:'bubbles.html'},{nm:'Mémoire NFT',href:'memoire.html'},{nm:'La Corde',href:'corde.html'},{nm:'Match 3',href:'match3.html'},{nm:'Hexa Puzzle',href:'hexa-puzzle.html'},{nm:'Tetris Dogzy',href:'tetris.html'},{nm:'Gagnant tout de suite',cls:'w'},{nm:'Perdant tout de suite',cls:'l'}];
 const $=id=>document.getElementById(id);
+/* Intégration plateau : ?embed=1&me=J&n=NB&names=A|B|C|D&force=INDEX (force = test : case de roue imposée) */
+const Q=new URLSearchParams(location.search),EMBED=Q.get('embed')==='1';
+{const n=Math.max(2,Math.min(4,+Q.get('n')||4)),nm=(Q.get('names')||'').split('|');P.length=n;P.forEach((p,i)=>{if(nm[i])p.nm=nm[i]})}
+const FORCE=Q.has('force')?Math.max(0,Math.min(G.length-1,+Q.get('force'))):null;
+window.MJ_RESULT=null;window.DUEL_PICK=null;
 let me=1,opp=null,busy=false;
+if(EMBED){me=Math.max(1,Math.min(P.length,+Q.get('me')||1));document.querySelector('.mepick').style.display='none';document.querySelector('header.top').style.display='none'}
 P.forEach(p=>{const o=document.createElement('option');o.value=p.id;o.textContent='Joueur '+p.id+' – '+p.nm;$('me').appendChild(o)});
 function card(el,p,q){el.className='pl p'+(p?p.id:1)+(q?' q':'');el.innerHTML=p?`<span class="tag">J${p.id}</span><img src="${p.img}" alt="${p.nm}"><span class="nm">${p.nm}</span>`:`<span class="tag">?</span><img src="${P[0].img}" alt=""><span class="nm">???</span>`}
 function reset(){opp=null;card($('pa'),P[me-1]);card($('pb'),null,true);$('die').textContent='?';$('s2').classList.add('off');$('s3').classList.remove('on');$('bDie').disabled=false;buildReel(0)}
@@ -79,10 +85,10 @@ $('bDie').onclick=()=>{if(busy)return;busy=true;$('bDie').disabled=true;const ot
  const t=setInterval(()=>{const r=others[Math.floor(Math.random()*others.length)];d.textContent=r.id;card($('pb'),r,true);if(++n>=16){clearInterval(t);d.classList.remove('roll');opp=r;d.textContent=r.id;card($('pb'),r);$('pb').classList.add('pop');$('s2').classList.remove('off');busy=false}},90)};
 const H=60,REP=12;let pos=0;
 function buildReel(){const r=$('reel');r.innerHTML='';for(let k=0;k<REP;k++)G.forEach(g=>{const d=document.createElement('div');d.textContent=g.nm;if(g.cls)d.className=g.cls;r.appendChild(d)});pos=0;r.style.transform=`translateY(${H}px)`}
-$('bSpin').onclick=()=>{if(busy||!opp)return;busy=true;$('bSpin').disabled=true;buildReel();const pick=Math.floor(Math.random()*G.length);const target=(REP-2)*G.length+pick;
+$('bSpin').onclick=()=>{if(busy||!opp)return;busy=true;$('bSpin').disabled=true;buildReel();const pick=FORCE!==null?FORCE:Math.floor(Math.random()*G.length);const target=(REP-2)*G.length+pick;
  const dist=target*H,dur=3800+Math.random()*1200,t0=performance.now(),r=$('reel');
  (function f(now){let k=Math.min(1,(now-t0)/dur);const e=1-Math.pow(1-k,4);r.style.transform=`translateY(${H-dist*e}px)`;if(k<1)requestAnimationFrame(f);else done(pick)})(t0)};
-function done(i){const g=G[i],a=P[me-1];busy=false;$('bSpin').disabled=false;const b=$('bPlay');
+function done(i){const g=G[i],a=P[me-1];window.DUEL_PICK={game:g.href||g.cls,name:g.nm,j:a.id,vs:opp.id};if(!g.href)window.MJ_RESULT={game:'instant',won:g.cls==='w',instant:true};if(EMBED)$('bAgain').style.display='none';busy=false;$('bSpin').disabled=false;const b=$('bPlay');
  if(g.href){$('rt').textContent='Duel : '+g.nm;$('rd').textContent=`${a.nm} affronte ${opp.nm} au ${g.nm}. Le meilleur remporte le duel !`;b.style.display='';b.href=g.href+'?duel=1&j='+a.id+'&vs='+opp.id}
  else if(g.cls==='w'){$('rt').textContent='🏆 GAGNANT TOUT DE SUITE !';$('rd').textContent=`La chance sourit à ${a.nm} : victoire immédiate contre ${opp.nm} !`;b.style.display='none'}
  else{$('rt').textContent='💀 PERDANT TOUT DE SUITE…';$('rd').textContent=`Pas de chance : ${a.nm} perd le duel contre ${opp.nm} sans jouer.`;b.style.display='none'}

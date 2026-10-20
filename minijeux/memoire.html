@@ -87,6 +87,7 @@ function flip(c){
  else{lock=true;setTimeout(()=>{a.classList.remove('up');c.classList.remove('up');lock=false;if(duel){cur=1-cur;duo()}},1000)}
 }
 function end(){clearInterval(tick);const tm=$('tm').textContent;
+ window.MJ_RESULT={game:'memoire',won:duel?sc[0]>sc[1]:true,tie:duel&&sc[0]===sc[1],scores:duel?sc.slice():null,tries};
  if(duel){if(sc[0]===sc[1]){$('eT').textContent='🤝 Égalité !';$('eM').textContent=`${pl[0].nm} ${sc[0]} – ${sc[1]} ${pl[1].nm}`}
   else{const w=sc[0]>sc[1]?0:1;$('eT').textContent='🏆 '+pl[w].nm+' gagne le duel !';$('eM').textContent=`${pl[0].nm} ${sc[0]} paires – ${sc[1]} paires ${pl[1].nm} · ${tries} essais · ${tm}`}}
  else{$('eT').textContent='🏆 Bravo, 12 paires !';$('eM').textContent=`Trouvées en ${tries} essais et ${tm}.`}

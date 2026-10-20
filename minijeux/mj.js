@@ -47,6 +47,11 @@ const MJ = (() => {
       }};
   }
   function showEnd(title, msg, ranking, onReplay){
+    { // résultat lisible par le plateau (case Duel) : le joueur humain (j en duel, sinon P1) a-t-il gagné ?
+      const q = new URLSearchParams(location.search), human = (q.get('duel') === '1' && typeof MJDuel !== 'undefined') ? (+q.get('j') || 1) : 1; // jeux sans mode duel : l'humain est P1
+      const own = window.MJ_RESULT;
+      if (!own || own._auto) window.MJ_RESULT = { _auto:true, game:location.pathname.split('/').pop().replace('.html',''), won: !!ranking[0] && ranking[0].id === human, player:human, ranking:ranking.map(r => ({id:r.id, score:r.v})) };
+    }
     const ov = $('#ovEnd');
     ov.querySelector('h2').textContent = title;
     ov.querySelector('.msg').textContent = msg;

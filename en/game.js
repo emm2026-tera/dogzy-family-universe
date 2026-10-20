@@ -534,16 +534,47 @@ function pickTarget(p){
   const open_ = others.filter(q => !q.shield); return (open_.length ? open_ : others).sort((x, y) => y.tokens - x.tokens)[0];
 }
 
+/* ---------- case Duel : SEUL déclencheur des mini-jeux ---------- */
+const DUEL_STAKE = 100; // jetons gagnés par le vainqueur / perdus par le perdant d'un duel
+const DUEL_GAMES = ['2048-hex','tile-match','bubbles','memoire','corde','match3','hexa-puzzle','tetris'];
+function duelApply(p, q, won){
+  if (won === null || won === undefined || !q) return;
+  const w = won ? p : q, l = won ? q : p;
+  addTokens(l, -DUEL_STAKE, 'Duel lost'); addTokens(w, DUEL_STAKE, 'Duel won');
+  say(w, `${w.name} wins the duel against ${l.name} (+${DUEL_STAKE})`, true);
+}
+async function duelSpace(p){
+  const n = S.players.length, j = idxOf(p) + 1;
+  if (p.bot || n < 2) {
+    say(p, 'lands on a DUEL space!', true); await pause(p, 1100);
+    if (n < 2) return;
+    const others = S.players.filter(q => q !== p && !q.out); if (!others.length) return;
+    duelApply(p, others[Math.floor(Math.random() * others.length)], Math.random() < 0.5); return;
+  }
+  const names = S.players.map(q => encodeURIComponent(q.name)).join('|');
+  const force = window.DZ.duelForce != null ? `&force=${window.DZ.duelForce}` : '';
+  open(`<h2>⚔️ DUEL!</h2><p>Roll the die to pick your opponent, then the casino reel picks the mini-game. Stake : <b>${DUEL_STAKE}</b> tokens.</p><iframe class="duelFrame" id="duelFrame" src="minijeux/duel.html?embed=1&me=${j}&n=${n}&names=${names}${force}" title="Duel"></iframe><button class="btn primary" id="ok">END DUEL</button>`, true);
+  await waitClick('#ok');
+  let res = null, vs = null;
+  try {
+    const w = $('#duelFrame').contentWindow, qs = new URLSearchParams(w.location.search);
+    res = w.MJ_RESULT || null;
+    vs = +(qs.get('vs') || (w.DUEL_PICK && w.DUEL_PICK.vs) || 0);
+    window.DZ.lastDuel = { page: w.location.pathname.split('/').pop(), vs, result: res };
+  } catch (e) { /* iframe illisible */ }
+  close();
+  const q = vs ? S.players[vs - 1] : null;
+  if (res && q && q !== p && !res.tie) duelApply(p, q, !!res.won);
+  else log('Duel cancelled: no result.');
+  hud();
+}
+
 /* ---------- spaces ---------- */
 async function resolveSpace(p){
   const t = WP[p.pos].type;
   const TFR = {building:'BUSINESS', search:'SEARCH', quiz:'QUIZ', coin:'COINS', penalty:'PENALTY', duel:'DUEL', start:'START', empty:'EMPTY'};
   if (!p.bot) log(`Space ${p.pos}: ${TFR[t] || t}`);
-  if (t === 'duel') {
-    if (p.bot) { say(p, 'lands on a DUEL space!', true); await pause(p, 1100); return; }
-    open(`<h2>⚔️ DUEL!</h2><p>Roll the die to pick your opponent (up to 4 players), then the casino reel picks the mini-game.</p><iframe class="duelFrame" src="minijeux/duel.html?embed=1" title="Duel"></iframe><button class="btn primary" id="ok">END DUEL</button>`, true);
-    await waitClick('#ok'); close(); return;
-  }
+  if (t === 'duel') { await duelSpace(p); return; }
   if (!SPECIAL.has(t)) { if (t === 'empty' && !p.bot) log('Empty space — moving on.'); return; }
   const i2 = wIdx('w2', W2.length);
   if (p.bot) await botWheel(p, W2.map(s => s.label), i2, 'Bonus wheel');
