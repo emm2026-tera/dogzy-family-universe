@@ -308,10 +308,17 @@
     },
     {
       "id": "CH38",
-      "titre": "Tous à la Banque",
-      "texte": "Chaque joueur recule de 1 case. Toi, tu restes là, tranquille.",
+      "titre": "Immunité",
+      "texte": "Garde cette carte (1 seule utilisation) : ne paie pas sur une case Commerce, OU esquive une attaque d'un autre joueur, OU bloque une attaque sur ton commerce.",
       "effet": {
-        "others_move": -1
+        "immunity": 1,
+        "uses": 1,
+        "keep": true,
+        "options": [
+          "skip_commerce_payment",
+          "dodge_attack",
+          "block_commerce_attack"
+        ]
       }
     },
     {
