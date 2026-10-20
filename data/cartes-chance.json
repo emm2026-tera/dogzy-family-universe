@@ -369,10 +369,11 @@
     {
       "id": "CH44",
       "titre": "Loyer boosté +50 %",
-      "texte": "Pendant 3 tours, chaque joueur qui tombe sur un de tes commerces paie 50 % de plus que le prix habituel !",
+      "texte": "Pendant 3 tours, chaque joueur qui tombe sur un de tes commerces paie 50 % de plus que le prix habituel — une seule fois par joueur.",
       "effet": {
         "commerce_rent_multiplier": 1.5,
-        "duration_turns": 3
+        "duration_turns": 3,
+        "once_per_player": true
       }
     }
   ]
