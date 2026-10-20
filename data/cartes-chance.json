@@ -386,11 +386,32 @@
     },
     {
       "id": "CH46",
-      "titre": "15 % de rabais sur ton prochain commerce",
-      "texte": "Garde cette carte : 15 % de rabais sur l'achat de ton prochain commerce (1 seule utilisation).",
+      "titre": "Épargne 15 % sur ton prochain commerce",
+      "texte": "Épargne 15 % sur l'achat de ton prochain commerce (1 seule utilisation).",
       "effet": {
         "commerce_discount": 0.15,
         "applies": "next_purchase",
+        "uses": 1,
+        "keep": true
+      }
+    },
+    {
+      "id": "CH47",
+      "titre": "25 % de rabais sur ta prochaine bâtisse",
+      "texte": "Garde cette carte : 25 % de rabais sur l'achat de ta prochaine bâtisse (1 seule utilisation).",
+      "effet": {
+        "building_discount": 0.25,
+        "applies": "next_purchase",
+        "uses": 1,
+        "keep": true
+      }
+    },
+    {
+      "id": "CH48",
+      "titre": "Épargne 25 % sur l'évolution de métier",
+      "texte": "Épargne 25 % de rabais sur la prochaine évolution de métier de ton personnage.",
+      "effet": {
+        "job_upgrade_discount": 0.25,
         "uses": 1,
         "keep": true
       }
