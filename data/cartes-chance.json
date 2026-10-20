@@ -340,6 +340,17 @@
     },
     {
       "id": "CH41",
+      "titre": "15 % de rabais sur ton prochain accessoire",
+      "texte": "Garde cette carte : 15 % de rabais sur ton prochain achat d'accessoire (1 seule utilisation).",
+      "effet": {
+        "accessory_discount": 0.15,
+        "applies": "next_purchase",
+        "uses": 1,
+        "keep": true
+      }
+    },
+    {
+      "id": "CH42",
       "titre": "Jackpot Dogzy",
       "texte": "Le jackpot de Dogzy Town est à toi : 300 pièces !",
       "effet": {
