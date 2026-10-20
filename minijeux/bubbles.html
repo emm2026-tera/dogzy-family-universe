@@ -49,12 +49,13 @@ canvas{display:block;width:100%;border:1px solid var(--line);border-radius:16px;
   </div>
 </div>
 <div class="hud" style="width:min(96vw,460px)">
+  <div>LEVEL<b id="hLevel">1</b></div>
   <div>SCORE<b id="hScore">0</b></div>
   <div>BULLES RESTANTES<b id="hLeft">100/100</b></div>
   <div>TIRS<b id="hShots">85/85</b></div>
-  <div>CHRONO<b id="hTime">60</b></div><b id="hLevel" style="display:none">1</b>
+  <div>CHRONO<b id="hTime">60</b></div>
 </div>
-<p class="hint">Éclate les grappes de 3+ bulles de la même couleur. Les bulles détachées tombent. Le cœur Dogzy compte 100 bulles et tu as seulement 85 tirs pour toutes les faire tomber !</p>
+<p class="hint" id="hObj">Éclate les grappes de 3+ bulles de la même couleur. Les bulles détachées tombent.</p>
 
 <footer style="margin-top:14px;font-size:12px;color:#bfa55c;text-align:center">© 2026 Sania Labbé (Valkyrie). Tous droits réservés.</footer>
 
@@ -67,16 +68,25 @@ const HERO_SRC = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAU
 const heroImg = new Image(); heroImg.src = HERO_SRC;
 document.getElementById('heroFace').src = HERO_SRC;
 const W = 480, H = 700;
-const R = 19;                       // rayon d'une bulle
-const COLS = 12;                    // colonnes sur les rangées paires
-const ROW_H = R * Math.sqrt(3);     // hauteur d'une rangée (grille hexagonale)
+// ===== niveaux : ?level=N (1 à 5) =====
+const LEVELS = {
+  1:{bubbles:100, shots:85,  time:60, shape:'heart', name:'CŒUR',     R:17},
+  2:{bubbles:150, shots:128, time:60, shape:'paw',   name:'PATTE',    R:14.5},
+  3:{bubbles:200, shots:170, time:60, shape:'crown', name:'COURONNE', R:12.5},
+  4:{bubbles:250, shots:213, time:60, shape:'bone',  name:'OS',       R:11},
+  5:{bubbles:300, shots:255, time:60, shape:'star',  name:'ÉTOILE',   R:10},
+};
+const START_LEVEL = Math.max(1, Math.min(5, parseInt(new URLSearchParams(location.search).get('level'),10) || 1));
+let R = 19;                         // rayon d'une bulle (selon le niveau)
+let COLS = 12;                      // colonnes sur les rangées paires
+let ROW_H = R * Math.sqrt(3);       // hauteur d'une rangée (grille hexagonale)
 const TOP = 56;                     // y du centre de la rangée 0
 const SHOOT_Y = H - 64;             // lanceur
 const DEADLINE = H - 132;           // ligne de danger
-const LEVEL_TIME = {1:60}; const DEFAULT_TIME = 90; // secondes par niveau (configurable)
-const TOTAL_BUBBLES = 100, MAX_SHOTS = 85; // forme fixe : aucune rangée ajoutée
+const DEFAULT_TIME = 60; // secondes (configurable par niveau dans LEVELS)
+let TOTAL_BUBBLES = 100, MAX_SHOTS = 85; // forme fixe : aucune rangée ajoutée
 const SPEED = 10;
-const MAX_ROWS = Math.ceil((DEADLINE - TOP) / ROW_H) + 2; // rangées (vides comprises) jusqu'à la ligne de danger
+let MAX_ROWS = Math.ceil((DEADLINE - TOP) / ROW_H) + 2; // rangées (vides comprises) jusqu'à la ligne de danger
 
 // 6 couleurs vives : rouge, bleu, vert, jaune, violet, rose
 const PALETTES = [['#ff3b3b','#2f7bff','#22d36b','#ffd21f','#a64dff','#ff4fb8']];
@@ -114,40 +124,58 @@ function colorsOnBoard(){
 }
 
 // forme fixe : un cœur Dogzy de exactement 100 bulles, accroché au plafond
-function heartCells(){
-  // on ajuste la taille du cœur pour qu'il contienne ~100 cases pleines (forme remplie, pas un contour)
-  let cand=[];
-  for (let k=0.55;k<1.6;k+=0.01){
-    cand=[];
+// formes Dogzy : u horizontal [-1,1], v vertical (1 = plafond, -1 = bas)
+const SHAPES = {
+  heart:(u,v)=>{ const x=1.2*u, y=1.25*v+0.2; return Math.pow(x*x+y*y-1,3)-x*x*y*y*y < 0; },
+  paw:(u,v)=>{ const e=(cx,cy,rx,ry)=>((u-cx)/rx)**2+((v-cy)/ry)**2<1;
+    return e(0,-0.35,0.62,0.55) || e(-0.62,0.42,0.24,0.42) || e(-0.22,0.7,0.24,0.32) || e(0.22,0.7,0.24,0.32) || e(0.62,0.42,0.24,0.42)
+      || (Math.abs(u)<0.55 && v>-0.1 && v<0.5); },
+  crown:(u,v)=>{ if (Math.abs(u)>0.9 || v<-0.9) return false; if (v<0.1) return true;
+    const t=((u+0.9)/0.45)%1; return v < 0.1 + 0.9*(1-Math.abs(2*t-1)*1.6) || v<0.25; },
+  bone:(u,v)=>{ const c=(cx,cy)=>((u-cx)/0.42)**2+((v-cy)/0.3)**2<1;
+    return c(-0.4,0.72)||c(0.4,0.72)||c(-0.4,-0.72)||c(0.4,-0.72)||(Math.abs(u)<0.42&&Math.abs(v)<0.8); },
+  star:(u,v)=>{ const y=-(v-0.05), a=Math.atan2(y,u)+Math.PI/2, rr=Math.hypot(u,y);
+    const k=Math.PI*2/5, m=((a%k)+k)%k/k; return rr < 0.42+0.58*Math.abs(1-2*m)**1.4 || rr<0.5; },
+};
+// remplit la forme avec exactement `count` bulles, toutes accrochées au plafond
+function shapeCells(shape, count){
+  const inside=SHAPES[shape], key=(r,c)=>r+','+c, Hs=DEADLINE-TOP-2*ROW_H;
+  for (let k=0.35;k<=1.6;k+=0.01){
+    const S=new Set();
     for (let r=0;r<MAX_ROWS;r++) for (let c=0;c<rowLen(r);c++){
       const [x,y]=cellXY(r,c);
-      const u=(x-W/2)/(175*k), v=1.1-(y-TOP)/(150*k);
-      cand.push({r,c,f:Math.pow(u*u+v*v-1,3)-u*u*v*v*v});
+      if (y+R > TOP+Hs) continue;
+      if (inside((x-W/2)/((W/2-R)*k), 1-2*(y-TOP)/(Hs*k))) S.add(key(r,c));
     }
-    if (cand.filter(o=>o.f<0).length>=TOTAL_BUBBLES) break;
+    // remonte la forme pour qu'elle touche le plafond (décalage pair : même parité)
+    let minR=1e9; for (const kk of S) minR=Math.min(minR, +kk.split(',')[0]);
+    if (minR>0 && minR<1e9){ const sh=minR-(minR%2), T=new Set();
+      for (const kk of S){ const [a,b]=kk.split(',').map(Number); T.add(key(a-sh,b)); }
+      S.clear(); for (const kk of T) S.add(kk);
+      if (minR%2){ // rangée impaire en haut : on ajoute les voisines de la rangée 0
+        for (let c=0;c<rowLen(0);c++) if (neighborCells(0,c).filter(([a,b])=>S.has(key(a,b))).length>=2) S.add(key(0,c)); } }
+    // BFS depuis le plafond : un préfixe de BFS est toujours accroché
+    const row0=[]; for (let c=0;c<rowLen(0);c++) if (S.has(key(0,c))) row0.push([0,c]);
+    row0.sort((a,b)=>Math.abs(cellXY(...a)[0]-W/2)-Math.abs(cellXY(...b)[0]-W/2));
+    const seen=new Set(row0.map(a=>key(...a))), q=[...row0];
+    for (let i=0;i<q.length;i++) for (const [a,b] of neighborCells(...q[i])){ const kk=key(a,b); if (S.has(kk)&&!seen.has(kk)){ seen.add(kk); q.push([a,b]); } }
+    if (q.length>=count) return q.slice(0,count).map(a=>key(...a));
   }
-  // priorité aux cases dans le cœur, du haut vers le bas
-  cand.forEach(o=>{ o.f = o.f<0 ? o.r : 1000+o.f; });
-  cand.sort((a,b)=>a.f-b.f);
-  // on prend les meilleures cases connectées au plafond jusqu'à 100
-  const chosen=new Set(), key=(r,c)=>r+','+c;
-  const inShape=new Set(cand.slice(0,140).map(o=>key(o.r,o.c)));
-  const order=cand.slice(0,140);
-  for (const o of order){ if (chosen.size>=TOTAL_BUBBLES) break;
-    if (o.r===0 || neighborCells(o.r,o.c).some(([a,b])=>chosen.has(key(a,b)))) chosen.add(key(o.r,o.c)); }
-  for (let pass=0; chosen.size<TOTAL_BUBBLES && pass<20; pass++)
-    for (const o of cand){ if (chosen.size>=TOTAL_BUBBLES) break; const k=key(o.r,o.c);
-      if (!chosen.has(k) && (o.r===0 || neighborCells(o.r,o.c).some(([a,b])=>chosen.has(key(a,b))))) chosen.add(k); }
-  return chosen;
+  return null;
 }
 function bubblesLeft(){ let n=0; for (const row of grid) for (const v of row) if (v>=0) n++; return n; }
 function newLevel(lv){
+  const L = LEVELS[lv] || LEVELS[1];
+  TOTAL_BUBBLES = L.bubbles; MAX_SHOTS = L.shots;
+  R = L.R; ROW_H = R*Math.sqrt(3); COLS = Math.floor(W/(2*R));
+  MAX_ROWS = Math.ceil((DEADLINE - TOP) / ROW_H) + 2;
   palette = PALETTES[0];
   grid = []; topParity = 0;
   padRows();
-  const cells = heartCells();
+  const cells = shapeCells(L.shape, TOTAL_BUBBLES);
   for (const k of cells){ const [r,c]=k.split(',').map(Number); grid[r][c]=rnd(palette.length); }
-  shots = 0; timeLeft = LEVEL_TIME[lv] || DEFAULT_TIME; lastT = 0;
+  shots = 0; timeLeft = L.time || DEFAULT_TIME;
+  document.getElementById('hObj').innerHTML = `<b>Objectif Level ${lv} (${L.name}) :</b> fais tomber les <b>${TOTAL_BUBBLES}</b> bulles avec <b>${MAX_SHOTS}</b> tirs en <b>${timeLeft}</b> s. Éclate les grappes de 3+ bulles de la même couleur ; les bulles détachées tombent. Les tirs ratés restent collés et s'ajoutent aux bulles restantes.`; lastT = 0;
   const avail = colorsOnBoard();
   current = pick(avail); nextCol = pick(avail);
   aim = -Math.PI/2; proj = null;
@@ -172,7 +200,7 @@ function updateHud(){
   document.getElementById('hLevel').textContent = level;
   document.getElementById('hShots').textContent = (MAX_SHOTS - shots) + '/' + MAX_SHOTS;
   document.getElementById('hTime').textContent = Math.ceil(timeLeft);
-  document.getElementById('hLeft').textContent = bubblesLeft() + '/' + TOTAL_BUBBLES;
+  document.getElementById('hLeft').textContent = bubblesLeft() + ' (départ ' + TOTAL_BUBBLES + ')';
 }
 
 /* ---------- dessin ---------- */
@@ -416,15 +444,15 @@ cv.addEventListener('touchend', e=>{ e.preventDefault(); shoot(); },{passive:fal
 function gameOver(won){
   over=true; window.MJ_RESULT = {won:!!won, score, left:bubblesLeft(), shots};
   document.getElementById('ovTitle').textContent= won ? 'GAGNÉ !' : 'PARTIE TERMINÉE';
-  document.getElementById('ovText').innerHTML= won ? `Score : <b>${score}</b><br>Les 100 bulles sont tombées en ${shots} tirs !`
-    : `Score : <b>${score}</b> — Bulles restantes : ${bubblesLeft()}/100<br>${timeLeft<=0?'Temps écoulé !':shots>=MAX_SHOTS?'Plus de tirs !':'Les bulles ont envahi DogzyTown !'}`;
+  document.getElementById('ovText').innerHTML= won ? `Score : <b>${score}</b><br>Les ${TOTAL_BUBBLES} bulles sont tombées en ${shots} tirs !`
+    : `Score : <b>${score}</b> — Bulles restantes : ${bubblesLeft()}<br>${timeLeft<=0?'Temps écoulé !':shots>=MAX_SHOTS?'Plus de tirs !':'Les bulles ont envahi DogzyTown !'}`;
   document.getElementById('ovBtn').textContent='REJOUER';
   document.getElementById('overlay').classList.remove('hidden');
 }
 function startGame(){
-  score=0; level=1; particles=[]; over=false;
+  score=0; level=START_LEVEL; particles=[]; over=false;
   document.getElementById('overlay').classList.add('hidden');
-  newLevel(1); running=true;
+  newLevel(level); running=true;
 }
 // Intro de Bubbles : mettre ici le fichier d'animation de Sania (ex. 'img/intro-bubbles.mp4') pour remplacer l'intro standard.
 const BUBBLES_INTRO = 'img/bubbles-intro.mp4';
@@ -432,8 +460,8 @@ MJIntro.decor();
 document.getElementById('ovBtn').addEventListener('click', ()=>{ document.getElementById('overlay').classList.add('hidden'); MJIntro.play({titre:'DOGZY BUBBLES', media:BUBBLES_INTRO, onDone:startGame}); });
 
 // écran d'accueil (la grille doit exister avant le premier dessin)
-score=0; level=1; particles=[]; over=false; running=false;
-newLevel(1);
+score=0; level=START_LEVEL; particles=[]; over=false; running=false;
+newLevel(level);
 draw();
 requestAnimationFrame(loop);
 </script>
