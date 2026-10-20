@@ -364,6 +364,24 @@
       "effet": {
         "no_commerce_purchase_turns": 3
       }
+    },
+    {
+      "id": "PE44",
+      "titre": "Incendie au commerce",
+      "texte": "Un incendie a ravagé ton commerce ! Paie 250 tokens à la Banque pour rembourser le prêt de réparation.",
+      "effet": {
+        "coins": -250,
+        "to": "bank"
+      }
+    },
+    {
+      "id": "PE45",
+      "titre": "Grabuge au commerce",
+      "texte": "Du grabuge a tout brisé dans ton commerce ! Paie 200 tokens à la Banque pour rembourser le prêt de réparation.",
+      "effet": {
+        "coins": -200,
+        "to": "bank"
+      }
     }
   ]
 }
