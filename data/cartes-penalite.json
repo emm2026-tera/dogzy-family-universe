@@ -400,6 +400,16 @@
         "coins": -250,
         "to": "bank"
       }
+    },
+    {
+      "id": "PE48",
+      "titre": "Taxe double",
+      "texte": "Pendant 2 tours, si tu passes sur un commerce, tu dois payer le double de la taxe au propriétaire.",
+      "effet": {
+        "commerce_tax_multiplier": 2,
+        "duration_turns": 2,
+        "to": "commerce_owner"
+      }
     }
   ]
 }
