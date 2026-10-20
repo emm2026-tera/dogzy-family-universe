@@ -368,7 +368,7 @@
     {
       "id": "PE44",
       "titre": "Incendie au commerce",
-      "texte": "Un incendie a ravagé ton commerce ! Paie 250 tokens à la Banque pour rembourser le prêt de réparation.",
+      "texte": "Un incendie a ravagé ton commerce ! Rembourse à la Banque les 250 tokens de frais de réparation de ton commerce.",
       "effet": {
         "coins": -250,
         "to": "bank"
@@ -377,7 +377,7 @@
     {
       "id": "PE45",
       "titre": "Grabuge au commerce",
-      "texte": "Du grabuge a tout brisé dans ton commerce ! Paie 200 tokens à la Banque pour rembourser le prêt de réparation.",
+      "texte": "Du grabuge a tout brisé dans ton commerce ! Rembourse à la Banque les 200 tokens de frais de réparation de ton commerce.",
       "effet": {
         "coins": -200,
         "to": "bank"
