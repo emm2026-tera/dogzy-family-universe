@@ -16,7 +16,7 @@
     {
       "id": "PE02",
       "titre": "Amende de flânage",
-      "texte": "Tu traînais devant le dépanneur. Amende : 50 pièces.",
+      "texte": "Tu traînais devant le dépanneur. Amende : 50 tokens.",
       "effet": {
         "coins": -50
       }
@@ -40,7 +40,7 @@
     {
       "id": "PE05",
       "titre": "Retour à la Banque",
-      "texte": "Va directement à la Banque et paie 40 pièces de frais.",
+      "texte": "Va directement à la Banque et paie 40 tokens de frais.",
       "effet": {
         "goto": "banque",
         "coins": -40
@@ -57,7 +57,7 @@
     {
       "id": "PE07",
       "titre": "Facture de cell",
-      "texte": "Tu as dépassé ton forfait de données. Paie 100 pièces.",
+      "texte": "Tu as dépassé ton forfait de données. Paie 100 tokens.",
       "effet": {
         "coins": -100
       }
@@ -73,7 +73,7 @@
     {
       "id": "PE09",
       "titre": "Vitre cassée",
-      "texte": "Ton ballon a fracassé la vitre du voisin. Paie 70 pièces.",
+      "texte": "Ton ballon a fracassé la vitre du voisin. Paie 70 tokens.",
       "effet": {
         "coins": -70
       }
@@ -81,7 +81,7 @@
     {
       "id": "PE10",
       "titre": "Tournée générale",
-      "texte": "Tu paies la poutine à tout le monde : 20 pièces à chaque joueur.",
+      "texte": "Tu paies la poutine à tout le monde : 20 tokens à chaque joueur.",
       "effet": {
         "pay_each": 20
       }
@@ -89,7 +89,7 @@
     {
       "id": "PE11",
       "titre": "Retenue du samedi",
-      "texte": "Retenue ! Passe ton tour et paie 30 pièces.",
+      "texte": "Retenue ! Passe ton tour et paie 30 tokens.",
       "effet": {
         "skip_turn": 1,
         "coins": -30
@@ -107,7 +107,7 @@
     {
       "id": "PE13",
       "titre": "Pickpocket Philzy",
-      "texte": "Philzy te vole 60 pièces. Classique.",
+      "texte": "Philzy te vole 60 tokens. Classique.",
       "effet": {
         "coins": -60
       }
@@ -115,7 +115,7 @@
     {
       "id": "PE14",
       "titre": "Taxe municipale",
-      "texte": "Paie 10 pièces par bâtiment que tu possèdes.",
+      "texte": "Paie 10 tokens par bâtiment que tu possèdes.",
       "effet": {
         "pay_per_building": 10
       }
@@ -132,7 +132,7 @@
     {
       "id": "PE16",
       "titre": "Selfie interdit",
-      "texte": "Selfie dans un endroit interdit. Amende : 40 pièces.",
+      "texte": "Selfie dans un endroit interdit. Amende : 40 tokens.",
       "effet": {
         "coins": -40
       }
@@ -166,7 +166,7 @@
     {
       "id": "PE20",
       "titre": "Pénalité de retard",
-      "texte": "Rendu de devoir en retard : -25 pièces et recule de 1 case.",
+      "texte": "Rendu de devoir en retard : -25 tokens et recule de 1 case.",
       "effet": {
         "coins": -25,
         "move": -1
@@ -175,7 +175,7 @@
     {
       "id": "PE21",
       "titre": "Donne au plus pauvre",
-      "texte": "Brandzy te convainc d'être généreux : donne 80 pièces au joueur le plus pauvre.",
+      "texte": "Brandzy te convainc d'être généreux : donne 80 tokens au joueur le plus pauvre.",
       "effet": {
         "give_poorest": 80
       }
@@ -191,7 +191,7 @@
     {
       "id": "PE23",
       "titre": "Duel obligatoire",
-      "texte": "Le joueur de ton choix te défie : va au Duel. Si tu perds, paie 50 pièces.",
+      "texte": "Le joueur de ton choix te défie : va au Duel. Si tu perds, paie 50 tokens.",
       "effet": {
         "goto": "duel",
         "lose_coins": 50
@@ -209,7 +209,7 @@
     {
       "id": "PE25",
       "titre": "Frais de livraison",
-      "texte": "Ta commande en ligne arrive avec des frais : 45 pièces.",
+      "texte": "Ta commande en ligne arrive avec des frais : 45 tokens.",
       "effet": {
         "coins": -45
       }
@@ -233,7 +233,7 @@
     {
       "id": "PE28",
       "titre": "Taxe de luxe",
-      "texte": "Paie 15 % de tes pièces à la Banque.",
+      "texte": "Paie 15 % de tes tokens à la Banque.",
       "effet": {
         "pay_percent": 0.15
       }
@@ -258,7 +258,7 @@
     {
       "id": "PE31",
       "titre": "Facture du vétérinaire",
-      "texte": "Ton chien a mangé une chaussette. Vétérinaire : 90 pièces.",
+      "texte": "Ton chien a mangé une chaussette. Vétérinaire : 90 tokens.",
       "effet": {
         "coins": -90
       }
@@ -274,7 +274,7 @@
     {
       "id": "PE33",
       "titre": "Pari perdu",
-      "texte": "Tu as parié contre Kelzy au quiz. Paie au joueur à ta gauche 50 pièces.",
+      "texte": "Tu as parié contre Kelzy au quiz. Paie au joueur à ta gauche 50 tokens.",
       "effet": {
         "pay_player": "left_player",
         "coins": 50
@@ -292,7 +292,7 @@
     {
       "id": "PE35",
       "titre": "Amende de bruit",
-      "texte": "Ton party était trop bruyant. Paie 60 pièces.",
+      "texte": "Ton party était trop bruyant. Paie 60 tokens.",
       "effet": {
         "coins": -60
       }
@@ -308,7 +308,7 @@
     {
       "id": "PE37",
       "titre": "Rénovation forcée",
-      "texte": "Rénove un bâtiment : paie 75 pièces.",
+      "texte": "Rénove un bâtiment : paie 75 tokens.",
       "effet": {
         "coins": -75
       }
@@ -316,7 +316,7 @@
     {
       "id": "PE38",
       "titre": "Perte de portefeuille",
-      "texte": "Tu as perdu ton portefeuille. Perds la moitié de tes pièces (max 200).",
+      "texte": "Tu as perdu ton portefeuille. Perds la moitié de tes tokens (max 200).",
       "effet": {
         "lose_half_coins": 1,
         "max": 200
@@ -325,7 +325,7 @@
     {
       "id": "PE39",
       "titre": "Mauvaise réponse",
-      "texte": "Pige une carte Quiz. Mauvaise réponse = -60 pièces.",
+      "texte": "Pige une carte Quiz. Mauvaise réponse = -60 tokens.",
       "effet": {
         "draw": "quiz",
         "fail_coins": -60

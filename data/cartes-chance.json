@@ -23,7 +23,7 @@
     {
       "id": "CH03",
       "titre": "Attaque catapulte",
-      "texte": "Charge la catapulte ! Vise le village d'un adversaire : s'il a un bouclier, il le perd. Sinon, démolis un bâtiment ou vole 150 pièces.",
+      "texte": "Charge la catapulte ! Vise le village d'un adversaire : s'il a un bouclier, il le perd. Sinon, démolis un bâtiment ou vole 150 tokens.",
       "effet": {
         "attack": 1,
         "steal": 150
@@ -64,7 +64,7 @@
     {
       "id": "CH08",
       "titre": "Téléphone tombé",
-      "texte": "Ton cell est tombé dans la toilette. Réparation : paie 80 pièces.",
+      "texte": "Ton cell est tombé dans la toilette. Réparation : paie 80 tokens.",
       "effet": {
         "coins": -80
       }
@@ -88,7 +88,7 @@
     {
       "id": "CH11",
       "titre": "Direction la Banque",
-      "texte": "Va directement à la Banque au centre et touche 50 pièces.",
+      "texte": "Va directement à la Banque au centre et touche 50 tokens.",
       "effet": {
         "goto": "banque",
         "coins": 50
@@ -97,7 +97,7 @@
     {
       "id": "CH12",
       "titre": "Emprunt de Philzy",
-      "texte": "Philzy « emprunte » 50 pièces à chaque joueur pour toi. Il ne les rendra jamais.",
+      "texte": "Philzy « emprunte » 50 tokens à chaque joueur pour toi. Il ne les rendra jamais.",
       "effet": {
         "steal_each": 50
       }
@@ -113,7 +113,7 @@
     {
       "id": "CH14",
       "titre": "Anniversaire",
-      "texte": "C'est ta fête ! Chaque joueur te donne 30 pièces (même s'ils ont oublié).",
+      "texte": "C'est ta fête ! Chaque joueur te donne 30 tokens (même s'ils ont oublié).",
       "effet": {
         "collect_each": 30
       }
@@ -121,7 +121,7 @@
     {
       "id": "CH15",
       "titre": "Job d'été",
-      "texte": "Tu tonds le gazon chez la voisine de Jouzy. Gagne 120 pièces.",
+      "texte": "Tu tonds le gazon chez la voisine de Jouzy. Gagne 120 tokens.",
       "effet": {
         "coins": 120
       }
@@ -137,7 +137,7 @@
     {
       "id": "CH17",
       "titre": "Catapulte de Brandzy",
-      "texte": "Brandzy lance une catapulte pour toi sur le joueur de ton choix. Bouclier = bloqué, sinon vole 100 pièces.",
+      "texte": "Brandzy lance une catapulte pour toi sur le joueur de ton choix. Bouclier = bloqué, sinon vole 100 tokens.",
       "effet": {
         "attack": 1,
         "steal": 100
@@ -146,7 +146,7 @@
     {
       "id": "CH18",
       "titre": "Trouvaille au parc",
-      "texte": "Un billet traîne sous un banc du parc. Gagne 40 pièces.",
+      "texte": "Un billet traîne sous un banc du parc. Gagne 40 tokens.",
       "effet": {
         "coins": 40
       }
@@ -170,7 +170,7 @@
     {
       "id": "CH21",
       "titre": "Selfie raté",
-      "texte": "Ton selfie avec Waltzy a 2 likes. Sois humble : donne 20 pièces à la Banque.",
+      "texte": "Ton selfie avec Waltzy a 2 likes. Sois humble : donne 20 tokens à la Banque.",
       "effet": {
         "coins": -20
       }
@@ -185,8 +185,8 @@
     },
     {
       "id": "CH23",
-      "titre": "Lâcher de pièces",
-      "texte": "Une pluie de pièces tombe sur Dogzy Town ! Tout le monde gagne 50, toi 100.",
+      "titre": "Lâcher de tokens",
+      "texte": "Une pluie de tokens tombe sur Dogzy Town ! Tout le monde gagne 50, toi 100.",
       "effet": {
         "coins": 100,
         "all_coins": 50
@@ -195,7 +195,7 @@
     {
       "id": "CH24",
       "titre": "Wi-Fi gratuit",
-      "texte": "Tu trouves le mot de passe Wi-Fi du voisin. Économise 60 pièces.",
+      "texte": "Tu trouves le mot de passe Wi-Fi du voisin. Économise 60 tokens.",
       "effet": {
         "coins": 60
       }
@@ -228,7 +228,7 @@
     {
       "id": "CH28",
       "titre": "Coiffure ratée",
-      "texte": "Philzy t'a coupé les cheveux. Achète une tuque : -50 pièces.",
+      "texte": "Philzy t'a coupé les cheveux. Achète une tuque : -50 tokens.",
       "effet": {
         "coins": -50
       }
@@ -236,7 +236,7 @@
     {
       "id": "CH29",
       "titre": "Vol éclair",
-      "texte": "Vole 80 pièces au joueur le plus riche.",
+      "texte": "Vole 80 tokens au joueur le plus riche.",
       "effet": {
         "steal_richest": 80
       }
@@ -260,7 +260,7 @@
     {
       "id": "CH32",
       "titre": "Mauvais pari",
-      "texte": "Tu as parié que Waltzy ne tomberait pas. Il est tombé. Paie 40 pièces.",
+      "texte": "Tu as parié que Waltzy ne tomberait pas. Il est tombé. Paie 40 tokens.",
       "effet": {
         "coins": -40
       }
@@ -268,7 +268,7 @@
     {
       "id": "CH33",
       "titre": "Influenceur du jour",
-      "texte": "Tu deviens influenceur pour 1 tour : reçois 25 pièces de chaque joueur.",
+      "texte": "Tu deviens influenceur pour 1 tour : reçois 25 tokens de chaque joueur.",
       "effet": {
         "collect_each": 25
       }
@@ -284,7 +284,7 @@
     {
       "id": "CH35",
       "titre": "Carte cadeau",
-      "texte": "Jouzy t'offre une carte cadeau. Gagne 75 pièces.",
+      "texte": "Jouzy t'offre une carte cadeau. Gagne 75 tokens.",
       "effet": {
         "coins": 75
       }
@@ -292,7 +292,7 @@
     {
       "id": "CH36",
       "titre": "Bouclier troué",
-      "texte": "Ton bouclier a un trou. Si tu en as un, perds-le. Sinon, gagne 30 pièces.",
+      "texte": "Ton bouclier a un trou. Si tu en as un, perds-le. Sinon, gagne 30 tokens.",
       "effet": {
         "lose_shield": 1,
         "else_coins": 30
@@ -301,7 +301,7 @@
     {
       "id": "CH37",
       "titre": "Chien perdu",
-      "texte": "Tu ramènes le chien perdu du maire. Récompense : 150 pièces !",
+      "texte": "Tu ramènes le chien perdu du maire. Récompense : 150 tokens !",
       "effet": {
         "coins": 150
       }
@@ -352,7 +352,7 @@
     {
       "id": "CH42",
       "titre": "Jackpot Dogzy",
-      "texte": "Le jackpot de Dogzy Town est à toi : 300 pièces !",
+      "texte": "Le jackpot de Dogzy Town est à toi : 300 tokens !",
       "effet": {
         "coins": 300
       }
@@ -382,6 +382,17 @@
       "texte": "Tu viens de gagner à la loto ! Reçois 500 tokens.",
       "effet": {
         "coins": 500
+      }
+    },
+    {
+      "id": "CH46",
+      "titre": "15 % de rabais sur ton prochain commerce",
+      "texte": "Garde cette carte : 15 % de rabais sur l'achat de ton prochain commerce (1 seule utilisation).",
+      "effet": {
+        "commerce_discount": 0.15,
+        "applies": "next_purchase",
+        "uses": 1,
+        "keep": true
       }
     }
   ]
