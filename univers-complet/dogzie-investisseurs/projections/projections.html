@@ -1,0 +1,222 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Dogzy Universe — Projections de revenus</title><style>
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#d4af37;--gold2:#f3d77a;--gold3:#9c7a1e;--ink:#0a0a0a;--soft:#cfc6ad}
+body{background:#000;font-family:'Montserrat',sans-serif;color:var(--soft);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;
+ background:radial-gradient(ellipse at 50% -10%,#2a2108 0%,#0b0905 45%,#000 80%);padding:20mm 18mm 22mm}
+.page:last-child{page-break-after:auto}
+.frame{position:absolute;inset:8mm;border:1px solid rgba(212,175,55,.45);pointer-events:none}
+.frame:after{content:"";position:absolute;inset:2.2mm;border:.5px solid rgba(212,175,55,.2)}
+.gold{color:#e2bf57;text-shadow:0 0 18px rgba(212,175,55,.25)}
+h1,h2,h3{font-family:'Cinzel','Cormorant SC','Cormorant Garamond',serif;font-weight:700;letter-spacing:.06em}
+h2{font-size:27pt;margin-bottom:2mm}
+.kicker{font-size:8pt;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:3mm}
+.rule{height:1px;width:38mm;background:linear-gradient(90deg,var(--gold),transparent);margin:4mm 0 9mm}
+p{font-size:11pt;line-height:1.65;margin-bottom:3.6mm}
+strong{color:#f1e3b3;font-weight:600}
+.foot{position:absolute;bottom:12mm;left:18mm;right:18mm;display:flex;justify-content:space-between;font-size:7.5pt;letter-spacing:.2em;text-transform:uppercase;color:var(--gold3)}
+.card{border:1px solid rgba(212,175,55,.4);background:linear-gradient(160deg,rgba(212,175,55,.09),rgba(0,0,0,.2));border-radius:3mm;padding:7mm}
+.card h3{font-size:14pt;margin-bottom:1mm}
+.card .tag{font-size:7.5pt;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:3mm}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+ul{list-style:none}
+li{font-size:10.6pt;line-height:1.55;padding-left:6mm;position:relative;margin-bottom:2mm}
+li:before{content:"";position:absolute;left:0;top:2.1mm;width:2.2mm;height:2.2mm;transform:rotate(45deg);background:var(--gold)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin:8mm 0 10mm}
+.stat{text-align:center;border-top:1px solid var(--gold3);padding-top:3mm}
+.stat b{display:block;font-family:'Cinzel',serif;font-size:34pt}
+.stat span{font-size:7.5pt;letter-spacing:.15em;text-transform:uppercase}
+.note{font-size:8.3pt;color:#9d937a;line-height:1.5;font-style:italic}
+.band{border-left:2px solid var(--gold);padding:4mm 0 4mm 6mm;margin:8mm 0;background:linear-gradient(90deg,rgba(212,175,55,.08),transparent)}
+/* cover */
+.cover{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-top:10mm}
+.cover h1{font-size:44pt;line-height:1.05;letter-spacing:.08em}
+.cover .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21pt;color:var(--gold2);margin-top:7mm}
+.cover .meta{margin-top:16mm;font-size:9pt;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.cover .site{margin-top:3mm;font-size:10pt;letter-spacing:.12em;color:var(--soft)}
+.halo{position:absolute;width:150mm;height:150mm;border-radius:50%;left:30mm;top:40mm;background:radial-gradient(circle,rgba(212,175,55,.18),transparent 65%)}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:2.5mm;margin:5mm 0 7mm}
+.step{border:1px solid rgba(212,175,55,.4);border-radius:2mm;padding:5mm 3.5mm;font-size:9.2pt;min-height:52mm;line-height:1.4;position:relative;background:rgba(212,175,55,.05)}
+.step b{display:block;font-family:'Cinzel',serif;font-size:15pt;color:var(--gold);margin-bottom:1mm}
+.step em{display:block;font-style:normal;font-size:6.8pt;letter-spacing:.18em;text-transform:uppercase;color:var(--gold3);margin-bottom:1.5mm}
+.status{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5mm}
+.pill{display:inline-block;white-space:nowrap;font-size:7pt;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--gold);color:var(--gold);padding:1mm 3mm;border-radius:10mm;margin-bottom:3mm}
+.ask{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;margin:6mm 0}
+.ask .card{text-align:center;padding:7mm 5mm}
+.ask .num{font-family:'Cinzel',serif;font-size:30pt}
+a{color:var(--gold2);text-decoration:none}
+
+.tbl{width:100%;border-collapse:collapse;font-size:8.6pt;margin:3mm 0 4mm}
+.tbl th{font-size:6.8pt;letter-spacing:.14em;text-transform:uppercase;color:#0a0a0a;background:linear-gradient(180deg,#f3d77a,#c9a22f);padding:2mm 1.6mm;text-align:right;font-weight:700}
+.tbl th:first-child,.tbl td:first-child{text-align:left}
+.tbl td{padding:1.15mm 1.6mm;border-bottom:.5px solid rgba(212,175,55,.22);text-align:right;color:#e6dcc0;white-space:nowrap}
+.tbl td:first-child{white-space:normal}
+.tbl tr.sub td{color:#a89e84;font-size:7.8pt}
+.tbl tr.tot td{color:#f1e3b3;font-weight:600;border-top:1px solid rgba(212,175,55,.5)}
+.tbl tr.big td{color:#f3d77a;font-weight:700;background:rgba(212,175,55,.10);font-size:9.2pt}
+.tbl tr.ded td{color:#c9b98e}
+.tbl th.grp{text-align:center;background:none;color:#e2bf57;border-bottom:1px solid #d4af37;font-size:7pt}
+.tbl td.sep,.tbl th.sep{border-left:1px solid rgba(212,175,55,.35)}
+.nine{display:grid;grid-template-columns:30mm repeat(3,1fr);gap:2.5mm;margin:4mm 0 6mm}
+.nine .h{font-size:7pt;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-align:center;align-self:end;padding-bottom:1mm}
+.nine .r{font-family:'Cinzel','Cormorant SC',serif;font-size:10.5pt;color:#f1e3b3;align-self:center;line-height:1.2}
+.nine .r small{display:block;font-family:Montserrat;font-size:6.6pt;letter-spacing:.12em;color:#9d937a;text-transform:uppercase}
+.nine .c{border:1px solid rgba(212,175,55,.4);border-radius:2mm;background:linear-gradient(160deg,rgba(212,175,55,.10),rgba(0,0,0,.25));text-align:center;padding:3.5mm 2mm}
+.nine .c b{display:block;font-family:'Cinzel','Cormorant SC',serif;font-size:19pt;color:#e9c862;text-shadow:0 0 14px rgba(212,175,55,.3)}
+.nine .c span{font-size:7.6pt;color:#b8ad90}
+.read{border:1px solid var(--gold);border-radius:3mm;padding:5mm 6mm;background:rgba(212,175,55,.06)}
+.read h3{font-size:12.5pt;color:#e2bf57;margin-bottom:2mm}
+.read li{font-size:9.2pt;margin-bottom:1.3mm}
+.illu{position:absolute;top:12mm;right:16mm;font-size:6.5pt;letter-spacing:.25em;text-transform:uppercase;color:#0a0a0a;background:#d4af37;padding:1mm 3mm;border-radius:1mm}
+.small li{font-size:9pt;line-height:1.45;margin-bottom:1.4mm}
+.small p{font-size:9.6pt;line-height:1.55}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
+.cols3 .card{padding:5mm}
+.cols3 .card h3{font-size:12pt}
+.kv{font-size:8.8pt;line-height:1.5}
+.kv div{display:flex;justify-content:space-between;border-bottom:.5px dotted rgba(212,175,55,.3);padding:.8mm 0}
+.kv div b{color:#f1e3b3;font-weight:600;white-space:nowrap;padding-left:2mm}
+.legend{display:flex;gap:4mm;flex-wrap:wrap;font-size:7.5pt;margin:1mm 0 3mm}
+.legend i{display:inline-block;width:3mm;height:3mm;margin-right:1.2mm;vertical-align:-.4mm}
+h2{font-size:23pt}
+.hyp td{padding:.9mm 1.6mm!important;font-size:8.1pt}
+.hyp td:first-child{width:52%}
+.kv{font-size:8.2pt;line-height:1.35}
+</style></head><body><svg width="0" height="0" style="position:absolute"><defs>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6dc85"/><stop offset=".55" stop-color="#d4af37"/><stop offset="1" stop-color="#8f6d17"/></linearGradient>
+<symbol id="paw" viewBox="0 0 100 100"><g fill="url(#g)">
+<ellipse cx="22" cy="42" rx="9.5" ry="12.5" transform="rotate(-22 22 42)"/>
+<ellipse cx="39" cy="24" rx="10" ry="13.5" transform="rotate(-8 39 24)"/>
+<ellipse cx="61" cy="24" rx="10" ry="13.5" transform="rotate(8 61 24)"/>
+<ellipse cx="78" cy="42" rx="9.5" ry="12.5" transform="rotate(22 78 42)"/>
+<path d="M50 48c-11 0-17 9-22 17-5 8-9 13-6 20 3 7 11 8 18 6 4-1 7-2 10-2s6 1 10 2c7 2 15 1 18-6 3-7-1-12-6-20-5-8-11-17-22-17z"/></g></symbol>
+</defs></svg><section class="page"><div class="frame"></div><div class="illu">Illustratif · non audité · pas une garantie</div>
+<div class="kicker">Projections · Vue d'ensemble</div><h2 class="gold">Dogzy Universe : ce que l'univers pourrait rapporter</h2><div class="rule" style="margin:3mm 0 6mm"></div>
+
+<p class="small" style="font-size:10.2pt">Un seul univers, cinq sources de revenus : la console <strong>Dogzie Town</strong>, la couche blockchain <strong>Dogzy Universe</strong> (avec le jeton <strong>Dogzy</strong>), l'art physique de la <strong>Galerie Valkyrie</strong>, la marchandise et les lieux thématiques ajoutés avec le temps. On les calcule un par un, puis on les additionne. Tout est en <strong>dollars canadiens</strong>.</p>
+<div class="nine"><div></div><div class="h">Prudent</div><div class="h">Normal</div><div class="h">Si ça pogne vraiment</div><div class="r">An 1<small>12 premiers mois</small></div><div class="c"><b>128 k$</b><span>brut · net 93 k$</span></div><div class="c"><b>571 k$</b><span>brut · net 402 k$</span></div><div class="c"><b>2,33 M$</b><span>brut · net 1,63 M$</span></div><div class="r">Cumul 3 ans<small>An 1 à An 3</small></div><div class="c"><b>494 k$</b><span>brut · net 353 k$</span></div><div class="c"><b>2,63 M$</b><span>brut · net 1,85 M$</span></div><div class="c"><b>13,93 M$</b><span>brut · net 9,85 M$</span></div><div class="r">Cumul 5 ans<small>An 1 à An 5</small></div><div class="c"><b>948 k$</b><span>brut · net 678 k$</span></div><div class="c"><b>5,83 M$</b><span>brut · net 4,14 M$</span></div><div class="c"><b>35,12 M$</b><span>brut · net 25,25 M$</span></div></div>
+<p class="note" style="margin:-3mm 0 5mm">Brut = total des ventes. Net = après la part PlayStation (30 %), les commissions de galeries, le coût de la marchandise et les redevances des influenceurs (5 %). Le net est calculé <u>avant</u> les salaires, le développement, les serveurs et les impôts : ce n'est pas un profit.</p>
+<div class="read"><h3>Comment lire ces chiffres</h3><ul>
+<li><strong>Scénarios illustratifs</strong>, préparés pour la discussion avec des investisseurs. Ce n'est ni une prévision, ni une promesse, ni un audit.</li>
+<li>Les trois scénarios diffèrent par le <strong>nombre de joueurs</strong> et les <strong>taux de conversion</strong>. Les prix restent les mêmes partout : pas de multiplicateur magique.</li>
+<li>Les contrats intelligents sont <strong>rédigés, mais pas déployés ni audités</strong>. Le jeton Dogzy <strong>n'est inscrit sur aucune plateforme d'échange</strong>. Aucune valeur de jeton n'est projetée.</li>
+<li>Les volets blockchain exigent un déploiement, un audit de sécurité indépendant, une validation juridique (AMF / ACVM) et l'accord des règles de Sony.</li>
+<li>Les <strong>500 000 $ à 550 000 $</strong> recherchés pour la Phase 2 sont un <strong>investissement</strong>, pas un revenu. Ils ne figurent dans aucun total.</li>
+<li>An 1 = les 12 premiers mois après le lancement commercial de Dogzie Town.</li></ul></div>
+<div class="foot"><span>Dogzy Universe · Projections de revenus ($ CA)</span><span>P1</span></div></section><section class="page"><div class="frame"></div><div class="illu">Illustratif · non audité · pas une garantie</div>
+<div class="kicker">Projections · Méthode</div><h2 class="gold">Les hypothèses, en clair</h2><div class="rule" style="margin:3mm 0 6mm"></div>
+<p class="small">Ce qui change d'un scénario à l'autre : <strong>combien de joueurs</strong> arrivent, <strong>combien restent</strong> et <strong>quelle part achète</strong>. Chaque chiffre est modifiable dans le fichier Excel (onglet « Hypothèses »).</p>
+<table class="tbl hyp"><tr><th>Hypothèse</th><th>Prudent</th><th>Normal</th><th>Si ça pogne vraiment</th></tr>
+<tr><td>Nouveaux joueurs (copies vendues) — An 1</td><td>3 000</td><td>15 000</td><td>60 000</td></tr>
+<tr><td>Nouveaux joueurs — An 3</td><td>5 000</td><td>30 000</td><td>160 000</td></tr>
+<tr><td>Nouveaux joueurs — An 5</td><td>6 000</td><td>40 000</td><td>230 000</td></tr>
+<tr class="sub"><td>Copies vendues cumulées sur 5 ans</td><td>23 000</td><td>142 000</td><td>760 000</td></tr>
+<tr><td>Rétention : joueurs qui restent actifs l'année suivante</td><td>35 %</td><td>45 %</td><td>55 %</td></tr>
+<tr class="tot"><td>Joueurs actifs — An 1 / An 3 / An 5</td><td>3 000 / 6 768 / 8 579</td><td>15 000 / 42 938 / 64 445</td><td>60 000 / 238 650 / 412 192</td></tr>
+<tr><td>Achètent l'extension (DLC) de l'année</td><td>15 %</td><td>25 %</td><td>35 %</td></tr>
+<tr><td>Achètent la passe compétitive multijoueur</td><td>3 %</td><td>6 %</td><td>10 %</td></tr>
+<tr><td>Achètent des accessoires en Dogzy (portefeuille requis)</td><td>3 %</td><td>6 %</td><td>10 %</td></tr>
+<tr><td>Achètent un NFT personnage dans l'année</td><td>1 %</td><td>2 %</td><td>3 %</td></tr>
+<tr><td>Acheteurs NFT venus du milieu crypto (hors joueurs) / an</td><td>150</td><td>300</td><td>600</td></tr>
+<tr><td>Lots NFT bâtiments / carte vendus par année</td><td>10</td><td>25</td><td>45</td></tr>
+<tr><td>Éditions Valkyrie vendues par collection mensuelle (An 1) · croissance</td><td>10 · +10 %/an</td><td>25 · +20 %/an</td><td>60 · +30 %/an</td></tr>
+<tr><td>Toiles physiques vendues (An 1) · croissance</td><td>10 · +10 %/an</td><td>18 · +15 %/an</td><td>30 · +25 %/an</td></tr>
+<tr><td>Achètent de la marchandise</td><td>1 %</td><td>2 %</td><td>3 %</td></tr>
+<tr><td>Achètent la passe d'un lieu thématique · commandites par lieu</td><td>2 % · 0 $</td><td>4 % · 10 k$</td><td>6 % · 40 k$</td></tr>
+<tr><td>Revente NFT secondaire / an (% valeur primaire cumulée)</td><td>25 %</td><td>40 %</td><td>60 %</td></tr>
+<tr><td>Détenteurs qui exportent des jetons vers leur portefeuille</td><td>30 %</td><td>40 %</td><td>50 %</td></tr></table>
+<div class="band"><p style="font-size:9.4pt;margin:0"><strong>Pourquoi ces écarts ?</strong> Prudent = un jeu indépendant qui trouve un petit public fidèle. Normal = un succès indépendant solide, porté par les 5 influenceurs. « Si ça pogne vraiment » = l'univers devient viral : beaucoup plus de joueurs, qui restent plus longtemps et achètent plus souvent. Les prix ne changent pas.</p></div>
+<div class="foot"><span>Dogzy Universe · Projections de revenus ($ CA)</span><span>P2</span></div></section><section class="page"><div class="frame"></div><div class="illu">Illustratif · non audité · pas une garantie</div>
+<div class="kicker">Projections · Méthode</div><h2 class="gold">Prix, taux et déductions</h2><div class="rule" style="margin:3mm 0 6mm"></div>
+<p class="small">Les prix sont les mêmes dans les trois scénarios. Seuls les volumes changent. Voici la méthode, en quatre étapes.</p><div class="flow" style="grid-template-columns:repeat(4,1fr)">
+<div class="step" style="min-height:34mm"><em>Étape 1</em><b>Joueurs</b>Copies vendues chaque année, puis joueurs actifs (rétention).</div>
+<div class="step" style="min-height:34mm"><em>Étape 2</em><b>Achats</b>Joueurs actifs × taux de conversion × prix, volet par volet.</div>
+<div class="step" style="min-height:34mm"><em>Étape 3</em><b>Total brut</b>Somme des volets A à E, en $ CA.</div>
+<div class="step" style="min-height:34mm"><em>Étape 4</em><b>Net</b>Moins PlayStation, galeries, coût marchandise et influenceurs.</div></div><div class="grid2" style="gap:5mm">
+<div class="card" style="padding:5mm"><div class="tag">Prix · identiques dans les 3 scénarios</div><div class="kv">
+<div>Jeu (prix moyen réalisé, soldes incluses; affiché ~29,99 $)<b>24,99 $</b></div>
+<div>Extension (5 prévues, 1 par année)<b>9,99 $</b></div>
+<div>Passe compétitive (duel 2 joueurs, camps opposés)<b>7,99 $</b></div>
+<div>Accessoires : dépense annuelle par acheteur (en Dogzy)<b>30 $</b></div>
+<div>NFT personnage (143 personnages)<b>75 $</b></div>
+<div>Lot NFT bâtiment (46 bâtiments × 5 éd. = 230)<b>350 $</b></div>
+<div>Édition NFT Valkyrie (12 collections / an)<b>100 $</b></div>
+<div>Toile physique (moyenne, à confirmer)<b>1 500 $</b></div>
+<div>Panier marchandise · passe de lieu<b>40 $ · 12 $</b></div></div></div>
+<div class="card" style="padding:5mm"><div class="tag">Taux et déductions</div><div class="kv">
+<div>Part PlayStation (jeu, DLC, passe en numérique)<b>30 %</b></div>
+<div>Redevances influenceurs (5 × 1 % à vie, sur le brut total)<b>5 %</b></div>
+<div>Commission galeries / plateformes sur toiles<b>30 %</b></div>
+<div>Coût de production marchandise<b>55 %</b></div>
+<div>Redevance sur reventes NFT secondaires<b>5 %</b></div>
+<div>Frais sur export de jetons (valeur moy. 20 $ / an)<b>2 %</b></div>
+<div>Frais sur revente d'accessoires (20 % des ventes)<b>2,5 %</b></div>
+<div>Lieux thématiques actifs (An 3 / 4 / 5)<b>1 / 2 / 3</b></div></div>
+<p class="note" style="margin-top:3mm">Lieux : croisière (An 3), événements calqués sur le sport (An 4), casino comme <u>lieu NFT</u> (An 5) — spectacles et cosmétiques, <strong>aucun jeu d'argent</strong>.</p></div></div><div class="band" style="margin:5mm 0 3mm"><p style="font-size:9.4pt;margin:0"><strong>Volatilité crypto :</strong> la valeur en $ CA d'un montant payé en Dogzy, en BNB ou en AVAX peut varier fortement entre l'achat et la conversion. Les montants crypto ne sont pas garantis en $ CA. C'est pourquoi le modèle ne compte que la valeur au moment de la vente et de petits frais de plateforme, jamais une hausse du jeton.</p></div>
+<div class="band"><p style="font-size:9.4pt;margin:0"><strong>Ce que le modèle ne compte pas :</strong> le capital Phase 2, toute vente de jetons Dogzy par l'entreprise, toute hausse de valeur du jeton, les revenus publicitaires et les ventes de copies physiques en magasin.</p></div>
+<div class="foot"><span>Dogzy Universe · Projections de revenus ($ CA)</span><span>P3</span></div></section><section class="page"><div class="frame"></div><div class="illu">Illustratif · non audité · pas une garantie</div>
+<div class="kicker">Projections · Annuel</div><h2 class="gold">Revenus par volet, année par année</h2><div class="rule" style="margin:3mm 0 6mm"></div>
+<p class="small">Chaque volet est calculé séparément, année par année. Le tableau montre l'<strong>An 1</strong>, puis les années <strong>3</strong> et <strong>5</strong> prises seules (pas cumulées), pour voir la vitesse de croisière.</p>
+<table class="tbl"><tr><th></th><th class="grp" colspan="3">An 1</th><th class="grp sep" colspan="3">An 3 (annuel)</th><th class="grp sep" colspan="3">An 5 (annuel)</th></tr><tr><th>$ CA (milliers)</th><th class="sep">Prud.</th><th class="">Norm.</th><th class="">Pogne</th><th class="sep">Prud.</th><th class="">Norm.</th><th class="">Pogne</th><th class="sep">Prud.</th><th class="">Norm.</th><th class="">Pogne</th></tr><tr class="tot"><td>A. Console — Dogzie Town</td><td class="sep">83</td><td class="">447</td><td class="">1 937</td><td class="sep">143</td><td class="">955</td><td class="">5 739</td><td class="sep">173</td><td class="">1 307</td><td class="">8 755</td></tr><tr class="sub"><td>Ventes du jeu</td><td class="sep">75</td><td class="">375</td><td class="">1 499</td><td class="sep">125</td><td class="">750</td><td class="">3 998</td><td class="sep">150</td><td class="">1 000</td><td class="">5 748</td></tr><tr class="sub"><td>Extensions (DLC)</td><td class="sep">4</td><td class="">37</td><td class="">210</td><td class="sep">10</td><td class="">107</td><td class="">834</td><td class="sep">13</td><td class="">161</td><td class="">1 441</td></tr><tr class="sub"><td>Passe compétitive multijoueur</td><td class="sep">1</td><td class="">7</td><td class="">48</td><td class="sep">2</td><td class="">21</td><td class="">191</td><td class="sep">2</td><td class="">31</td><td class="">329</td></tr><tr class="sub"><td>Accessoires (payés en Dogzy)</td><td class="sep">3</td><td class="">27</td><td class="">180</td><td class="sep">6</td><td class="">77</td><td class="">716</td><td class="sep">8</td><td class="">116</td><td class="">1 237</td></tr><tr class="tot"><td>B. Blockchain — Dogzy Universe</td><td class="sep">29</td><td class="">86</td><td class="">277</td><td class="sep">36</td><td class="">146</td><td class="">769</td><td class="sep">41</td><td class="">206</td><td class="">1 316</td></tr><tr class="sub"><td>NFT personnages</td><td class="sep">14</td><td class="">45</td><td class="">180</td><td class="sep">16</td><td class="">87</td><td class="">582</td><td class="sep">18</td><td class="">119</td><td class="">972</td></tr><tr class="sub"><td>NFT bâtiments / carte</td><td class="sep">4</td><td class="">9</td><td class="">16</td><td class="sep">4</td><td class="">9</td><td class="">16</td><td class="sep">4</td><td class="">9</td><td class="">16</td></tr><tr class="sub"><td>Collections NFT mensuelles Valkyrie</td><td class="sep">12</td><td class="">30</td><td class="">72</td><td class="sep">14</td><td class="">43</td><td class="">121</td><td class="sep">18</td><td class="">62</td><td class="">205</td></tr><tr class="sub"><td>Redevances reventes secondaires (5 %)</td><td class="sep">0</td><td class="">2</td><td class="">8</td><td class="sep">1</td><td class="">7</td><td class="">44</td><td class="sep">2</td><td class="">14</td><td class="">109</td></tr><tr class="sub"><td>Frais export de jetons + revente</td><td class="sep">0</td><td class="">0</td><td class="">1</td><td class="sep">0</td><td class="">1</td><td class="">7</td><td class="sep">0</td><td class="">1</td><td class="">14</td></tr><tr class="tot"><td>C. Art physique — toiles Valkyrie</td><td class="sep">15</td><td class="">27</td><td class="">45</td><td class="sep">18</td><td class="">36</td><td class="">70</td><td class="sep">22</td><td class="">46</td><td class="">110</td></tr><tr class="tot"><td>D. Marchandise / marque</td><td class="sep">1</td><td class="">12</td><td class="">72</td><td class="sep">3</td><td class="">34</td><td class="">286</td><td class="sep">3</td><td class="">52</td><td class="">495</td></tr><tr class="tot"><td>E. Lieux thématiques</td><td class="sep">0</td><td class="">0</td><td class="">0</td><td class="sep">2</td><td class="">31</td><td class="">212</td><td class="sep">6</td><td class="">123</td><td class="">1 010</td></tr><tr class="big"><td>Revenu brut total</td><td class="sep">128</td><td class="">571</td><td class="">2 331</td><td class="sep">201</td><td class="">1 202</td><td class="">7 078</td><td class="sep">246</td><td class="">1 734</td><td class="">11 685</td></tr><tr class="ded"><td>− Part PlayStation (30 %)</td><td class="sep">−24</td><td class="">−126</td><td class="">−527</td><td class="sep">−41</td><td class="">−263</td><td class="">−1 507</td><td class="sep">−49</td><td class="">−357</td><td class="">−2 255</td></tr><tr class="ded"><td>− Commissions galeries (toiles)</td><td class="sep">−4</td><td class="">−8</td><td class="">−14</td><td class="sep">−5</td><td class="">−11</td><td class="">−21</td><td class="sep">−7</td><td class="">−14</td><td class="">−33</td></tr><tr class="ded"><td>− Coût marchandise</td><td class="sep">−1</td><td class="">−7</td><td class="">−40</td><td class="sep">−1</td><td class="">−19</td><td class="">−158</td><td class="sep">−2</td><td class="">−28</td><td class="">−272</td></tr><tr class="ded"><td>− Influenceurs (5 % du brut)</td><td class="sep">−6</td><td class="">−29</td><td class="">−117</td><td class="sep">−10</td><td class="">−60</td><td class="">−354</td><td class="sep">−12</td><td class="">−87</td><td class="">−584</td></tr><tr class="big"><td>Revenu net pour l'entreprise*</td><td class="sep">93</td><td class="">402</td><td class="">1 634</td><td class="sep">143</td><td class="">849</td><td class="">5 038</td><td class="sep">176</td><td class="">1 247</td><td class="">8 541</td></tr></table>
+<p class="note">Montants en milliers de $ CA (ex. 571 = 571 000 $). « Pogne » = scénario « si le concept pogne vraiment ». * Net = avant salaires, développement, serveurs, marketing payé et impôts. Les accessoires sont payés en Dogzy et comptés à leur valeur en $ CA au moment de l'achat; on suppose qu'ils sont vendus dans Dogzy Universe (site / portefeuille), donc sans part PlayStation. Si Sony exige qu'ils passent par le PlayStation Store, une part de 30 % s'appliquerait aussi.</p>
+<div class="band" style="margin:3mm 0 0;padding:3mm 0 3mm 5mm"><p style="font-size:9pt;margin:0">Dans les trois scénarios, <strong>la console porte l'essentiel des revenus</strong> (environ 78,2 % du brut en An 1, scénario Normal). La blockchain ajoute de la valeur et de la fidélité, sans que le plan dépende d'une hausse du prix du jeton.</p></div>
+<div class="foot"><span>Dogzy Universe · Projections de revenus ($ CA)</span><span>P4</span></div></section><section class="page"><div class="frame"></div><div class="illu">Illustratif · non audité · pas une garantie</div>
+<div class="kicker">Projections · Cumulatif</div><h2 class="gold">Ce que ça donne sur 3 ans et sur 5 ans</h2><div class="rule" style="margin:3mm 0 6mm"></div>
+<p class="small">Les mêmes volets, additionnés sur <strong>3 ans</strong> et sur <strong>5 ans</strong>.</p>
+<table class="tbl"><tr><th></th><th class="grp" colspan="3">Cumul 3 ans (An 1 à 3)</th><th class="grp sep" colspan="3">Cumul 5 ans (An 1 à 5)</th></tr><tr><th>$ CA (milliers)</th><th class="sep">Prud.</th><th class="">Norm.</th><th class="">Pogne</th><th class="sep">Prud.</th><th class="">Norm.</th><th class="">Pogne</th></tr><tr class="tot"><td>A. Console — Dogzie Town</td><td class="sep">339</td><td class="">2 088</td><td class="">11 469</td><td class="sep">656</td><td class="">4 530</td><td class="">27 638</td></tr><tr class="sub"><td>Ventes du jeu</td><td class="sep">300</td><td class="">1 674</td><td class="">8 247</td><td class="sep">575</td><td class="">3 549</td><td class="">18 992</td></tr><tr class="sub"><td>Extensions (DLC)</td><td class="sep">22</td><td class="">217</td><td class="">1 544</td><td class="sep">46</td><td class="">513</td><td class="">4 144</td></tr><tr class="sub"><td>Passe compétitive multijoueur</td><td class="sep">4</td><td class="">42</td><td class="">353</td><td class="sep">7</td><td class="">98</td><td class="">947</td></tr><tr class="sub"><td>Accessoires (payés en Dogzy)</td><td class="sep">13</td><td class="">156</td><td class="">1 325</td><td class="sep">28</td><td class="">370</td><td class="">3 555</td></tr><tr class="tot"><td>B. Blockchain — Dogzy Universe</td><td class="sep">97</td><td class="">347</td><td class="">1 549</td><td class="sep">177</td><td class="">728</td><td class="">3 912</td></tr><tr class="sub"><td>NFT personnages</td><td class="sep">45</td><td class="">198</td><td class="">1 129</td><td class="sep">79</td><td class="">421</td><td class="">2 891</td></tr><tr class="sub"><td>NFT bâtiments / carte</td><td class="sep">10</td><td class="">26</td><td class="">47</td><td class="sep">18</td><td class="">44</td><td class="">79</td></tr><tr class="sub"><td>Collections NFT mensuelles Valkyrie</td><td class="sep">40</td><td class="">109</td><td class="">287</td><td class="sep">73</td><td class="">223</td><td class="">650</td></tr><tr class="sub"><td>Redevances reventes secondaires (5 %)</td><td class="sep">2</td><td class="">12</td><td class="">74</td><td class="sep">6</td><td class="">36</td><td class="">256</td></tr><tr class="sub"><td>Frais export de jetons + revente</td><td class="sep">0</td><td class="">2</td><td class="">12</td><td class="sep">1</td><td class="">4</td><td class="">36</td></tr><tr class="tot"><td>C. Art physique — toiles Valkyrie</td><td class="sep">50</td><td class="">94</td><td class="">172</td><td class="sep">92</td><td class="">182</td><td class="">370</td></tr><tr class="tot"><td>D. Marchandise / marque</td><td class="sep">6</td><td class="">69</td><td class="">530</td><td class="sep">12</td><td class="">164</td><td class="">1 422</td></tr><tr class="tot"><td>E. Lieux thématiques</td><td class="sep">2</td><td class="">31</td><td class="">212</td><td class="sep">11</td><td class="">226</td><td class="">1 779</td></tr><tr class="big"><td>Revenu brut total</td><td class="sep">494</td><td class="">2 630</td><td class="">13 932</td><td class="sep">948</td><td class="">5 829</td><td class="">35 122</td></tr><tr class="ded"><td>− Part PlayStation (30 %)</td><td class="sep">−98</td><td class="">−580</td><td class="">−3 043</td><td class="sep">−188</td><td class="">−1 248</td><td class="">−7 225</td></tr><tr class="ded"><td>− Commissions galeries (toiles)</td><td class="sep">−15</td><td class="">−28</td><td class="">−52</td><td class="sep">−27</td><td class="">−54</td><td class="">−111</td></tr><tr class="ded"><td>− Coût marchandise</td><td class="sep">−3</td><td class="">−38</td><td class="">−291</td><td class="sep">−7</td><td class="">−90</td><td class="">−782</td></tr><tr class="ded"><td>− Influenceurs (5 % du brut)</td><td class="sep">−25</td><td class="">−131</td><td class="">−697</td><td class="sep">−47</td><td class="">−291</td><td class="">−1 756</td></tr><tr class="big"><td>Revenu net pour l'entreprise*</td><td class="sep">353</td><td class="">1 852</td><td class="">9 849</td><td class="sep">678</td><td class="">4 145</td><td class="">25 248</td></tr></table>
+<div class="kicker" style="margin-top:2mm">Répartition du revenu brut cumulatif sur 5 ans</div>
+<div class="legend"><span><i style="background:#f3d77a"></i>A. Console — Dogzie Town</span><span><i style="background:#c9a22f"></i>B. Blockchain — Dogzy Universe</span><span><i style="background:#8f6d17"></i>C. Art physique — Galerie Valkyrie</span><span><i style="background:#e8e0c8"></i>D. Marchandise / marque</span><span><i style="background:#5a4a1a"></i>E. Lieux thématiques (expansions)</span></div><div style="display:grid;grid-template-columns:42mm 1fr 26mm;align-items:center;gap:3mm;margin:2mm 0"><span style="font-size:8.5pt;color:#f1e3b3">Prudent</span><svg width="100%" height="7mm" preserveAspectRatio="none"><rect x="0%" y="0" width="69.21513323315057%" height="100%" fill="#f3d77a"/><rect x="69.21513323315057%" y="0" width="18.634701838297925%" height="100%" fill="#c9a22f"/><rect x="87.8498350714485%" y="0" width="9.655207499640275%" height="100%" fill="#8f6d17"/><rect x="97.50504257108877%" y="0" width="1.2985523351366606%" height="100%" fill="#e8e0c8"/><rect x="98.80359490622543%" y="0" width="1.1964050937745645%" height="100%" fill="#5a4a1a"/></svg><span style="font-size:8.5pt;text-align:right;color:#e9c862">948 k$</span></div><div style="display:grid;grid-template-columns:42mm 1fr 26mm;align-items:center;gap:3mm;margin:2mm 0"><span style="font-size:8.5pt;color:#f1e3b3">Normal</span><svg width="100%" height="7mm" preserveAspectRatio="none"><rect x="0%" y="0" width="77.71341544804271%" height="100%" fill="#f3d77a"/><rect x="77.71341544804271%" y="0" width="12.48369507188226%" height="100%" fill="#c9a22f"/><rect x="90.19711051992496%" y="0" width="3.113673401870921%" height="100%" fill="#8f6d17"/><rect x="93.31078392179589%" y="0" width="2.8196907381776084%" height="100%" fill="#e8e0c8"/><rect x="96.1304746599735%" y="0" width="3.8695253400264966%" height="100%" fill="#5a4a1a"/></svg><span style="font-size:8.5pt;text-align:right;color:#e9c862">5,83 M$</span></div><div style="display:grid;grid-template-columns:42mm 1fr 26mm;align-items:center;gap:3mm;margin:2mm 0"><span style="font-size:8.5pt;color:#f1e3b3">Si ça pogne vraiment</span><svg width="100%" height="7mm" preserveAspectRatio="none"><rect x="0%" y="0" width="78.69241499744719%" height="100%" fill="#f3d77a"/><rect x="78.69241499744719%" y="0" width="11.137892709155627%" height="100%" fill="#c9a22f"/><rect x="89.83030770660281%" y="0" width="1.0548966326618436%" height="100%" fill="#8f6d17"/><rect x="90.88520433926465%" y="0" width="4.049091745208089%" height="100%" fill="#e8e0c8"/><rect x="94.93429608447273%" y="0" width="5.065703915527252%" height="100%" fill="#5a4a1a"/></svg><span style="font-size:8.5pt;text-align:right;color:#e9c862">35,12 M$</span></div>
+<ul class="small" style="margin-top:3mm"><li><strong>Prudent</strong> : console 69,2 % · blockchain 18,6 % · art 9,7 % · marchandise 1,3 % · lieux 1,2 %</li><li><strong>Normal</strong> : console 77,7 % · blockchain 12,5 % · art 3,1 % · marchandise 2,8 % · lieux 3,9 %</li><li><strong>Si ça pogne vraiment</strong> : console 78,7 % · blockchain 11,1 % · art 1,1 % · marchandise 4 % · lieux 5,1 %</li></ul>
+<div class="foot"><span>Dogzy Universe · Projections de revenus ($ CA)</span><span>P5</span></div></section><section class="page"><div class="frame"></div><div class="illu">Illustratif · non audité · pas une garantie</div>
+<div class="kicker">Projections · Économie</div><h2 class="gold">Dogzy, les déductions et ce qui n'est pas un revenu</h2><div class="rule" style="margin:3mm 0 6mm"></div>
+<div class="grid2" style="gap:5mm">
+<div class="card" style="padding:5.5mm"><div class="tag">Comment Dogzy entre dans les chiffres</div><ul class="small">
+<li>Les <strong>accessoires</strong> s'achètent <strong>uniquement en Dogzy</strong>. On compte leur valeur en $ CA au moment de l'achat, rien de plus.</li>
+<li>Les <strong>jetons de mission</strong> gagnés sur console peuvent être exportés vers le portefeuille (ex. 500 000 jetons de jeu ↔ 5 Dogzy, selon la valeur du moment).</li>
+<li>L'export exige que le personnage existe dans <strong>Dogzy Universe ET Dogzie Town</strong>. On ne compte donc que les détenteurs de NFT personnage.</li>
+<li>Sur l'export et la revente, l'entreprise touche seulement de <strong>petits frais</strong> (2 % et 2,5 %). Aucun revenu ne vient d'une hausse du prix du jeton.</li>
+<li>Certains autres achats pourront se faire en BNB ou autre crypto; ils sont comptés en $ CA comme le reste.</li></ul></div>
+<div class="card" style="padding:5.5mm"><div class="tag">Ce qui est retiré du brut</div><ul class="small">
+<li><strong>PlayStation ~30 %</strong> sur les ventes numériques du jeu, des extensions et de la passe compétitive.</li>
+<li><strong>Influenceurs 5 %</strong> : 5 partenaires à 1 % de redevances à vie chacun. Par prudence, on l'applique au revenu <u>brut total</u>. La base exacte doit être écrite au contrat.</li>
+<li><strong>Galeries 30 %</strong> en moyenne sur les toiles (mélange ventes directes et plateformes comme Singulart).</li>
+<li><strong>Marchandise 55 %</strong> de coût de production (impression sur demande).</li></ul></div></div>
+<div class="kicker" style="margin-top:6mm">Exemple · scénario Normal, An 1</div>
+<table class="tbl"><tr><th>Étape</th><th>Montant</th><th>Explication</th></tr>
+<tr class="tot"><td>Revenu brut total</td><td>571 160 $</td><td style="text-align:left;white-space:normal">15 000 copies + extensions, passe, accessoires, NFT, toiles, marchandise</td></tr>
+<tr class="ded"><td>− Part PlayStation</td><td>−125 851 $</td><td style="text-align:left">30 % du jeu, du DLC et de la passe</td></tr>
+<tr class="ded"><td>− Influenceurs</td><td>−28 558 $</td><td style="text-align:left">5 % du brut</td></tr>
+<tr class="ded"><td>− Galeries + coût marchandise</td><td>−14 700 $</td><td style="text-align:left">Toiles et produits dérivés</td></tr>
+<tr class="big"><td>Revenu net pour l'entreprise</td><td>402 050 $</td><td style="text-align:left">Avant salaires, serveurs, développement et impôts</td></tr></table>
+<div class="band"><p style="font-size:10pt;margin:0"><strong>Capital Phase 2 : 500 000 $ à 550 000 $ CA.</strong> C'est un investissement pour finir et lancer l'univers. Il n'est compté dans aucun revenu. La Phase 1 a été bâtie avec environ <strong>500 $</strong> d'abonnements, plus le temps investi par la fondatrice.</p></div>
+
+<div class="foot"><span>Dogzy Universe · Projections de revenus ($ CA)</span><span>P6</span></div></section><section class="page"><div class="frame"></div><div class="illu">Illustratif · non audité · pas une garantie</div>
+<div class="kicker">Projections · Conditions</div><h2 class="gold">Ce qui doit arriver pour que ces chiffres tiennent</h2><div class="rule" style="margin:3mm 0 6mm"></div>
+<div class="cols3">
+<div class="card"><div class="tag">Blockchain</div><h3>Pas encore en ligne</h3><ul class="small">
+<li>Contrats (DogzyToken, PontDogzy) <strong>rédigés, non déployés, non audités</strong>.</li>
+<li>Jeton Dogzy <strong>non inscrit</strong> sur une plateforme d'échange.</li>
+<li>Avant tout revenu B : réseau de test, audit indépendant, puis réseau principal.</li></ul></div>
+<div class="card"><div class="tag">Règles et lois</div><h3>À valider</h3><ul class="small">
+<li>Règles de <strong>Sony PlayStation</strong> sur les cryptos et NFT : les achats en Dogzy pourraient devoir se faire hors console.</li>
+<li>Avis juridique sur le jeton (<strong>AMF / ACVM</strong>) et la fiscalité.</li>
+<li>Casino = <strong>lieu NFT</strong> seulement : aucune mise, aucun gain en argent.</li></ul></div>
+<div class="card"><div class="tag">Données de départ</div><h3>À confirmer</h3><ul class="small">
+<li>Prix moyen des toiles et partage des revenus avec l'artiste à confirmer par entente.</li>
+<li>Les repères de la galerie sont des <strong>affirmations de la fondatrice</strong>, non vérifiées ici.</li>
+<li>Ventes de jeu à valider avec un éditeur / Sony.</li></ul></div></div>
+<div class="kicker" style="margin-top:7mm">Les bases de l'univers (fournies par la fondatrice)</div>
+<div class="stats" style="grid-template-columns:repeat(5,1fr);margin:3mm 0 5mm">
+<div class="stat"><b class="gold" style="font-size:24pt">143</b><span>personnages</span></div>
+<div class="stat"><b class="gold" style="font-size:24pt">46</b><span>bâtiments</span></div>
+<div class="stat"><b class="gold" style="font-size:24pt">5</b><span>extensions</span></div>
+<div class="stat"><b class="gold" style="font-size:24pt">7</b><span>collections jouables</span></div>
+<div class="stat"><b class="gold" style="font-size:24pt">9</b><span>factions</span></div></div>
+<p class="small" style="font-size:9.4pt">Ambiance de luxe Dubaï / Saint-Martin · duels à 2 joueurs, toujours dans des camps opposés · <strong>Galerie Valkyrie</strong> : une collection NFT par mois et des toiles physiques, 23 expositions internationales, 14 curations, top 10 % sur Singulart (41 000 vues en environ 4 mois) et, selon la fondatrice, 37 toiles dans le monde.</p>
+<div class="read" style="margin-top:6mm"><h3>En résumé</h3><ul>
+<li>Le scénario <strong>Prudent</strong> montre un univers qui vit modestement (948 k$ brut sur 5 ans). Le <strong>Normal</strong> montre un succès indépendant solide (5,83 M$). « <strong>Si ça pogne vraiment</strong> » montre le potentiel d'un succès viral (35,12 M$).</li>
+<li>Les chiffres reposent sur les joueurs et sur ce qu'ils achètent, pas sur la valeur future d'un jeton.</li>
+<li>Ce sont des chiffres illustratifs, non audités, sans garantie. On les ajuste au fur et à mesure que les vraies données arrivent.</li></ul></div>
+<p class="note" style="margin-top:4mm">Dogzy Universe (anciennement Family Universe) · Document préparé en octobre 2026 · Ce document n'est ni une offre de valeurs mobilières, ni une offre de cryptomonnaie, ni un conseil financier.</p>
+<div class="foot"><span>Dogzy Universe · Projections de revenus ($ CA)</span><span>P7</span></div></section></body></html>

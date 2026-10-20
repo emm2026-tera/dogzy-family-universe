@@ -1,0 +1,30 @@
+Dogzy / Acquisition — dossier investisseur & acquéreur
+Créé / mis à jour 10 octobre 2026
+STATUT : RIEN N'A ÉTÉ ENVOYÉ
+PAS inclus : smart contracts (demande annulée)
+
+tokenomics/
+  tokenomics.pdf
+  tokenomics.html
+
+pitch-deck/
+  pitch-deck-investisseurs.pdf
+  pitch-deck-investisseurs-avec-projections.pdf
+  Dogzy-investisseurs-noir-or.pdf
+  projections-revenus.pdf
+  projections-revenus.xlsx  (si présent)
+
+presentation/
+  presentation-vision-ensemble.pdf          — les deux univers ensemble
+  presentation-PlayStation-anglais.pdf      — Dogzie Town / PlayStation (matériel EN ; PAS un partenariat Sony)
+
+dossiers-separes/
+  Dogzie-Town-dossier-seul.pdf
+  Dogzy-Family-Universe-dossier-seul.pdf
+
+courriels/  (brouillons seulement)
+  brouillon-courriel-investisseurs-EN.txt
+  brouillon-courriel-investisseurs-FR.txt
+  brouillon-courriel-Sony-Town.txt
+
+À confirmer avant tout envoi : avocat divertissement ; listes destinataires ; publication Webador.

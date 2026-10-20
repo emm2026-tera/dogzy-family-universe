@@ -1,0 +1,551 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Dogzy Universe — Investisseurs</title>
+<style>
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#d4af37;--gold2:#f3d77a;--gold3:#9c7a1e;--ink:#0a0a0a;--soft:#cfc6ad}
+body{background:#000;font-family:'Montserrat',sans-serif;color:var(--soft);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;
+ background:radial-gradient(ellipse at 50% -10%,#2a2108 0%,#0b0905 45%,#000 80%);padding:20mm 18mm 22mm}
+.page:last-child{page-break-after:auto}
+.frame{position:absolute;inset:8mm;border:1px solid rgba(212,175,55,.45);pointer-events:none}
+.frame:after{content:"";position:absolute;inset:2.2mm;border:.5px solid rgba(212,175,55,.2)}
+.gold{color:#e2bf57;text-shadow:0 0 18px rgba(212,175,55,.25)}
+h1,h2,h3{font-family:'Cinzel','Cormorant SC','Cormorant Garamond',serif;font-weight:700;letter-spacing:.06em}
+h2{font-size:27pt;margin-bottom:2mm}
+.kicker{font-size:8pt;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:3mm}
+.rule{height:1px;width:38mm;background:linear-gradient(90deg,var(--gold),transparent);margin:4mm 0 9mm}
+p{font-size:11pt;line-height:1.65;margin-bottom:3.6mm}
+strong{color:#f1e3b3;font-weight:600}
+.foot{position:absolute;bottom:12mm;left:18mm;right:18mm;display:flex;justify-content:space-between;font-size:7.5pt;letter-spacing:.2em;text-transform:uppercase;color:var(--gold3)}
+.card{border:1px solid rgba(212,175,55,.4);background:linear-gradient(160deg,rgba(212,175,55,.09),rgba(0,0,0,.2));border-radius:3mm;padding:7mm}
+.card h3{font-size:14pt;margin-bottom:1mm}
+.card .tag{font-size:7.5pt;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:3mm}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+ul{list-style:none}
+li{font-size:10.6pt;line-height:1.55;padding-left:6mm;position:relative;margin-bottom:2mm}
+li:before{content:"";position:absolute;left:0;top:2.1mm;width:2.2mm;height:2.2mm;transform:rotate(45deg);background:var(--gold)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin:8mm 0 10mm}
+.stat{text-align:center;border-top:1px solid var(--gold3);padding-top:3mm}
+.stat b{display:block;font-family:'Cinzel',serif;font-size:34pt}
+.stat span{font-size:7.5pt;letter-spacing:.15em;text-transform:uppercase}
+.note{font-size:8.3pt;color:#9d937a;line-height:1.5;font-style:italic}
+.band{border-left:2px solid var(--gold);padding:4mm 0 4mm 6mm;margin:8mm 0;background:linear-gradient(90deg,rgba(212,175,55,.08),transparent)}
+/* cover */
+.cover{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-top:10mm}
+.cover h1{font-size:44pt;line-height:1.05;letter-spacing:.08em}
+.cover .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21pt;color:var(--gold2);margin-top:7mm}
+.cover .meta{margin-top:16mm;font-size:9pt;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.cover .site{margin-top:3mm;font-size:10pt;letter-spacing:.12em;color:var(--soft)}
+.halo{position:absolute;width:150mm;height:150mm;border-radius:50%;left:30mm;top:40mm;background:radial-gradient(circle,rgba(212,175,55,.18),transparent 65%)}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:2.5mm;margin:5mm 0 7mm}
+.step{border:1px solid rgba(212,175,55,.4);border-radius:2mm;padding:5mm 3.5mm;font-size:9.2pt;min-height:52mm;line-height:1.4;position:relative;background:rgba(212,175,55,.05)}
+.step b{display:block;font-family:'Cinzel',serif;font-size:15pt;color:var(--gold);margin-bottom:1mm}
+.step em{display:block;font-style:normal;font-size:6.8pt;letter-spacing:.18em;text-transform:uppercase;color:var(--gold3);margin-bottom:1.5mm}
+.status{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5mm}
+.pill{display:inline-block;white-space:nowrap;font-size:7pt;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--gold);color:var(--gold);padding:1mm 3mm;border-radius:10mm;margin-bottom:3mm}
+.ask{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;margin:6mm 0}
+.ask .card{text-align:center;padding:7mm 5mm}
+.ask .num{font-family:'Cinzel',serif;font-size:30pt}
+a{color:var(--gold2);text-decoration:none}
+</style></head><body>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6dc85"/><stop offset=".55" stop-color="#d4af37"/><stop offset="1" stop-color="#8f6d17"/></linearGradient>
+<symbol id="paw" viewBox="0 0 100 100"><g fill="url(#g)">
+<ellipse cx="22" cy="42" rx="9.5" ry="12.5" transform="rotate(-22 22 42)"/>
+<ellipse cx="39" cy="24" rx="10" ry="13.5" transform="rotate(-8 39 24)"/>
+<ellipse cx="61" cy="24" rx="10" ry="13.5" transform="rotate(8 61 24)"/>
+<ellipse cx="78" cy="42" rx="9.5" ry="12.5" transform="rotate(22 78 42)"/>
+<path d="M50 48c-11 0-17 9-22 17-5 8-9 13-6 20 3 7 11 8 18 6 4-1 7-2 10-2s6 1 10 2c7 2 15 1 18-6 3-7-1-12-6-20-5-8-11-17-22-17z"/></g></symbol>
+</defs></svg>
+
+<!-- 1 COVER -->
+<section class="page"><div class="frame"></div><div class="halo"></div>
+<div class="cover">
+<svg width="44mm" height="44mm"><use href="#paw"/></svg>
+<div class="kicker" style="margin-top:9mm">Dossier pour investisseurs et partenaires</div>
+<h1 class="gold">DOGZIE<br>UNIVERSE</h1>
+<div class="rule" style="margin:8mm auto 0;width:60mm;background:linear-gradient(90deg,transparent,var(--gold),transparent)"></div>
+<div class="sub">« The sky is not the limit. »</div>
+<p style="margin-top:7mm;font-size:11pt;max-width:140mm">Un seul univers familial : <strong>Dogzie Town</strong> pour jouer sur console, et la couche numérique <strong>Dogzy Universe</strong> pour relier le jeu au portefeuille, quand le joueur le choisit.</p>
+<div class="meta">Mise à jour · Octobre 2026</div>
+<div class="site">thedogzyfamilyuniverse.ca</div>
+<p class="note" style="margin-top:14mm;max-width:150mm">Note sur le nom : la marque officielle est désormais <em>Dogzy Universe</em> (anciennement « Family Universe »). Le site, les contrats et le jeton gardent pour l’instant l’orthographe historique <em>Dogzy</em> (DogzyToken, PontDogzy).</p>
+</div>
+<div class="foot"><span>Dogzy Universe</span><span>Valkyrie · Sania</span></div>
+</section>
+
+<!-- 2 UNIVERSE -->
+<section class="page p2s"><div class="frame"></div>
+<div class="kicker">01 · La vision</div>
+<h2 class="gold">Une seule famille, un seul univers</h2>
+<div class="rule"></div>
+<p><strong>Dogzy Universe</strong> est la marque et l’univers. C’est une seule propriété intellectuelle, avec deux portes d’entrée qui se complètent. Ce ne sont pas deux projets séparés.</p>
+<div class="grid2" style="margin-top:4mm">
+ <div class="card"><div class="tag">Console · PlayStation</div><h3 class="gold">Dogzie Town</h3>
+ <p>La ville jouable de l’univers, inspirée du luxe de Dubaï et de Saint-Martin. Les personnages, les bâtiments et la progression vivent sur le serveur du jeu.</p>
+ <p style="margin:0"><strong>Rôle :</strong> jouer et progresser dans l’univers, sans avoir besoin d’un portefeuille.</p></div>
+ <div class="card"><div class="tag">Couche numérique · Avalanche C-Chain</div><h3 class="gold">Dogzy Universe</h3>
+ <p>La couche numérique de la même IP. Les jetons du jeu restent sur le serveur jusqu’à ce que le joueur les demande.</p>
+ <p style="margin:0"><strong>Rôle :</strong> sur demande, faire passer de la valeur du jeu au portefeuille du joueur, avec un code de retrait à usage unique et un pont sécurisé.</p></div>
+</div>
+<div class="band" style="margin:5mm 0"><p style="margin:0;font-family:'Cormorant Garamond',serif;font-size:14pt;font-style:italic;color:var(--gold2)">Town pour jouer. Dogzy Universe pour relier le jeu au portefeuille, quand le joueur le choisit.</p></div>
+<div class="kicker" style="margin-top:6mm">L’ampleur annoncée du projet</div>
+<div class="stats" style="grid-template-columns:repeat(3,1fr);gap:3.5mm 5mm;margin:4mm 0 4mm"><style>.p2s .stat b{font-size:28pt}</style>
+ <div class="stat"><b class="gold">143</b><span>personnages</span></div>
+ <div class="stat"><b class="gold">46</b><span>bâtiments conçus pour Dogzie Town</span></div>
+ <div class="stat"><b class="gold">5</b><span>expansions</span></div>
+ <div class="stat"><b class="gold">7</b><span>collections jouables</span></div>
+ <div class="stat"><b class="gold">8</b><span>contrats prévus</span></div>
+ <div class="stat"><b class="gold">~100</b><span>jours de création</span></div>
+</div>
+<p class="note">Chiffres tels qu’annoncés pour le projet dans le dossier précédent. Deux contrats sont écrits à ce jour : DogzyToken (le jeton) et PontDogzy (le pont). Le jeton porte deux noms dans les documents (DGZY et DOGZY). Il faudra en garder un seul avant le lancement.</p>
+<div class="foot"><span>Dogzy Universe</span><span>2</span></div>
+</section>
+
+<!-- 2a TOWN -->
+<section class="page"><div class="frame"></div>
+<div class="kicker">02 · Comment l’univers prend vie</div>
+<h2 class="gold">D’abord la ville, puis la vie</h2>
+<div class="rule" style="margin:4mm 0 8mm"></div>
+<div style="display:grid;grid-template-columns:1fr 12mm 1fr;align-items:stretch;gap:0">
+ <div class="card" style="padding:5mm 6mm"><div class="tag">Étape 1 · Dogzy Universe</div><h3 class="gold" style="font-size:13pt">On bâtit la ville</h3><p style="font-size:9.8pt;margin:2mm 0 0">Dogzy Universe construit la ville : ses commerces, ses bâtiments, ses lieux.</p></div>
+ <div class="gold" style="font-size:22pt;align-self:center;text-align:center">→</div>
+ <div class="card" style="padding:5mm 6mm;border-color:var(--gold)"><div class="tag">Étape 2 · Dogzie Town</div><h3 class="gold" style="font-size:13pt">On lui donne vie</h3><p style="font-size:9.8pt;margin:2mm 0 0">Dogzie Town anime la ville, dans une ambiance inspirée du luxe de <strong>Dubaï et de Saint-Martin</strong>. <strong>7 collections de personnages</strong> y entrent en scène, jouables à la manette.</p></div>
+</div>
+<div class="kicker" style="margin-top:9mm">Dogzie Town sur PlayStation · le gameplay</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:3mm">
+ <div class="card" style="text-align:center;padding:5mm 4mm"><svg width="9mm" height="9mm"><use href="#paw"/></svg><h3 class="gold" style="font-size:12.5pt;margin-top:2mm">Monde ouvert</h3><p style="font-size:9pt;margin:2mm 0 0">Une ville libre, comparable à <em>GTA</em> : voitures, tatouages, magasinage, condo.</p></div>
+ <div class="card" style="text-align:center;padding:5mm 4mm"><svg width="9mm" height="9mm"><use href="#paw"/></svg><h3 class="gold" style="font-size:12.5pt;margin-top:2mm">Vitesse et poursuites</h3><p style="font-size:9pt;margin:2mm 0 0">Courses et poursuites policières comparables à <em>Burnout</em>, avec des figures signature qui donnent des points bonus.</p></div>
+ <div class="card" style="text-align:center;padding:5mm 4mm"><svg width="9mm" height="9mm"><use href="#paw"/></svg><h3 class="gold" style="font-size:12.5pt;margin-top:2mm">Missions de braquage</h3><p style="font-size:9pt;margin:2mm 0 0">Vols de banque, cambriolages de bijouterie et autres coups, dans l’esprit de <em>Payday</em>.</p></div>
+</div>
+<div class="card" style="margin-top:7mm;padding:6mm 7mm"><div class="tag">Missions de luxe · ambiance Dubaï et Saint-Martin</div>
+<p style="font-size:9.8pt;margin:0">Des yachts de riches attaqués par des pirates des mers, que les joueurs doivent repousser. Des jets privés. Des tournois d’avions. Et d’autres missions du même genre, à côté des braquages, des poursuites et du monde ouvert.</p></div>
+
+<p class="note" style="margin-top:8mm">GTA, Burnout et Payday sont cités seulement comme comparaisons de style de jeu. Dogzy n’a aucun lien avec Rockstar Games, Electronic Arts ou Starbreeze.</p>
+<div class="foot"><span>Dogzy Universe</span><span>3</span></div>
+</section>
+
+<!-- 2c MISSIONS -->
+<section class="page"><div class="frame"></div>
+<div class="kicker">03 · Les camps et les factions</div>
+<h2 class="gold">Deux camps, aucun raccourci</h2>
+<div class="rule" style="margin:3mm 0 5mm"></div>
+<p style="margin-bottom:3mm">Au début de Dogzie Town, le joueur choisit son camp. Chaque camp regroupe des factions :</p>
+<div class="grid2" style="gap:4mm;margin-bottom:4mm">
+ <div class="card" style="padding:4mm 5mm"><div class="tag">Le bon côté</div><div style="border:1px solid rgba(212,175,55,.5);border-radius:10mm;padding:2mm 3mm;font-family:'Cinzel',serif;font-weight:700;font-size:9.5pt;color:#e2bf57;background:rgba(212,175,55,.07);display:inline-block;margin:0 1.5mm 2mm 0">Jetset</div><div style="border:1px solid rgba(212,175,55,.5);border-radius:10mm;padding:2mm 3mm;font-family:'Cinzel',serif;font-weight:700;font-size:9.5pt;color:#e2bf57;background:rgba(212,175,55,.07);display:inline-block;margin:0 1.5mm 2mm 0">Vedettes</div><div style="border:1px solid rgba(212,175,55,.5);border-radius:10mm;padding:2mm 3mm;font-family:'Cinzel',serif;font-weight:700;font-size:9.5pt;color:#e2bf57;background:rgba(212,175,55,.07);display:inline-block;margin:0 1.5mm 2mm 0">Justiciers</div><div style="border:1px solid rgba(212,175,55,.5);border-radius:10mm;padding:2mm 3mm;font-family:'Cinzel',serif;font-weight:700;font-size:9.5pt;color:#e2bf57;background:rgba(212,175,55,.07);display:inline-block;margin:0 1.5mm 2mm 0">Geeks</div></div>
+ <div class="card" style="padding:4mm 5mm"><div class="tag">Le mauvais côté</div><div style="border:1px solid rgba(212,175,55,.5);border-radius:10mm;padding:2mm 3mm;font-family:'Cinzel',serif;font-weight:700;font-size:9.5pt;color:#e2bf57;background:rgba(212,175,55,.07);display:inline-block;margin:0 1.5mm 2mm 0">Criminels</div><div style="border:1px solid rgba(212,175,55,.5);border-radius:10mm;padding:2mm 3mm;font-family:'Cinzel',serif;font-weight:700;font-size:9.5pt;color:#e2bf57;background:rgba(212,175,55,.07);display:inline-block;margin:0 1.5mm 2mm 0">Excentriques</div><div style="border:1px solid rgba(212,175,55,.5);border-radius:10mm;padding:2mm 3mm;font-family:'Cinzel',serif;font-weight:700;font-size:9.5pt;color:#e2bf57;background:rgba(212,175,55,.07);display:inline-block;margin:0 1.5mm 2mm 0">Marginaux</div><div style="border:1px solid rgba(212,175,55,.5);border-radius:10mm;padding:2mm 3mm;font-family:'Cinzel',serif;font-weight:700;font-size:9.5pt;color:#e2bf57;background:rgba(212,175,55,.07);display:inline-block;margin:0 1.5mm 2mm 0">Adoléchien</div><div style="border:1px solid rgba(212,175,55,.5);border-radius:10mm;padding:2mm 3mm;font-family:'Cinzel',serif;font-weight:700;font-size:9.5pt;color:#e2bf57;background:rgba(212,175,55,.07);display:inline-block;margin:0 1.5mm 2mm 0">Mordus d’adrénaline</div><p style="font-size:8.6pt;margin:1mm 0 0;line-height:1.4"><strong>Adoléchien</strong> : les ados chiants, leurs petites crises, toujours pleins de drama.</p></div>
+</div>
+<div class="card" style="padding:4mm 5mm;margin-bottom:4mm;border-color:var(--gold);background:linear-gradient(160deg,rgba(212,175,55,.16),rgba(0,0,0,.2))"><div class="tag">Multijoueur · 2 joueurs</div>
+<p style="font-size:9.8pt;margin:0">À deux dans la même maison ou en ligne. <strong>Règle obligatoire :</strong> les deux joueurs s’affrontent toujours. Ils ne peuvent jamais être du même côté : il faut se défier.</p></div>
+<div class="band" style="margin:0 0 5mm;padding:3mm 0 3mm 5mm"><p style="margin:0;font-size:10pt"><strong>Règle de conception :</strong> chaque mission implique un personnage de chaque faction. Les factions ne font pas que se croiser : selon la mission, elles s’affrontent, s’entraident ou interagissent autrement. Confrontation ou coopération, c’est la mission qui décide.</p></div>
+<div class="card" style="margin-top:2mm;padding:5mm 6mm;border-color:var(--gold);background:linear-gradient(160deg,rgba(212,175,55,.16),rgba(0,0,0,.2))">
+ <div style="display:flex;align-items:center;gap:4mm;margin-bottom:3mm"><svg width="9mm" height="9mm"><use href="#paw"/></svg><div><div class="tag" style="margin:0">Règle d’or de l’univers</div><h3 class="gold" style="font-size:15pt">Pas de « pay-to-win »</h3></div></div>
+ <p style="font-size:10pt;margin-bottom:3mm">Dans le monde des NFT, on peut échanger et vendre ses NFT. Dogzy garde cette liberté, avec une règle d’équité fondamentale :</p>
+ <div class="grid2" style="gap:5mm">
+  <p style="font-size:9.8pt;margin:0"><strong>Les accessoires</strong> se vendent et s’échangent entre joueurs, comme des NFT normaux.</p>
+  <p style="font-size:9.8pt;margin:0"><strong>Les personnages, non.</strong> Tout le monde part du même endroit avec son personnage de base. Personne ne peut acheter un personnage déjà évolué pour sauter des étapes et prendre l’avantage parce qu’il a plus d’argent.</p>
+ </div>
+</div>
+<div class="foot"><span>Dogzy Universe</span><span>4</span></div>
+</section>
+
+<!-- 2d CAMPMISSIONS -->
+<section class="page"><div class="frame"></div>
+<div class="kicker">04 · Les missions de Dogzie Town</div>
+<h2 class="gold">À chaque camp son style de mission</h2>
+<div class="rule" style="margin:3mm 0 4mm"></div>
+<div class="band" style="margin:0 0 4mm;padding:3mm 0 3mm 5mm"><p style="margin:0;font-size:9.8pt"><strong>Principes :</strong> chaque camp a un style de mission adapté à ses factions. Dans les missions, chaque faction en croise d’autres, avec des rôles opposés ou complémentaires.</p></div>
+<div class="grid2" style="gap:4mm">
+<div class="card" style="padding:4.5mm 5.5mm;border-color:var(--gold)"><div class="tag">Bon côté · style Jetset</div><h3 class="gold" style="font-size:12.5pt;margin-bottom:2mm">Protéger le luxe</h3><ul><li style="font-size:9.8pt;margin-bottom:1.2mm">Protéger des colis d’or</li><li style="font-size:9.8pt;margin-bottom:1.2mm">Protéger un gros colis de diamants pendant une soirée mondaine</li></ul></div>
+<div class="card" style="padding:4.5mm 5.5mm"><div class="tag">Mauvais côté · style Adoléchien</div><h3 class="gold" style="font-size:12.5pt;margin-bottom:2mm">Semer le désordre</h3><ul><li style="font-size:9.8pt;margin-bottom:1.2mm">Perturber une « vente de clairon »</li><li style="font-size:9.8pt;margin-bottom:1.2mm">Une plantation de weed</li><li style="font-size:9.8pt;margin-bottom:1.2mm">Des vols au dépanneur</li><li style="font-size:9.8pt;margin-bottom:1.2mm">Du vol à l’étalage</li></ul></div>
+</div>
+<div class="kicker" style="margin:6mm 0 2mm">Exemple 1 · la soirée mondaine</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3.5mm">
+<div class="step" style="min-height:0;padding:3mm 4mm"><em>rôle opposé</em><h3 class="gold" style="font-size:12pt;margin-bottom:1.5mm">Le Criminel</h3>Tente de voler le collier de diamants.</div>
+<div class="step" style="min-height:0;padding:3mm 4mm"><em>rôle opposé</em><h3 class="gold" style="font-size:12pt;margin-bottom:1.5mm">Le Jetset</h3>Protège le collier pendant la soirée.</div>
+<div class="step" style="min-height:0;padding:3mm 4mm"><em>rôle complémentaire</em><h3 class="gold" style="font-size:12pt;margin-bottom:1.5mm">Les Justiciers</h3>La police enquête sur ce qui s’est passé.</div>
+</div>
+
+<div style="margin-top:5mm"><div class="kicker" style="margin-bottom:2mm">Exemple 2 · le geek et la chanteuse</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:3.5mm"><div class="step" style="min-height:0;padding:3mm 4mm"><em>obsédé par la chanteuse</em><h3 class="gold" style="font-size:12pt;margin-bottom:1.5mm">Le geek</h3>Entrer dans sa loge et prendre des souvenirs personnels. Son but : se faire pogner.</div><div class="step" style="min-height:0;padding:3mm 4mm"><em>la vedette</em><h3 class="gold" style="font-size:12pt;margin-bottom:1.5mm">La chanteuse</h3>Donner son spectacle et attraper le geek.</div><div class="step" style="min-height:0;padding:3mm 4mm"><em>le protecteur</em><h3 class="gold" style="font-size:12pt;margin-bottom:1.5mm">L’agent de sécurité</h3>Protéger la chanteuse.</div><div class="step" style="min-height:0;padding:3mm 4mm"><em>le justicier</em><h3 class="gold" style="font-size:12pt;margin-bottom:1.5mm">L’enquêteur de police</h3>Trouver les preuves pour tout arrêter.</div></div>
+</div>
+<p class="note" style="margin-top:4mm">Classification : certaines missions (vols, braquages, drogue) influenceront la cote ESRB/PEGI du jeu. Elle sera établie selon le contenu final.</p>
+<div class="foot"><span>Dogzy Universe</span><span>5</span></div>
+</section>
+
+<!-- 2b LIVING -->
+<section class="page"><div class="frame"></div>
+<div class="kicker">05 · Un univers vivant</div>
+<h2 class="gold">Quand le monde regarde, Dogzy joue aussi</h2>
+<div class="rule" style="margin:3mm 0 5mm"></div>
+<p>L’univers grandit par extensions. Cinq sont déjà créées ; en voici deux, avec un nouveau concept :</p>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm;margin-top:4mm">
+ <div class="card" style="text-align:center;padding:5mm 4mm"><svg width="10mm" height="10mm"><use href="#paw"/></svg><div class="tag" style="margin-top:2mm">Extension créée</div><h3 class="gold" style="font-size:12pt">Le bateau de croisière Dogzy Family</h3><p style="font-size:9pt;margin:2mm 0 0">Toute la famille Dogzy prend le large.</p></div>
+ <div class="card" style="text-align:center;padding:5mm 4mm"><svg width="10mm" height="10mm"><use href="#paw"/></svg><div class="tag" style="margin-top:2mm">Extension créée</div><h3 class="gold" style="font-size:12pt">Le Super Bowl</h3><p style="font-size:9pt;margin:2mm 0 0">Le grand match vécu dans l’univers Dogzy. <em>(titre de travail)</em></p></div>
+ <div class="card" style="text-align:center;padding:5mm 4mm;border-color:var(--gold)"><svg width="10mm" height="10mm"><use href="#paw"/></svg><div class="tag" style="margin-top:2mm">Concept · lieu NFT</div><h3 class="gold" style="font-size:12pt">Le casino Dogzy</h3><p style="font-size:9pt;margin:2mm 0 0">Une carte NFT à l’ambiance Las Vegas : personnages de spectacle façon showgirls, personnages sur le thème de l’amour, accessoires de luxe.</p></div>
+</div>
+<div class="band" style="margin:5mm 0 0;padding:3mm 0 3mm 5mm"><p style="margin:0;font-size:9.3pt"><strong>Précision sur le casino :</strong> c’est un lieu NFT, une expérience d’ambiance Las Vegas avec spectacles, romance et luxe. Ce n’est <strong>pas</strong> un jeu de hasard : aucune machine à sous à jouer, aucune mise d’argent réel dans le jeu. Une demande est en cours auprès des autorités des jeux et des alcools pour ce projet.</p></div>
+<div class="kicker" style="margin-top:7mm">Une idée qui nous distingue</div>
+<p>Chaque grand événement sportif télévisé existe aussi dans Dogzy Universe, comme un événement du jeu. <strong>Ce que les gens regardent à la télé se vit en même temps dans le jeu.</strong></p>
+<div style="display:grid;grid-template-columns:1fr 10mm 1fr 10mm 1fr;align-items:stretch;text-align:center;margin:4mm 0 5mm">
+ <div class="step" style="min-height:0"><em>À la télé</em>Séries de la LNH, Super Bowl, grands événements de soccer…</div>
+ <div class="gold" style="font-size:18pt;align-self:center">→</div>
+ <div class="step" style="min-height:0"><em>Dans le jeu</em>Un événement Dogzy au même moment, avec ses décors et ses défis</div>
+ <div class="gold" style="font-size:18pt;align-self:center">→</div>
+ <div class="step" style="min-height:0"><em>Les joueurs</em>Des rendez-vous qui reviennent toute l’année</div>
+</div>
+<ul>
+ <li>Un calendrier d’événements déjà connu de millions de fans, qui ramène les joueurs dans le jeu.</li>
+ <li>Du contenu tout prêt pour les lives des cinq influenceurs partenaires.</li>
+</ul>
+<p class="note" style="margin-top:2mm">Les noms d’événements sont des exemples. Utiliser les marques officielles (LNH, Super Bowl, etc.) demandera des licences ou des ententes avec leurs détenteurs.</p>
+<div class="foot"><span>Dogzy Universe</span><span>6</span></div>
+</section>
+
+<!-- 3 ARCHITECTURE -->
+<section class="page p7"><style>.p7 .flow .step{min-height:44mm}.p7 li{font-size:9.8pt;margin-bottom:1.4mm}.p7 .rule{margin:3mm 0 5mm}</style><div class="frame"></div>
+<div class="kicker">06 · Comment ça marche</div>
+<h2 class="gold">Du jeu au portefeuille</h2>
+<div class="rule"></div>
+<p>Le joueur décide. Rien ne quitte le jeu sans sa demande. Il retire avec un <strong>code à 8 chiffres</strong> affiché à l’écran de la console.</p>
+<div class="flow">
+ <div class="step"><b>1</b><em>Dogzie Town</em>Le solde est sur le serveur du jeu. Le joueur choisit un montant.</div>
+ <div class="step"><b>2</b><em>Console</em>L’écran affiche un code à 8 chiffres, valable 15 minutes.</div>
+ <div class="step"><b>3</b><em>Application</em>Le joueur entre le code dans l’application, sur la même session.</div>
+ <div class="step"><b>4</b><em>Serveur</em>Il renvoie le montant, un nonce unique et sa signature.</div>
+ <div class="step"><b>5</b><em>Avalanche</em>Le portefeuille appelle le contrat. Le contrat vérifie, puis crée les jetons.</div>
+</div>
+<div class="kicker">07 · Sécurité prévue par conception</div>
+<div class="grid2" style="gap:4mm 8mm;margin-top:3mm">
+<ul>
+ <li>La clé privée du serveur ne quitte jamais le serveur. Seule son adresse est inscrite dans le contrat.</li>
+ <li>Le joueur ne signe pas la création des jetons. Il envoie une transaction qui contient la signature déjà faite par le serveur.</li>
+ <li>Chaque retrait a un nonce unique. Il est refusé une deuxième fois, sur le serveur et sur la chaîne.</li>
+ <li>Le code est à usage unique, tiré au hasard, et lié au compte.</li>
+</ul>
+<ul>
+ <li>Trois mauvais codes bloquent le dépôt 30 minutes.</li>
+ <li>Maximum 5 codes et 10 essais par heure, plus une limite par adresse IP.</li>
+ <li>Chaque échec est noté avec la date, le compte et l’adresse IP.</li>
+ <li>Le joueur reçoit un courriel si son compte est bloqué, si une limite est atteinte, si un code est créé, si le dépôt réussit, ou si un gros code expire sans servir.</li>
+</ul>
+</div>
+
+<div class="band" style="margin:6mm 0 0"><p style="margin:0;font-size:9.6pt">Contrats en <strong>Solidity 0.8.20</strong> sur Avalanche C-Chain. Ces règles sont rédigées et pas encore testées en production. Ce document n’est pas un audit.</p></div>
+<div class="foot"><span>Dogzy Universe</span><span>7</span></div>
+</section>
+
+<!-- 3b ECONOMY -->
+<section class="page"><div class="frame"></div>
+<div class="kicker">08 · L’économie Dogzy · vision</div>
+<h2 class="gold">Un écosystème, une monnaie</h2>
+<div class="rule" style="margin:3mm 0 5mm"></div>
+<p>Dogzie Town, Dogzy Universe, les NFT et la crypto Dogzy forment un seul écosystème. Voici les règles prévues.</p>
+<div class="card" style="margin-top:0;padding:5mm 6mm"><div class="tag">Vision prévue · l’écosystème complet</div>
+<p style="font-size:9.8pt;margin-bottom:3mm">À terme, le pont pourrait permettre aux joueurs d’exporter leurs jetons de Dogzie Town vers leur portefeuille blockchain, puis de les échanger contre la <strong>crypto Dogzy</strong>, la cryptomonnaie propre au projet.</p>
+<div style="display:grid;grid-template-columns:1fr 6mm 1fr 6mm 1fr 6mm 1fr;align-items:stretch">
+<div class="step" style="min-height:0;text-align:center;padding:3.5mm 2mm"><em>Jeu console</em><h3 class="gold" style="font-size:11.5pt">Dogzie Town</h3></div><div class="gold" style="align-self:center;text-align:center">+</div><div class="step" style="min-height:0;text-align:center;padding:3.5mm 2mm"><em>Blockchain</em><h3 class="gold" style="font-size:11.5pt">Dogzy Universe</h3></div><div class="gold" style="align-self:center;text-align:center">+</div><div class="step" style="min-height:0;text-align:center;padding:3.5mm 2mm"><em>Accessoires, art</em><h3 class="gold" style="font-size:11.5pt">NFT</h3></div><div class="gold" style="align-self:center;text-align:center">+</div><div class="step" style="min-height:0;text-align:center;padding:3.5mm 2mm"><em>Cryptomonnaie</em><h3 class="gold" style="font-size:11.5pt">Crypto Dogzy</h3></div>
+</div>
+</div>
+
+<div style="display:grid;gap:4mm;margin-top:5mm">
+<div class="card" style="padding:4.5mm 6mm;border-color:var(--gold);background:linear-gradient(160deg,rgba(212,175,55,.16),rgba(0,0,0,.2))"><div style="display:flex;gap:4mm;align-items:flex-start"><div class="gold" style="font-family:'Cinzel',serif;font-size:22pt;line-height:1">1</div><div><h3 class="gold" style="font-size:12.5pt;margin-bottom:1.5mm">Les accessoires s’achètent en Dogzy</h3><p style="font-size:9.8pt;margin:0">Certains achats pourront se payer en BNB ou dans d’autres cryptos. Mais les accessoires s’achètent <strong>obligatoirement en crypto Dogzy</strong>. Pas de choix : pour un accessoire, il faut des Dogzy.</p></div></div></div>
+<div class="card" style="padding:4.5mm 6mm"><div style="display:flex;gap:4mm;align-items:flex-start"><div class="gold" style="font-family:'Cinzel',serif;font-size:22pt;line-height:1">2</div><div><h3 class="gold" style="font-size:12.5pt;margin-bottom:1.5mm">Les jetons gagnés en mission s’exportent</h3><p style="font-size:9.8pt;margin:0">Les jetons gagnés dans les missions sur console peuvent être exportés vers le portefeuille blockchain, puis échangés contre de vraies Dogzy. Exemple illustratif : 500 000 jetons de jeu pour 5 Dogzy, selon la valeur du Dogzy.</p></div></div></div>
+<div class="card" style="padding:4.5mm 6mm;border-color:var(--gold);background:linear-gradient(160deg,rgba(212,175,55,.16),rgba(0,0,0,.2))"><div style="display:flex;gap:4mm;align-items:flex-start"><div class="gold" style="font-family:'Cinzel',serif;font-size:22pt;line-height:1">3</div><div><h3 class="gold" style="font-size:12.5pt;margin-bottom:1.5mm">Pour exporter, il faut jouer des deux côtés</h3><p style="font-size:9.8pt;margin:0">Il faut avoir un personnage dans <strong>Dogzy Universe et dans Dogzie Town</strong>. Avec un seul des deux univers, on joue et on fait les missions normalement, mais sans l’avantage de l’export.</p></div></div></div>
+</div>
+<p class="note" style="margin-top:5mm">Vision prévue, pas une fonction en ligne. Le taux d’échange n’est pas fixé. Les contrats (Solidity 0.8.20, Avalanche C-Chain) sont rédigés, mais pas encore testés, déployés ni audités. Ce document n’est pas un audit ni une offre de cryptomonnaie.</p>
+<div class="foot"><span>Dogzy Universe</span><span>8</span></div>
+</section>
+
+<!-- 4 STATUS -->
+<section class="page"><div class="frame"></div>
+<div class="kicker">09 · État réel du projet</div>
+<h2 class="gold">Où on en est, en toute transparence</h2>
+<div class="rule"></div>
+<p>Les bases techniques sont posées. Il reste à les relier au jeu, à les tester, à les faire réviser par un auditeur externe, puis à les mettre en ligne.</p>
+<div class="status" style="margin-top:6mm">
+ <div class="card"><span class="pill">Écrit</span>
+ <ul><li>Le contrat du pont (PontDogzy) et le jeton (DogzyToken)</li><li>Le parcours de retrait par code à 8 chiffres</li><li>Les règles de blocage et de limites</li><li>Le schéma de la base des retraits en attente</li><li>Le journal des échecs et le journal des alertes</li><li>Les modèles de courriel</li></ul></div>
+ <div class="card"><span class="pill">Pas encore</span>
+ <ul><li>Relié au jeu console</li><li>Déployé, sur le réseau d’essai ou le réseau principal</li><li>Audité par un tiers</li><li>Nom du jeton fixé (DGZY ou DOGZY)</li></ul></div>
+ <div class="card"><span class="pill">À venir</span>
+ <ul><li>Afficher le code dans le jeu PlayStation</li><li>Écran « Déposer » et lien au portefeuille</li><li>API du serveur</li><li>Envoi réel des courriels</li><li>Tests</li><li>Revue par un auditeur externe</li><li>Réseau d’essai Avalanche, puis réseau principal, seulement après cette revue</li></ul></div>
+</div>
+<div class="band" style="margin-top:9mm"><p style="margin:0">Nous préférons montrer l’état exact du projet plutôt qu’un sceau d’audit qui n’existe pas encore. <strong>Aucun contrat n’est déployé, et aucun audit n’a été fait.</strong> L’audit externe est une condition avant toute mise en ligne.</p></div>
+<div class="foot"><span>Dogzy Universe</span><span>9</span></div>
+</section>
+
+<!-- 5 ART -->
+<section class="page p5"><div class="frame"></div>
+<div class="kicker">10 · Notre différence</div>
+<h2 class="gold">La galerie Valkyrie</h2>
+<div class="rule" style="margin-bottom:5mm"></div>
+<p>Ce qui distingue Dogzy Universe, c’est une vraie artiste au cœur de l’univers. <strong>Valkyrie</strong> (La Valkyrie Artiste Peintre) est une artiste internationale. Sa galerie relie l’art physique et l’art numérique.</p>
+<div class="stats" style="margin:5mm 0 3mm;--s:1"><style>.p5 .stat b{font-size:27pt;white-space:nowrap}</style>
+ <div class="stat"><b class="gold">23</b><span>expositions internationales</span></div>
+ <div class="stat"><b class="gold">14</b><span>curations</span></div>
+ <div class="stat"><b class="gold" style="white-space:nowrap">Top 10&nbsp;%</b><span>artistes les plus vus sur Singulart</span></div>
+ <div class="stat"><b class="gold">41 000</b><span>vues en à peine 4 mois</span></div>
+</div>
+<p class="note" style="font-size:9pt;margin-bottom:6mm;text-align:center">Expositions à Dubaï, Paris, Strasbourg, Barcelone, São Paulo et ailleurs. 14 curations : des galeristes sont venus chercher ses toiles sur des sites comme Singulart pour les inclure dans leurs collections. Sur Singulart, elle s’est classée dans le top 10 % des artistes les plus vus, avec 41 000 vues en à peine quatre mois.</p>
+<div class="card" style="padding:6mm 7mm">
+ <div class="tag">Chaque mois, une nouvelle collection</div>
+ <p style="margin-bottom:4mm">Chaque mois, une nouvelle collection de toiles est exposée en NFT dans la galerie Valkyrie. Chaque œuvre peut s’acheter <strong>en NFT</strong> ou <strong>en toile physique</strong>.</p>
+ <div style="display:grid;grid-template-columns:1fr 22mm 1fr;align-items:center;text-align:center;gap:3mm">
+  <div style="border:1px solid rgba(212,175,55,.45);border-radius:2mm;padding:4mm"><h3 class="gold" style="font-size:12pt">La toile</h3><p style="font-size:9pt;margin:1mm 0 0">Amène les amateurs de NFT vers la vraie peinture</p></div>
+  <div class="gold" style="font-family:'Cinzel',serif;font-size:24pt;line-height:1">⇄</div>
+  <div style="border:1px solid rgba(212,175,55,.45);border-radius:2mm;padding:4mm"><h3 class="gold" style="font-size:12pt">Le NFT</h3><p style="font-size:9pt;margin:1mm 0 0">Amène les artistes et les collectionneurs vers les NFT</p></div>
+ </div>
+</div>
+<div class="grid2" style="margin-top:6mm;gap:5mm">
+ <div class="card" style="padding:5.5mm 6mm"><div class="tag">Catalogue Artmajeur</div>
+ <p style="font-size:9.8pt;margin-bottom:2mm">Environ 40 à 50 œuvres retenues sont en cours d’inventaire pour Artmajeur.</p>
+ <p style="font-size:9.8pt;margin:0">Quand le catalogue sera en ligne : <strong>−30 % pendant une semaine</strong> pour le lancement.</p></div>
+ <div class="card" style="padding:5.5mm 6mm"><div class="tag">Profil Singulart</div>
+ <p style="font-size:9.8pt;margin-bottom:2mm">Un profil public existe déjà, avec des œuvres listées (ex. <em>Unshakable</em>, <em>Émergence passionnée</em>).</p>
+ <p style="margin:0;font-size:8pt;word-break:break-all"><a href="https://www.singulart.com/en/artist/la-valkyrie-artiste-peintre-82316">singulart.com/en/artist/la-valkyrie-artiste-peintre-82316</a></p></div>
+</div>
+<div class="band" style="margin:5mm 0 0;padding:2.5mm 0 2.5mm 6mm"><p style="margin:0;font-family:'Cormorant Garamond',serif;font-size:13pt;font-style:italic;color:var(--gold2)">La famille Dogzy Universe continue de grandir.</p></div>
+<div class="foot"><span>Dogzy Universe</span><span>10</span></div>
+</section>
+
+<!-- 6 BUDGET -->
+<section class="page p11s"><div class="frame"></div>
+<div class="kicker">11 · Budget et phases</div>
+<h2 class="gold">Deux phases, un besoin clair</h2>
+<div class="rule" style="margin-bottom:6mm"></div>
+<p>La première phase a été bâtie presque sans argent, grâce au travail de la créatrice. La deuxième phase, le jeu console, est celle qui demande un vrai financement.</p>
+<div class="card" style="margin-top:5mm;padding:6mm 7mm">
+ <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:4mm">
+  <div><div class="tag">Phase 1 · Couche blockchain</div><h3 class="gold" style="font-size:16pt">Dogzy Universe</h3></div>
+  <span class="pill" style="margin:0">Création terminée</span>
+ </div>
+ <div style="display:grid;grid-template-columns:44mm 1fr;gap:6mm;margin-top:4mm;align-items:center">
+  <div style="text-align:center;border-right:1px solid rgba(212,175,55,.35);padding-right:5mm">
+   <div class="gold" style="font-family:'Cinzel',serif;font-size:30pt;line-height:1.1">≈ 500 $</div>
+   <div style="font-size:7.5pt;letter-spacing:.15em;text-transform:uppercase;margin-top:2mm">coût total en argent (CAD)</div>
+  </div>
+  <div><p style="font-size:10pt;margin-bottom:2mm">Seulement des abonnements mensuels : <strong>Cloud, Replit et Suno</strong>.</p>
+  <p style="font-size:10pt;margin:0">Tout le reste a été créé par la créatrice elle-même :</p></div>
+ </div>
+ <div class="stats" style="grid-template-columns:repeat(7,1fr);gap:2.5mm;margin:5mm 0 2mm"><style>.p11s .stat span{font-size:6.4pt;letter-spacing:.1em}</style>
+  <div class="stat"><b class="gold" style="font-size:18pt">~143</b><span>personnages</span></div>
+  <div class="stat"><b class="gold" style="font-size:18pt">46</b><span>bâtiments conçus pour Dogzie Town</span></div>
+  <div class="stat"><b class="gold" style="font-size:18pt">5</b><span>expansions (croisière, Super Bowl…)</span></div>
+  <div class="stat"><b class="gold" style="font-size:18pt">7</b><span>collections jouables</span></div>
+  <div class="stat"><b class="gold" style="font-size:13pt;line-height:2.1">♪</b><span>trame sonore</span></div>
+  <div class="stat"><b class="gold" style="font-size:13pt;line-height:2.1">▶</b><span>bande-annonce</span></div>
+  <div class="stat"><b class="gold" style="font-size:13pt;line-height:2.1">{ }</b><span>code et contrats</span></div>
+ </div>
+</div>
+<div class="band" style="margin:5mm 0"><p style="margin:0;font-size:10pt"><strong>Le temps de la créatrice a une valeur.</strong> Ce travail n’est pas gratuit : c’est un apport en industrie (« sweat equity »), à reconnaître dans toute entente et à compenser. Sa valeur exacte sera fixée avec les partenaires.</p></div>
+<div class="card" style="padding:6mm 7mm;border-color:var(--gold);background:linear-gradient(160deg,rgba(212,175,55,.16),rgba(0,0,0,.2))">
+ <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:4mm">
+  <div><div class="tag">Phase 2 · Console PlayStation</div><h3 class="gold" style="font-size:16pt">Dogzie Town</h3></div>
+  <span class="pill" style="margin:0;background:var(--gold);color:#000">Investissement recherché</span>
+ </div>
+ <div style="display:grid;grid-template-columns:62mm 1fr;gap:6mm;margin-top:3mm;align-items:center">
+  <div style="text-align:center;border-right:1px solid rgba(212,175,55,.35);padding-right:5mm">
+   <div style="font-size:7.5pt;letter-spacing:.15em;text-transform:uppercase;margin-bottom:1mm">au moins</div>
+   <div class="gold" style="font-family:'Cinzel',serif;font-size:21pt;line-height:1.15;white-space:nowrap">500 000 à<br>550 000 $</div>
+   <div style="font-size:7.5pt;letter-spacing:.15em;text-transform:uppercase;margin-top:2mm">CAD · investissement recherché</div>
+  </div>
+  <div><p style="font-size:10pt;margin-bottom:2mm">C’est la phase coûteuse : la production du jeu console. Ce montant vise à ce que <strong>rien ne manque</strong> pour produire Dogzie Town sur PlayStation.</p>
+  <p style="font-size:10pt;margin:0">Il couvre aussi le lien jeu–portefeuille, les tests, l’audit externe et le déploiement sur Avalanche.</p></div>
+ </div>
+</div>
+<p class="note" style="margin-top:4mm">« Création terminée » : le contenu et les contrats de la phase 1 sont faits. Les contrats ne sont pas encore déployés ni audités. Ces étapes viennent avant toute mise en ligne.</p>
+<div class="foot"><span>Dogzy Universe</span><span>11</span></div>
+</section>
+
+<!-- 7 MARKETING -->
+<section class="page"><div class="frame"></div>
+<div class="kicker">12 · Mise en marché</div>
+<h2 class="gold">Cinq voix de confiance</h2>
+<div class="rule" style="margin-bottom:6mm"></div>
+<p>La créatrice détient <strong>100 % de l’entreprise</strong>. Pour faire connaître le jeu, elle propose de s’associer à cinq influenceurs plutôt que d’acheter de la publicité. Objectif : créer une communauté qui explose dès l’ouverture.</p>
+<div class="band"><p style="margin:0;font-family:'Cormorant Garamond',serif;font-size:15pt;font-style:italic;color:var(--gold2)">Ces influenceurs ont des millions d’abonnés. Les joueurs leur font confiance pour essayer de nouveaux jeux. Ce sont eux, les partenaires dont nous avons besoin.</p></div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:3mm;margin:7mm 0 5mm">
+ <div class="step" style="min-height:44mm;text-align:center"><svg width="11mm" height="11mm"><use href="#paw"/></svg><em style="margin-top:2mm">Blockchain · jeux</em>Influenceur n° 1</div>
+ <div class="step" style="min-height:44mm;text-align:center"><svg width="11mm" height="11mm"><use href="#paw"/></svg><em style="margin-top:2mm">Blockchain · jeux</em>Influenceur n° 2</div>
+ <div class="step" style="min-height:44mm;text-align:center;border-color:var(--gold);background:rgba(212,175,55,.14)"><svg width="11mm" height="11mm"><use href="#paw"/></svg><em style="margin-top:2mm;color:var(--gold)">Hybride</em>Blockchain et console</div>
+ <div class="step" style="min-height:44mm;text-align:center"><svg width="11mm" height="11mm"><use href="#paw"/></svg><em style="margin-top:2mm">Console</em>Influenceur n° 1</div>
+ <div class="step" style="min-height:44mm;text-align:center"><svg width="11mm" height="11mm"><use href="#paw"/></svg><em style="margin-top:2mm">Console</em>Influenceur n° 2</div>
+</div>
+<div class="grid2" style="gap:5mm">
+ <div class="card"><div class="tag">L’offre</div>
+ <ul><li><strong>1 % de redevances à vie</strong> pour chacun des cinq</li><li>En échange, ils parlent de Dogzy <strong>dans tous leurs lives</strong> : de petits aperçus de la progression du jeu, de ce qu’il devient</li><li>Deux influenceurs blockchain dans les jeux, deux influenceurs console, un hybride</li></ul></div>
+ <div class="card"><div class="tag">Pourquoi ça marche</div>
+ <ul><li>Leurs abonnés suivent la création du jeu, live après live</li><li>Une communauté se forme avant même la sortie : <strong>un vrai « bang » au lancement</strong></li><li>Payés selon le succès du jeu, pas d’avance, ils ont intérêt à en parler longtemps</li></ul></div>
+</div>
+<p class="note" style="margin-top:5mm">Au total, 5 × 1 % = 5 % de redevances. Les influenceurs seront choisis et approchés avec les partenaires. Aucune entente n’est signée à ce jour.</p>
+<div class="foot"><span>Dogzy Universe</span><span>12</span></div>
+</section>
+
+<!-- 9 PROJECTIONS · VUE D'ENSEMBLE -->
+<section class="page pj"><style>
+.pj .pjgrid{display:grid;grid-template-columns:36mm repeat(3,1fr);gap:3mm;align-items:stretch}
+.pj .pjh{font-size:7pt;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);text-align:center;align-self:end;padding-bottom:.5mm}
+.pj .pjrow{align-self:center}
+.pj .pjrow h3{font-size:12pt;color:#e2bf57;margin:0}
+.pj .pjrow span{display:block;font-size:6.6pt;letter-spacing:.2em;text-transform:uppercase;color:var(--gold3);margin-top:1mm}
+.pj .pjc{border:1px solid rgba(212,175,55,.4);background:linear-gradient(160deg,rgba(212,175,55,.09),rgba(0,0,0,.2));border-radius:2.5mm;padding:3.5mm 2mm;text-align:center}
+.pj .pjc b{display:block;font-family:'Cinzel',serif;font-size:19pt;line-height:1.1;color:#e2bf57;text-shadow:0 0 18px rgba(212,175,55,.25);white-space:nowrap}
+.pj .pjc i{display:block;font-style:normal;font-size:8pt;margin-top:1.2mm;color:var(--soft)}
+.pj .pjc i em{font-style:normal;color:#f1e3b3;font-weight:600}
+.pt{width:100%;border-collapse:collapse;font-size:8.6pt}
+.pt th{font-size:6.6pt;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;text-align:right;padding:1.4mm 1.6mm;border-bottom:1px solid var(--gold3)}
+.pt th:first-child{text-align:left}
+.pt td{padding:1.15mm 1.6mm;text-align:right;border-bottom:.5px solid rgba(212,175,55,.16);white-space:nowrap;font-variant-numeric:tabular-nums}
+.pt td:first-child{text-align:left;white-space:normal}
+.pt tr.v td{color:#f1e3b3;font-weight:600;background:rgba(212,175,55,.06)}
+.pt tr.s td:first-child{padding-left:5mm}
+.pt tr.tot td{color:#e2bf57;font-weight:700;border-top:1px solid var(--gold3);border-bottom:1px solid var(--gold3);background:rgba(212,175,55,.1)}
+.pt tr.d td{color:#a99f86;font-size:8.2pt}
+.pt .gs{border-left:1px solid rgba(212,175,55,.35)}
+</style><div class="frame"></div>
+<div class="kicker">13 · Projections de revenus</div>
+<h2 class="gold">Ce que l’univers pourrait rapporter</h2>
+<div class="rule" style="margin:3mm 0 5mm"></div>
+<p style="font-size:10pt;margin-bottom:3mm">Un seul univers, cinq sources de revenus : la console <strong>Dogzie Town</strong>, la couche blockchain <strong>Dogzy Universe</strong> (avec le jeton Dogzy), l’art physique de la <strong>galerie Valkyrie</strong>, la marchandise et les lieux thématiques ajoutés avec le temps. On les calcule un par un, puis on les additionne. Tout est en <strong>dollars canadiens</strong>.</p>
+<span class="pill">Illustratif · non audité · pas une garantie</span>
+<div class="pjgrid" style="margin-top:2mm">
+ <div></div><div class="pjh">Prudent</div><div class="pjh">Normal</div><div class="pjh">Si ça pogne vraiment</div>
+ <div class="pjrow"><h3>An 1</h3><span>12 premiers mois</span></div>
+ <div class="pjc"><b>128 k$</b><i>brut · net <em>93 k$</em></i></div>
+ <div class="pjc"><b>571 k$</b><i>brut · net <em>402 k$</em></i></div>
+ <div class="pjc"><b>2,33 M$</b><i>brut · net <em>1,63 M$</em></i></div>
+ <div class="pjrow"><h3>Cumul 3 ans</h3><span>An 1 à An 3</span></div>
+ <div class="pjc"><b>494 k$</b><i>brut · net <em>353 k$</em></i></div>
+ <div class="pjc"><b>2,63 M$</b><i>brut · net <em>1,85 M$</em></i></div>
+ <div class="pjc"><b>13,93 M$</b><i>brut · net <em>9,85 M$</em></i></div>
+ <div class="pjrow"><h3>Cumul 5 ans</h3><span>An 1 à An 5</span></div>
+ <div class="pjc" style="border-color:var(--gold)"><b>948 k$</b><i>brut · net <em>678 k$</em></i></div>
+ <div class="pjc" style="border-color:var(--gold)"><b>5,83 M$</b><i>brut · net <em>4,14 M$</em></i></div>
+ <div class="pjc" style="border-color:var(--gold)"><b>35,12 M$</b><i>brut · net <em>25,25 M$</em></i></div>
+</div>
+<p class="note" style="margin-top:3mm">Brut = total des ventes. Net = après la part PlayStation (30 %), les commissions de galeries, le coût de la marchandise et les redevances des influenceurs (5 %). Le net est calculé avant les salaires, le développement, les serveurs et les impôts : ce n’est pas un profit.</p>
+<div class="kicker" style="margin:5mm 0 2mm">Exemple · scénario Normal, An 1</div>
+<table class="pt" style="font-size:9pt">
+<tr><th>Étape</th><th>Montant</th><th style="text-align:left;padding-left:5mm">Explication</th></tr>
+<tr class="v"><td>Revenu brut total</td><td>571 160 $</td><td style="text-align:left;padding-left:5mm;white-space:normal;font-weight:400;color:var(--soft)">15 000 copies + extensions, passe, accessoires, NFT, toiles, marchandise</td></tr>
+<tr class="d"><td>− Part PlayStation</td><td>−125 851 $</td><td style="text-align:left;padding-left:5mm">30 % du jeu, du DLC et de la passe</td></tr>
+<tr class="d"><td>− Influenceurs</td><td>−28 558 $</td><td style="text-align:left;padding-left:5mm">5 % du brut</td></tr>
+<tr class="d"><td>− Galeries + coût marchandise</td><td>−14 700 $</td><td style="text-align:left;padding-left:5mm">Toiles et produits dérivés</td></tr>
+<tr class="tot"><td>Revenu net pour l’entreprise</td><td>402 050 $</td><td style="text-align:left;padding-left:5mm;font-weight:400">Avant salaires, serveurs, développement et impôts</td></tr>
+</table>
+<div class="band" style="margin:5mm 0 0;padding:3mm 0 3mm 5mm"><p style="margin:0;font-size:9.4pt">Dans les trois scénarios, <strong>la console porte l’essentiel des revenus</strong> (environ 78,2 % du brut en An 1, scénario Normal). La blockchain ajoute de la valeur et de la fidélité, sans que le plan dépende d’une hausse du prix du jeton.</p></div>
+<div class="foot"><span>Dogzy Universe</span><span>13</span></div>
+</section>
+
+<!-- 10 PROJECTIONS · SOURCES -->
+<section class="page pj"><div class="frame"></div>
+<div class="kicker">14 · Projections · sources de revenus</div>
+<h2 class="gold">D’où viendraient les revenus</h2>
+<div class="rule" style="margin:3mm 0 4mm"></div>
+<p style="font-size:9.6pt;margin-bottom:3mm">Chaque source est calculée séparément, puis additionnée. An 1 et cumul sur 5 ans, en <strong>milliers de $ CA</strong> (ex. 571 = 571 000 $). « Pogne » = scénario « si ça pogne vraiment ».</p>
+<table class="pt">
+<tr><th style="border-bottom:none"></th><th colspan="3" style="text-align:center;border-bottom:1px solid var(--gold3)">An 1</th><th colspan="3" class="gs" style="text-align:center;border-bottom:1px solid var(--gold3)">Cumul 5 ans (An 1 à 5)</th></tr>
+<tr><th>$ CA (milliers)</th><th>Prud.</th><th>Norm.</th><th>Pogne</th><th class="gs">Prud.</th><th>Norm.</th><th>Pogne</th></tr>
+<tr class="v"><td>A. Console — Dogzie Town</td><td>83</td><td>447</td><td>1 937</td><td class="gs">656</td><td>4 530</td><td>27 638</td></tr>
+<tr class="s"><td>Ventes du jeu (PlayStation)</td><td>75</td><td>375</td><td>1 499</td><td class="gs">575</td><td>3 549</td><td>18 992</td></tr>
+<tr class="s"><td>Extensions (DLC)</td><td>4</td><td>37</td><td>210</td><td class="gs">46</td><td>513</td><td>4 144</td></tr>
+<tr class="s"><td>Passe compétitive multijoueur</td><td>1</td><td>7</td><td>48</td><td class="gs">7</td><td>98</td><td>947</td></tr>
+<tr class="s"><td>Accessoires (payés en Dogzy)</td><td>3</td><td>27</td><td>180</td><td class="gs">28</td><td>370</td><td>3 555</td></tr>
+<tr class="v"><td>B. Blockchain — Dogzy Universe</td><td>29</td><td>86</td><td>277</td><td class="gs">177</td><td>728</td><td>3 912</td></tr>
+<tr class="s"><td>NFT personnages</td><td>14</td><td>45</td><td>180</td><td class="gs">79</td><td>421</td><td>2 891</td></tr>
+<tr class="s"><td>NFT bâtiments / carte</td><td>4</td><td>9</td><td>16</td><td class="gs">18</td><td>44</td><td>79</td></tr>
+<tr class="s"><td>Collections NFT mensuelles Valkyrie</td><td>12</td><td>30</td><td>72</td><td class="gs">73</td><td>223</td><td>650</td></tr>
+<tr class="s"><td>Redevances reventes secondaires (5 %)</td><td>0</td><td>2</td><td>8</td><td class="gs">6</td><td>36</td><td>256</td></tr>
+<tr class="s"><td>Frais export de jetons + revente</td><td>0</td><td>0</td><td>1</td><td class="gs">1</td><td>4</td><td>36</td></tr>
+<tr class="v"><td>C. Art physique — toiles galerie Valkyrie</td><td>15</td><td>27</td><td>45</td><td class="gs">92</td><td>182</td><td>370</td></tr>
+<tr class="v"><td>D. Marchandise / marque</td><td>1</td><td>12</td><td>72</td><td class="gs">12</td><td>164</td><td>1 422</td></tr>
+<tr class="v"><td>E. Lieux thématiques</td><td>0</td><td>0</td><td>0</td><td class="gs">11</td><td>226</td><td>1 779</td></tr>
+<tr class="tot"><td>Revenu brut total</td><td>128</td><td>571</td><td>2 331</td><td class="gs">948</td><td>5 829</td><td>35 122</td></tr>
+<tr class="d"><td>− Part PlayStation (30 %)</td><td>−24</td><td>−126</td><td>−527</td><td class="gs">−188</td><td>−1 248</td><td>−7 225</td></tr>
+<tr class="d"><td>− Commissions galeries (toiles)</td><td>−4</td><td>−8</td><td>−14</td><td class="gs">−27</td><td>−54</td><td>−111</td></tr>
+<tr class="d"><td>− Coût marchandise</td><td>−1</td><td>−7</td><td>−40</td><td class="gs">−7</td><td>−90</td><td>−782</td></tr>
+<tr class="d"><td>− Influenceurs (5 % du brut)</td><td>−6</td><td>−29</td><td>−117</td><td class="gs">−47</td><td>−291</td><td>−1 756</td></tr>
+<tr class="tot"><td>Revenu net pour l’entreprise*</td><td>93</td><td>402</td><td>1 634</td><td class="gs">678</td><td>4 145</td><td>25 248</td></tr>
+</table>
+<div class="kicker" style="margin:5mm 0 2mm">Répartition du revenu brut cumulatif sur 5 ans</div>
+<style>
+.bars{display:grid;grid-template-columns:34mm 1fr 18mm;gap:1.6mm 3mm;align-items:center;font-size:8.4pt}
+.bar{display:flex;height:4.6mm;border-radius:1mm;overflow:hidden;border:.5px solid rgba(212,175,55,.4)}
+.bar i{display:block;height:100%}
+.c1{background:#e2bf57}.c2{background:#a8842a}.c3{background:#f3e3a6}.c4{background:#6e5618}.c5{background:#c9a24a;background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.35) 0 1mm,transparent 1mm 2mm)}
+.lg{display:flex;flex-wrap:wrap;gap:1mm 4mm;font-size:7.2pt;margin:2.5mm 0 1.5mm}
+.lg span{display:inline-flex;align-items:center;gap:1.4mm}.lg span i{display:inline-block;width:3mm;height:3mm;border-radius:.6mm}
+</style>
+<div class="bars">
+ <span>Prudent</span><div class="bar"><i class="c1" style="width:69.2%"></i><i class="c2" style="width:18.6%"></i><i class="c3" style="width:9.7%"></i><i class="c4" style="width:1.3%"></i><i class="c5" style="width:1.2%"></i></div><strong style="text-align:right">948 k$</strong>
+ <span>Normal</span><div class="bar"><i class="c1" style="width:77.7%"></i><i class="c2" style="width:12.5%"></i><i class="c3" style="width:3.1%"></i><i class="c4" style="width:2.8%"></i><i class="c5" style="width:3.9%"></i></div><strong style="text-align:right">5,83 M$</strong>
+ <span>Si ça pogne vraiment</span><div class="bar"><i class="c1" style="width:78.7%"></i><i class="c2" style="width:11.1%"></i><i class="c3" style="width:1.1%"></i><i class="c4" style="width:4%"></i><i class="c5" style="width:5.1%"></i></div><strong style="text-align:right">35,12 M$</strong>
+</div>
+<div class="lg"><span><i class="c1"></i>A. Console</span><span><i class="c2"></i>B. Blockchain</span><span><i class="c3"></i>C. Art physique</span><span><i class="c4"></i>D. Marchandise</span><span><i class="c5"></i>E. Lieux thématiques</span></div>
+<p class="note" style="font-size:7.6pt;margin:0">Prudent : console 69,2 % · blockchain 18,6 % · art 9,7 % · marchandise 1,3 % · lieux 1,2 %<br>Normal : console 77,7 % · blockchain 12,5 % · art 3,1 % · marchandise 2,8 % · lieux 3,9 %<br>Si ça pogne vraiment : console 78,7 % · blockchain 11,1 % · art 1,1 % · marchandise 4 % · lieux 5,1 %<br>* Net = avant salaires, développement, serveurs, marketing payé et impôts.</p>
+<div class="foot"><span>Dogzy Universe</span><span>14</span></div>
+</section>
+
+<!-- 11 PROJECTIONS · HYPOTHÈSES ET AVERTISSEMENT -->
+<section class="page pj"><div class="frame"></div>
+<div class="kicker">15 · Projections · hypothèses et limites</div>
+<h2 class="gold">Les hypothèses, en clair</h2>
+<div class="rule" style="margin:3mm 0 4mm"></div>
+<p style="font-size:9.6pt;margin-bottom:2mm">Mêmes prix partout. Seuls changent le nombre de joueurs, combien restent et quelle part achète.</p>
+<table class="pt" style="table-layout:fixed">
+<colgroup><col style="width:46%"><col style="width:14%"><col style="width:14%"><col style="width:26%"></colgroup>
+<tr><th>Hypothèse</th><th>Prudent</th><th>Normal</th><th style="white-space:nowrap">Si ça pogne vraiment</th></tr>
+<tr><td>Nouveaux joueurs (copies vendues) — An 1</td><td>3 000</td><td>15 000</td><td>60 000</td></tr>
+<tr><td>Nouveaux joueurs — An 5</td><td>6 000</td><td>40 000</td><td>230 000</td></tr>
+<tr><td>Copies vendues cumulées sur 5 ans</td><td>23 000</td><td>142 000</td><td>760 000</td></tr>
+<tr><td>Rétention : joueurs qui restent actifs l’année suivante</td><td>35 %</td><td>45 %</td><td>55 %</td></tr>
+<tr><td>Achètent l’extension (DLC) de l’année</td><td>15 %</td><td>25 %</td><td>35 %</td></tr>
+<tr><td>Achètent des accessoires en Dogzy (portefeuille requis)</td><td>3 %</td><td>6 %</td><td>10 %</td></tr>
+<tr><td>Achètent un NFT personnage dans l’année</td><td>1 %</td><td>2 %</td><td>3 %</td></tr>
+<tr><td>Toiles physiques vendues (An 1) · croissance</td><td>10 · +10 %/an</td><td>18 · +15 %/an</td><td>30 · +25 %/an</td></tr>
+</table>
+<div class="grid2" style="gap:4mm;margin-top:4mm">
+ <div class="card" style="padding:4mm 5mm"><div class="tag" style="margin-bottom:2mm">Prix · identiques dans les 3 scénarios</div>
+ <p style="font-size:8.6pt;line-height:1.5;margin:0">Jeu <strong>24,99 $</strong> (prix moyen réalisé, soldes incluses; affiché ~29,99 $) · Extension <strong>9,99 $</strong> · Passe compétitive <strong>7,99 $</strong> · Accessoires <strong>30 $</strong> par acheteur et par an (en Dogzy) · NFT personnage (143 personnages) <strong>75 $</strong> · Toile physique <strong>1 500 $</strong> (moyenne, à confirmer)</p></div>
+ <div class="card" style="padding:4mm 5mm"><div class="tag" style="margin-bottom:2mm">Ce qui est retiré du brut</div>
+ <p style="font-size:8.6pt;line-height:1.5;margin:0"><strong>PlayStation ~30 %</strong> sur les ventes numériques du jeu, des extensions et de la passe compétitive · <strong>Influenceurs 5 %</strong> (5 × 1 % à vie, sur le brut total) · <strong>Galeries 30 %</strong> sur les toiles · <strong>Marchandise 55 %</strong> de coût de production</p></div>
+</div>
+<div class="card" style="margin-top:4mm;padding:4.5mm 6mm;border-color:var(--gold);background:linear-gradient(160deg,rgba(212,175,55,.16),rgba(0,0,0,.2))">
+ <div style="display:flex;align-items:center;gap:3mm;margin-bottom:2mm"><svg width="7mm" height="7mm"><use href="#paw"/></svg><h3 class="gold" style="font-size:13pt;margin:0">Avertissement · à lire avec chaque chiffre</h3></div>
+ <ul>
+  <li style="font-size:8.7pt;line-height:1.45;margin-bottom:1.3mm"><strong>Scénarios illustratifs</strong>, préparés pour la discussion avec des investisseurs. Ce n’est ni une prévision, ni une promesse, ni un audit. Aucun chiffre n’est garanti.</li>
+  <li style="font-size:8.7pt;line-height:1.45;margin-bottom:1.3mm">Les contrats intelligents (DogzyToken, PontDogzy) sont <strong>rédigés, mais pas déployés ni audités</strong>. Le jeton Dogzy n’est inscrit sur aucune plateforme d’échange. Aucune valeur de jeton n’est projetée.</li>
+  <li style="font-size:8.7pt;line-height:1.45;margin-bottom:1.3mm"><strong>Part PlayStation de 30 %</strong> sur le jeu, le DLC et la passe. Si Sony exige que les accessoires passent par le PlayStation Store, une part de 30 % s’appliquerait aussi.</li>
+  <li style="font-size:8.7pt;line-height:1.45;margin-bottom:1.3mm">Les volets blockchain exigent un déploiement, un audit de sécurité indépendant, une <strong>validation juridique (AMF / ACVM)</strong> et <strong>l’accord des règles de Sony</strong>. Selon ces règles, les achats en Dogzy pourraient devoir se faire hors console.</li>
+  <li style="font-size:8.7pt;line-height:1.45;margin-bottom:1.3mm"><strong>Volatilité crypto :</strong> la valeur en $ CA d’un montant payé en Dogzy, en BNB ou en AVAX peut varier fortement entre l’achat et la conversion. Les montants crypto ne sont pas garantis en $ CA.</li>
+  <li style="font-size:8.7pt;line-height:1.45;margin-bottom:0">Les <strong>500 000 $ à 550 000 $</strong> recherchés pour la Phase 2 sont un investissement, pas un revenu. Ils ne figurent dans aucun total.</li>
+ </ul>
+</div>
+<p class="note" style="margin-top:3mm;font-size:7.8pt">Ce que le modèle ne compte pas : le capital Phase 2, toute vente de jetons Dogzy par l’entreprise, toute hausse de valeur du jeton, les revenus publicitaires et les ventes de copies physiques en magasin. Ventes de jeu à valider avec un éditeur / Sony; prix moyen des toiles à confirmer. Détail complet : document « Projections de revenus » et fichier Excel (onglet « Hypothèses »).</p>
+<div class="foot"><span>Dogzy Universe</span><span>15</span></div>
+</section>
+
+<!-- 8 ASK -->
+<section class="page"><div class="frame"></div><div class="halo" style="top:90mm"></div>
+<div class="kicker">16 · Notre demande</div>
+<h2 class="gold">Construire la suite ensemble</h2>
+<div class="rule"></div>
+<p>Nous cherchons des <strong>partenaires et des investisseurs</strong> pour faire passer Dogzy Universe de la conception au lancement. Nous cherchons <strong>au moins 500 000 à 550 000 $ CAD</strong> pour la phase 2, afin que rien ne manque à la production de Dogzie Town. La forme se discute : partenariat, apport de capital ou expertise.</p>
+<div class="ask">
+ <div class="card"><div class="num gold">I</div><h3 class="gold" style="font-size:12pt;margin:2mm 0 3mm">Produire la console</h3><p style="font-size:9.2pt;margin:0">Phase 2 : produire Dogzie Town sur PlayStation. C’est le cœur du besoin.</p></div>
+ <div class="card"><div class="num gold">II</div><h3 class="gold" style="font-size:12pt;margin:2mm 0 3mm">Relier au portefeuille</h3><p style="font-size:9.2pt;margin:0">API du serveur, écran Déposer, tests, audit externe, puis déploiement sur Avalanche.</p></div>
+ <div class="card"><div class="num gold">III</div><h3 class="gold" style="font-size:12pt;margin:2mm 0 3mm">Mise en marché</h3><p style="font-size:9.2pt;margin:0">Cinq influenceurs partenaires dans leurs lives, pour un « bang » communautaire au lancement.</p></div>
+</div>
+<div style="text-align:center;margin-top:14mm">
+<svg width="18mm" height="18mm"><use href="#paw"/></svg>
+<p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20pt;color:var(--gold2);margin-top:4mm">The sky is not the limit.</p>
+<p style="margin-top:6mm;font-size:10pt;letter-spacing:.12em">Pour en discuter : <strong>Valkyrie · Sania</strong></p>
+<p style="font-size:10pt;letter-spacing:.12em"><a href="https://thedogzyfamilyuniverse.ca">thedogzyfamilyuniverse.ca</a></p>
+</div>
+<p class="note" style="position:absolute;bottom:22mm;left:18mm;right:18mm;text-align:center">Ce document présente un projet en développement. Il ne constitue ni une offre de valeurs mobilières, ni un audit de sécurité, ni une promesse de rendement.</p>
+<div class="foot"><span>Dogzy Universe</span><span>16</span></div>
+</section>
+</body></html>

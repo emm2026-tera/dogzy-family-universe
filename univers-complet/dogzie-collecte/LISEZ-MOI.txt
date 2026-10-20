@@ -1,0 +1,21 @@
+Dossier de collecte Dogzie Universe / Dogzie Town
+================================================
+Dépose ici tous les visuels, photos, 3D, sons, etc. Sans limite de nombre.
+
+Catégories :
+01-personnages-dogzie-town          → personnages / clans du jeu console
+02-personnages-dogzie-universe-metiers → métiers (cuisinier, chef, proprio…)
+03-accessoires                      → accessoires de progression (x10 par métier)
+04-environnements-ile-3d            → île, ville, bâtiments, maps 3D
+05-collections                      → Jetset, Criminal, Outcasts, autres
+06-bandes-annonces                  → trailers vidéo
+07-trames-sonores                   → musique, SFX
+08-galerie-valkyrie                 → toiles / photos d’œuvres
+09-divers                           → le reste
+
+Comment déposer :
+- Depuis le chat Grok Bot : envoie les fichiers (plusieurs à la fois OK) et dis dans quelle catégorie les mettre.
+- Depuis l’ordinateur de Chris (bureau Grok Bot) : ouvre ce dossier et glisse-dépose.
+- Cloud (Google Drive / Photos / iCloud) : connecte le compte, puis on importe ici.
+
+Chemin sur l’ordinateur de l’assistant : /workspace/dogzie-collecte
