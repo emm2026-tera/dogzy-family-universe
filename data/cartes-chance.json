@@ -415,6 +415,14 @@
         "uses": 1,
         "keep": true
       }
+    },
+    {
+      "id": "CH49",
+      "titre": "Héritage de ta tante",
+      "texte": "Tu viens d'hériter de ta tante ! Tu reçois 1000 tokens.",
+      "effet": {
+        "coins": 1000
+      }
     }
   ]
 }
