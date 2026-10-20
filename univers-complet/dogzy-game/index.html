@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0905">
+<title>Dogzy Family Universe</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="hud">
+    <div class="title">DOGZY <span>Family</span> UNIVERSE</div>
+    <div class="stats">
+      <div class="stat" title="Pièces"><i class="ico coin"></i><b id="hTokens">0</b></div>
+      <div class="stat dzs" title="Jetons Dogzy"><i class="ico dz"></i><b id="hDogzy">0</b></div>
+      <div class="stat gds" title="Accessoires gold (1 utilisation chacun)"><span class="gstar">✦</span><b id="hGold">0</b></div>
+      <div class="stat" title="Accessoires"><i class="ico gem"></i><b id="hAcc">0</b></div>
+      <div class="stat" title="Bouclier"><i class="ico shield"></i><b id="hShield">NON</b></div>
+      <div class="stat" title="Niveau"><i class="ico lvl"></i><b id="hLevel">1</b></div>
+    </div>
+    <div class="substats"><span id="hMult"></span><span id="hGoal"></span><span id="hTurn"></span></div>
+    <div id="leader" aria-label="Classement"></div>
+  </header>
+
+  <main id="boardWrap">
+    <div id="board">
+      <img id="boardImg" src="assets/board-level1.png" alt="Plateau de Dogzy Town" draggable="false">
+      <div id="wpLayer"></div>
+      <div id="pawns"></div>
+    </div>
+  </main>
+
+  <div id="botPanel" class="hidden"><img id="bpImg" alt=""><div class="bpText"><b id="bpName"></b><span id="bpMsg"></span></div><div id="bpWheel"></div><button class="btn" id="bpSkip">PASSER ⏭</button></div>
+  <div id="log"></div>
+
+  <nav id="controls">
+    <button class="btn ghost" id="btnLevels">NIVEAUX</button>
+    <button class="btn spin" id="btnSpin">TOURNER</button>
+    <button class="btn ghost" id="btnBag">SAC</button>
+    <button class="btn ghost shop" id="btnShop">🛍</button>
+    <button class="btn ghost speed" id="btnSpeed" title="Vitesse des bots">1x</button>
+  </nav>
+</div>
+
+<!-- generic modal -->
+<div id="modal" class="hidden">
+  <div class="sheet" id="sheet"></div>
+</div>
+<div id="toast"></div>
+
+<script src="data.js"></script>
+<script src="fr.js"></script>
+<script src="chars.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

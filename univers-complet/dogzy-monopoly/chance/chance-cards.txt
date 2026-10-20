@@ -1,0 +1,16 @@
+01. [BONUS] Lucky Spin (SPIN AGAIN): The stars of Dogzy Town shine on you. Spin the outer wheel again and move forward.
+02. [BONUS] Golden Paw Bonus (+200 TOKENS): The Dogzy Bank pays a loyalty bonus. Collect 200 tokens.
+03. [BONUS] Double Trouble (x2): Your next token reward is doubled. Twice the shine, twice the swagger.
+04. [BONUS] Triple Jackpot (x3): Big night in Dogzy Town! Your next token reward is multiplied by 3.
+05. [PROTECTION] Royal Shield (SHIELD): Raise the golden shield. It blocks the next raid or attack on your village.
+06. [ATTACK] Surprise Raid (RAID): Raid another player's village. Spin the second wheel to see how many tokens you steal.
+07. [ATTACK] Pickpocket Pup (STEAL 100): Quick paws! Steal 100 tokens from the player of your choice. A shield blocks it.
+08. [ACTION] City Tour (VISIT): Spin the second wheel. Visit that many buildings and complete their tasks.
+09. [ACTION] Call from the Bank (GO TO BANK): Move directly to the Bank and collect 100 tokens in interest.
+10. [PENALTY] Emergency Room (LOSE 1 TURN): Too much adventure! Go to the Hospital and lose your next turn.
+11. [PENALTY] Parking Ticket (-50 TOKENS): You parked your limo on a fire lane. Pay 50 tokens to the Police Station.
+12. [PENALTY] Lost in Dogzy Town (BACK 3): Wrong turn at the Marina. Move back 3 spaces.
+13. [BONUS] Shopping Spree (FREE ACCESSORY): The boutiques love you. Pick one free accessory from any shop.
+14. [PENALTY] The Pyromaniac Strikes (-1 ACCESSORY): The Pyromaniac set fire to your stuff! Lose one accessory unless you have a shield.
+15. [BONUS] Level Up! (LEVEL UP): Your hard work pays off. Move up to the next level of Dogzy Town.
+16. [ACTION] Treasure Hunt (SEARCH): Go to the nearest Search space and play a hidden-object card. Find them all to win an accessory.

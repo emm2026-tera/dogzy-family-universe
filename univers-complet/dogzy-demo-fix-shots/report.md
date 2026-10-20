@@ -1,0 +1,29 @@
+| Character | Before | Before failures | After |
+|---|---|---|---|
+| 00a-chef-golden-retriever | 4/9 | chef-hat: wrong scale; crown: wrong scale; cap: wrong scale; mic: wrong position; brush: wrong position | 9/9 |
+| 00c-barmaid-cavalier | 2/9 | chef-hat: wrong position, wrong scale; crown: wrong position, wrong scale; cap: wrong position, wrong scale; shades: wrong position, wrong scale; specs: wrong position, wrong scale; mic: wrong position; brush: wrong position | 9/9 |
+| 01-police-officer-german-shepherd | 2/9 | chef-hat: wrong position; crown: wrong position; cap: wrong position; bowtie: wrong position, wrong scale; medal: wrong position, wrong scale; mic: wrong position, wrong scale; brush: wrong position, wrong scale | 9/9 |
+| 02-clerk-beagle | 5/9 | bowtie: wrong scale; medal: wrong scale; mic: wrong position; brush: wrong position | 9/9 |
+| 03-firefighter-saint-bernard | 3/9 | shades: wrong scale; specs: wrong scale; bowtie: wrong position, wrong scale; medal: wrong position, wrong scale; mic: wrong position, wrong scale; brush: wrong position, wrong scale | 9/9 |
+| 04-nurse-collie | 4/9 | chef-hat: wrong scale; crown: wrong scale; cap: wrong scale; mic: wrong position; brush: wrong position | 9/9 |
+| 05-lawyer-bulldog | 7/9 | mic: wrong position; brush: wrong position | 9/9 |
+| 06-dentist-poodle | 5/9 | bowtie: wrong scale; medal: wrong scale; mic: wrong position; brush: wrong position | 9/9 |
+| 07-florist-yorkshire | 0/9 | chef-hat: wrong position; crown: wrong position; cap: wrong position; shades: beside character; specs: beside character; bowtie: in mouth/face, wrong scale; medal: in mouth/face, wrong scale; mic: wrong position, wrong scale; brush: wrong position, wrong scale | 9/9 |
+| 08-construction-rottweiler | 0/9 | chef-hat: wrong position; crown: wrong position; cap: wrong position; shades: wrong position, wrong scale; specs: wrong position, wrong scale; bowtie: wrong position, wrong scale; medal: wrong position, wrong scale; mic: wrong position, wrong scale; brush: wrong position, wrong scale | 9/9 |
+| 09-electrician-border-collie | 0/9 | chef-hat: wrong position; crown: wrong position; cap: wrong position; shades: wrong position; specs: wrong position; bowtie: in mouth/face, wrong scale; medal: in mouth/face, wrong scale; mic: wrong position, wrong scale; brush: wrong position, wrong scale | 9/9 |
+| 10-plumber-french-bulldog | 0/9 | chef-hat: wrong position; crown: wrong position; cap: wrong position; shades: wrong position; specs: wrong position; bowtie: in mouth/face, wrong scale; medal: in mouth/face, wrong scale; mic: wrong position, wrong scale; brush: wrong position, wrong scale | 9/9 |
+| 11-decorator-afghan-hound | 4/9 | chef-hat: wrong position, wrong scale; crown: wrong position, wrong scale; cap: wrong position, wrong scale; mic: wrong position; brush: wrong position | 9/9 |
+| 12-technician-husky | 0/9 | chef-hat: wrong position; crown: wrong position; cap: wrong position; shades: beside character; specs: beside character; bowtie: wrong position, wrong scale; medal: wrong position, wrong scale; mic: wrong position, wrong scale; brush: wrong position, wrong scale | 9/9 |
+| 13-architect-doberman | 5/9 | bowtie: wrong scale; medal: wrong scale; mic: wrong position; brush: wrong position | 9/9 |
+| 14-banker-dachshund | 2/9 | chef-hat: wrong position; crown: wrong position; cap: wrong position; bowtie: wrong position, wrong scale; medal: wrong position, wrong scale; mic: wrong position; brush: wrong position | 9/9 |
+| 15-veterinarian-labrador | 0/9 | chef-hat: wrong position; crown: wrong position; cap: wrong position; shades: beside character; specs: beside character; bowtie: wrong position, wrong scale; medal: wrong position, wrong scale; mic: wrong position; brush: wrong position | 9/9 |
+| 16-hairstylist-shih-tzu | 2/9 | chef-hat: wrong position; crown: wrong position; cap: wrong position; bowtie: wrong scale; medal: wrong scale; mic: wrong position; brush: wrong position | 9/9 |
+| 17-journalist-jack-russell | 7/9 | mic: wrong position; brush: wrong position | 9/9 |
+| 18-actor-boxer | 5/9 | bowtie: wrong scale; medal: wrong scale; mic: wrong position; brush: wrong position | 9/9 |
+| 19-fitness-coach-whippet | 7/9 | mic: wrong position; brush: wrong position | 9/9 |
+| 20-painter-australian-shepherd | 0/9 | chef-hat: wrong position; crown: wrong position; cap: wrong position; shades: beside character; specs: beside character; bowtie: wrong position, wrong scale; medal: wrong position, wrong scale; mic: wrong position; brush: wrong position | 9/9 |
+| 21-singer-shiba | 0/9 | chef-hat: wrong position; crown: wrong position; cap: wrong position; shades: wrong position; specs: wrong position; bowtie: wrong position, wrong scale; medal: wrong position, wrong scale; mic: wrong position, wrong scale; brush: wrong position, wrong scale | 9/9 |
+| 22-actress-pomeranian | 0/9 | chef-hat: wrong position; crown: wrong position; cap: wrong position; shades: wrong position, wrong scale; specs: wrong position, wrong scale; bowtie: in mouth/face, wrong scale; medal: in mouth/face, wrong scale; mic: wrong position, wrong scale; brush: wrong position, wrong scale | 9/9 |
+| 23-pilot-weimaraner | 3/9 | shades: wrong position; specs: wrong position; bowtie: wrong scale; medal: wrong scale; mic: wrong position, wrong scale; brush: wrong position, wrong scale | 9/9 |
+| 24-teacher-bernese | 3/9 | shades: wrong position, wrong scale; specs: wrong position, wrong scale; bowtie: wrong position, wrong scale; medal: wrong position, wrong scale; mic: wrong position, wrong scale; brush: wrong position, wrong scale | 9/9 |
+| 25-sound-tech-corgi | 3/9 | shades: wrong position; specs: wrong position; bowtie: wrong scale; medal: wrong scale; mic: wrong position, wrong scale; brush: wrong position, wrong scale | 9/9 |

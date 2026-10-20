@@ -1,0 +1,89 @@
+SECTION DU SITE : THE ADOLES-CHIANT OF DOGZY TOWN
+Pour thedogzyfamilyuniverse.ca (Webador), à coller soi-même.
+Emplacement : APRÈS la section « Dogzy Family Universe » et AVANT la section « Dogzy Town »
+(les ados viennent avant le jeu console des adultes).
+Style : fond noir, titres or (#D4AF37), texte crème (#E9E1CC).
+Images : dossier images/ (JPG pour le web). Le nom du fichier est indiqué à chaque endroit.
+
+==================================================================
+[IMAGE] images/01-banniere-adolescent-dogzytown.jpg  (bannière pleine largeur, en haut de la section)
+==================================================================
+
+SURTITRE : Jeu web3 · nouveau concept
+TITRE (H2) : The Adoles-chiant of Dogzy Town
+
+Paragraphe :
+Les personnages du jeu console Dogzy Town reprennent vie... à l'adolescence ! Dans The Adoles-chiant of Dogzy Town, tu regardes tes personnages préférés grandir et évoluer, et tu découvres, mission après mission, POURQUOI ils ont la personnalité qu'on leur connaît.
+
+Citation (en italique, en or) :
+« On les connaît adultes. Ici, on comprend enfin comment ils le sont devenus. »
+
+------------------------------------------------------------------
+TITRE (H3) : Comment fonctionnent les missions
+------------------------------------------------------------------
+Paragraphe :
+Chaque mission te propose 3 actions : à toi de choisir comment ton ado réagit.
+Chaque mission arrive avec un accessoire de base, suffisant pour réussir. Personne n'est obligé d'acheter quoi que ce soit.
+Si tu le souhaites, tu peux choisir l'accessoire ultime parmi 3 proposés.
+
+Trois encadrés (3 colonnes) :
+  3 actions : tu choisis la réaction de ton personnage.
+  Accessoire de base inclus : de quoi réussir la mission.
+  Accessoire ultime (optionnel) : un choix parmi 3.
+
+------------------------------------------------------------------
+TITRE (H3) : Exemples de missions
+------------------------------------------------------------------
+
+Mission : Kelzy libère les animaux
+[IMAGE] images/20-mission-kelzy-libere-animaux.jpg
+Texte : Dans l'animalerie, des chiots, des chatons et des oiseaux attendent dans leurs cages. Kelzy ne peut pas les laisser là. Libérer les oiseaux, distraire le commis ou libérer tous les animaux : à toi de choisir.
+
+Mission : Entrée par effraction à l'école (mission à deux joueurs)
+[IMAGE] images/23-mission-ecole-resultats-examen.jpg  (image verticale)
+Texte : La nuit, Rihanzy et sa complice se faufilent dans l'école pour voler les résultats d'examen. Caméras, gardien, casiers : il faudra jouer en équipe pour entrer et ressortir sans se faire prendre.
+
+Mission : Brandzy au derby de démolition
+[IMAGE] images/24-mission-derby-brandzy.jpg  (image verticale)
+Texte : Dans l'arène, Brandzy prend le volant de son bolide noir et or. Objectif de la mission : 5 voitures à démolir. Qui restera le dernier en piste ?
+
+Mission : Course de drag (nouvelle mission)
+[PAS D'IMAGE : encadré typographique noir et or]
+Texte : Feu rouge, moteurs qui grondent... Une ligne droite, une seule chance de partir au bon moment.
+
+------------------------------------------------------------------
+TITRE (H3) : Les ados
+------------------------------------------------------------------
+Paragraphe :
+Les personnages de Dogzy Town, version ado. Chaque fiche montre le personnage en entier : vues de face, de profil et de dos, expressions et personnalité.
+
+Galerie (grille de fiches, 3 colonnes ordinateur / 1 colonne mobile) :
+  Rihanzy (version teen) : images/10-rihanzy-teen.jpg
+  Rihanzy (version ado) : images/11-rihanzy-ado.jpg
+  Brandzy : images/12-brandzy-ado.jpg
+  Diegzy : images/13-diegzy-ado.jpg
+  Bobzy, de la bande des Marginaux : images/14-bobzy-marginals.jpg
+  Waltzy : images/15-waltzy-ado.jpg
+  The Pyromaniac : images/16-the-pyromaniac-fiche.jpg
+  Jouzy, artiste graffiti : images/17-jouzy-fiche.jpg
+  Kelzy, la cheerleader au grand cœur : images/21-kelzy-fuite-chiots-chatons.jpg
+
+(Image facultative, en plus : images/22-the-pyromaniac-ado-voiture.jpg, The Pyromaniac en ville)
+
+------------------------------------------------------------------
+TITRE (H3) : Avant-première : les cartes NFT VIP
+------------------------------------------------------------------
+Paragraphe :
+« Possède à l'avance ton personnage pour l'univers The Adoles-chiant of Dogzy Town. »
+Dans la boutique du jeu Dogzy Family Universe, 4 cartes NFT VIP donnent un avant-goût du jeu web3 : The Pyromaniac, Jouzy, Waltzy et Kelzy.
+
+Encadré or :
+  Carte NFT VIP : 1000 jetons Dogzy chacune.
+  Objets de collection, sans avantage en jeu.
+  NFT prévus sur Avalanche, pas encore déployés.
+
+Petite mention (texte gris, petite taille) :
+Les jetons Dogzy servent uniquement à acheter des objets dans les jeux Dogzy. Ils ne sont ni un placement ni un investissement : aucun rendement ni aucune valeur future n'est promis. Dans la démo actuelle, les jetons et les NFT sont simulés.
+
+Bouton (facultatif) : Jouer à la démo Dogzy Family Universe
+Lien : https://emm2026-tera.github.io/dogzy-family-universe/

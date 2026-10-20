@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>The Adoles-chiant of Dogzy Town — Pitch</title>
+<style>
+@font-face { font-family: 'DZ Sans'; src: url('fonts/Montserrat-VariableFont_wght.ttf'); font-weight: 100 900; }
+@font-face { font-family: 'DZ Cinzel'; src: url('fonts/Cinzel-VariableFont_wght.ttf'); font-weight: 400 900; }
+@font-face { font-family: 'DZ Serif'; src: url('fonts/CormorantGaramond-VariableFont_wght.ttf'); font-weight: 300 700; font-style: normal; }
+@font-face { font-family: 'DZ Serif'; src: url('fonts/CormorantGaramond-Italic-VariableFont_wght.ttf'); font-weight: 300 700; font-style: italic; }
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #050403; }
+body { font-family: 'DZ Sans', sans-serif; color: #e9e0cc; font-size: 9.3pt; line-height: 1.42; font-weight: 400;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 210mm; height: 297mm; position: relative; overflow: hidden; page-break-after: always;
+  background: radial-gradient(ellipse at 50% 0%, #1a1408 0%, #070604 55%, #030302 100%); }
+.page:last-child { page-break-after: auto; }
+.frame { position: absolute; inset: 6mm; border: 0.35mm solid rgba(212,175,55,.55); pointer-events: none; z-index: 5; }
+.frame::after { content: ""; position: absolute; inset: 1.2mm; border: 0.15mm solid rgba(212,175,55,.3); }
+.inner { position: absolute; inset: 12mm 13mm 12mm 13mm; }
+.gold { color: #f2cf6a; text-shadow: 0 0 .1mm #fff0b8, 0 .35mm .9mm rgba(0,0,0,.85), 0 0 3mm rgba(212,160,40,.35); display: inline-block; }
+.kicker { font-family: 'DZ Cinzel', serif; font-weight: 600; letter-spacing: .32em; text-transform: uppercase; font-size: 7.5pt; color: #d4af37; }
+h2 { font-family: 'DZ Cinzel', serif; font-weight: 700; font-size: 19pt; letter-spacing: .04em; line-height: 1.1; }
+h3 { font-family: 'DZ Cinzel', serif; font-weight: 700; font-size: 10.5pt; color: #f1cf6b; letter-spacing: .05em; margin-bottom: 1.5mm; }
+.rule { height: .35mm; background: linear-gradient(90deg, transparent, #d4af37 20%, #f6d77c 50%, #d4af37 80%, transparent); margin: 2.5mm 0 4mm; }
+.secthead { text-align: center; }
+p { margin-bottom: 2mm; }
+b, strong { color: #f6d77c; font-weight: 600; }
+.art { display: block; border: .35mm solid #c8952b; box-shadow: 0 0 0 .6mm #0a0805, 0 0 0 .9mm rgba(212,175,55,.45), 0 2mm 6mm rgba(0,0,0,.7); }
+.cap { font-family: 'DZ Serif', serif; font-style: italic; font-weight: 500; font-size: 9pt; color: #cdb98a; margin-top: 1.6mm; text-align: center; }
+.foot { font-weight: 600; position: absolute; bottom: 7.6mm; left: 0; right: 0; text-align: center; font-family: 'DZ Cinzel', serif;
+  font-size: 6.3pt; letter-spacing: .28em; color: #a88a3d; z-index: 6; }
+.foot span { background: #050403; padding: 0 3mm; }
+
+/* PAGE 1 */
+.hero { position: absolute; top: 0; left: 0; width: 210mm; height: 128mm; overflow: hidden; }
+.hero img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; display: block; }
+.hero::after { content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(5,4,3,0) 55%, rgba(5,4,3,.85) 88%, #050403 100%); }
+.titleblock { position: absolute; top: 113mm; left: 0; right: 0; text-align: center; z-index: 3; }
+.titleblock h1 { font-family: 'DZ Cinzel', serif; font-weight: 900; font-size: 24.5pt; line-height: 1.05; letter-spacing: .03em;
+  filter: drop-shadow(0 .6mm 1.2mm rgba(0,0,0,.9)); }
+.titleblock h1 .of { font-family: 'DZ Serif', serif; font-style: italic; font-weight: 600; font-size: 21pt; text-transform: none; letter-spacing: 0; }
+.byline { font-family: 'DZ Serif', serif; font-weight: 500; font-size: 12.5pt; font-style: italic; color: #e8d6a6; margin-top: 1.5mm; }
+.badges { margin-top: 2.6mm; display: flex; justify-content: center; gap: 2.5mm; }
+.badge { border: .3mm solid #c8952b; border-radius: 10mm; padding: .9mm 3.4mm; font-size: 6.8pt; letter-spacing: .14em; text-transform: uppercase; color: #f1cf6b; background: rgba(20,15,6,.8); }
+.p1body { position: absolute; top: 154mm; left: 14mm; right: 14mm; bottom: 15mm; display: flex; gap: 7mm; }
+.p1left { flex: 1; }
+.hook { font-family: 'DZ Serif', serif; font-weight: 500; font-size: 14.2pt; line-height: 1.28; color: #f3e7c8; margin-bottom: 3mm; }
+.hook em { color: #f6d77c; font-style: italic; }
+.loop { list-style: none; counter-reset: s; }
+.loop li { counter-increment: s; position: relative; padding-left: 9.5mm; margin-bottom: 3.2mm; font-size: 9.3pt; line-height: 1.36; }
+.loop li::before { content: counter(s); position: absolute; left: 0; top: .4mm; width: 6.4mm; height: 6.4mm; border-radius: 50%;
+  border: .35mm solid #d4af37; text-align: center; line-height: 6mm; font-family: 'DZ Cinzel', serif; font-weight: 700; font-size: 9pt; color: #f6d77c; background: #120e06; }
+.p1right { width: 56mm; text-align: center; }
+.p1right img { width: 56mm; height: auto; border-radius: 3mm; }
+
+/* PAGE 2 */
+.row { display: flex; gap: 6mm; }
+.txtcol { flex: 1; }
+.lvls { list-style: none; margin-top: 1mm; }
+.lvls li { padding: 1.1mm 0 1.1mm 0; border-bottom: .2mm solid rgba(212,175,55,.25); font-size: 8.5pt; }
+.lvls li span { font-family: 'DZ Cinzel', serif; color: #d4af37; font-weight: 700; margin-right: 1.6mm; }
+.duo { display: flex; gap: 6mm; margin-top: 4.5mm; }
+.duo > div { flex: 1; }
+.duo img { width: 100%; }
+.bul { list-style: none; }
+.bul li { position: relative; padding-left: 4mm; margin-bottom: 1.4mm; font-size: 8.6pt; }
+.p4 .bul li, .p4 .status li { font-size: 9.3pt; margin-bottom: 2.2mm; }
+.bul li::before { content: "◆"; position: absolute; left: 0; top: 0; color: #d4af37; font-size: 6pt; line-height: 3.9mm; }
+
+/* PAGE 3 */
+.grid4 { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5mm; }
+.card { border: .3mm solid rgba(212,175,55,.6); background: linear-gradient(160deg, rgba(40,30,10,.55), rgba(10,8,4,.7)); padding: 4.2mm 4.5mm; border-radius: 1.2mm; }
+.card h3 { font-size: 9.6pt; display: flex; align-items: flex-start; gap: 2mm; }
+.card h3 i { font-style: normal; font-family: 'DZ Serif', serif; font-size: 17pt; line-height: 1; color: #d4af37; font-weight: 600; }
+.card p { font-size: 8.9pt; margin: 0; line-height: 1.38; }
+.trio { display: flex; gap: 5mm; align-items: flex-start; }
+.trio > div { flex: 1; }
+.trio img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 0%; }
+
+/* PAGE 4 */
+.cols2 { display: flex; gap: 6mm; }
+.cols2 > div { flex: 1; }
+.status li { list-style: none; position: relative; padding-left: 7mm; margin-bottom: 2mm; font-size: 8.6pt; }
+.status li .ic { position: absolute; left: 0; top: .2mm; width: 4.6mm; height: 4.6mm; border-radius: 50%; border: .3mm solid #d4af37; text-align: center; line-height: 4.1mm; font-size: 7pt; color: #050403; background: #d4af37; font-weight: 700; }
+.status li .ic.wip { background: transparent; color: #f6d77c; }
+.status li .ic.next { background: transparent; color: #a88a3d; border-color: #a88a3d; }
+.contact { position: absolute; left: 0; right: 0; bottom: 6mm; border: .4mm solid #d4af37; padding: 4.5mm 6mm; text-align: center; border-radius: 1.5mm;
+  background: linear-gradient(180deg, rgba(60,45,12,.55), rgba(12,9,4,.85)); }
+.contact .big { font-family: 'DZ Cinzel', serif; font-size: 14pt; font-weight: 700; letter-spacing: .05em; }
+.contact .ph { font-family: 'DZ Serif', serif; font-weight: 600; font-size: 17pt; color: #fff2c2; margin: 1mm 0; }
+.tagline { font-family: 'DZ Serif', serif; font-style: italic; font-weight: 600; font-size: 20pt; text-align: center; line-height: 1.15; }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 : CONCEPT ============ -->
+<section class="page">
+  <div class="hero"><img src="images/plateau-niveau1.jpg" alt="Plateau de jeu, niveau 1 de Dogzy Town"></div>
+  <div class="frame"></div>
+  <div class="titleblock">
+    <div class="kicker">Jeu de plateau festif · Mobile &amp; PC</div>
+    <h1><span class="gold">THE ADOLES-CHIANT <span class="of">of</span> DOGZY TOWN</span></h1>
+    <div class="byline">Créé par Sania Labbé (Valkyrie)</div>
+    <div class="badges"><span class="badge">Style Monopoly</span><span class="badge">Carrières &amp; commerces</span><span class="badge">Mini-jeux</span></div>
+  </div>
+  <div class="p1body">
+    <div class="p1left">
+      <h3>Le concept</h3>
+      <p class="hook">Un jeu de plateau à la Monopoly où l’on ne se contente pas d’acheter des propriétés&nbsp;: <em>on bâtit une carrière.</em> À Dogzy Town, ville dorée et nocturne peuplée de chiens anthropomorphes de luxe, chaque ado commence apprenti… et rêve de finir propriétaire, franchisé, voire maire.</p>
+      <h3 style="margin-top:4mm">La boucle de jeu</h3>
+      <ol class="loop">
+        <li><b>Choisir son héros</b> parmi 12 personnages de base&nbsp;; des bots incarnent les autres. Partie contre les bots (mode en ligne à venir).</li>
+        <li><b>Lancer la roue</b> au lieu des dés&nbsp;: la roue extérieure indique le nombre de cases à avancer.</li>
+        <li><b>Déclencher la roue bonus</b> sur les cases spéciales&nbsp;: bâtiments à visiter, jetons à voler, x2, x3.</li>
+        <li><b>Jouer la case</b>&nbsp;: cartes Chance, objets cachés, quiz, raids entre joueurs, achat de commerces.</li>
+        <li><b>Grimper</b>&nbsp;: monter en métier, débloquer des accessoires, encaisser des loyers et passer à la ville suivante.</li>
+      </ol>
+    </div>
+    <div class="p1right">
+      <img class="art" src="images/capture-roue-bonus.jpg" alt="Capture du prototype : roue bonus">
+      <div class="cap">Prototype web jouable&nbsp;: la roue bonus</div>
+    </div>
+  </div>
+  <div class="foot"><span>Univers Dogzy Town · anciennement Dogzy Family Universe</span></div>
+</section>
+
+<!-- ============ PAGE 2 : MECANIQUES ============ -->
+<section class="page">
+  <div class="frame"></div>
+  <div class="inner">
+    <div class="secthead">
+      <div class="kicker">Mécaniques de jeu</div>
+      <h2><span class="gold">Du premier emploi à l’empire</span></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="row">
+      <div class="txtcol" style="flex:0 0 62mm">
+        <h3>Des métiers en 5 niveaux</h3>
+        <p style="font-size:8.6pt">Barmaid, serveuse, cuisinier et d’autres&nbsp;: chaque métier évolue de l’apprenti jusqu’au propriétaire ou à la franchise, avec des accessoires à débloquer à chaque niveau.</p>
+        <ul class="lvls">
+          <li><span>1</span>Apprenti</li>
+          <li><span>2</span>Spécialisé</li>
+          <li><span>3</span>Superviseur / chef</li>
+          <li><span>4</span>Gérant / propriétaire</li>
+          <li><span>5</span>Chaîne / franchise</li>
+        </ul>
+      </div>
+      <div style="flex:1">
+        <img class="art" style="width:100%" src="images/carriere-barmaid.jpg" alt="Fiche d’évolution : Barmaid">
+      </div>
+    </div>
+    <div class="duo">
+      <div><img class="art" src="images/carriere-serveuse.jpg" alt="Fiche d’évolution : Serveuse"><div class="cap">Serveuse&nbsp;: du premier service au bistro en chaîne</div></div>
+      <div><img class="art" src="images/carriere-cuisinier.jpg" alt="Fiche d’évolution : Cuisinier"><div class="cap">Cuisinier&nbsp;: de la cuisine de base à la chaîne de restaurants</div></div>
+    </div>
+    <div class="row" style="margin-top:5mm; align-items:flex-start">
+      <div style="flex:0 0 86mm">
+        <img class="art" style="width:100%" src="images/cartes-batiments.jpg" alt="Aperçu des 36 cartes commerces et bâtiments">
+      </div>
+      <div class="txtcol">
+        <h3>36 cartes commerces &amp; bâtiments</h3>
+        <ul class="bul">
+          <li>Hôtel de ville, police, banque, restaurant, bar, boulangerie…</li>
+          <li>Chacun lié à un métier&nbsp;: bar ↔ barmaid, restaurant ↔ cuisinier, bistro ↔ serveuse.</li>
+          <li>Le propriétaire encaisse ou paie le loyer, améliore de 0 à 5 et gagne un bonus si son métier correspond.</li>
+        </ul>
+        <h3 style="margin-top:2.6mm">Cartes Chance &amp; Chance Carrière</h3>
+        <ul class="bul">
+          <li><b>Chance</b>&nbsp;: bonus, raids, bouclier, montée de niveau.</li>
+          <li><b>Chance Carrière</b>&nbsp;: promotion, accessoire de métier offert, formation express, perte d’accessoire, achat de commerce.</li>
+        </ul>
+      </div>
+      <div style="flex:0 0 38mm">
+        <img class="art" style="width:100%" src="images/cartes-chance.jpg" alt="Aperçu des cartes Chance">
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>The Adoles-chiant of Dogzy Town · 2</span></div>
+</section>
+
+<!-- ============ PAGE 3 : DIFFERENCE ============ -->
+<section class="page">
+  <div class="frame"></div>
+  <div class="inner">
+    <div class="secthead">
+      <div class="kicker">Ce qui le distingue</div>
+      <h2><span class="gold">Plus qu’un Monopoly&nbsp;: une ville à conquérir</span></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="grid4">
+      <div class="card"><h3><i>I</i>Des carrières qui deviennent des entreprises</h3><p>On ne possède pas seulement des cases&nbsp;: on grandit dans un métier jusqu’à posséder le commerce qui lui correspond, puis la franchise.</p></div>
+      <div class="card"><h3><i>II</i>Le système à deux roues</h3><p>La roue remplace les dés&nbsp;; la roue bonus ajoute visites, vols de jetons et multiplicateurs x2 / x3. Chaque tour réserve une surprise.</p></div>
+      <div class="card"><h3><i>III</i>Un univers original de 26+ personnages</h3><p>Une identité visuelle forte et immédiatement reconnaissable&nbsp;: chiens de luxe, nuit dorée, personnalités tranchées et un antagoniste chaotique.</p></div>
+      <div class="card"><h3><i>IV</i>Des mini-jeux qui cassent le rythme</h3><p>Objets cachés dans des scènes riches (braquage de bijouterie, gala, laboratoire…), quiz de type QI et raids entre joueurs.</p></div>
+    </div>
+    <h3 style="margin-top:7mm; text-align:center">Quelques personnages de base</h3>
+    <div class="trio">
+      <div><img class="art" src="images/jouzy.jpg" alt="Jouzy"><div class="cap">Jouzy, l’ado graffeuse</div></div>
+      <div><img class="art" src="images/waltzy.jpg" alt="Waltzy"><div class="cap">Waltzy, le jeune scientifique</div></div>
+      <div><img class="art" src="images/pyromaniac.jpg" alt="The Pyromaniac"><div class="cap">The Pyromaniac, l’antagoniste chaotique</div></div>
+    </div>
+    <h3 style="margin-top:7mm; text-align:center">Mini-jeux &amp; missions</h3>
+    <div class="duo" style="margin-top:0">
+      <div><img class="art" src="images/braquage-bijouterie.jpg" alt="Scène d’objets cachés : braquage de bijouterie"><div class="cap">Objets cachés&nbsp;: le braquage de la bijouterie</div></div>
+      <div><img class="art" src="images/kelzy-mission.jpg" alt="Mission de Kelzy"><div class="cap">Kelzy, l’ado cheerleader, en mission</div></div>
+    </div>
+    <div class="rule" style="margin:8mm 30mm 4mm"></div>
+    <div class="tagline"><span class="gold">Commencer apprenti. Finir propriétaire.</span></div>
+  </div>
+  <div class="foot"><span>The Adoles-chiant of Dogzy Town · 3</span></div>
+</section>
+
+<!-- ============ PAGE 4 : PUBLIC / ETAT / CONTACT ============ -->
+<section class="page p4">
+  <div class="frame"></div>
+  <div class="inner">
+    <div class="secthead">
+      <div class="kicker">Progression</div>
+      <h2><span class="gold">Quatre villes, une ascension</span></h2>
+      <div class="rule"></div>
+    </div>
+    <img class="art" style="width:100%" src="images/4-niveaux.jpg" alt="Les 4 niveaux de ville">
+    <div class="cap">Cuisinier de base → chef cuisinier → gérant → propriétaire / maire</div>
+    <div class="cols2" style="margin-top:8mm">
+      <div>
+        <h3>Public cible</h3>
+        <ul class="bul">
+          <li>Ados et jeunes adultes de <b>13 à 30 ans</b></li>
+          <li>Joueurs mobiles occasionnels et amateurs de jeux de société festifs</li>
+          <li>Fans de progression façon <b>Monopoly GO</b> / <b>Coin Master</b></li>
+          <li>Familles</li>
+        </ul>
+      </div>
+      <div>
+        <h3>État actuel</h3>
+        <ul class="status">
+          <li><span class="ic">✓</span><b>Prototype web jouable</b>&nbsp;: plateau, roues, cartes Chance, objets cachés.</li>
+          <li><span class="ic wip">◐</span><b>En intégration</b>&nbsp;: bots, 12 personnages, carrières.</li>
+          <li><span class="ic next">→</span><b>À venir</b>&nbsp;: version complète jouable, puis mode en ligne.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rule" style="margin:9mm 30mm 4mm"></div>
+    <div class="tagline" style="font-size:17pt"><span class="gold">Une ville dorée, une carrière à bâtir, une partie entre amis.</span></div>
+    <div class="contact">
+      <div class="kicker" style="margin-bottom:1.5mm">Édition · publication · acquisition</div>
+      <div class="big"><span class="gold">Parlons de Dogzy Town</span></div>
+      <div class="ph">[Nom / courriel]</div>
+      <div class="byline" style="font-size:11pt">Créé par Sania Labbé (Valkyrie)</div>
+    </div>
+  </div>
+  <div class="foot"><span>The Adoles-chiant of Dogzy Town · 4</span></div>
+</section>
+
+</body>
+</html>

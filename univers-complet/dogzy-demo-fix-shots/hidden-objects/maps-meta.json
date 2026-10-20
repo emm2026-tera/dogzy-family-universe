@@ -1,0 +1,29 @@
+{
+ "influencer-suite": {
+  "title": "The Influencer's Suite",
+  "story": "The Princess of the Net goes live in five minutes, but her suite is a mess. Find the 5 things she needs before the stream starts.",
+  "reward": {
+   "character": "21-singer-shiba",
+   "item": "21-singer-shiba-L2-4",
+   "label": "Stage jacket (Singer, level 2): early right to buy"
+  }
+ },
+ "jetset-vip": {
+  "title": "Jetset VIP",
+  "story": "Midnight on the Jetset yacht: champagne, fireworks and the Dogzy elite. A thief is working the party. Find the 5 pieces before they vanish overboard.",
+  "reward": {
+   "character": "00c-barmaid-cavalier",
+   "item": "00c-barmaid-cavalier-L2-2",
+   "label": "Professional shaker set (Barmaid, level 2): early right to buy"
+  }
+ },
+ "dfu-boardroom": {
+  "title": "The DFU Boardroom",
+  "story": "You slipped into the DFU's secret meeting. Spot the 5 pieces of evidence on the table before the bosses notice you.",
+  "reward": {
+   "character": "08-construction-rottweiler",
+   "item": "08-construction-rottweiler-L2-2",
+   "label": "Walkie-talkie (Construction Worker, level 2): early right to buy"
+  }
+ }
+}

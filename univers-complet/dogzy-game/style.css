@@ -1,0 +1,242 @@
+:root{--gold:#d4af37;--gold2:#f6dd8a;--gold3:#8a6a12;--ink:#0b0905;--panel:#15110a;--line:rgba(212,175,55,.55)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:#000;color:#f3e7c1;font-family:Georgia,"Times New Roman",serif;overflow:hidden}
+#app{display:flex;flex-direction:column;height:100%;max-width:1400px;margin:0 auto;background:radial-gradient(ellipse at top,#1d1608,#050403 70%)}
+#hud{padding:calc(6px + env(safe-area-inset-top)) 10px 6px;border-bottom:1px solid var(--line);background:linear-gradient(#17120a,#0b0905)}
+.title{text-align:center;font-weight:bold;letter-spacing:.12em;font-size:13px;background:linear-gradient(90deg,#a87d1c,#f9e7a1,#a87d1c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.title span{font-style:italic;letter-spacing:0;font-weight:normal}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:6px}
+.stat{display:flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--line);border-radius:10px;padding:5px 4px;background:#0f0c06;font-size:15px}
+.stat b{color:var(--gold2)}
+.ico{width:18px;height:18px;border-radius:50%;display:inline-block;flex:none}
+.ico.coin{background:radial-gradient(circle at 35% 30%,#fff2b0,#d4a017 55%,#6d4a00)}
+.ico.gem{background:linear-gradient(135deg,#bfe9ff,#3fa2d8);transform:rotate(45deg);border-radius:3px;width:13px;height:13px}
+.ico.shield{background:linear-gradient(#f6dd8a,#8a6a12);border-radius:3px 3px 50% 50%;width:15px}
+.ico.lvl{background:conic-gradient(#d4af37 0 25%,#000 0 50%,#d4af37 0 75%,#000 0);border:1px solid var(--gold)}
+.substats{display:flex;justify-content:space-between;font-size:11px;color:#bfa55c;margin-top:4px;min-height:14px}
+#boardWrap{flex:1;overflow:auto;position:relative;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
+#board{position:relative;margin:0 auto}
+#boardImg{width:100%;height:100%;display:block;user-select:none;pointer-events:none}
+#wpLayer{position:absolute;inset:0;pointer-events:none}
+#wpLayer.debug .wp{position:absolute;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#0f0;border:2px solid #000;font:9px sans-serif;color:#0f0}
+#wpLayer.debug .wp span{position:absolute;left:12px;top:-2px;text-shadow:0 0 2px #000}
+@keyframes hop{50%{transform:translateY(-30%)}}
+#log{font-size:12px;padding:5px 12px;color:#e7d397;border-top:1px solid var(--line);min-height:28px;background:#0b0905;text-align:center}
+#controls{display:flex;gap:10px;padding:8px 12px calc(10px + env(safe-area-inset-bottom));background:#0b0905;align-items:center}
+.btn{font-family:inherit;font-weight:bold;letter-spacing:.1em;border-radius:14px;border:1px solid var(--gold);color:var(--gold2);background:#120e06;padding:12px 10px;font-size:14px;cursor:pointer}
+.btn:active{transform:scale(.97)}
+.btn.ghost{flex:1}
+.btn.spin,.btn.primary{flex:1.6;font-size:20px;color:#1a1204;background:linear-gradient(#fbe9a6,#d4af37 45%,#8a6a12);border-color:#fff1b8;box-shadow:0 0 18px rgba(212,175,55,.45)}
+.btn.primary{font-size:16px;width:100%;margin-top:10px}
+.btn[disabled]{opacity:.45;filter:grayscale(.6)}
+#modal{position:fixed;inset:0;background:rgba(0,0,0,.78);display:flex;align-items:center;justify-content:center;z-index:50;padding:10px}
+#modal.hidden{display:none}
+.sheet{width:100%;max-width:560px;max-height:100%;overflow:auto;background:linear-gradient(#1a140a,#0b0905);border:1px solid var(--gold);border-radius:18px;padding:14px;box-shadow:0 0 40px rgba(212,175,55,.25);text-align:center}
+.sheet.wide{max-width:1100px}
+.sheet h2{margin:2px 0 6px;font-size:20px;letter-spacing:.08em;color:var(--gold2)}
+.sheet p{margin:6px 0;font-size:14px;line-height:1.35}
+.tag{display:inline-block;font-size:10px;letter-spacing:.15em;border:1px solid var(--line);border-radius:20px;padding:2px 8px;color:#bfa55c}
+.tag.warn{color:#ffb35c;border-color:#ffb35c}
+.wheelBox{position:relative;width:min(78vw,340px);aspect-ratio:1;margin:8px auto}
+.wheelBox svg.wheel{width:100%;height:100%;transition:transform 3.6s cubic-bezier(.12,.75,.12,1)}
+.pointer{position:absolute;left:50%;top:-6px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:28px solid #fff1b8;transform:translateX(-50%);filter:drop-shadow(0 2px 3px #000);z-index:2}
+.result{font-size:22px;color:var(--gold2);min-height:30px;font-weight:bold;letter-spacing:.06em}
+.cardImg{max-width:100%;max-height:52vh;border-radius:10px;display:block;margin:6px auto}
+.progress{display:flex;gap:5px;justify-content:center;margin:8px 0}
+.progress i{width:28px;height:10px;border-radius:5px;border:1px solid var(--gold);background:#000}
+.progress i.on{background:linear-gradient(#f6dd8a,#a87d1c)}
+/* hidden object */
+.hoTop{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.timer{font-size:22px;font-weight:bold;color:var(--gold2);min-width:56px}
+.timer.low{color:#ff6a5c}
+.hoScroll{overflow:auto;border:1px solid var(--line);border-radius:10px;margin:8px 0;max-height:52vh;background:#000;touch-action:pan-x pan-y}
+.hoScene{position:relative;transform-origin:0 0}
+.hoScene img{display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none}
+.zone{position:absolute;cursor:pointer}
+.zone.found{border:2px solid rgba(246,221,138,.85);border-radius:10px;box-shadow:0 0 10px rgba(246,221,138,.6)}
+.miss{position:absolute;width:30px;height:30px;margin:-15px;border-radius:50%;border:2px solid rgba(255,90,80,.8);animation:fade .6s forwards;pointer-events:none}
+@keyframes fade{to{opacity:0;transform:scale(1.6)}}
+.hoList{display:grid;grid-template-columns:1fr 1fr;gap:4px;text-align:left;font-size:12.5px}
+.hoList div{border:1px solid rgba(212,175,55,.3);border-radius:8px;padding:4px 7px;background:#0f0c06}
+.hoList div.done{color:#6b5a2e;text-decoration:line-through;border-color:rgba(212,175,55,.12)}
+.hoList b{color:var(--gold2);float:right}
+.zoomBtns{display:flex;gap:6px}
+.zoomBtns .btn{padding:6px 12px;font-size:16px}
+.opts{display:grid;gap:8px;margin-top:10px}
+.opts .btn{font-size:15px;letter-spacing:.03em}
+.opts .btn.ok{background:#1f3b12;border-color:#7cd36b;color:#c9f5bd}
+.opts .btn.bad{background:#3b1212;border-color:#e46b6b;color:#f5bdbd}
+.bagGrid{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:8px 0}
+.bagGrid span{border:1px solid var(--line);border-radius:20px;padding:4px 10px;font-size:13px;background:#0f0c06}
+.lvList{display:grid;gap:6px;margin-top:8px;text-align:left}
+.lvList div{border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px;display:flex;justify-content:space-between;gap:8px}
+.lvList div.locked{opacity:.55}
+#toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translate(-50%,-20px);background:linear-gradient(#2a200c,#120e06);border:1px solid var(--gold);color:var(--gold2);padding:10px 16px;border-radius:14px;font-weight:bold;z-index:80;opacity:0;transition:.3s;pointer-events:none;text-align:center;max-width:90vw}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+#toast{transform:translate(-50%,20px)}
+@media (min-width:900px){.title{font-size:18px}.stats{max-width:700px;margin:6px auto 0}.substats{max-width:700px;margin:4px auto 0}#controls{max-width:700px;margin:0 auto;width:100%}}
+
+/* ---- v2: pawns, leaderboard, bots, setup ---- */
+.pawn{position:absolute;width:4.6%;aspect-ratio:1;transform:translate(-50%,-78%);transition:left .14s ease,top .14s ease;filter:drop-shadow(0 4px 4px rgba(0,0,0,.8));z-index:5}
+.pawn svg{width:100%;height:100%;display:block}
+.pawn.hop svg{animation:hop .15s ease}
+.plabel{position:absolute;left:50%;top:96%;transform:translateX(-50%);display:flex;align-items:center;gap:3px;white-space:nowrap;font:bold 10px/1 Georgia,serif;color:#fff;background:rgba(0,0,0,.78);border:1px solid var(--pc);border-radius:10px;padding:1px 5px 1px 1px}
+.plabel img{width:16px;height:16px;border-radius:50%;object-fit:cover;border:1px solid var(--pc)}
+#leader{display:flex;gap:4px;margin-top:5px;overflow-x:auto;scrollbar-width:none}
+.lb{flex:1;min-width:0;display:flex;align-items:center;gap:4px;border:1px solid rgba(212,175,55,.35);border-left:3px solid var(--pc);border-radius:9px;padding:2px 5px 2px 3px;background:#0f0c06;font-size:11px;white-space:nowrap}
+.lb.cur{box-shadow:0 0 0 1px var(--pc),0 0 10px var(--pc);background:#1d160a}
+.lb img{width:22px;height:22px;border-radius:50%;object-fit:cover;flex:none}
+.lb .rk{color:#bfa55c;font-size:10px}
+.lb .nm{overflow:hidden;text-overflow:ellipsis;max-width:70px;color:#e7d397}
+.lb .tk{color:var(--gold2);font-weight:bold;margin-left:auto}
+.lb .bz{font-size:9px;color:#bfa55c}
+.lb .ico.shield{width:10px;height:12px}
+@media (max-width:480px){.lb .nm{display:none}.lb .bz{display:none}}
+#botPanel{display:flex;align-items:center;gap:8px;padding:5px 10px;background:linear-gradient(90deg,#1d160a,#0b0905);border-top:2px solid var(--pc,#d4af37)}
+#botPanel.hidden{display:none}
+#bpImg{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--pc,#d4af37);flex:none}
+.bpText{flex:1;min-width:0;display:flex;flex-direction:column;font-size:12px}
+.bpText b{color:var(--gold2);font-size:13px}
+.bpText span{color:#e7d397;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#bpWheel{position:relative;width:52px;height:52px;flex:none}
+#bpWheel svg{width:100%;height:100%}
+#bpWheel .miniCard{height:52px;border-radius:4px}
+.pointer.sm{border-left-width:6px;border-right-width:6px;border-top-width:11px;top:-4px}
+#bpSkip{padding:7px 8px;font-size:11px}
+.btn.speed{flex:.6;padding:12px 4px}
+#toast{display:flex;align-items:center;gap:8px}
+#toast img{width:30px;height:30px;border-radius:50%;object-fit:cover}
+.cardRow{display:flex;gap:10px;align-items:center;justify-content:center}
+.cardRow .cardImg{max-height:40vh;max-width:60%;margin:6px 0}
+.bizInfo{display:grid;gap:5px;text-align:left;font-size:13px;min-width:110px}
+.bizInfo div{border:1px solid var(--line);border-radius:8px;padding:4px 7px;background:#0f0c06}
+.bizInfo small{display:block;font-size:9px;letter-spacing:.12em;color:#bfa55c}
+.bizInfo b{color:var(--gold2)}
+.bizInfo .jobs b{color:#cfe6ff}
+.sheet p.big{font-size:17px}
+.sheet p.good{color:#9ff58a;font-size:13px}
+.sheet p.sm{font-size:12px;color:#bfa55c;margin:6px 0 4px}
+.opts .btn.tgt{display:flex;align-items:center;gap:8px;border-left:4px solid var(--pc)}
+.opts .btn.tgt img{width:30px;height:30px;border-radius:50%;object-fit:cover}
+.charGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+@media (min-width:700px){.charGrid{grid-template-columns:repeat(6,1fr)}}
+.charTile{font-family:inherit;background:#0f0c06;border:1px solid rgba(212,175,55,.35);border-radius:10px;padding:4px;color:#e7d397;cursor:pointer;display:flex;flex-direction:column;align-items:center}
+.charTile img{width:100%;aspect-ratio:1;border-radius:8px;object-fit:cover}
+.charTile b{font-size:11px;margin-top:2px}
+.charTile small{font-size:9px;color:#bfa55c}
+.charTile.sel{border:2px solid var(--gold2);box-shadow:0 0 12px rgba(246,221,138,.6);background:#2a200c}
+.seg{display:flex;gap:6px;margin:6px 0 10px}
+.seg.col{flex-direction:column}
+.seg .btn{flex:1;padding:9px 6px;font-size:13px}
+.seg .btn.on{background:linear-gradient(#fbe9a6,#d4af37 45%,#8a6a12);color:#1a1204}
+.rankList{display:grid;gap:6px;margin:10px 0;text-align:left}
+.rankList div{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-left:4px solid var(--pc);border-radius:10px;padding:6px 10px;background:#0f0c06}
+.rankList div.me{background:#2a200c}
+.rankList b{font-size:20px;color:var(--gold2);width:22px}
+.rankList img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.rankList span{flex:1;display:flex;flex-direction:column}
+.rankList small{font-size:10px;color:#bfa55c}
+.rankList em{font-style:normal;font-weight:bold;color:var(--gold2);font-size:18px}
+.prof{display:flex;align-items:center;gap:10px;text-align:left}
+.prof img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+.career{display:grid;gap:6px;text-align:left;margin:8px 0}
+.career>div{border:1px solid rgba(212,175,55,.3);border-radius:10px;padding:6px 9px;font-size:13px;opacity:.6}
+.career>div.cur{opacity:1;border-color:var(--gold2)}
+.career>div.done{opacity:1}
+.career small{color:#bfa55c}
+.career ul{margin:4px 0 0;padding-left:18px;columns:2;font-size:12px}
+.career li.got{color:#9ff58a}
+.career li.got::marker{content:'✓ '}
+body.botTurn #toast{bottom:calc(150px + env(safe-area-inset-bottom))}
+
+/* ---- v3 Dogzy Family Universe : cartes noir et or, commerce + métier, menu ---- */
+.logo{font-weight:bold;letter-spacing:.14em;font-size:22px;background:linear-gradient(90deg,#a87d1c,#f9e7a1,#a87d1c);-webkit-background-clip:text;background-clip:text;color:transparent;margin:4px 0}
+.logo span{font-style:italic;letter-spacing:.02em}
+.dzCard{position:relative;width:min(82vw,320px);aspect-ratio:5/7;margin:6px auto;border-radius:18px;padding:18px 16px;background:radial-gradient(ellipse at 50% 35%,#1c160a,#000 75%);
+  border:3px solid #d4af37;box-shadow:inset 0 0 0 6px #000,inset 0 0 0 8px #8a6a12,0 0 26px rgba(212,175,55,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.dzPaw{position:absolute;top:12px;font-size:18px;filter:sepia(1) saturate(4) hue-rotate(5deg)}
+.dzPaw.tl{left:14px}.dzPaw.tr{right:14px}
+.dzCrown{color:#d4af37;font-size:26px;line-height:1}
+.dzDeck{font-size:clamp(26px,9vw,40px);font-weight:bold;letter-spacing:.06em;background:linear-gradient(#fbe9a6,#d4af37 55%,#8a6a12);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.dzNo{font-size:11px;color:#d4af37;letter-spacing:.15em}
+.dzQ{width:64px;height:64px;border-radius:50%;border:3px solid #d4af37;display:flex;align-items:center;justify-content:center;font-size:38px;font-weight:bold;color:#f6dd8a;box-shadow:0 0 14px rgba(212,175,55,.5)}
+.dzTitle{font-size:20px;font-weight:bold;color:#f6dd8a;letter-spacing:.06em}
+.dzCat{font-size:10px;color:#7cd36b;letter-spacing:.15em}
+.dzBadge{background:linear-gradient(#fbe9a6,#d4af37 50%,#8a6a12);color:#1a1204;font-weight:bold;border-radius:22px;padding:6px 18px;font-size:15px;border:1px solid #fff1b8}
+.dzText{font-size:13.5px!important;color:#f3e7c1}
+.dzFoot{position:absolute;bottom:12px;left:0;right:0;font-size:10px;letter-spacing:.2em;color:#d4af37}
+.dzMini{width:38px;height:52px;border:2px solid #d4af37;border-radius:5px;background:#000;color:#f6dd8a;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:22px}
+.bizCard{border:2px solid #d4af37;border-radius:14px;padding:8px;margin-top:6px;background:linear-gradient(#0f0c06,#000);box-shadow:inset 0 0 0 4px #000,inset 0 0 0 5px #8a6a12}
+.bcHead{font-weight:bold;letter-spacing:.08em;font-size:18px;color:#f6dd8a;border-bottom:1px solid var(--line);padding-bottom:4px}
+.bcJob{margin-top:6px;border-radius:10px;padding:6px;background:linear-gradient(#fbe9a6,#d4af37 50%,#8a6a12);color:#1a1204}
+.bcJob small{display:block;font-size:9px;letter-spacing:.16em}
+.bcJob b{font-size:16px}
+.charTile{position:relative}
+.seatTag{position:absolute;top:4px;left:4px;font-style:normal;font-weight:bold;font-size:11px;color:#1a1204;background:#f6dd8a;border-radius:6px;padding:0 4px}
+.seatTag:empty{display:none}
+.passImg{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);display:block;margin:8px auto}
+.btn[disabled].on{opacity:.45}
+
+/* ---- v4 : jetons Dogzy, boutique, accessoires gold, faillite ---- */
+.stats{grid-template-columns:repeat(6,1fr)!important;gap:4px!important}
+.stat{font-size:13px!important;gap:3px!important;padding:5px 2px!important}
+.ico.dz{background:radial-gradient(circle at 35% 30%,#e9d9ff,#8b4dff 55%,#2b0d63);border:1.5px solid #f6dd8a;position:relative;width:18px;height:18px;vertical-align:middle}
+.ico.dz::after{content:'D';position:absolute;inset:0;font:bold 11px/15px Georgia,serif;color:#fff3c4;text-align:center}
+.stat.dzs b{color:#d8c2ff}
+.gstar,.gd{color:#ffd54a;text-shadow:0 0 6px rgba(255,213,74,.8);font-weight:bold}
+.stat.gds{border-color:#ffd54a}
+.lb .gd{font-size:10px}
+.lb.out{opacity:.4;filter:grayscale(1)}
+.btn.shop{flex:.7;padding:12px 4px}
+.wallet{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:6px 0}
+.wallet span{border:1px solid var(--line);border-radius:20px;padding:4px 10px;background:#0f0c06;display:flex;align-items:center;gap:5px}
+.exchBox{border:1px solid #8b4dff;border-radius:12px;padding:8px;background:linear-gradient(#1a1030,#0b0905);margin:8px 0;text-align:left}
+.exchBox small{display:block;color:#cbb8f0;font-size:11px;margin:3px 0}
+.exch small{display:block;font-size:10px;letter-spacing:0;color:inherit}
+.shopList{display:grid;gap:6px;margin:6px 0 10px}
+@media (min-width:800px){.shopList{grid-template-columns:1fr 1fr}}
+.shopItem{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:12px;padding:7px 9px;background:#0f0c06;text-align:left}
+.shopItem>div{flex:1}
+.shopItem small{display:block;font-size:11px;color:#bfa55c}
+.shopItem .btn{padding:8px 10px;min-width:70px;display:flex;align-items:center;gap:4px;justify-content:center}
+.shopItem.gold{border:2px solid #ffd54a;background:linear-gradient(135deg,#3a2a05,#120e06 60%,#3a2a05);box-shadow:0 0 12px rgba(255,213,74,.35)}
+.shopItem.gold b{background:linear-gradient(90deg,#fff3b0,#ffd54a,#b8860b);-webkit-background-clip:text;background-clip:text;color:transparent}
+.shopItem.gold .btn{background:linear-gradient(#fff3b0,#ffd54a 45%,#b8860b);color:#1a1204;border-color:#fff3b0}
+.tag.gold{color:#ffd54a;border-color:#ffd54a}
+.winImg{width:110px;height:110px;border-radius:50%;object-fit:cover;border:4px solid #ffd54a;box-shadow:0 0 24px rgba(255,213,74,.7);display:block;margin:8px auto}
+.rankList div.out{opacity:.55}
+.rules{border:1px solid var(--line);border-radius:10px;padding:8px;color:#e7d397!important}
+@media (max-width:420px){.stat .ico{width:14px;height:14px}.ico.dz::after{font-size:9px;line-height:12px}}
+
+/* ---- v5 : personnages gold NFT + loupe ---- */
+img.gsk{filter:sepia(.55) saturate(1.7) hue-rotate(-8deg) brightness(1.07) contrast(1.05);outline:2px solid #ffd54a;outline-offset:-2px;box-shadow:0 0 10px rgba(255,213,74,.75)}
+.goldPawn svg{filter:drop-shadow(0 0 6px #ffd54a)}
+.goldPawn .plabel{border-color:#ffd54a!important;color:#ffd54a}
+.tag.nft{color:#ffd54a;border-color:#ffd54a;background:linear-gradient(90deg,#2a1e04,#0b0905)}
+.nftGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:6px 0 10px}
+@media (min-width:700px){.nftGrid{grid-template-columns:repeat(4,1fr)}}
+.nftCard{border:2px solid #b8860b;border-radius:14px;padding:6px;background:linear-gradient(160deg,#3a2a05,#0b0905 55%,#2a1e04);display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center;box-shadow:inset 0 0 0 3px #000,inset 0 0 0 4px #8a6a12}
+.nftCard.own{border-color:#ffd54a;box-shadow:0 0 14px rgba(255,213,74,.5),inset 0 0 0 3px #000,inset 0 0 0 4px #ffd54a}
+.nftImg{position:relative;width:100%}
+.nftImg img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;cursor:zoom-in;display:block}
+.nftBadge{position:absolute;top:5px;right:5px;font-size:9px;font-weight:bold;letter-spacing:.12em;color:#1a1204;background:linear-gradient(#fff3b0,#ffd54a,#b8860b);border-radius:6px;padding:1px 5px}
+.nftCard b{color:#ffd54a;font-size:13px}
+.nftLbl{font-size:9px;color:#d8c2ff;letter-spacing:.05em}
+.nftPerks{margin:2px 0;padding-left:14px;text-align:left;font-size:10px;color:#f3e7c1;line-height:1.25}
+.nftPerks li{margin:2px 0}
+.nftCard .btn{padding:7px 10px;width:100%;display:flex;gap:4px;align-items:center;justify-content:center;background:linear-gradient(#fff3b0,#ffd54a 45%,#b8860b);color:#1a1204}
+.nftCard .btn[disabled]{background:#120e06;color:var(--gold2)}
+.nftOwn{font-size:11px;color:#9ff58a;font-weight:bold}
+.charTile{position:relative}
+.zoomBtn{position:absolute;top:4px;right:4px;width:26px;height:26px;border-radius:50%;background:rgba(0,0,0,.75);border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:13px;cursor:zoom-in}
+img.zoomable{cursor:zoom-in}
+#lightbox{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px}
+#lightbox.hidden{display:none}
+#lightbox img{max-width:94vw;max-height:80vh;border-radius:16px;border:3px solid var(--gold);object-fit:contain}
+#lightbox p{color:var(--gold2);font-size:16px;letter-spacing:.08em;margin:10px 0 0}
+.lbClose{position:absolute;top:calc(10px + env(safe-area-inset-top));right:14px;width:44px;height:44px;border-radius:50%;border:1px solid var(--gold);background:#120e06;color:var(--gold2);font-size:28px;line-height:1;cursor:pointer}
+.vipBadge{position:absolute;left:5px;top:5px;font-size:10px;font-weight:bold;letter-spacing:.1em;color:#1a1204;background:linear-gradient(#fff3b0,#ffd54a,#b8860b);border:1px solid #fff3b0;border-radius:6px;padding:2px 6px;box-shadow:0 0 8px rgba(255,213,74,.8)}
+.nftCard.vip{border:3px solid #ffd54a;box-shadow:0 0 16px rgba(255,213,74,.55),inset 0 0 0 3px #000,inset 0 0 0 4px #ffd54a}
+.nftCard.vip .nftImg img{outline:2px solid #ffd54a;outline-offset:-2px}
+.vipHead{border:1px solid #ffd54a;border-radius:10px;padding:8px;color:#ffd54a!important;font-weight:bold;background:linear-gradient(90deg,#2a1e04,#0b0905);text-align:center}
+#lightbox img{width:min(90vw,80vh,640px);height:auto}

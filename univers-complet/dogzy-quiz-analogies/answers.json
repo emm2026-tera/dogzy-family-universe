@@ -1,0 +1,42 @@
+{
+  "q1": {
+    "correct_option": 3,
+    "rule_fr": "Remplissage : la forme vide devient pleine (or)."
+  },
+  "q2": {
+    "correct_option": 5,
+    "rule_fr": "Rotation de 90° dans le sens horaire."
+  },
+  "q3": {
+    "correct_option": 2,
+    "rule_fr": "Taille : la forme devient beaucoup plus petite."
+  },
+  "q4": {
+    "correct_option": 3,
+    "rule_fr": "Déplacement vers le coin opposé (diagonale)."
+  },
+  "q5": {
+    "correct_option": 3,
+    "rule_fr": "Nombre : on ajoute un élément (+1)."
+  },
+  "q6": {
+    "correct_option": 5,
+    "rule_fr": "Miroir gauche-droite (symétrie verticale)."
+  },
+  "q7": {
+    "correct_option": 2,
+    "rule_fr": "Échange des couleurs : l'extérieur prend la couleur de l'intérieur et inversement."
+  },
+  "q8": {
+    "correct_option": 4,
+    "rule_fr": "Deux règles : rotation de 180° + la forme se remplit."
+  },
+  "q9": {
+    "correct_option": 5,
+    "rule_fr": "Deux règles : +1 élément et les éléments deviennent plus petits."
+  },
+  "q10": {
+    "correct_option": 4,
+    "rule_fr": "Trois règles : coin opposé + rotation 90° horaire + l'or devient turquoise."
+  }
+}

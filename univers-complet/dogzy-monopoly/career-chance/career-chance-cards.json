@@ -1,0 +1,82 @@
+[
+  {
+    "n": 1,
+    "category": "PROMOTION",
+    "title": "Promotion!",
+    "badge": "NEXT LEVEL",
+    "text": "Your boss noticed your hard work. Move up to the next level of your career.",
+    "file": "/workspace/dogzy-monopoly/career-chance/career-01-promotion.png"
+  },
+  {
+    "n": 2,
+    "category": "ACCESSORY",
+    "title": "Employee of the Month",
+    "badge": "+1 CAREER ITEM",
+    "text": "Your team voted for you. Win the next accessory of your career level.",
+    "file": "/workspace/dogzy-monopoly/career-chance/career-02-employee-of-the-month.png"
+  },
+  {
+    "n": 3,
+    "category": "PENALTY",
+    "title": "Torn Uniform",
+    "badge": "-1 UNIFORM PIECE",
+    "text": "Coffee spill on the job! Lose your last career accessory unless you have a shield.",
+    "file": "/workspace/dogzy-monopoly/career-chance/career-03-torn-uniform.png"
+  },
+  {
+    "n": 4,
+    "category": "BONUS",
+    "title": "Training Day",
+    "badge": "+150 TOKENS",
+    "text": "You aced a training course at the Dogzy Academy. Collect 150 tokens.",
+    "file": "/workspace/dogzy-monopoly/career-chance/career-04-training-day.png"
+  },
+  {
+    "n": 5,
+    "category": "BONUS",
+    "title": "Big Tip",
+    "badge": "+100 TOKENS",
+    "text": "A VIP customer loved your service and leaves a generous tip.",
+    "file": "/workspace/dogzy-monopoly/career-chance/career-05-big-tip.png"
+  },
+  {
+    "n": 6,
+    "category": "ACTION",
+    "title": "Job Interview",
+    "badge": "QUIZ",
+    "text": "Answer a quiz. Pass it to win the next accessory of your career.",
+    "file": "/workspace/dogzy-monopoly/career-chance/career-06-job-interview.png"
+  },
+  {
+    "n": 7,
+    "category": "PENALTY",
+    "title": "Late for Work",
+    "badge": "-75 TOKENS",
+    "text": "You overslept after a night in Dogzy Town. Your boss docks 75 tokens from your pay.",
+    "file": "/workspace/dogzy-monopoly/career-chance/career-07-late-for-work.png"
+  },
+  {
+    "n": 8,
+    "category": "BUSINESS",
+    "title": "Franchise Deal",
+    "badge": "+50 PER BUSINESS",
+    "text": "Your brand is growing. Collect 50 tokens for every business you own.",
+    "file": "/workspace/dogzy-monopoly/career-chance/career-08-franchise-deal.png"
+  },
+  {
+    "n": 9,
+    "category": "ACTION",
+    "title": "Mentor a Rookie",
+    "badge": "+1 CAREER ITEM",
+    "text": "You train a new apprentice. Give 50 tokens to the poorest player and win a career accessory.",
+    "file": "/workspace/dogzy-monopoly/career-chance/career-09-mentor-a-rookie.png"
+  },
+  {
+    "n": 10,
+    "category": "PENALTY",
+    "title": "Health Inspection",
+    "badge": "-25 PER BUSINESS",
+    "text": "The inspector visits your shops. Pay 25 tokens for every business you own.",
+    "file": "/workspace/dogzy-monopoly/career-chance/career-10-health-inspection.png"
+  }
+]

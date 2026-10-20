@@ -1,0 +1,27 @@
+no,metier,sexe,race,personnalite,niveau1,niveau2,niveau3,niveau4,niveau5,deja_fait
+0a,Cuisinier,M,Golden retriever,passionné et généreux,Cuisinier apprenti,Chef cuisinier spécialisé,Maître hôte chef exécutif,Propriétaire restaurateur,Commerce chaîne/franchise,oui (fiche de Sania)
+0b,Serveuse,F,Dalmatien,souriante et sociable,Serveuse apprentie,Serveuse spécialisée bar et boissons,Cheffe de salle superviseure,Gérante de restaurant,Propriétaire chaîne/franchise,oui (fiche de Sania)
+0c,Barmaid,F,Cavalier King Charles,festive et créative,Barmaid apprentie,Barmaid spécialisée mixologie,Cheffe barmaid superviseure,Gérante de bar,Propriétaire chaîne de bars,oui (fiche de Sania)
+01,Policière,F,Berger allemand,brave et juste,Policière recrue,Enquêtrice détective,Sergente superviseure,Cheffe de police,Commandante poste de police,oui
+02,Commis,M,Beagle,enjoué et débrouillard,Commis apprenti,Commis spécialisé,Gérant,Propriétaire de boutique,Franchise,
+03,Pompier,M,Saint-Bernard,courageux et protecteur,Pompier recrue,Pompier,Superviseur,Capitaine,Chef de caserne,
+04,Infirmière,F,Colley,douce et attentive,Infirmière,Interne,Docteure,Chirurgienne,Directrice de clinique,
+05,Avocat,M,Bouledogue anglais,sérieux et éloquent,Assistant avocat,Avocat,Juge,Juge à la Cour suprême,Tribunal / cabinet,
+06,Dentiste,F,Caniche,méticuleuse et rassurante,Assistante dentaire,Dentiste,Chirurgienne ORL,Propriétaire de clinique,Clinique dentaire,
+07,Fleuriste,F,Yorkshire,rêveuse et créative,Assistante fleuriste,Fleuriste,Botaniste,Propriétaire de boutique,Serre,
+08,Ouvrier de chantier,M,Rottweiler,travaillant et fiable,Ouvrier de chantier,Chef de chantier,Contracteur,Propriétaire d'entreprise,Expansion,
+09,Électricienne,F,Border collie,vive et ingénieuse,Assistante électricienne,Électricienne,Formatrice,Entrepreneure,Entreprise,
+10,Plombier,M,Bouledogue français,jovial et pratique,Assistant plombier,Plombier,Formateur,Entrepreneur,Entreprise,
+11,Décoratrice,F,Lévrier afghan,élégante et artistique,Conseillère,Décoratrice,Designer,Propriétaire de studio,Commerce,
+12,Technicien,M,Husky,méthodique et calme,Technicien,Chef de chantier,Contracteur,Propriétaire,Commerce,
+13,Architecte,M,Dobermann,visionnaire et précis,Dessinateur,Technicien,Architecte,Associé,Firme d'architectes,
+14,Banquière,F,Teckel,prudente et organisée,Caissière,Superviseure,Banquière,Directrice,Banque,
+15,Vétérinaire,F,Labrador chocolat,bienveillante et patiente,Technicienne vétérinaire,Vétérinaire,Chirurgienne vétérinaire,Propriétaire,Clinique vétérinaire,
+16,Coiffeur,M,Shih Tzu,flamboyant et stylé,Assistant coiffeur,Coiffeur,Styliste,Propriétaire de salon,Chaîne de salons,
+17,Journaliste,F,Jack Russell,curieuse et énergique,Assistante,Journaliste,Présentatrice,Cheffe d'antenne,Salle multimédia,
+18,Acteur,M,Boxer,charismatique et drôle,Figurant,Acteur,Acteur international,Vedette,Remise de prix (Grammys),
+19,Entraîneuse,F,Whippet,énergique et motivante,Conseillère,Entraîneuse,Physiothérapeute,Propriétaire de gym,Chaîne de gyms,
+20,Peintre,F,Berger australien,passionnée et libre,Peintre,Peintre professionnelle,Peintre internationale,Peintre célèbre,Galerie,
+21,Chanteur,M,Shiba Inu,sensible et charismatique,Chanteur,Chanteur professionnel,Chanteur international,Chanteur célèbre,Tournée mondiale,
+22,Actrice,F,Loulou de Poméranie,glamour et expressive,Actrice,Actrice professionnelle,Actrice internationale,Actrice célèbre,Studio de cinéma,
+23,Pilote,M,Braque de Weimar,calme et sûr de lui,Agent de bord,Pilote,Capitaine,Contrôleur aérien (tour de contrôle),Aéroport,

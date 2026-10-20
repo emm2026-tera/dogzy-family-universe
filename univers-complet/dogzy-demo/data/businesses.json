@@ -1,0 +1,1301 @@
+{
+ "note": "Businesses: level 5 of every job. First player to complete it owns it; next players can buy a franchise. Upgrade prices are in-game tokens.",
+ "businesses": [
+  {
+   "id": "city-hall",
+   "name": "City Hall",
+   "category": "Administration",
+   "unlocks": "City Administration",
+   "description": "The city hall runs the city and coordinates every service in Dogzy Town.",
+   "image": "assets/businesses/01-city-hall-hd.jpg",
+   "card": "assets/businesses/01-city-hall.jpg",
+   "items": [
+    {
+     "id": "city-hall-u0",
+     "name": "City Services",
+     "price": 10
+    },
+    {
+     "id": "city-hall-u1",
+     "name": "Mayor's Office",
+     "price": 15
+    },
+    {
+     "id": "city-hall-u2",
+     "name": "Event Plaza",
+     "price": 20
+    },
+    {
+     "id": "city-hall-u3",
+     "name": "Records Office",
+     "price": 25
+    },
+    {
+     "id": "city-hall-u4",
+     "name": "Council Chamber",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "police-station",
+   "name": "Police Station",
+   "category": "Public Safety",
+   "unlocks": "Police Hq",
+   "description": "The police station maintains law and order and keeps Dogzy Town safe.",
+   "image": "assets/businesses/02-police-station-hd.jpg",
+   "card": "assets/businesses/02-police-station.jpg",
+   "items": [
+    {
+     "id": "police-station-u0",
+     "name": "K9 Unit",
+     "price": 10
+    },
+    {
+     "id": "police-station-u1",
+     "name": "Dispatch Center",
+     "price": 15
+    },
+    {
+     "id": "police-station-u2",
+     "name": "Investigation Lab",
+     "price": 20
+    },
+    {
+     "id": "police-station-u3",
+     "name": "Patrol Fleet",
+     "price": 25
+    },
+    {
+     "id": "police-station-u4",
+     "name": "Police Helicopter",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "fire-station",
+   "name": "Fire Station",
+   "category": "Emergency Services",
+   "unlocks": "Fire Hq",
+   "description": "The fire station protects citizens and responds quickly to every emergency.",
+   "image": "assets/businesses/03-fire-station-hd.jpg",
+   "card": "assets/businesses/03-fire-station.jpg",
+   "items": [
+    {
+     "id": "fire-station-u0",
+     "name": "Additional Trucks",
+     "price": 10
+    },
+    {
+     "id": "fire-station-u1",
+     "name": "Rescue Unit",
+     "price": 15
+    },
+    {
+     "id": "fire-station-u2",
+     "name": "Training Center",
+     "price": 20
+    },
+    {
+     "id": "fire-station-u3",
+     "name": "Water Tower",
+     "price": 25
+    },
+    {
+     "id": "fire-station-u4",
+     "name": "Alarm Network",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "hospital",
+   "name": "Hospital",
+   "category": "Healthcare",
+   "unlocks": "City Hospital",
+   "description": "The hospital cares for the health of every citizen in Dogzy Town.",
+   "image": "assets/businesses/04-hospital-hd.jpg",
+   "card": "assets/businesses/04-hospital.jpg",
+   "items": [
+    {
+     "id": "hospital-u0",
+     "name": "Emergency Ward",
+     "price": 10
+    },
+    {
+     "id": "hospital-u1",
+     "name": "Surgery Wing",
+     "price": 15
+    },
+    {
+     "id": "hospital-u2",
+     "name": "Helicopter Pad",
+     "price": 20
+    },
+    {
+     "id": "hospital-u3",
+     "name": "Pharmacy",
+     "price": 25
+    },
+    {
+     "id": "hospital-u4",
+     "name": "Research Lab",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "school",
+   "name": "School",
+   "category": "Education",
+   "unlocks": "School Campus",
+   "description": "The school teaches young citizens and prepares the future of the city.",
+   "image": "assets/businesses/05-school-hd.jpg",
+   "card": "assets/businesses/05-school.jpg",
+   "items": [
+    {
+     "id": "school-u0",
+     "name": "Classrooms",
+     "price": 10
+    },
+    {
+     "id": "school-u1",
+     "name": "Sports Field",
+     "price": 15
+    },
+    {
+     "id": "school-u2",
+     "name": "Student Programs",
+     "price": 20
+    },
+    {
+     "id": "school-u3",
+     "name": "Science Lab",
+     "price": 25
+    },
+    {
+     "id": "school-u4",
+     "name": "Library Corner",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "library",
+   "name": "Library",
+   "category": "Knowledge",
+   "unlocks": "Grand Library",
+   "description": "The library preserves knowledge and inspires minds across generations.",
+   "image": "assets/businesses/06-library-hd.jpg",
+   "card": "assets/businesses/06-library.jpg",
+   "items": [
+    {
+     "id": "library-u0",
+     "name": "Digital Archives",
+     "price": 10
+    },
+    {
+     "id": "library-u1",
+     "name": "Learning Center",
+     "price": 15
+    },
+    {
+     "id": "library-u2",
+     "name": "Event Hall",
+     "price": 20
+    },
+    {
+     "id": "library-u3",
+     "name": "Rare Books",
+     "price": 25
+    },
+    {
+     "id": "library-u4",
+     "name": "Reading Garden",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "courthouse",
+   "name": "Courthouse",
+   "category": "Justice",
+   "unlocks": "Justice Center",
+   "description": "The courthouse delivers fair justice for all citizens of Dogzy Town.",
+   "image": "assets/businesses/07-courthouse-hd.jpg",
+   "card": "assets/businesses/07-courthouse.jpg",
+   "items": [
+    {
+     "id": "courthouse-u0",
+     "name": "Courtrooms",
+     "price": 10
+    },
+    {
+     "id": "courthouse-u1",
+     "name": "Legal Services",
+     "price": 15
+    },
+    {
+     "id": "courthouse-u2",
+     "name": "Records Archive",
+     "price": 20
+    },
+    {
+     "id": "courthouse-u3",
+     "name": "Mediation Room",
+     "price": 25
+    },
+    {
+     "id": "courthouse-u4",
+     "name": "Security Wing",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "bank",
+   "name": "Bank",
+   "category": "Financial Services",
+   "unlocks": "Main Bank",
+   "description": "The bank keeps savings safe and fuels the city economy.",
+   "image": "assets/businesses/08-bank-hd.jpg",
+   "card": "assets/businesses/08-bank.jpg",
+   "items": [
+    {
+     "id": "bank-u0",
+     "name": "Vault",
+     "price": 10
+    },
+    {
+     "id": "bank-u1",
+     "name": "Investment Office",
+     "price": 15
+    },
+    {
+     "id": "bank-u2",
+     "name": "Premium Services",
+     "price": 20
+    },
+    {
+     "id": "bank-u3",
+     "name": "ATM Network",
+     "price": 25
+    },
+    {
+     "id": "bank-u4",
+     "name": "Loan Desk",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "post-office",
+   "name": "Post Office",
+   "category": "Mail Services",
+   "unlocks": "Central Hub",
+   "description": "The post office connects all citizens through fast and reliable mail services.",
+   "image": "assets/businesses/09-post-office-hd.jpg",
+   "card": "assets/businesses/09-post-office.jpg",
+   "items": [
+    {
+     "id": "post-office-u0",
+     "name": "Sorting Center",
+     "price": 10
+    },
+    {
+     "id": "post-office-u1",
+     "name": "Delivery Fleet",
+     "price": 15
+    },
+    {
+     "id": "post-office-u2",
+     "name": "Package Hub",
+     "price": 20
+    },
+    {
+     "id": "post-office-u3",
+     "name": "Postal Banking",
+     "price": 25
+    },
+    {
+     "id": "post-office-u4",
+     "name": "Digital Services",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "supermarket",
+   "name": "Supermarket",
+   "category": "Food & Essentials",
+   "unlocks": "Mega Market",
+   "description": "The supermarket supplies fresh food and daily essentials to the city.",
+   "image": "assets/businesses/10-supermarket-hd.jpg",
+   "card": "assets/businesses/10-supermarket.jpg",
+   "items": [
+    {
+     "id": "supermarket-u0",
+     "name": "Larger Stock",
+     "price": 10
+    },
+    {
+     "id": "supermarket-u1",
+     "name": "Delivery Service",
+     "price": 15
+    },
+    {
+     "id": "supermarket-u2",
+     "name": "Organic Section",
+     "price": 20
+    },
+    {
+     "id": "supermarket-u3",
+     "name": "Bakery Corner",
+     "price": 25
+    },
+    {
+     "id": "supermarket-u4",
+     "name": "Express Checkout",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "bakery",
+   "name": "Bakery",
+   "category": "Food & Beverage",
+   "unlocks": "Artisan Bakery",
+   "description": "The bakery bakes fresh bread and treats every morning.",
+   "image": "assets/businesses/11-bakery-hd.jpg",
+   "card": "assets/businesses/11-bakery.jpg",
+   "items": [
+    {
+     "id": "bakery-u0",
+     "name": "Pastry Workshop",
+     "price": 10
+    },
+    {
+     "id": "bakery-u1",
+     "name": "Coffee Corner",
+     "price": 15
+    },
+    {
+     "id": "bakery-u2",
+     "name": "Custom Orders",
+     "price": 20
+    },
+    {
+     "id": "bakery-u3",
+     "name": "Bigger Ovens",
+     "price": 25
+    },
+    {
+     "id": "bakery-u4",
+     "name": "Delivery Service",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "restaurant",
+   "name": "Restaurant",
+   "category": "Food & Beverage",
+   "unlocks": "Fine Dining",
+   "description": "The restaurant serves delicious meals to hungry citizens.",
+   "image": "assets/businesses/12-restaurant-hd.jpg",
+   "card": "assets/businesses/12-restaurant.jpg",
+   "items": [
+    {
+     "id": "restaurant-u0",
+     "name": "Gourmet Menu",
+     "price": 10
+    },
+    {
+     "id": "restaurant-u1",
+     "name": "Rooftop Terrace",
+     "price": 15
+    },
+    {
+     "id": "restaurant-u2",
+     "name": "Chef's Table",
+     "price": 20
+    },
+    {
+     "id": "restaurant-u3",
+     "name": "Wine Cellar",
+     "price": 25
+    },
+    {
+     "id": "restaurant-u4",
+     "name": "Private Room",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "pizzeria",
+   "name": "Pizzeria",
+   "category": "Food & Beverage",
+   "unlocks": "Pizzeria",
+   "description": "The pizzeria serves hot pizza to the whole neighborhood.",
+   "image": "assets/businesses/13-pizzeria-hd.jpg",
+   "card": "assets/businesses/13-pizzeria.jpg",
+   "items": [
+    {
+     "id": "pizzeria-u0",
+     "name": "Delivery Service",
+     "price": 10
+    },
+    {
+     "id": "pizzeria-u1",
+     "name": "Expanded Kitchen",
+     "price": 15
+    },
+    {
+     "id": "pizzeria-u2",
+     "name": "Private Room",
+     "price": 20
+    },
+    {
+     "id": "pizzeria-u3",
+     "name": "Wood Oven",
+     "price": 25
+    },
+    {
+     "id": "pizzeria-u4",
+     "name": "Patio Seating",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "sushi-restaurant",
+   "name": "Sushi Restaurant",
+   "category": "Food & Beverage",
+   "unlocks": "Sushi House",
+   "description": "The sushi restaurant prepares fresh sushi for citizens who love fine flavors.",
+   "image": "assets/businesses/14-sushi-restaurant-hd.jpg",
+   "card": "assets/businesses/14-sushi-restaurant.jpg",
+   "items": [
+    {
+     "id": "sushi-restaurant-u0",
+     "name": "Sushi Bar",
+     "price": 10
+    },
+    {
+     "id": "sushi-restaurant-u1",
+     "name": "Premium Menu",
+     "price": 15
+    },
+    {
+     "id": "sushi-restaurant-u2",
+     "name": "VIP Room",
+     "price": 20
+    },
+    {
+     "id": "sushi-restaurant-u3",
+     "name": "Takeout Counter",
+     "price": 25
+    },
+    {
+     "id": "sushi-restaurant-u4",
+     "name": "Chef's Counter",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "coffee-shop",
+   "name": "Coffee Shop",
+   "category": "Food & Beverage",
+   "unlocks": "Coffee Chain",
+   "description": "The coffee shop keeps Dogzy Town energized one cup at a time.",
+   "image": "assets/businesses/15-coffee-shop-hd.jpg",
+   "card": "assets/businesses/15-coffee-shop.jpg",
+   "items": [
+    {
+     "id": "coffee-shop-u0",
+     "name": "Drive-Thru",
+     "price": 10
+    },
+    {
+     "id": "coffee-shop-u1",
+     "name": "Lounge Area",
+     "price": 15
+    },
+    {
+     "id": "coffee-shop-u2",
+     "name": "Specialty Drinks",
+     "price": 20
+    },
+    {
+     "id": "coffee-shop-u3",
+     "name": "Pastry Display",
+     "price": 25
+    },
+    {
+     "id": "coffee-shop-u4",
+     "name": "Roastery",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "hotel",
+   "name": "Hotel",
+   "category": "Accommodation",
+   "unlocks": "Luxury Hotel",
+   "description": "The hotel welcomes visitors with comfort and style.",
+   "image": "assets/businesses/16-hotel-hd.jpg",
+   "card": "assets/businesses/16-hotel.jpg",
+   "items": [
+    {
+     "id": "hotel-u0",
+     "name": "More Rooms",
+     "price": 10
+    },
+    {
+     "id": "hotel-u1",
+     "name": "Spa & Pool",
+     "price": 15
+    },
+    {
+     "id": "hotel-u2",
+     "name": "Conference Center",
+     "price": 20
+    },
+    {
+     "id": "hotel-u3",
+     "name": "Rooftop Bar",
+     "price": 25
+    },
+    {
+     "id": "hotel-u4",
+     "name": "Concierge",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "clothing-store",
+   "name": "Clothing Store",
+   "category": "Retail",
+   "unlocks": "Fashion Hub",
+   "description": "The clothing store dresses citizens in the latest styles.",
+   "image": "assets/businesses/17-clothing-store-hd.jpg",
+   "card": "assets/businesses/17-clothing-store.jpg",
+   "items": [
+    {
+     "id": "clothing-store-u0",
+     "name": "New Collections",
+     "price": 10
+    },
+    {
+     "id": "clothing-store-u1",
+     "name": "VIP Fitting",
+     "price": 15
+    },
+    {
+     "id": "clothing-store-u2",
+     "name": "Custom Design",
+     "price": 20
+    },
+    {
+     "id": "clothing-store-u3",
+     "name": "Shoe Section",
+     "price": 25
+    },
+    {
+     "id": "clothing-store-u4",
+     "name": "Online Store",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "beauty-salon",
+   "name": "Beauty Salon",
+   "category": "Services",
+   "unlocks": "Beauty Center",
+   "description": "The beauty salon helps citizens look and feel their best.",
+   "image": "assets/businesses/18-beauty-salon-hd.jpg",
+   "card": "assets/businesses/18-beauty-salon.jpg",
+   "items": [
+    {
+     "id": "beauty-salon-u0",
+     "name": "Hair & Makeup",
+     "price": 10
+    },
+    {
+     "id": "beauty-salon-u1",
+     "name": "Esthetics",
+     "price": 15
+    },
+    {
+     "id": "beauty-salon-u2",
+     "name": "Spa Section",
+     "price": 20
+    },
+    {
+     "id": "beauty-salon-u3",
+     "name": "Nail Studio",
+     "price": 25
+    },
+    {
+     "id": "beauty-salon-u4",
+     "name": "Product Shop",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "pet-store",
+   "name": "Pet Store",
+   "category": "Pet Supplies",
+   "unlocks": "Pet Paradise",
+   "description": "The pet store provides everything pets need to be happy and healthy.",
+   "image": "assets/businesses/19-pet-store-hd.jpg",
+   "card": "assets/businesses/19-pet-store.jpg",
+   "items": [
+    {
+     "id": "pet-store-u0",
+     "name": "Grooming Services",
+     "price": 10
+    },
+    {
+     "id": "pet-store-u1",
+     "name": "Veterinary Corner",
+     "price": 15
+    },
+    {
+     "id": "pet-store-u2",
+     "name": "Exotic Pets",
+     "price": 20
+    },
+    {
+     "id": "pet-store-u3",
+     "name": "Pet Food Aisle",
+     "price": 25
+    },
+    {
+     "id": "pet-store-u4",
+     "name": "Play Area",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "flower-shop",
+   "name": "Flower Shop",
+   "category": "Retail",
+   "unlocks": "Floral Garden",
+   "description": "The flower shop brightens the city with fresh flowers and bouquets.",
+   "image": "assets/businesses/20-flower-shop-hd.jpg",
+   "card": "assets/businesses/20-flower-shop.jpg",
+   "items": [
+    {
+     "id": "flower-shop-u0",
+     "name": "Rare Flowers",
+     "price": 10
+    },
+    {
+     "id": "flower-shop-u1",
+     "name": "Event Decorations",
+     "price": 15
+    },
+    {
+     "id": "flower-shop-u2",
+     "name": "Delivery Service",
+     "price": 20
+    },
+    {
+     "id": "flower-shop-u3",
+     "name": "Greenhouse",
+     "price": 25
+    },
+    {
+     "id": "flower-shop-u4",
+     "name": "Gift Section",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "hardware-store",
+   "name": "Hardware Store",
+   "category": "Retail",
+   "unlocks": "Mega Hardware",
+   "description": "The hardware store supplies tools and materials for every project.",
+   "image": "assets/businesses/21-hardware-store-hd.jpg",
+   "card": "assets/businesses/21-hardware-store.jpg",
+   "items": [
+    {
+     "id": "hardware-store-u0",
+     "name": "Tools & Materials",
+     "price": 10
+    },
+    {
+     "id": "hardware-store-u1",
+     "name": "Pro Equipment",
+     "price": 15
+    },
+    {
+     "id": "hardware-store-u2",
+     "name": "Construction Supplies",
+     "price": 20
+    },
+    {
+     "id": "hardware-store-u3",
+     "name": "Garden Center",
+     "price": 25
+    },
+    {
+     "id": "hardware-store-u4",
+     "name": "Rental Service",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "construction-company",
+   "name": "Construction Company",
+   "category": "Business Services",
+   "unlocks": "Construction Hq",
+   "description": "The construction company builds and expands the neighborhoods of Dogzy Town.",
+   "image": "assets/businesses/22-construction-company-hd.jpg",
+   "card": "assets/businesses/22-construction-company.jpg",
+   "items": [
+    {
+     "id": "construction-company-u0",
+     "name": "Heavy Equipment",
+     "price": 10
+    },
+    {
+     "id": "construction-company-u1",
+     "name": "Project Management",
+     "price": 15
+    },
+    {
+     "id": "construction-company-u2",
+     "name": "Materials Supply",
+     "price": 20
+    },
+    {
+     "id": "construction-company-u3",
+     "name": "Crane Fleet",
+     "price": 25
+    },
+    {
+     "id": "construction-company-u4",
+     "name": "Design Office",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "plumbing-company",
+   "name": "Plumbing Company",
+   "category": "Business Services",
+   "unlocks": "Plumbing Hq",
+   "description": "The plumbing company keeps water flowing in every home and business.",
+   "image": "assets/businesses/23-plumbing-company-hd.jpg",
+   "card": "assets/businesses/23-plumbing-company.jpg",
+   "items": [
+    {
+     "id": "plumbing-company-u0",
+     "name": "Maintenance Service",
+     "price": 10
+    },
+    {
+     "id": "plumbing-company-u1",
+     "name": "Emergency Repairs",
+     "price": 15
+    },
+    {
+     "id": "plumbing-company-u2",
+     "name": "Equipment Storage",
+     "price": 20
+    },
+    {
+     "id": "plumbing-company-u3",
+     "name": "Service Vans",
+     "price": 25
+    },
+    {
+     "id": "plumbing-company-u4",
+     "name": "Training Room",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "electrician-company",
+   "name": "Electrician Company",
+   "category": "Business Services",
+   "unlocks": "Electric Hq",
+   "description": "The electrician company powers the city with safe and reliable electrical work.",
+   "image": "assets/businesses/24-electrician-company-hd.jpg",
+   "card": "assets/businesses/24-electrician-company.jpg",
+   "items": [
+    {
+     "id": "electrician-company-u0",
+     "name": "Electrical Services",
+     "price": 10
+    },
+    {
+     "id": "electrician-company-u1",
+     "name": "Emergency Unit",
+     "price": 15
+    },
+    {
+     "id": "electrician-company-u2",
+     "name": "Smart Home Systems",
+     "price": 20
+    },
+    {
+     "id": "electrician-company-u3",
+     "name": "Solar Panels",
+     "price": 25
+    },
+    {
+     "id": "electrician-company-u4",
+     "name": "Service Vans",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "car-dealership",
+   "name": "Car Dealership",
+   "category": "Automotive",
+   "unlocks": "Premium Dealership",
+   "description": "The car dealership sells new and used vehicles to citizens.",
+   "image": "assets/businesses/25-car-dealership-hd.jpg",
+   "card": "assets/businesses/25-car-dealership.jpg",
+   "items": [
+    {
+     "id": "car-dealership-u0",
+     "name": "New Vehicles",
+     "price": 10
+    },
+    {
+     "id": "car-dealership-u1",
+     "name": "Luxury Section",
+     "price": 15
+    },
+    {
+     "id": "car-dealership-u2",
+     "name": "Service Center",
+     "price": 20
+    },
+    {
+     "id": "car-dealership-u3",
+     "name": "Test Track",
+     "price": 25
+    },
+    {
+     "id": "car-dealership-u4",
+     "name": "Finance Office",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "car-repair-garage",
+   "name": "Car Repair Garage",
+   "category": "Automotive",
+   "unlocks": "Custom Garage",
+   "description": "The car repair garage keeps every vehicle in Dogzy Town running smoothly.",
+   "image": "assets/businesses/26-car-repair-garage-hd.jpg",
+   "card": "assets/businesses/26-car-repair-garage.jpg",
+   "items": [
+    {
+     "id": "car-repair-garage-u0",
+     "name": "Expert Repair",
+     "price": 10
+    },
+    {
+     "id": "car-repair-garage-u1",
+     "name": "Customization",
+     "price": 15
+    },
+    {
+     "id": "car-repair-garage-u2",
+     "name": "Performance Tuning",
+     "price": 20
+    },
+    {
+     "id": "car-repair-garage-u3",
+     "name": "Paint Shop",
+     "price": 25
+    },
+    {
+     "id": "car-repair-garage-u4",
+     "name": "Tow Truck",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "gas-station",
+   "name": "Gas Station",
+   "category": "Automotive",
+   "unlocks": "Full Service",
+   "description": "The gas station keeps vehicles fueled and travelers on the move.",
+   "image": "assets/businesses/27-gas-station-hd.jpg",
+   "card": "assets/businesses/27-gas-station.jpg",
+   "items": [
+    {
+     "id": "gas-station-u0",
+     "name": "Convenience Store",
+     "price": 10
+    },
+    {
+     "id": "gas-station-u1",
+     "name": "Car Wash",
+     "price": 15
+    },
+    {
+     "id": "gas-station-u2",
+     "name": "Charging Station",
+     "price": 20
+    },
+    {
+     "id": "gas-station-u3",
+     "name": "Snack Bar",
+     "price": 25
+    },
+    {
+     "id": "gas-station-u4",
+     "name": "Extra Pumps",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "gym-fitness-center",
+   "name": "Gym / Fitness Center",
+   "category": "Health & Fitness",
+   "unlocks": "Fitness Hub",
+   "description": "The gym / fitness center keeps citizens strong, fit and healthy.",
+   "image": "assets/businesses/28-gym-fitness-center-hd.jpg",
+   "card": "assets/businesses/28-gym-fitness-center.jpg",
+   "items": [
+    {
+     "id": "gym-fitness-center-u0",
+     "name": "Training Area",
+     "price": 10
+    },
+    {
+     "id": "gym-fitness-center-u1",
+     "name": "Personal Coaching",
+     "price": 15
+    },
+    {
+     "id": "gym-fitness-center-u2",
+     "name": "Spa & Sauna",
+     "price": 20
+    },
+    {
+     "id": "gym-fitness-center-u3",
+     "name": "Pool",
+     "price": 25
+    },
+    {
+     "id": "gym-fitness-center-u4",
+     "name": "Group Classes",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "shopping-center",
+   "name": "Shopping Center",
+   "category": "Retail",
+   "unlocks": "Mega Mall",
+   "description": "The shopping center provides the best shopping experience in Dogzy Town.",
+   "image": "assets/businesses/29-shopping-center-hd.jpg",
+   "card": "assets/businesses/29-shopping-center.jpg",
+   "items": [
+    {
+     "id": "shopping-center-u0",
+     "name": "New Retail Wing",
+     "price": 10
+    },
+    {
+     "id": "shopping-center-u1",
+     "name": "Payment Network",
+     "price": 15
+    },
+    {
+     "id": "shopping-center-u2",
+     "name": "Logistics Center",
+     "price": 20
+    },
+    {
+     "id": "shopping-center-u3",
+     "name": "Food Court",
+     "price": 25
+    },
+    {
+     "id": "shopping-center-u4",
+     "name": "Luxury Section",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "cinema",
+   "name": "Cinema",
+   "category": "Entertainment",
+   "unlocks": "Multiplex",
+   "description": "The cinema brings the latest movies to the big screen.",
+   "image": "assets/businesses/30-cinema-hd.jpg",
+   "card": "assets/businesses/30-cinema.jpg",
+   "items": [
+    {
+     "id": "cinema-u0",
+     "name": "More Screens",
+     "price": 10
+    },
+    {
+     "id": "cinema-u1",
+     "name": "VIP Theater",
+     "price": 15
+    },
+    {
+     "id": "cinema-u2",
+     "name": "Arcade Zone",
+     "price": 20
+    },
+    {
+     "id": "cinema-u3",
+     "name": "Snack Bar",
+     "price": 25
+    },
+    {
+     "id": "cinema-u4",
+     "name": "3D Projection",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "arcade",
+   "name": "Arcade",
+   "category": "Entertainment",
+   "unlocks": "Game Center",
+   "description": "The arcade offers games and fun for players of all ages.",
+   "image": "assets/businesses/31-arcade-hd.jpg",
+   "card": "assets/businesses/31-arcade.jpg",
+   "items": [
+    {
+     "id": "arcade-u0",
+     "name": "New Games",
+     "price": 10
+    },
+    {
+     "id": "arcade-u1",
+     "name": "VR Zone",
+     "price": 15
+    },
+    {
+     "id": "arcade-u2",
+     "name": "Tournament Area",
+     "price": 20
+    },
+    {
+     "id": "arcade-u3",
+     "name": "Prize Counter",
+     "price": 25
+    },
+    {
+     "id": "arcade-u4",
+     "name": "Snack Bar",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "nightclub",
+   "name": "Nightclub",
+   "category": "Entertainment",
+   "unlocks": "Nightlife Hub",
+   "description": "The nightclub brings music and nightlife to Dogzy Town.",
+   "image": "assets/businesses/32-nightclub-hd.jpg",
+   "card": "assets/businesses/32-nightclub.jpg",
+   "items": [
+    {
+     "id": "nightclub-u0",
+     "name": "VIP Lounge",
+     "price": 10
+    },
+    {
+     "id": "nightclub-u1",
+     "name": "Live DJ",
+     "price": 15
+    },
+    {
+     "id": "nightclub-u2",
+     "name": "Rooftop Club",
+     "price": 20
+    },
+    {
+     "id": "nightclub-u3",
+     "name": "Light Show",
+     "price": 25
+    },
+    {
+     "id": "nightclub-u4",
+     "name": "Dance Floor",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "sports-arena",
+   "name": "Sports Arena",
+   "category": "Entertainment",
+   "unlocks": "Stadium",
+   "description": "The sports arena hosts big games and events for the whole city.",
+   "image": "assets/businesses/33-sports-arena-hd.jpg",
+   "card": "assets/businesses/33-sports-arena.jpg",
+   "items": [
+    {
+     "id": "sports-arena-u0",
+     "name": "Major Events",
+     "price": 10
+    },
+    {
+     "id": "sports-arena-u1",
+     "name": "Overtime Seating",
+     "price": 15
+    },
+    {
+     "id": "sports-arena-u2",
+     "name": "VIP Suites",
+     "price": 20
+    },
+    {
+     "id": "sports-arena-u3",
+     "name": "Giant Screen",
+     "price": 25
+    },
+    {
+     "id": "sports-arena-u4",
+     "name": "Training Field",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "media-studio",
+   "name": "Media Studio",
+   "category": "Media & Content",
+   "unlocks": "Media Network",
+   "description": "The media studio creates shows, music and news for Dogzy Town.",
+   "image": "assets/businesses/34-media-studio-hd.jpg",
+   "card": "assets/businesses/34-media-studio.jpg",
+   "items": [
+    {
+     "id": "media-studio-u0",
+     "name": "Recording Studio",
+     "price": 10
+    },
+    {
+     "id": "media-studio-u1",
+     "name": "Broadcast Room",
+     "price": 15
+    },
+    {
+     "id": "media-studio-u2",
+     "name": "Production Center",
+     "price": 20
+    },
+    {
+     "id": "media-studio-u3",
+     "name": "Editing Suite",
+     "price": 25
+    },
+    {
+     "id": "media-studio-u4",
+     "name": "Live Stage",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "recycling-center",
+   "name": "Recycling Center",
+   "category": "City Services",
+   "unlocks": "Eco Center",
+   "description": "The recycling center keeps the city clean and green.",
+   "image": "assets/businesses/35-recycling-center-hd.jpg",
+   "card": "assets/businesses/35-recycling-center.jpg",
+   "items": [
+    {
+     "id": "recycling-center-u0",
+     "name": "Sorting Facility",
+     "price": 10
+    },
+    {
+     "id": "recycling-center-u1",
+     "name": "Waste Processing",
+     "price": 15
+    },
+    {
+     "id": "recycling-center-u2",
+     "name": "Green Energy",
+     "price": 20
+    },
+    {
+     "id": "recycling-center-u3",
+     "name": "Collection Trucks",
+     "price": 25
+    },
+    {
+     "id": "recycling-center-u4",
+     "name": "Compost Site",
+     "price": 30
+    }
+   ]
+  },
+  {
+   "id": "airport",
+   "name": "Airport",
+   "category": "Transportation",
+   "unlocks": "International Airport",
+   "description": "The airport connects Dogzy Town to the rest of the world.",
+   "image": "assets/businesses/36-airport-hd.jpg",
+   "card": "assets/businesses/36-airport.jpg",
+   "items": [
+    {
+     "id": "airport-u0",
+     "name": "More Flights",
+     "price": 10
+    },
+    {
+     "id": "airport-u1",
+     "name": "VIP Lounge",
+     "price": 15
+    },
+    {
+     "id": "airport-u2",
+     "name": "International Terminal",
+     "price": 20
+    },
+    {
+     "id": "airport-u3",
+     "name": "Cargo Hub",
+     "price": 25
+    },
+    {
+     "id": "airport-u4",
+     "name": "Control Tower",
+     "price": 30
+    }
+   ]
+  }
+ ]
+}

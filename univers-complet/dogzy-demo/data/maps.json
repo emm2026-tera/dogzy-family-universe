@@ -1,0 +1,453 @@
+{
+ "note": "Hidden-object maps opened by Search spaces on the board. Each is inspired by a Dogzy Town console mission. x/y/size are fractions of the image width/height.",
+ "maps": [
+  {
+   "id": "jewelry-store",
+   "title": "Valkyrie Jewelry Store",
+   "mission": "Jewelry store heist",
+   "image": "assets/maps/jewelry-store.png",
+   "time": 90,
+   "intro": "The Dogzy crew is emptying the gold paw jewelry store. Before the police arrive, find the 5 hidden pieces.",
+   "reward": {
+    "character": "00a-chef-golden-retriever",
+    "item": "00a-chef-golden-retriever-L3-2",
+    "label": "Medal or insignia (Chef, level 3): early right to buy"
+   },
+   "objects": [
+    {
+     "id": "ring",
+     "name": "Diamond ring",
+     "icon": "ring",
+     "x": 0.665,
+     "y": 0.8,
+     "size": 0.018,
+     "rot": -10
+    },
+    {
+     "id": "pearls",
+     "name": "Pearl necklace",
+     "icon": "pearls",
+     "x": 0.205,
+     "y": 0.775,
+     "size": 0.028,
+     "rot": 12
+    },
+    {
+     "id": "watch",
+     "name": "Gold watch",
+     "icon": "watch",
+     "x": 0.445,
+     "y": 0.47,
+     "size": 0.018,
+     "rot": -8
+    },
+    {
+     "id": "brooch",
+     "name": "Ruby brooch",
+     "icon": "brooch",
+     "x": 0.565,
+     "y": 0.715,
+     "size": 0.018,
+     "rot": 0
+    },
+    {
+     "id": "key",
+     "name": "Vault key",
+     "icon": "key",
+     "x": 0.432,
+     "y": 0.055,
+     "size": 0.016,
+     "rot": 72
+    }
+   ],
+   "w": 1672,
+   "h": 941
+  },
+  {
+   "id": "dressing-room",
+   "title": "The Singer's Dressing Room",
+   "mission": "Investigation: the dressing room break-in",
+   "image": "assets/maps/dressing-room.png",
+   "w": 1312,
+   "h": 1199,
+   "time": 90,
+   "intro": "Someone broke into the star's dressing room. Help the DFU investigator find the 5 clues before the trail goes cold.",
+   "reward": {
+    "character": "01-police-officer-german-shepherd",
+    "item": "01-police-officer-german-shepherd-L2-2",
+    "label": "Magnifying glass (Police, level 2): early right to buy"
+   },
+   "objects": [
+    {
+     "id": "lipstick",
+     "name": "Red lipstick",
+     "icon": "lipstick",
+     "x": 0.3,
+     "y": 0.83,
+     "size": 0.02,
+     "rot": -25
+    },
+    {
+     "id": "perfume",
+     "name": "Perfume bottle",
+     "icon": "perfume",
+     "x": 0.93,
+     "y": 0.4,
+     "size": 0.02,
+     "rot": 0
+    },
+    {
+     "id": "earring",
+     "name": "Lost earring",
+     "icon": "earring",
+     "x": 0.52,
+     "y": 0.47,
+     "size": 0.018,
+     "rot": 10
+    },
+    {
+     "id": "key",
+     "name": "Dressing room key",
+     "icon": "key",
+     "x": 0.05,
+     "y": 0.68,
+     "size": 0.017,
+     "rot": 40
+    },
+    {
+     "id": "tag",
+     "name": "Evidence tag",
+     "icon": "tag",
+     "x": 0.8,
+     "y": 0.585,
+     "size": 0.022,
+     "rot": -8
+    }
+   ]
+  },
+  {
+   "id": "fan-lair",
+   "title": "The Obsessed Fan's Lair",
+   "mission": "Investigation: the obsessed fan",
+   "image": "assets/maps/fan-lair.png",
+   "w": 1536,
+   "h": 1024,
+   "time": 90,
+   "intro": "The investigators found the obsessed fan's room, covered in posters of the singer. Find the 5 things he took from her.",
+   "reward": {
+    "character": "21-singer-shiba",
+    "item": "21-singer-shiba-L2-2",
+    "label": "Headphones (Singer, level 2): early right to buy"
+   },
+   "objects": [
+    {
+     "id": "earring",
+     "name": "Stolen earring",
+     "icon": "earring",
+     "x": 0.2,
+     "y": 0.5,
+     "size": 0.014,
+     "rot": -12
+    },
+    {
+     "id": "key",
+     "name": "Backstage key",
+     "icon": "key",
+     "x": 0.03,
+     "y": 0.36,
+     "size": 0.014,
+     "rot": 60
+    },
+    {
+     "id": "perfume",
+     "name": "Her perfume",
+     "icon": "perfume",
+     "x": 0.965,
+     "y": 0.25,
+     "size": 0.014,
+     "rot": 0
+    },
+    {
+     "id": "lipstick",
+     "name": "Her lipstick",
+     "icon": "lipstick",
+     "x": 0.62,
+     "y": 0.665,
+     "size": 0.015,
+     "rot": 30
+    },
+    {
+     "id": "letter",
+     "name": "Unsent fan letter",
+     "icon": "envelope",
+     "x": 0.22,
+     "y": 0.73,
+     "size": 0.022,
+     "rot": -6
+    }
+   ]
+  },
+  {
+   "id": "charity-gala",
+   "title": "The Charity Gala",
+   "mission": "High-society gala heist (cross-faction)",
+   "image": "assets/maps/charity-gala.png",
+   "w": 1672,
+   "h": 941,
+   "time": 90,
+   "intro": "The Dogzy Town charity gala is in full swing. The crew wants the one-of-a-kind necklace. Find the 5 items they hid around the hall before the auction.",
+   "reward": {
+    "character": "14-banker-dachshund",
+    "item": "14-banker-dachshund-L2-3",
+    "label": "Vault key (Banker, level 2): early right to buy"
+   },
+   "objects": [
+    {
+     "id": "ring",
+     "name": "Diamond ring",
+     "icon": "ring",
+     "x": 0.918,
+     "y": 0.7,
+     "size": 0.013,
+     "rot": -10
+    },
+    {
+     "id": "invite",
+     "name": "Forged invitation",
+     "icon": "envelope",
+     "x": 0.8,
+     "y": 0.865,
+     "size": 0.02,
+     "rot": 12
+    },
+    {
+     "id": "badge",
+     "name": "Guard's ID tag",
+     "icon": "tag",
+     "x": 0.07,
+     "y": 0.71,
+     "size": 0.016,
+     "rot": -15
+    },
+    {
+     "id": "key",
+     "name": "Display case key",
+     "icon": "key",
+     "x": 0.205,
+     "y": 0.355,
+     "size": 0.014,
+     "rot": 30
+    },
+    {
+     "id": "pearls",
+     "name": "Pearl necklace",
+     "icon": "pearls",
+     "x": 0.032,
+     "y": 0.53,
+     "size": 0.024,
+     "rot": 5
+    }
+   ]
+  },
+  {
+   "id": "vip-concert",
+   "title": "The VIP Concert",
+   "mission": "Singer's show: the stage intruder",
+   "image": "assets/maps/vip-concert.png",
+   "w": 1312,
+   "h": 1199,
+   "time": 90,
+   "intro": "A fan rushed the stage during the show. Find the 5 items lost in the chaos before the crowd leaves.",
+   "reward": {
+    "character": "00c-barmaid-cavalier",
+    "item": "00c-barmaid-cavalier-L3-3",
+    "label": "Earpiece/communication (Barmaid, level 3): early right to buy"
+   },
+   "objects": [
+    {
+     "id": "earring",
+     "name": "Singer's earring",
+     "icon": "earring",
+     "x": 0.215,
+     "y": 0.31,
+     "size": 0.018,
+     "rot": 15
+    },
+    {
+     "id": "pass",
+     "name": "VIP backstage pass",
+     "icon": "tag",
+     "x": 0.9,
+     "y": 0.68,
+     "size": 0.02,
+     "rot": -10
+    },
+    {
+     "id": "brooch",
+     "name": "Ruby brooch",
+     "icon": "brooch",
+     "x": 0.4,
+     "y": 0.58,
+     "size": 0.015,
+     "rot": 0
+    },
+    {
+     "id": "watch",
+     "name": "Gold watch",
+     "icon": "watch",
+     "x": 0.8,
+     "y": 0.88,
+     "size": 0.02,
+     "rot": 20
+    },
+    {
+     "id": "key",
+     "name": "Tour bus key",
+     "icon": "key",
+     "x": 0.615,
+     "y": 0.3,
+     "size": 0.016,
+     "rot": -50
+    }
+   ]
+  },
+  {
+   "id": "stunt-studio",
+   "title": "The Stunt Studio",
+   "mission": "Movie set: the big stunt shoot",
+   "image": "assets/maps/stunt-studio.png",
+   "w": 1672,
+   "h": 941,
+   "time": 90,
+   "intro": "Lights, camera, action! The stunt crew is about to shoot the race scene, but the set is a mess. Find the 5 missing props before the director calls action.",
+   "reward": {
+    "character": "23-pilot-weimaraner",
+    "item": "23-pilot-weimaraner-L2-2",
+    "label": "Aviator glasses (Pilot, level 2): early right to buy"
+   },
+   "objects": [
+    {
+     "id": "clapper",
+     "name": "Clapperboard",
+     "icon": "clapper",
+     "x": 0.08,
+     "y": 0.62,
+     "size": 0.016,
+     "rot": -12
+    },
+    {
+     "id": "carkey",
+     "name": "Car key",
+     "icon": "key",
+     "x": 0.83,
+     "y": 0.82,
+     "size": 0.014,
+     "rot": 35
+    },
+    {
+     "id": "reel",
+     "name": "Film reel",
+     "icon": "reel",
+     "x": 0.93,
+     "y": 0.4,
+     "size": 0.018,
+     "rot": 0
+    },
+    {
+     "id": "helmet",
+     "name": "Racing helmet",
+     "icon": "helmet",
+     "x": 0.5,
+     "y": 0.37,
+     "size": 0.016,
+     "rot": 8
+    },
+    {
+     "id": "trophy",
+     "name": "Trophy",
+     "icon": "trophy",
+     "x": 0.97,
+     "y": 0.2,
+     "size": 0.014,
+     "rot": 0
+    }
+   ]
+  },
+  {
+   "id": "mad-lab",
+   "title": "The Misfits Lab",
+   "mission": "Laboratoire Les Marginaux: Formula D-13",
+   "image": "assets/maps/mad-lab.png",
+   "w": 1672,
+   "h": 941,
+   "time": 90,
+   "intro": "The Misfits' mad scientist is one step away from finishing Formula D-13, but 5 ingredients and tools have vanished in his messy lab. Find them before the potion boils over.",
+   "reward": {
+    "character": "04-nurse-collie",
+    "item": "04-nurse-collie-L2-3",
+    "label": "Penlight (Nurse, level 2): early right to buy"
+   },
+   "objects": [
+    {
+     "id": "tube",
+     "name": "Test tube",
+     "icon": "tube",
+     "x": 0.03,
+     "y": 0.53,
+     "size": 0.012,
+     "rot": 15
+    },
+    {
+     "id": "fkey",
+     "name": "Formula key",
+     "icon": "key",
+     "x": 0.86,
+     "y": 0.2,
+     "size": 0.014,
+     "rot": -40
+    },
+    {
+     "id": "cring",
+     "name": "Crown ring",
+     "icon": "cring",
+     "x": 0.95,
+     "y": 0.58,
+     "size": 0.013,
+     "rot": 0
+    },
+    {
+     "id": "goggles",
+     "name": "Lab goggles",
+     "icon": "goggles",
+     "x": 0.4,
+     "y": 0.73,
+     "size": 0.018,
+     "rot": -8
+    },
+    {
+     "id": "vial",
+     "name": "Paw vial",
+     "icon": "vial",
+     "x": 0.5,
+     "y": 0.6,
+     "size": 0.013,
+     "rot": 6
+    }
+   ]
+  },
+  {
+   "id": "cruise",
+   "title": "Cruise Ship",
+   "mission": "Sea pirates attacking yachts",
+   "status": "coming-next",
+   "concept": "Night deck of a luxury liner: find a pirate flag, a compass, a life ring, a treasure map and a stolen gold bar."
+  },
+  {
+   "id": "jet",
+   "title": "Private Jet",
+   "mission": "Private-jet runs / plane tournament",
+   "status": "coming-next",
+   "concept": "Gold-and-leather jet cabin: find the pilot's wings, a passport, a boarding pass, a diamond case and the cockpit key."
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+Businesses
+A business is level 5 of every job. The first player to complete it owns the business; the next players can buy a franchise.
+No | Job | Level 4 | Level 5 · Business
+0a | Cook | Restaurant owner | Chain / franchise
+0b | Waitress | Restaurant manager | Chain / franchise owner
+0c | Barmaid | Bar manager | Bar chain owner
+01 | Police officer | Police chief | Police station commander
+02 | Clerk | Shop owner | Franchise
+03 | Firefighter | Captain | Fire station chief
+04 | Nurse | Surgeon | Clinic director
+05 | Lawyer | Supreme Court judge | Court / law firm
+06 | Dentist | Clinic owner | Dental clinic
+07 | Florist | Shop owner | Greenhouse
+08 | Construction worker | Company owner | Expansion
+09 | Electrician | Contractor | Company
+10 | Plumber | Contractor | Company
+11 | Decorator | Studio owner | Business
+12 | Technician | Owner | Business
+13 | Architect | Partner | Architecture firm
+14 | Banker | Director | Bank
+15 | Veterinarian | Owner | Veterinary clinic
+16 | Hairdresser | Salon owner | Salon chain
+17 | Journalist | Lead anchor | Media newsroom
+18 | Actor | Star | Awards ceremony (Grammys)
+19 | Trainer | Gym owner | Gym chain
+20 | Painter | Famous painter | Gallery
+21 | Singer | Famous singer | World tour
+22 | Actress | Famous actress | Film studio
+23 | Pilot | Air traffic controller (control tower) | Airport
+
+Planned places and events
+Cruise ship: coming soon
+Marina: coming soon
+Airport: coming soon. It is also level 5 of the Pilot job.
+Exchange bank: not open yet. The player's wallet will be inside the exchange bank. No wallet or address published.
+Art gallery: linked to the Valkyrie Gallery. Paintings are planned as NFTs; sales are not open yet.
+
+Vision and plan, no promises. No sales open. Exclusive intellectual property of the artist Valkyrie (Sania Labbé). © 2026 Dogzy Family Universe · thedogzyfamilyuniverse.ca

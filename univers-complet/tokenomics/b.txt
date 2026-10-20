@@ -1,0 +1,294 @@
+DOGZY TOKENOMICS
+L'économie de jeton qui alimente Dogzy Town
+
+The Dogzy Family Universe | Avalanche C-Chain | Juillet 2026
+thedogzyfamilyuniverse.ca
+© 2026 The Dogzy Family Universe. Tous droits réservés.
+Document confidentiel — reproduction ou diffusion interdite sans autorisation écrite.
+
+Aperçu du jeton
+$DOGZY est le jeton utilitaire natif du Dogzy Family Universe, déployé sur Avalanche C-Chain. C'est la
+monnaie commune des trois jeux qui le partagent - Dogzy Family Universe (Monopoly), Dogzy Town
+(console) et The Adoles-chiant of Dogzy Town (web3) : chaque achat, récompense, mise en staking et
+vote de gouvernance y fonctionne au DOGZY.
+
+Nom du jeton
+
+DOGZY
+
+Type
+
+Jeton utilitaire (norme ERC-20)
+
+Réseau
+
+Avalanche C-Chain (chainId 43114)
+
+Offre totale
+
+100 000 000 000 DOGZY (fixe, sans inflation)
+
+Début de la distribution
+
+Inclus avec chaque NFT Jetset VIP - 1 000 DOGZY par NFT
+
+Suite de contrats
+
+8 contrats intelligents audités - score de sécurité 9,3/10
+
+Principe de conception : le DOGZY se gagne et s'utilise à l'intérieur d'un écosystème de divertissement
+vivant. Sa proposition de valeur repose sur l'utilité et l'engagement - non sur une émission spéculative.
+
+© 2026 The Dogzy Family Universe | DOGZY Tokenomics | Tous droits réservés - Document confidentiel
+
+2
+
+Répartition des jetons
+Communauté et récompenses NFT
+
+30 %
+
+Récompenses de staking
+
+20 %
+
+Trésorerie de l'écosystème
+
+20 %
+
+Fondatrice (acquisition 36 mois)
+
+15 %
+
+Partenaires stratégiques (acquisition 24 mois)
+
+10 %
+
+Liquidité et inscriptions
+
+5%
+
+RÉPARTITION
+
+JETONS
+
+OBJECTIF
+
+Communauté et récompenses NFT
+
+30 000 000 000
+
+Distribués via l'inclusion NFT, le jeu et les récompenses de la ville
+
+Récompenses de staking
+
+20 000 000 000
+
+Distribuées via DogzyStaking sur des émissions pluriannuelles
+
+Trésorerie de l'écosystème
+
+20 000 000 000
+
+Réserve gouvernée par la DAO : croissance, partenariats, opérations
+
+Fondatrice
+
+15 000 000 000
+
+Acquisition linéaire sur 36 mois via DogzyVesting
+
+Partenaires stratégiques
+
+10 000 000 000
+
+Acquisition linéaire sur 24 mois via DogzyVesting
+
+Liquidité et inscriptions
+
+5 000 000 000
+
+Liquidité DEX et inscriptions en bourse
+
+© 2026 The Dogzy Family Universe | DOGZY Tokenomics | Tous droits réservés - Document confidentiel
+
+3
+
+Utilité du jeton
+Le DOGZY est conçu pour circuler constamment dans Dogzy Family Universe, Dogzy Town et The
+Adoles-chiant of Dogzy Town. Six utilités principales alimentent la demande :
+Commerce en ville
+Acheter accessoires, bâtiments et services dans Dogzy Town. Toute la progression d'un personnage - d'employé à
+propriétaire d'entreprise - fonctionne au DOGZY.
+
+Staking
+Bloquer des DOGZY dans le contrat DogzyStaking pour gagner des récompenses et débloquer des privilèges premium
+dans la ville.
+
+Gouvernance
+Voter sur les décisions de la ville via DogzyGovernance, protégé par un verrou temporel on-chain. Les rôles de
+conseiller et de maire amplifient le poids du vote.
+
+Marché
+La monnaie native du DogzyMarketplace pour les échanges de personnages, d'accessoires et de bâtiments - avec des
+redevances perpétuelles pour les créateurs.
+
+Enchères Or hebdomadaires
+Les cartes du palier Or sont mises aux enchères chaque semaine ; le DOGZY est la monnaie de mise, ce qui crée des
+cycles de demande récurrents.
+
+Moteur de récompenses
+DogzyRewards distribue des récompenses garanties en jetons aux collectionneurs - un mécanisme entièrement
+conforme (aucun tirage, aucune loterie).
+
+© 2026 The Dogzy Family Universe | DOGZY Tokenomics | Tous droits réservés - Document confidentiel
+
+4
+
+Mécanique de distribution
+Le DOGZY entre en circulation par l'engagement, et non par une vente publique de jetons.
+
+1
+2
+3
+4
+
+Inclusion NFT
+Chaque NFT Jetset VIP est livré avec 1 000 DOGZY. La première collection à elle seule (58 personnages x
+20 éditions) achemine 1 160 000 DOGZY directement aux collectionneurs.
+
+Jouer et progresser
+Les personnages gagnent des DOGZY en travaillant, en progressant et en possédant des entreprises dans
+les trois jeux - Dogzy Family Universe (Monopoly), Dogzy Town (console) et The Adoles-chiant of Dogzy
+Town (web3) - une récompense de la participation active.
+
+Staker et gouverner
+Les collectionneurs mettent leurs gains en staking pour le rendement et le pouvoir de vote, ce qui réduit l'offre
+en circulation tout en approfondissant l'engagement.
+
+Dépenser et faire circuler
+Le DOGZY revient dans le circuit par le commerce de la ville, les enchères et le marché - les redevances
+alimentant la trésorerie pour la pérennité.
+
+Note de conformité : le modèle de récompense au lancement utilise des récompenses garanties en jetons plutôt que
+des tirages au hasard. Un mécanisme de tirage sous licence distinct (demande déposée à la RACJ, Québec) pourra
+suivre après le lancement.
+
+© 2026 The Dogzy Family Universe | DOGZY Tokenomics | Tous droits réservés - Document confidentiel
+
+5
+
+Architecture des contrats intelligents
+Huit contrats interconnectés forment une économie on-chain complète, auditée à un score de sécurité de
+9,3/10 avec trois protections critiques : verrou temporel de gouvernance DAO, vérification des approbations
+du marché et oracle de staking renforcé.
+
+DogzyToken
+
+DogzyNFT
+
+Jeton utilitaire ERC-20 - offre fixe de 100 G
+
+Collections de personnages - 6 sous-collections, éditions
+par paliers
+
+DogzyMarketplace
+
+DogzyTreasury
+
+Plateforme d'échange native avec application des
+redevances
+
+Réserve de l'écosystème gouvernée par la DAO
+
+DogzyStaking
+
+DogzyGovernance
+
+Staking de rendement et de privilèges avec flux de prix
+sécurisés
+
+Vote communautaire protégé par verrou temporel
+
+DogzyVesting
+
+DogzyRewards
+
+Acquisition linéaire pour la fondatrice et les partenaires
+
+Moteur de distribution de récompenses garanties
+
+Réseau : Avalanche C-Chain (mainnet 43114 / testnet Fuji 43113), EVM « paris ». Déploiement géré avec un
+partenaire professionnel à Québec.
+
+© 2026 The Dogzy Family Universe | DOGZY Tokenomics | Tous droits réservés - Document confidentiel
+
+6
+
+Principes et PontDogzy
+Trois principes encadrent l'utilisation du DOGZY et le passage des jetons de jeu vers la blockchain. Ils
+s'appliquent aux trois jeux qui partagent le jeton : Dogzy Family Universe (Monopoly), Dogzy Town
+(console) et The Adoles-chiant of Dogzy Town (web3).
+Accessoires en DOGZY
+L'achat d'accessoires se fait obligatoirement en DOGZY, dans chacun des trois jeux.
+
+Export des jetons de jeu
+Les jetons gagnés en jeu peuvent être exportés vers un portefeuille, puis échangés contre des DOGZY. Le taux
+d'échange n'est pas encore fixé.
+
+Un personnage des deux côtés
+Pour exporter des jetons, le joueur doit posséder un personnage des deux côtés : dans le jeu et sur la blockchain.
+
+PontDogzy
+PontDogzy relie les jeux à la blockchain Avalanche. Chaque export suit trois étapes :
+
+code à usage unique
+1 Un
+s'affiche dans le jeu
+
+2 Le serveur valide le code
+
+DOGZY sont créés
+3 Les
+(mint) sur Avalanche
+
+PontDogzy et l'export des jetons s'appliquent aux trois jeux : Dogzy Family Universe, Dogzy Town et The Adoles-chiant
+of Dogzy Town.
+
+Statut du déploiement
+Le jeton n'est pas encore déployé sur Avalanche.
+
+© 2026 The Dogzy Family Universe | DOGZY Tokenomics | Tous droits réservés - Document confidentiel
+
+7
+
+Pérennité et garde-fous
+Offre fixe, sans inflation
+Plafond strict de 100 G. La nouvelle circulation provient uniquement des réserves allouées - jamais d'une nouvelle
+émission.
+
+Alignement des acquisitions
+Les jetons de la fondatrice (36 mois) et des partenaires (24 mois) s'acquièrent linéairement on-chain via DogzyVesting
+- aucun déblocage massif, vérifiable par quiconque.
+
+Trésorerie sous gouvernance
+Les fonds de l'écosystème ne bougent que par des votes DAO protégés par verrou temporel.
+
+Roue d'inertie des redevances
+Les redevances perpétuelles du marché réalimentent continuellement la trésorerie, finançant récompenses et
+développement sans nouvelles émissions.
+
+Conception axée sur la conformité
+Mécaniques de lancement à récompenses garanties ; demande de licence de tirage déposée (RACJ, Québec) ;
+révision juridique complétée pour les modèles de récompense.
+Avertissement : le DOGZY est un jeton utilitaire destiné à être utilisé au sein du Dogzy Family Universe. Ce document est fourni à titre
+informatif et ne constitue ni un conseil financier ni une offre de valeurs mobilières. Les chiffres reflètent le modèle de jeton au moment
+de la rédaction et seront finalisés au déploiement en mainnet.
+
+Le ciel n'est pas la limite. C'est là que commence Dogzy Town.
+
+© 2026 The Dogzy Family Universe | DOGZY Tokenomics | Tous droits réservés - Document confidentiel
+
+8
+
+

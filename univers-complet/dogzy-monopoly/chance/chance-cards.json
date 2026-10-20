@@ -1,0 +1,130 @@
+[
+  {
+    "n": 1,
+    "category": "BONUS",
+    "title": "Lucky Spin",
+    "badge": "SPIN AGAIN",
+    "text": "The stars of Dogzy Town shine on you. Spin the outer wheel again and move forward.",
+    "file": "/workspace/dogzy-monopoly/chance/chance-01-lucky-spin.png"
+  },
+  {
+    "n": 2,
+    "category": "BONUS",
+    "title": "Golden Paw Bonus",
+    "badge": "+200 TOKENS",
+    "text": "The Dogzy Bank pays a loyalty bonus. Collect 200 tokens.",
+    "file": "/workspace/dogzy-monopoly/chance/chance-02-golden-paw-bonus.png"
+  },
+  {
+    "n": 3,
+    "category": "BONUS",
+    "title": "Double Trouble",
+    "badge": "x2",
+    "text": "Your next token reward is doubled. Twice the shine, twice the swagger.",
+    "file": "/workspace/dogzy-monopoly/chance/chance-03-double-trouble.png"
+  },
+  {
+    "n": 4,
+    "category": "BONUS",
+    "title": "Triple Jackpot",
+    "badge": "x3",
+    "text": "Big night in Dogzy Town! Your next token reward is multiplied by 3.",
+    "file": "/workspace/dogzy-monopoly/chance/chance-04-triple-jackpot.png"
+  },
+  {
+    "n": 5,
+    "category": "PROTECTION",
+    "title": "Royal Shield",
+    "badge": "SHIELD",
+    "text": "Raise the golden shield. It blocks the next raid or attack on your village.",
+    "file": "/workspace/dogzy-monopoly/chance/chance-05-royal-shield.png"
+  },
+  {
+    "n": 6,
+    "category": "ATTACK",
+    "title": "Surprise Raid",
+    "badge": "RAID",
+    "text": "Raid another player's village. Spin the second wheel to see how many tokens you steal.",
+    "file": "/workspace/dogzy-monopoly/chance/chance-06-surprise-raid.png"
+  },
+  {
+    "n": 7,
+    "category": "ATTACK",
+    "title": "Pickpocket Pup",
+    "badge": "STEAL 100",
+    "text": "Quick paws! Steal 100 tokens from the player of your choice. A shield blocks it.",
+    "file": "/workspace/dogzy-monopoly/chance/chance-07-pickpocket-pup.png"
+  },
+  {
+    "n": 8,
+    "category": "ACTION",
+    "title": "City Tour",
+    "badge": "VISIT",
+    "text": "Spin the second wheel. Visit that many buildings and complete their tasks.",
+    "file": "/workspace/dogzy-monopoly/chance/chance-08-city-tour.png"
+  },
+  {
+    "n": 9,
+    "category": "ACTION",
+    "title": "Call from the Bank",
+    "badge": "GO TO BANK",
+    "text": "Move directly to the Bank and collect 100 tokens in interest.",
+    "file": "/workspace/dogzy-monopoly/chance/chance-09-call-from-the-bank.png"
+  },
+  {
+    "n": 10,
+    "category": "PENALTY",
+    "title": "Emergency Room",
+    "badge": "LOSE 1 TURN",
+    "text": "Too much adventure! Go to the Hospital and lose your next turn.",
+    "file": "/workspace/dogzy-monopoly/chance/chance-10-emergency-room.png"
+  },
+  {
+    "n": 11,
+    "category": "PENALTY",
+    "title": "Parking Ticket",
+    "badge": "-50 TOKENS",
+    "text": "You parked your limo on a fire lane. Pay 50 tokens to the Police Station.",
+    "file": "/workspace/dogzy-monopoly/chance/chance-11-parking-ticket.png"
+  },
+  {
+    "n": 12,
+    "category": "PENALTY",
+    "title": "Lost in Dogzy Town",
+    "badge": "BACK 3",
+    "text": "Wrong turn at the Marina. Move back 3 spaces.",
+    "file": "/workspace/dogzy-monopoly/chance/chance-12-lost-in-dogzy-town.png"
+  },
+  {
+    "n": 13,
+    "category": "BONUS",
+    "title": "Shopping Spree",
+    "badge": "FREE ACCESSORY",
+    "text": "The boutiques love you. Pick one free accessory from any shop.",
+    "file": "/workspace/dogzy-monopoly/chance/chance-13-shopping-spree.png"
+  },
+  {
+    "n": 14,
+    "category": "PENALTY",
+    "title": "The Pyromaniac Strikes",
+    "badge": "-1 ACCESSORY",
+    "text": "The Pyromaniac set fire to your stuff! Lose one accessory unless you have a shield.",
+    "file": "/workspace/dogzy-monopoly/chance/chance-14-the-pyromaniac-strikes.png"
+  },
+  {
+    "n": 15,
+    "category": "BONUS",
+    "title": "Level Up!",
+    "badge": "LEVEL UP",
+    "text": "Your hard work pays off. Move up to the next level of Dogzy Town.",
+    "file": "/workspace/dogzy-monopoly/chance/chance-15-level-up.png"
+  },
+  {
+    "n": 16,
+    "category": "ACTION",
+    "title": "Treasure Hunt",
+    "badge": "SEARCH",
+    "text": "Go to the nearest Search space and play a hidden-object card. Find them all to win an accessory.",
+    "file": "/workspace/dogzy-monopoly/chance/chance-16-treasure-hunt.png"
+  }
+]

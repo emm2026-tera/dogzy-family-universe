@@ -1,0 +1,424 @@
+{
+ "tabs": {
+  "Home": {
+   "pass": true,
+   "url": "/home",
+   "active": "Home"
+  },
+  "Characters": {
+   "pass": true,
+   "url": "/characters",
+   "active": "Characters"
+  },
+  "Businesses": {
+   "pass": true,
+   "url": "/businesses",
+   "active": "Businesses"
+  },
+  "City": {
+   "pass": true,
+   "url": "/city",
+   "active": "City"
+  },
+  "Inventory": {
+   "pass": true,
+   "url": "/wardrobe",
+   "active": "Inventory"
+  },
+  "Wallet": {
+   "pass": true,
+   "url": "/wallet",
+   "active": "Wallet"
+  },
+  "noBuildingsTab": true,
+  "order": "Home | Characters | Businesses | City | Inventory | Wallet"
+ },
+ "chars": [
+  {
+   "id": "00a-chef-golden-retriever",
+   "checks": {
+    "sheetOpens": true,
+    "title": "The Golden Retriever Chef",
+    "noClipDetail": true,
+    "buildingFull": true,
+    "buildingLabelGold": true,
+    "portraitPx": "360px src / 648px shown",
+    "unlockPrice15": true,
+    "balAfterUnlock": true,
+    "inventoryShowsChar": true,
+    "itemPrices_5_10_20": true,
+    "levelFees_10_15": true,
+    "goldLabels5": true,
+    "levelUpRule": true,
+    "balanceMath": true,
+    "book25": true,
+    "careerComplete": true,
+    "noClipInventory": true,
+    "persistAfterReload": true
+   },
+   "issues": [],
+   "pass": true
+  },
+  {
+   "id": "00c-barmaid-cavalier",
+   "checks": {
+    "sheetOpens": true,
+    "title": "The Cavalier Barmaid",
+    "noClipDetail": true,
+    "buildingFull": true,
+    "buildingLabelGold": true,
+    "portraitPx": "360px src / 648px shown",
+    "unlockPrice15": true,
+    "balAfterUnlock": true,
+    "inventoryShowsChar": true,
+    "itemPrices_5_10_20": true,
+    "levelFees_10_15": true,
+    "goldLabels5": true,
+    "levelUpRule": true,
+    "balanceMath": true,
+    "book25": true,
+    "careerComplete": true,
+    "noClipInventory": true,
+    "persistAfterReload": true
+   },
+   "issues": [],
+   "pass": true
+  },
+  {
+   "id": "01-police-officer-german-shepherd",
+   "checks": {
+    "sheetOpens": true,
+    "title": "The German Shepherd Police Officer",
+    "noClipDetail": true,
+    "buildingFull": true,
+    "buildingLabelGold": true,
+    "portraitPx": "360px src / 648px shown",
+    "unlockPrice15": true,
+    "balAfterUnlock": true,
+    "inventoryShowsChar": true,
+    "itemPrices_5_10_20": true,
+    "levelFees_10_15": true,
+    "goldLabels5": true,
+    "levelUpRule": true,
+    "balanceMath": true,
+    "book25": true,
+    "careerComplete": true,
+    "noClipInventory": true,
+    "persistAfterReload": true
+   },
+   "issues": [],
+   "pass": true
+  },
+  {
+   "id": "03-firefighter-saint-bernard",
+   "checks": {
+    "sheetOpens": true,
+    "title": "The Saint Bernard Firefighter",
+    "noClipDetail": true,
+    "buildingFull": true,
+    "buildingLabelGold": true,
+    "portraitPx": "360px src / 648px shown",
+    "unlockPrice15": true,
+    "balAfterUnlock": true,
+    "inventoryShowsChar": true,
+    "itemPrices_5_10_20": true,
+    "levelFees_10_15": true,
+    "goldLabels5": true,
+    "levelUpRule": true,
+    "balanceMath": true,
+    "book25": true,
+    "careerComplete": true,
+    "noClipInventory": true,
+    "persistAfterReload": true
+   },
+   "issues": [],
+   "pass": true
+  },
+  {
+   "id": "04-nurse-collie",
+   "checks": {
+    "sheetOpens": true,
+    "title": "The Collie Nurse",
+    "noClipDetail": true,
+    "buildingFull": true,
+    "buildingLabelGold": true,
+    "portraitPx": "360px src / 648px shown",
+    "unlockPrice15": true,
+    "balAfterUnlock": true,
+    "inventoryShowsChar": true,
+    "itemPrices_5_10_20": true,
+    "levelFees_10_15": true,
+    "goldLabels5": true,
+    "levelUpRule": true,
+    "balanceMath": true,
+    "book25": true,
+    "careerComplete": true,
+    "noClipInventory": true,
+    "persistAfterReload": true
+   },
+   "issues": [],
+   "pass": true
+  },
+  {
+   "id": "07-florist-yorkshire",
+   "checks": {
+    "sheetOpens": true,
+    "title": "The Yorkshire Florist",
+    "noClipDetail": true,
+    "buildingFull": true,
+    "buildingLabelGold": true,
+    "portraitPx": "360px src / 648px shown",
+    "unlockPrice15": true,
+    "balAfterUnlock": true,
+    "inventoryShowsChar": true,
+    "itemPrices_5_10_20": true,
+    "levelFees_10_15": true,
+    "goldLabels5": true,
+    "levelUpRule": true,
+    "balanceMath": true,
+    "book25": true,
+    "careerComplete": true,
+    "noClipInventory": true,
+    "persistAfterReload": true
+   },
+   "issues": [],
+   "pass": true
+  },
+  {
+   "id": "08-construction-rottweiler",
+   "checks": {
+    "sheetOpens": true,
+    "title": "The Rottweiler Construction Worker",
+    "noClipDetail": true,
+    "buildingFull": true,
+    "buildingLabelGold": true,
+    "portraitPx": "360px src / 648px shown",
+    "unlockPrice15": true,
+    "balAfterUnlock": true,
+    "inventoryShowsChar": true,
+    "itemPrices_5_10_20": true,
+    "levelFees_10_15": true,
+    "goldLabels5": true,
+    "levelUpRule": true,
+    "balanceMath": true,
+    "book25": true,
+    "careerComplete": true,
+    "noClipInventory": true,
+    "persistAfterReload": true
+   },
+   "issues": [],
+   "pass": true
+  },
+  {
+   "id": "14-banker-dachshund",
+   "checks": {
+    "sheetOpens": true,
+    "title": "The Dachshund Banker",
+    "noClipDetail": true,
+    "buildingFull": true,
+    "buildingLabelGold": true,
+    "portraitPx": "360px src / 648px shown",
+    "unlockPrice15": true,
+    "balAfterUnlock": true,
+    "inventoryShowsChar": true,
+    "itemPrices_5_10_20": true,
+    "levelFees_10_15": true,
+    "goldLabels5": true,
+    "levelUpRule": true,
+    "balanceMath": true,
+    "book25": true,
+    "careerComplete": true,
+    "noClipInventory": true,
+    "persistAfterReload": true
+   },
+   "issues": [],
+   "pass": true
+  },
+  {
+   "id": "21-singer-shiba",
+   "checks": {
+    "sheetOpens": true,
+    "title": "The Shiba Singer",
+    "noClipDetail": true,
+    "buildingFull": true,
+    "buildingLabelGold": true,
+    "portraitPx": "360px src / 648px shown",
+    "unlockPrice15": true,
+    "balAfterUnlock": true,
+    "inventoryShowsChar": true,
+    "itemPrices_5_10_20": true,
+    "levelFees_10_15": true,
+    "goldLabels5": true,
+    "levelUpRule": true,
+    "balanceMath": true,
+    "book25": true,
+    "careerComplete": true,
+    "noClipInventory": true,
+    "persistAfterReload": true
+   },
+   "issues": [],
+   "pass": true
+  },
+  {
+   "id": "23-pilot-weimaraner",
+   "checks": {
+    "sheetOpens": true,
+    "title": "The Weimaraner Pilot",
+    "noClipDetail": true,
+    "buildingFull": true,
+    "buildingLabelGold": true,
+    "portraitPx": "360px src / 648px shown",
+    "unlockPrice15": true,
+    "balAfterUnlock": true,
+    "inventoryShowsChar": true,
+    "itemPrices_5_10_20": true,
+    "levelFees_10_15": true,
+    "goldLabels5": true,
+    "levelUpRule": true,
+    "balanceMath": true,
+    "book25": true,
+    "careerComplete": true,
+    "noClipInventory": true,
+    "persistAfterReload": true
+   },
+   "issues": [],
+   "pass": true
+  }
+ ],
+ "biz": [
+  {
+   "biz": "restaurant",
+   "char": "00a-chef-golden-retriever",
+   "checks": {
+    "listed": true,
+    "imageFullSharp": true,
+    "labelGold": true,
+    "bought": true,
+    "ownedBadge": true
+   },
+   "pass": true
+  },
+  {
+   "biz": "nightclub",
+   "char": "00c-barmaid-cavalier",
+   "checks": {
+    "listed": true,
+    "imageFullSharp": true,
+    "labelGold": true,
+    "bought": true,
+    "ownedBadge": true
+   },
+   "pass": true
+  },
+  {
+   "biz": "police-station",
+   "char": "01-police-officer-german-shepherd",
+   "checks": {
+    "listed": true,
+    "imageFullSharp": true,
+    "labelGold": true,
+    "bought": true,
+    "ownedBadge": true
+   },
+   "pass": true
+  },
+  {
+   "biz": "fire-station",
+   "char": "03-firefighter-saint-bernard",
+   "checks": {
+    "listed": true,
+    "imageFullSharp": true,
+    "labelGold": true,
+    "bought": true,
+    "ownedBadge": true
+   },
+   "pass": true
+  },
+  {
+   "biz": "hospital",
+   "char": "04-nurse-collie",
+   "checks": {
+    "listed": true,
+    "imageFullSharp": true,
+    "labelGold": true,
+    "bought": true,
+    "ownedBadge": true
+   },
+   "pass": true
+  },
+  {
+   "biz": "flower-shop",
+   "char": "07-florist-yorkshire",
+   "checks": {
+    "listed": true,
+    "imageFullSharp": true,
+    "labelGold": true,
+    "bought": true,
+    "ownedBadge": true
+   },
+   "pass": true
+  },
+  {
+   "biz": "construction-company",
+   "char": "08-construction-rottweiler",
+   "checks": {
+    "listed": true,
+    "imageFullSharp": true,
+    "labelGold": true,
+    "bought": true,
+    "ownedBadge": true
+   },
+   "pass": true
+  },
+  {
+   "biz": "bank",
+   "char": "14-banker-dachshund",
+   "checks": {
+    "listed": true,
+    "imageFullSharp": true,
+    "labelGold": true,
+    "bought": true,
+    "ownedBadge": true
+   },
+   "pass": true
+  },
+  {
+   "biz": "sports-arena",
+   "char": "21-singer-shiba",
+   "checks": {
+    "listed": true,
+    "imageFullSharp": true,
+    "labelGold": true,
+    "bought": true,
+    "ownedBadge": true
+   },
+   "pass": true
+  },
+  {
+   "biz": "airport",
+   "char": "23-pilot-weimaraner",
+   "checks": {
+    "listed": true,
+    "imageFullSharp": true,
+    "labelGold": true,
+    "bought": true,
+    "ownedBadge": true
+   },
+   "pass": true
+  }
+ ],
+ "defaultFlow": {
+  "start": 100,
+  "dialogPrice": "15",
+  "afterL1andL2fee": 45,
+  "level": 2
+ },
+ "bizPersist": true,
+ "bizNoClip": [],
+ "cityImages": {
+  "count": 36,
+  "sharp": 31,
+  "uncropped": 31
+ },
+ "errors": []
+}

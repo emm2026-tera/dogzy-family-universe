@@ -1,0 +1,706 @@
+{
+ "characters": [
+  {
+   "id": "00a-chef-golden-retriever",
+   "name": "The Golden Retriever Chef",
+   "job": "Chef",
+   "breed": "Golden Retriever",
+   "image": "assets/characters/00a-chef-golden-retriever.jpg",
+   "card": "assets/characters/00a-chef-golden-retriever-card.jpg",
+   "level4": "Restaurant owner",
+   "level5": "Chain / franchise",
+   "description": "Starts as a level-1 chef and climbs five career levels up to chain / franchise.",
+   "anchors": {
+    "eyes": [
+     0.5,
+     0.3626
+    ],
+    "headTop": 0.2418,
+    "neck": 0.6044,
+    "hand": [
+     0.17,
+     0.6813
+    ]
+   },
+   "business": "restaurant",
+   "price": 15,
+   "demo": true
+  },
+  {
+   "id": "00c-barmaid-cavalier",
+   "name": "The Cavalier Barmaid",
+   "job": "Barmaid",
+   "breed": "Cavalier",
+   "image": "assets/characters/00c-barmaid-cavalier.jpg",
+   "card": "assets/characters/00c-barmaid-cavalier-card.jpg",
+   "level4": "Bar manager",
+   "level5": "Bar chain owner",
+   "description": "Starts as a level-1 barmaid and climbs five career levels up to bar chain owner.",
+   "anchors": {
+    "eyes": [
+     0.42,
+     0.1209
+    ],
+    "headTop": 0.022,
+    "neck": 0.4835,
+    "hand": [
+     0.1,
+     0.5604
+    ]
+   },
+   "business": "nightclub",
+   "price": 15,
+   "demo": true
+  },
+  {
+   "id": "01-police-officer-german-shepherd",
+   "name": "The German Shepherd Police Officer",
+   "job": "Police Officer",
+   "breed": "German Shepherd",
+   "image": "assets/characters/01-police-officer-german-shepherd.jpg",
+   "card": "assets/characters/01-police-officer-german-shepherd-card.jpg",
+   "level4": "Police chief",
+   "level5": "Police station commander",
+   "description": "Starts as a level-1 police officer and climbs five career levels up to police station commander.",
+   "anchors": {
+    "eyes": [
+     0.51,
+     0.3516
+    ],
+    "headTop": 0.1319,
+    "neck": 0.5165,
+    "hand": [
+     0.25,
+     0.97
+    ]
+   },
+   "business": "police-station",
+   "price": 15,
+   "demo": true
+  },
+  {
+   "id": "02-clerk-beagle",
+   "name": "The Beagle Clerk",
+   "job": "Clerk",
+   "breed": "Beagle",
+   "image": "assets/characters/02-clerk-beagle.jpg",
+   "card": "assets/characters/02-clerk-beagle-card.jpg",
+   "level4": "Shop owner",
+   "level5": "Franchise",
+   "description": "Starts as a level-1 clerk and climbs five career levels up to franchise.",
+   "anchors": {
+    "eyes": [
+     0.5,
+     0.3736
+    ],
+    "headTop": 0.2418,
+    "neck": 0.5714,
+    "hand": [
+     0.89,
+     0.97
+    ]
+   },
+   "business": "supermarket",
+   "price": 15,
+   "demo": false
+  },
+  {
+   "id": "03-firefighter-saint-bernard",
+   "name": "The Saint Bernard Firefighter",
+   "job": "Firefighter",
+   "breed": "Saint Bernard",
+   "image": "assets/characters/03-firefighter-saint-bernard.jpg",
+   "card": "assets/characters/03-firefighter-saint-bernard-card.jpg",
+   "level4": "Captain",
+   "level5": "Fire station chief",
+   "description": "Starts as a level-1 firefighter and climbs five career levels up to fire station chief.",
+   "anchors": {
+    "eyes": [
+     0.54,
+     0.3956
+    ],
+    "headTop": 0.2418,
+    "neck": 0.5275,
+    "hand": [
+     0.32,
+     0.8901
+    ]
+   },
+   "business": "fire-station",
+   "price": 15,
+   "demo": true
+  },
+  {
+   "id": "04-nurse-collie",
+   "name": "The Collie Nurse",
+   "job": "Nurse",
+   "breed": "Collie",
+   "image": "assets/characters/04-nurse-collie.jpg",
+   "card": "assets/characters/04-nurse-collie-card.jpg",
+   "level4": "Surgeon",
+   "level5": "Clinic director",
+   "description": "Starts as a level-1 nurse and climbs five career levels up to clinic director.",
+   "anchors": {
+    "eyes": [
+     0.47,
+     0.3187
+    ],
+    "headTop": 0.1648,
+    "neck": 0.6044,
+    "hand": [
+     0.15,
+     0.6593
+    ]
+   },
+   "business": "hospital",
+   "price": 15,
+   "demo": true
+  },
+  {
+   "id": "05-lawyer-bulldog",
+   "name": "The Bulldog Lawyer",
+   "job": "Lawyer",
+   "breed": "Bulldog",
+   "image": "assets/characters/05-lawyer-bulldog.jpg",
+   "card": "assets/characters/05-lawyer-bulldog-card.jpg",
+   "level4": "Supreme Court judge",
+   "level5": "Court / law firm",
+   "description": "Starts as a level-1 lawyer and climbs five career levels up to court / law firm.",
+   "anchors": {
+    "eyes": [
+     0.47,
+     0.3297
+    ],
+    "headTop": 0.2308,
+    "neck": 0.5714,
+    "hand": [
+     0.28,
+     0.9341
+    ]
+   },
+   "business": "courthouse",
+   "price": 15,
+   "demo": false
+  },
+  {
+   "id": "06-dentist-poodle",
+   "name": "The Poodle Dentist",
+   "job": "Dentist",
+   "breed": "Poodle",
+   "image": "assets/characters/06-dentist-poodle.jpg",
+   "card": "assets/characters/06-dentist-poodle-card.jpg",
+   "level4": "Clinic owner",
+   "level5": "Dental clinic",
+   "description": "Starts as a level-1 dentist and climbs five career levels up to dental clinic.",
+   "anchors": {
+    "eyes": [
+     0.51,
+     0.4396
+    ],
+    "headTop": 0.2088,
+    "neck": 0.6484,
+    "hand": [
+     0.33,
+     0.9451
+    ]
+   },
+   "business": "hospital",
+   "price": 15,
+   "demo": false
+  },
+  {
+   "id": "07-florist-yorkshire",
+   "name": "The Yorkshire Florist",
+   "job": "Florist",
+   "breed": "Yorkshire",
+   "image": "assets/characters/07-florist-yorkshire.jpg",
+   "card": "assets/characters/07-florist-yorkshire-card.jpg",
+   "level4": "Shop owner",
+   "level5": "Greenhouse",
+   "description": "Starts as a level-1 florist and climbs five career levels up to greenhouse.",
+   "anchors": {
+    "eyes": [
+     0.42,
+     0.4286
+    ],
+    "headTop": 0.2418,
+    "neck": 0.6044,
+    "hand": [
+     0.25,
+     0.7143
+    ]
+   },
+   "business": "flower-shop",
+   "price": 15,
+   "demo": true
+  },
+  {
+   "id": "08-construction-rottweiler",
+   "name": "The Rottweiler Construction Worker",
+   "job": "Construction Worker",
+   "breed": "Rottweiler",
+   "image": "assets/characters/08-construction-rottweiler.jpg",
+   "card": "assets/characters/08-construction-rottweiler-card.jpg",
+   "level4": "Company owner",
+   "level5": "Expansion",
+   "description": "Starts as a level-1 construction worker and climbs five career levels up to expansion.",
+   "anchors": {
+    "eyes": [
+     0.56,
+     0.4286
+    ],
+    "headTop": 0.2418,
+    "neck": 0.5714,
+    "hand": [
+     0.75,
+     0.8901
+    ]
+   },
+   "business": "construction-company",
+   "price": 15,
+   "demo": true
+  },
+  {
+   "id": "09-electrician-border-collie",
+   "name": "The Border Collie Electrician",
+   "job": "Electrician",
+   "breed": "Border Collie",
+   "image": "assets/characters/09-electrician-border-collie.jpg",
+   "card": "assets/characters/09-electrician-border-collie-card.jpg",
+   "level4": "Contractor",
+   "level5": "Company",
+   "description": "Starts as a level-1 electrician and climbs five career levels up to company.",
+   "anchors": {
+    "eyes": [
+     0.46,
+     0.5165
+    ],
+    "headTop": 0.3516,
+    "neck": 0.6813,
+    "hand": [
+     0.67,
+     0.97
+    ]
+   },
+   "business": "electrician-company",
+   "price": 15,
+   "demo": false
+  },
+  {
+   "id": "10-plumber-french-bulldog",
+   "name": "The French Bulldog Plumber",
+   "job": "Plumber",
+   "breed": "French Bulldog",
+   "image": "assets/characters/10-plumber-french-bulldog.jpg",
+   "card": "assets/characters/10-plumber-french-bulldog-card.jpg",
+   "level4": "Contractor",
+   "level5": "Company",
+   "description": "Starts as a level-1 plumber and climbs five career levels up to company.",
+   "anchors": {
+    "eyes": [
+     0.51,
+     0.5714
+    ],
+    "headTop": 0.3956,
+    "neck": 0.7473,
+    "hand": [
+     0.18,
+     0.7912
+    ]
+   },
+   "business": "plumbing-company",
+   "price": 15,
+   "demo": false
+  },
+  {
+   "id": "11-decorator-afghan-hound",
+   "name": "The Afghan Hound Decorator",
+   "job": "Decorator",
+   "breed": "Afghan Hound",
+   "image": "assets/characters/11-decorator-afghan-hound.jpg",
+   "card": "assets/characters/11-decorator-afghan-hound-card.jpg",
+   "level4": "Studio owner",
+   "level5": "Business",
+   "description": "Starts as a level-1 decorator and climbs five career levels up to business.",
+   "anchors": {
+    "eyes": [
+     0.49,
+     0.2527
+    ],
+    "headTop": 0.0549,
+    "neck": 0.5165,
+    "hand": [
+     0.49,
+     0.8681
+    ]
+   },
+   "business": "hotel",
+   "price": 15,
+   "demo": false
+  },
+  {
+   "id": "12-technician-husky",
+   "name": "The Husky Technician",
+   "job": "Technician",
+   "breed": "Husky",
+   "image": "assets/characters/12-technician-husky.jpg",
+   "card": "assets/characters/12-technician-husky-card.jpg",
+   "level4": "Owner",
+   "level5": "Business",
+   "description": "Starts as a level-1 technician and climbs five career levels up to business.",
+   "anchors": {
+    "eyes": [
+     0.64,
+     0.3846
+    ],
+    "headTop": 0.1099,
+    "neck": 0.5495,
+    "hand": [
+     0.36,
+     0.5165
+    ]
+   },
+   "business": "car-repair-garage",
+   "price": 15,
+   "demo": false
+  },
+  {
+   "id": "13-architect-doberman",
+   "name": "The Doberman Architect",
+   "job": "Architect",
+   "breed": "Doberman",
+   "image": "assets/characters/13-architect-doberman.jpg",
+   "card": "assets/characters/13-architect-doberman-card.jpg",
+   "level4": "Partner",
+   "level5": "Architecture firm",
+   "description": "Starts as a level-1 architect and climbs five career levels up to architecture firm.",
+   "anchors": {
+    "eyes": [
+     0.54,
+     0.4176
+    ],
+    "headTop": 0.2527,
+    "neck": 0.6154,
+    "hand": [
+     0.35,
+     0.97
+    ]
+   },
+   "business": "construction-company",
+   "price": 15,
+   "demo": false
+  },
+  {
+   "id": "14-banker-dachshund",
+   "name": "The Dachshund Banker",
+   "job": "Banker",
+   "breed": "Dachshund",
+   "image": "assets/characters/14-banker-dachshund.jpg",
+   "card": "assets/characters/14-banker-dachshund-card.jpg",
+   "level4": "Director",
+   "level5": "Bank",
+   "description": "Starts as a level-1 banker and climbs five career levels up to bank.",
+   "anchors": {
+    "eyes": [
+     0.5,
+     0.2857
+    ],
+    "headTop": 0.1099,
+    "neck": 0.4945,
+    "hand": [
+     0.72,
+     0.8022
+    ]
+   },
+   "business": "bank",
+   "price": 15,
+   "demo": true
+  },
+  {
+   "id": "15-veterinarian-labrador",
+   "name": "The Labrador Veterinarian",
+   "job": "Veterinarian",
+   "breed": "Labrador",
+   "image": "assets/characters/15-veterinarian-labrador.jpg",
+   "card": "assets/characters/15-veterinarian-labrador-card.jpg",
+   "level4": "Owner",
+   "level5": "Veterinary clinic",
+   "description": "Starts as a level-1 veterinarian and climbs five career levels up to veterinary clinic.",
+   "anchors": {
+    "eyes": [
+     0.42,
+     0.3077
+    ],
+    "headTop": 0.0879,
+    "neck": 0.4945,
+    "hand": [
+     0.71,
+     0.8571
+    ]
+   },
+   "business": "pet-store",
+   "price": 15,
+   "demo": false
+  },
+  {
+   "id": "16-hairstylist-shih-tzu",
+   "name": "The Shih Tzu Hairstylist",
+   "job": "Hairstylist",
+   "breed": "Shih Tzu",
+   "image": "assets/characters/16-hairstylist-shih-tzu.jpg",
+   "card": "assets/characters/16-hairstylist-shih-tzu-card.jpg",
+   "level4": "Salon owner",
+   "level5": "Salon chain",
+   "description": "Starts as a level-1 hairstylist and climbs five career levels up to salon chain.",
+   "anchors": {
+    "eyes": [
+     0.51,
+     0.3736
+    ],
+    "headTop": 0.1319,
+    "neck": 0.5714,
+    "hand": [
+     0.33,
+     0.6154
+    ]
+   },
+   "business": "beauty-salon",
+   "price": 15,
+   "demo": false
+  },
+  {
+   "id": "17-journalist-jack-russell",
+   "name": "The Jack Russell Journalist",
+   "job": "Journalist",
+   "breed": "Jack Russell",
+   "image": "assets/characters/17-journalist-jack-russell.jpg",
+   "card": "assets/characters/17-journalist-jack-russell-card.jpg",
+   "level4": "Lead anchor",
+   "level5": "Media newsroom",
+   "description": "Starts as a level-1 journalist and climbs five career levels up to media newsroom.",
+   "anchors": {
+    "eyes": [
+     0.46,
+     0.4176
+    ],
+    "headTop": 0.2527,
+    "neck": 0.6374,
+    "hand": [
+     0.3,
+     0.9341
+    ]
+   },
+   "business": "media-studio",
+   "price": 15,
+   "demo": false
+  },
+  {
+   "id": "18-actor-boxer",
+   "name": "The Boxer Actor",
+   "job": "Actor",
+   "breed": "Boxer",
+   "image": "assets/characters/18-actor-boxer.jpg",
+   "card": "assets/characters/18-actor-boxer-card.jpg",
+   "level4": "Star",
+   "level5": "Awards ceremony (Grammys)",
+   "description": "Starts as a level-1 actor and climbs five career levels up to awards ceremony (grammys).",
+   "anchors": {
+    "eyes": [
+     0.53,
+     0.3626
+    ],
+    "headTop": 0.2418,
+    "neck": 0.5714,
+    "hand": [
+     0.25,
+     0.9341
+    ]
+   },
+   "business": "cinema",
+   "price": 15,
+   "demo": false
+  },
+  {
+   "id": "19-fitness-coach-whippet",
+   "name": "The Whippet Fitness Coach",
+   "job": "Fitness Coach",
+   "breed": "Whippet",
+   "image": "assets/characters/19-fitness-coach-whippet.jpg",
+   "card": "assets/characters/19-fitness-coach-whippet-card.jpg",
+   "level4": "Gym owner",
+   "level5": "Gym chain",
+   "description": "Starts as a level-1 fitness coach and climbs five career levels up to gym chain.",
+   "anchors": {
+    "eyes": [
+     0.54,
+     0.3516
+    ],
+    "headTop": 0.1868,
+    "neck": 0.5714,
+    "hand": [
+     0.1,
+     0.97
+    ]
+   },
+   "business": "gym-fitness-center",
+   "price": 15,
+   "demo": false
+  },
+  {
+   "id": "20-painter-australian-shepherd",
+   "name": "The Australian Shepherd Painter",
+   "job": "Painter",
+   "breed": "Australian Shepherd",
+   "image": "assets/characters/20-painter-australian-shepherd.jpg",
+   "card": "assets/characters/20-painter-australian-shepherd-card.jpg",
+   "level4": "Famous painter",
+   "level5": "Gallery",
+   "description": "Starts as a level-1 painter and climbs five career levels up to gallery.",
+   "anchors": {
+    "eyes": [
+     0.64,
+     0.2967
+    ],
+    "headTop": 0.1099,
+    "neck": 0.4945,
+    "hand": [
+     0.47,
+     0.8681
+    ]
+   },
+   "business": "shopping-center",
+   "price": 15,
+   "demo": false
+  },
+  {
+   "id": "21-singer-shiba",
+   "name": "The Shiba Singer",
+   "job": "Singer",
+   "breed": "Shiba",
+   "image": "assets/characters/21-singer-shiba.jpg",
+   "card": "assets/characters/21-singer-shiba-card.jpg",
+   "level4": "Famous singer",
+   "level5": "World tour",
+   "description": "Starts as a level-1 singer and climbs five career levels up to world tour.",
+   "anchors": {
+    "eyes": [
+     0.53,
+     0.2857
+    ],
+    "headTop": 0.1319,
+    "neck": 0.4396,
+    "hand": [
+     0.69,
+     0.4505
+    ]
+   },
+   "business": "sports-arena",
+   "price": 15,
+   "demo": true
+  },
+  {
+   "id": "22-actress-pomeranian",
+   "name": "The Pomeranian Actress",
+   "job": "Actress",
+   "breed": "Pomeranian",
+   "image": "assets/characters/22-actress-pomeranian.jpg",
+   "card": "assets/characters/22-actress-pomeranian-card.jpg",
+   "level4": "Famous actress",
+   "level5": "Film studio",
+   "description": "Starts as a level-1 actress and climbs five career levels up to film studio.",
+   "anchors": {
+    "eyes": [
+     0.56,
+     0.5824
+    ],
+    "headTop": 0.4176,
+    "neck": 0.7253,
+    "hand": [
+     0.7,
+     0.7912
+    ]
+   },
+   "business": "cinema",
+   "price": 15,
+   "demo": false
+  },
+  {
+   "id": "23-pilot-weimaraner",
+   "name": "The Weimaraner Pilot",
+   "job": "Pilot",
+   "breed": "Weimaraner",
+   "image": "assets/characters/23-pilot-weimaraner.jpg",
+   "card": "assets/characters/23-pilot-weimaraner-card.jpg",
+   "level4": "Air traffic controller (control tower)",
+   "level5": "Airport",
+   "description": "Starts as a level-1 pilot and climbs five career levels up to airport.",
+   "anchors": {
+    "eyes": [
+     0.54,
+     0.4176
+    ],
+    "headTop": 0.2418,
+    "neck": 0.5714,
+    "hand": [
+     0.31,
+     0.7802
+    ]
+   },
+   "business": "airport",
+   "price": 15,
+   "demo": true
+  },
+  {
+   "id": "24-teacher-bernese",
+   "name": "The Bernese Teacher",
+   "job": "Teacher",
+   "breed": "Bernese",
+   "image": "assets/characters/24-teacher-bernese.jpg",
+   "card": "assets/characters/24-teacher-bernese-card.jpg",
+   "level4": null,
+   "level5": null,
+   "description": "Starts as a level-1 teacher and climbs five career levels.",
+   "anchors": {
+    "eyes": [
+     0.53,
+     0.4176
+    ],
+    "headTop": 0.2418,
+    "neck": 0.5495,
+    "hand": [
+     0.42,
+     0.8022
+    ]
+   },
+   "business": "school",
+   "price": 15,
+   "demo": false
+  },
+  {
+   "id": "25-sound-tech-corgi",
+   "name": "The Corgi Sound Tech",
+   "job": "Sound Tech",
+   "breed": "Corgi",
+   "image": "assets/characters/25-sound-tech-corgi.jpg",
+   "card": "assets/characters/25-sound-tech-corgi-card.jpg",
+   "level4": null,
+   "level5": null,
+   "description": "Starts as a level-1 sound tech and climbs five career levels.",
+   "anchors": {
+    "eyes": [
+     0.5,
+     0.4505
+    ],
+    "headTop": 0.3077,
+    "neck": 0.6264,
+    "hand": [
+     0.42,
+     0.7582
+    ]
+   },
+   "business": "media-studio",
+   "price": 15,
+   "demo": false
+  }
+ ]
+}

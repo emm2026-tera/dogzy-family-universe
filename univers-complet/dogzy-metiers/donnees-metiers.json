@@ -1,0 +1,4275 @@
+{
+  "projet": "Dogzy Family Universe — guide du joueur par métier",
+  "note": "Noms des personnages = proposés (à valider par Sania). Aucun prix de jeton, partenariat ou montant réel. Pièces Dogzy = monnaie de jeu générique.",
+  "regles_generales": [
+    "Chaque métier a 5 niveaux.",
+    "Chaque niveau débloque 5 accessoires et un environnement.",
+    "Pour monter de niveau : réussis les missions, collectionne les 5 accessoires du niveau et relève le défi."
+  ],
+  "personnages": [
+    {
+      "no": "0a",
+      "metier": "Cuisinier",
+      "slug": "cuisinier",
+      "nom": "Gustave",
+      "nom_statut": "proposé",
+      "sexe": "Mâle",
+      "race": "Golden retriever",
+      "personnalite": "Gustave est passionné et généreux. Il adore faire goûter ses plats à tout le monde et ne laisse jamais personne repartir le ventre vide. Quand un plat rate, il rit, il goûte et il recommence !",
+      "phrase_signature": "« Une pincée d'amour, et tout goûte meilleur ! »",
+      "source_titres_accessoires": "Fiche originale de Sania (titres et accessoires recopiés tels quels)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Cuisinier",
+          "sous_titre": "Apprenti",
+          "description": "Gustave fait ses premiers pas en cuisine : il coupe, il mélange et il apprend les recettes de base.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Ma première recette » pour commencer.",
+          "accessoires": [
+            {
+              "nom": "Toque de cuisinier",
+              "effet": "Débloque la cuisine et les recettes de base"
+            },
+            {
+              "nom": "Tablier de base",
+              "effet": "Moins de dégâts : la cuisine reste propre"
+            },
+            {
+              "nom": "Cuillère en bois",
+              "effet": "Mélanges plus rapides"
+            },
+            {
+              "nom": "Planche à découper",
+              "effet": "Débloque les recettes de légumes"
+            },
+            {
+              "nom": "Couteau de chef",
+              "effet": "Coupe plus vite, + points de précision"
+            }
+          ],
+          "environnement": "Cuisine de base"
+        },
+        {
+          "niveau": 2,
+          "titre": "Chef cuisinier",
+          "sous_titre": "Spécialisé",
+          "description": "Gustave a maintenant sa propre station. Il prépare des plats plus compliqués et invente ses premières recettes.",
+          "comment_debloquer": "Réussis 10 services en cuisine de base, obtiens 3 étoiles à un service et collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Veste de chef (spécialisée)",
+              "effet": "Montre ton rang : + confiance des clients"
+            },
+            {
+              "nom": "Poêle professionnelle",
+              "effet": "Débloque les plats sautés et flambés"
+            },
+            {
+              "nom": "Ensemble de couteaux",
+              "effet": "+ vitesse de préparation"
+            },
+            {
+              "nom": "Thermomètre de cuisson",
+              "effet": "Cuisson parfaite : bonus d'étoiles"
+            },
+            {
+              "nom": "Ustensiles spécialisés",
+              "effet": "Débloque les recettes avancées"
+            }
+          ],
+          "environnement": "Cuisine équipée"
+        },
+        {
+          "niveau": 3,
+          "titre": "Maître hôte",
+          "sous_titre": "Chef exécutif",
+          "description": "Gustave dirige toute la cuisine. Il crée le menu, guide l'équipe et accueille les clients importants.",
+          "comment_debloquer": "Crée 3 recettes signature, réussis le défi « Soirée gastronomique » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Toque de maître",
+              "effet": "Ton équipe travaille mieux quand tu es là"
+            },
+            {
+              "nom": "Médaille/insigne",
+              "effet": "Débloque les clients VIP"
+            },
+            {
+              "nom": "Tabard d'honneur",
+              "effet": "+ réputation du restaurant"
+            },
+            {
+              "nom": "Livre de recettes",
+              "effet": "Garde tes recettes et partage-les"
+            },
+            {
+              "nom": "Assiette signature",
+              "effet": "Ton plat vedette rapporte plus de pièces"
+            }
+          ],
+          "environnement": "Cuisine gastronomique"
+        },
+        {
+          "niveau": 4,
+          "titre": "Propriétaire",
+          "sous_titre": "Restaurateur",
+          "description": "Gustave ouvre SON restaurant ! Il choisit la déco, engage son équipe et gère les comptes.",
+          "comment_debloquer": "Économise des pièces Dogzy pour ton restaurant, atteins un bon niveau de réputation et réussis le défi « Grande ouverture ».",
+          "accessoires": [
+            {
+              "nom": "Tenue de propriétaire",
+              "effet": "Débloque les décisions de patron"
+            },
+            {
+              "nom": "Tablette de gestion",
+              "effet": "Suis tes ventes et ton inventaire"
+            },
+            {
+              "nom": "Clé du restaurant",
+              "effet": "Ouvre et décore ta salle à manger"
+            },
+            {
+              "nom": "Contrat d'affaires",
+              "effet": "Débloque les fournisseurs"
+            },
+            {
+              "nom": "Équipe de staff",
+              "effet": "Engage des employés qui t'aident"
+            }
+          ],
+          "environnement": "Salle à manger"
+        },
+        {
+          "niveau": 5,
+          "titre": "Commerce",
+          "sous_titre": "Chaîne / franchise",
+          "description": "Le restaurant de Gustave est tellement aimé qu'il en ouvre d'autres. Sa marque grandit partout !",
+          "comment_debloquer": "Garde 5 étoiles pendant une saison, forme un gérant et réussis la mission « Deuxième adresse ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ta marque est reconnue partout"
+            },
+            {
+              "nom": "Camion de livraison",
+              "effet": "Débloque les livraisons dans Dogzy Town"
+            },
+            {
+              "nom": "Franchise (nouvel emplacement)",
+              "effet": "Ouvre un nouveau restaurant"
+            },
+            {
+              "nom": "Campagne marketing",
+              "effet": "Attire plus de clients"
+            },
+            {
+              "nom": "Expansion internationale",
+              "effet": "Débloque de nouvelles villes"
+            }
+          ],
+          "environnement": "Chaîne de restaurants"
+        }
+      ]
+    },
+    {
+      "no": "0b",
+      "metier": "Serveuse",
+      "slug": "serveuse",
+      "nom": "Dalma",
+      "nom_statut": "proposé",
+      "sexe": "Femelle",
+      "race": "Dalmatien",
+      "personnalite": "Dalma est souriante et sociable. Elle se souvient du prénom de chaque client et de leur dessert préféré. Avec elle, chaque repas devient une petite fête.",
+      "phrase_signature": "« Un sourire, une table, et la magie commence ! »",
+      "source_titres_accessoires": "Fiche originale de Sania (en anglais) : titres et accessoires traduits fidèlement en français",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Serveuse",
+          "sous_titre": "Apprentie",
+          "description": "Dalma apprend à accueillir les clients, prendre les commandes et porter les plateaux sans rien renverser.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Ma première table » pour commencer.",
+          "accessoires": [
+            {
+              "nom": "Uniforme de base (chemise + tablier)",
+              "effet": "Débloque le service en salle"
+            },
+            {
+              "nom": "Plateau",
+              "effet": "Porte plus d'assiettes à la fois"
+            },
+            {
+              "nom": "Carnet de commandes",
+              "effet": "Moins d'erreurs de commande"
+            },
+            {
+              "nom": "Stylo",
+              "effet": "Notes rapides : + vitesse"
+            },
+            {
+              "nom": "Souliers antidérapants",
+              "effet": "Plus de chutes ni de dégâts"
+            }
+          ],
+          "environnement": "Restaurant décontracté"
+        },
+        {
+          "niveau": 2,
+          "titre": "Serveuse spécialisée",
+          "sous_titre": "Bar et boissons",
+          "description": "Dalma sert maintenant au bar : elle prépare de belles boissons colorées et conseille les clients.",
+          "comment_debloquer": "Sers 15 tables sans erreur, obtiens 3 étoiles de satisfaction et collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Veste (uniforme spécialisé)",
+              "effet": "+ style et + pourboires"
+            },
+            {
+              "nom": "Outils de bar (shaker, doseur)",
+              "effet": "Débloque les boissons spéciales"
+            },
+            {
+              "nom": "Ensemble de verres à cocktail",
+              "effet": "Présentation 3 étoiles"
+            },
+            {
+              "nom": "Tire-bouchon",
+              "effet": "Débloque le service des grandes tables"
+            },
+            {
+              "nom": "Carte des boissons",
+              "effet": "Les clients commandent plus vite"
+            }
+          ],
+          "environnement": "Bar / lounge"
+        },
+        {
+          "niveau": 3,
+          "titre": "Cheffe de salle",
+          "sous_titre": "Superviseure",
+          "description": "Dalma organise toute la salle : les réservations, les tables et l'équipe de serveurs.",
+          "comment_debloquer": "Réussis le défi « Soirée pleine » sans client fâché et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Veston de superviseure",
+              "effet": "Ton équipe te suit : + vitesse de groupe"
+            },
+            {
+              "nom": "Tablette (réservations)",
+              "effet": "Débloque les réservations"
+            },
+            {
+              "nom": "Oreillette / communication",
+              "effet": "Coordonne la salle et la cuisine"
+            },
+            {
+              "nom": "Affiches « Réservé »",
+              "effet": "Prépare les tables VIP"
+            },
+            {
+              "nom": "Horaire du personnel",
+              "effet": "Planifie les quarts de ton équipe"
+            }
+          ],
+          "environnement": "Salle gastronomique"
+        },
+        {
+          "niveau": 4,
+          "titre": "Gérante de restaurant",
+          "sous_titre": "Opérations",
+          "description": "Dalma gère tout le restaurant : le budget, le personnel et la bonne humeur de tout le monde.",
+          "comment_debloquer": "Garde le restaurant ouvert 7 jours de jeu avec une bonne réputation et réussis la mission « Budget équilibré ».",
+          "accessoires": [
+            {
+              "nom": "Tailleur de gérante",
+              "effet": "Débloque les décisions de gestion"
+            },
+            {
+              "nom": "Tablette de gestion",
+              "effet": "Suis tes ventes en direct"
+            },
+            {
+              "nom": "Clés (restaurant)",
+              "effet": "Ouvre et ferme le restaurant"
+            },
+            {
+              "nom": "Guide du personnel",
+              "effet": "Forme tes employés plus vite"
+            },
+            {
+              "nom": "Planificateur de budget",
+              "effet": "Économise plus de pièces Dogzy"
+            }
+          ],
+          "environnement": "Opérations du restaurant"
+        },
+        {
+          "niveau": 5,
+          "titre": "Propriétaire",
+          "sous_titre": "Chaîne / franchise",
+          "description": "Dalma devient patronne de sa propre chaîne : le Dalma Bistro ouvre ses portes un peu partout !",
+          "comment_debloquer": "Économise des pièces Dogzy pour un nouveau local et réussis la mission « Grande ouverture du Dalma Bistro ».",
+          "accessoires": [
+            {
+              "nom": "Logo et image de marque",
+              "effet": "Ta marque est reconnue partout"
+            },
+            {
+              "nom": "Camion de livraison",
+              "effet": "Débloque les livraisons"
+            },
+            {
+              "nom": "Nouvel emplacement (bâtiment)",
+              "effet": "Ouvre un nouveau restaurant"
+            },
+            {
+              "nom": "Campagne marketing",
+              "effet": "Attire plus de clients"
+            },
+            {
+              "nom": "Contrat de franchise",
+              "effet": "Débloque l'expansion de la chaîne"
+            }
+          ],
+          "environnement": "Chaîne de restaurants"
+        }
+      ]
+    },
+    {
+      "no": "0c",
+      "metier": "Barmaid",
+      "slug": "barmaid",
+      "nom": "Charlotte",
+      "nom_statut": "proposé",
+      "sexe": "Femelle",
+      "race": "Cavalier King Charles",
+      "personnalite": "Charlotte est festive et créative. Elle invente des boissons aux couleurs de l'arc-en-ciel et met de la musique partout où elle passe. Son bar est l'endroit le plus joyeux de Dogzy Town.",
+      "phrase_signature": "« Un peu de couleur, un peu de fête : santé ! »",
+      "source_titres_accessoires": "Fiche originale de Sania (en anglais) : titres et accessoires traduits fidèlement en français",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Barmaid",
+          "sous_titre": "Apprentie",
+          "description": "Charlotte apprend à servir au comptoir, à mesurer les ingrédients et à garder son bar bien propre.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Mon premier service au bar » pour commencer.",
+          "accessoires": [
+            {
+              "nom": "Uniforme de base (chemise + tablier)",
+              "effet": "Débloque le service au comptoir"
+            },
+            {
+              "nom": "Shaker à cocktail",
+              "effet": "Débloque les boissons secouées"
+            },
+            {
+              "nom": "Doseur (jigger)",
+              "effet": "Mesures parfaites : + étoiles"
+            },
+            {
+              "nom": "Linge de bar",
+              "effet": "Comptoir propre : + satisfaction"
+            },
+            {
+              "nom": "Souliers antidérapants",
+              "effet": "Plus de chutes ni de dégâts"
+            }
+          ],
+          "environnement": "Bar décontracté — vie nocturne"
+        },
+        {
+          "niveau": 2,
+          "titre": "Barmaid spécialisée",
+          "sous_titre": "Cocktails et mixologie",
+          "description": "Charlotte crée ses propres recettes. Elle fait des spectacles avec ses shakers et décore chaque verre.",
+          "comment_debloquer": "Sers 15 clients avec 3 étoiles et collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Uniforme spécialisé (veste)",
+              "effet": "+ style et + pourboires"
+            },
+            {
+              "nom": "Ensemble de shakers pro",
+              "effet": "Débloque le spectacle de shakers"
+            },
+            {
+              "nom": "Outils de mixologie",
+              "effet": "Débloque les recettes avancées"
+            },
+            {
+              "nom": "Trousse de garnitures",
+              "effet": "Verres décorés : bonus de présentation"
+            },
+            {
+              "nom": "Livre de recettes de cocktails",
+              "effet": "Garde et partage tes créations"
+            }
+          ],
+          "environnement": "Bar à cocktails — lounge mixologie"
+        },
+        {
+          "niveau": 3,
+          "titre": "Cheffe barmaid",
+          "sous_titre": "Superviseure",
+          "description": "Charlotte dirige l'équipe du bar : elle vérifie l'inventaire, planifie les quarts et accueille les VIP.",
+          "comment_debloquer": "Réussis le défi « Soirée VIP » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Veston de superviseure",
+              "effet": "Ton équipe te suit : + vitesse"
+            },
+            {
+              "nom": "Tablette (inventaire)",
+              "effet": "Suis tes ingrédients en direct"
+            },
+            {
+              "nom": "Oreillette / communication",
+              "effet": "Coordonne toute l'équipe"
+            },
+            {
+              "nom": "Horaire du personnel",
+              "effet": "Planifie les quarts"
+            },
+            {
+              "nom": "Clé du bar",
+              "effet": "Ouvre le salon VIP"
+            }
+          ],
+          "environnement": "Bar haut de gamme — salon VIP"
+        },
+        {
+          "niveau": 4,
+          "titre": "Gérante de bar",
+          "sous_titre": "Opérations",
+          "description": "Charlotte gère le bar au complet : le personnel, la réserve et le budget.",
+          "comment_debloquer": "Garde le bar ouvert 7 jours de jeu avec une bonne réputation et réussis la mission « Budget équilibré ».",
+          "accessoires": [
+            {
+              "nom": "Tailleur de gérante",
+              "effet": "Débloque les décisions de gestion"
+            },
+            {
+              "nom": "Tablette de gestion",
+              "effet": "Suis tes ventes en direct"
+            },
+            {
+              "nom": "Clés (bar et réserve)",
+              "effet": "Accès à la réserve"
+            },
+            {
+              "nom": "Guide du personnel",
+              "effet": "Forme tes employés plus vite"
+            },
+            {
+              "nom": "Planificateur de budget",
+              "effet": "Économise plus de pièces Dogzy"
+            }
+          ],
+          "environnement": "Opérations du bar — personnel et gestion"
+        },
+        {
+          "niveau": 5,
+          "titre": "Propriétaire de bars",
+          "sous_titre": "Chaîne / franchise",
+          "description": "Charlotte ouvre sa propre chaîne, les Dogzy Bars, et partage sa bonne humeur dans toute la ville.",
+          "comment_debloquer": "Économise des pièces Dogzy pour un nouveau local et réussis la mission « Grande ouverture des Dogzy Bars ».",
+          "accessoires": [
+            {
+              "nom": "Logo et image de marque",
+              "effet": "Ta marque est reconnue partout"
+            },
+            {
+              "nom": "Camion de livraison",
+              "effet": "Débloque les livraisons"
+            },
+            {
+              "nom": "Nouveau bar (emplacement)",
+              "effet": "Ouvre un nouveau bar"
+            },
+            {
+              "nom": "Campagne marketing",
+              "effet": "Attire plus de clients"
+            },
+            {
+              "nom": "Contrat de franchise",
+              "effet": "Débloque l'expansion de la chaîne"
+            }
+          ],
+          "environnement": "Chaîne de bars — franchise"
+        }
+      ]
+    },
+    {
+      "no": "01",
+      "metier": "Policière",
+      "slug": "policiere",
+      "nom": "Justine",
+      "nom_statut": "proposé",
+      "sexe": "Femelle",
+      "race": "Berger allemand",
+      "personnalite": "Justine est brave et juste. Elle protège tout le monde, des plus petits chiots aux plus grands, et elle écoute toujours les deux côtés d'une histoire. Son flair ne la trompe jamais !",
+      "phrase_signature": "« Pour Dogzy Town, toujours prête ! »",
+      "source_titres_accessoires": "Fiche Policière terminée (titres et accessoires recopiés tels quels)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Policière",
+          "sous_titre": "Recrue",
+          "description": "Justine patrouille dans son quartier. Elle aide les passants, retrouve les objets perdus et garde les rues sécuritaires.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Ma première patrouille » pour commencer.",
+          "accessoires": [
+            {
+              "nom": "Uniforme",
+              "effet": "Débloque les patrouilles"
+            },
+            {
+              "nom": "Casquette",
+              "effet": "+ confiance des citoyens"
+            },
+            {
+              "nom": "Radio",
+              "effet": "Reçois les appels d'aide plus vite"
+            },
+            {
+              "nom": "Lampe de poche",
+              "effet": "Débloque les missions de nuit"
+            },
+            {
+              "nom": "Carnet",
+              "effet": "Note les indices trouvés"
+            }
+          ],
+          "environnement": "Rue de quartier"
+        },
+        {
+          "niveau": 2,
+          "titre": "Enquêtrice",
+          "sous_titre": "Détective",
+          "description": "Justine résout des mystères : objets disparus, traces de pattes, indices cachés… rien ne lui échappe !",
+          "comment_debloquer": "Réussis 10 patrouilles, aide 5 citoyens et collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Imperméable",
+              "effet": "Enquête même sous la pluie"
+            },
+            {
+              "nom": "Loupe",
+              "effet": "Repère les indices cachés"
+            },
+            {
+              "nom": "Carnet d'enquête",
+              "effet": "Relie les indices plus vite"
+            },
+            {
+              "nom": "Appareil photo",
+              "effet": "Garde des preuves en images"
+            },
+            {
+              "nom": "Badge détective",
+              "effet": "Débloque les grandes enquêtes"
+            }
+          ],
+          "environnement": "Bureau d'enquête"
+        },
+        {
+          "niveau": 3,
+          "titre": "Sergente",
+          "sous_titre": "Superviseure",
+          "description": "Justine dirige une équipe d'agents. Elle prépare les briefings et envoie la bonne patte au bon endroit.",
+          "comment_debloquer": "Résous 3 mystères, réussis le défi « Briefing d'équipe » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Galons",
+              "effet": "Ton équipe te suit : + vitesse"
+            },
+            {
+              "nom": "Tablette",
+              "effet": "Vois la carte des missions"
+            },
+            {
+              "nom": "Sifflet",
+              "effet": "Rassemble ton équipe en un instant"
+            },
+            {
+              "nom": "Horaire d'équipe",
+              "effet": "Planifie les patrouilles"
+            },
+            {
+              "nom": "Clé de véhicule",
+              "effet": "Débloque les patrouilles en voiture"
+            }
+          ],
+          "environnement": "Salle de briefing"
+        },
+        {
+          "niveau": 4,
+          "titre": "Cheffe",
+          "sous_titre": "De police",
+          "description": "Justine est cheffe de police. Elle prend les grandes décisions pour garder toute la ville en sécurité.",
+          "comment_debloquer": "Garde Dogzy Town sécuritaire 7 jours de jeu et réussis la mission « Ville tranquille ».",
+          "accessoires": [
+            {
+              "nom": "Uniforme de cheffe",
+              "effet": "Débloque les décisions de cheffe"
+            },
+            {
+              "nom": "Insigne d'or",
+              "effet": "+ réputation du poste"
+            },
+            {
+              "nom": "Bureau",
+              "effet": "Ton quartier général"
+            },
+            {
+              "nom": "Téléphone",
+              "effet": "Reçois les appels importants"
+            },
+            {
+              "nom": "Dossiers",
+              "effet": "Débloque les enquêtes spéciales"
+            }
+          ],
+          "environnement": "Bureau de la cheffe"
+        },
+        {
+          "niveau": 5,
+          "titre": "Poste de police",
+          "sous_titre": "Commandante",
+          "description": "Justine commande son propre poste de police Dogzy, puis ouvre de nouveaux postes dans la région.",
+          "comment_debloquer": "Forme 3 agents, économise des pièces Dogzy pour le nouveau poste et réussis la mission « Grande ouverture ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ton poste est reconnu partout"
+            },
+            {
+              "nom": "Voiture de patrouille",
+              "effet": "Débloque les patrouilles rapides"
+            },
+            {
+              "nom": "Nouveau poste",
+              "effet": "Ouvre un poste dans un nouveau quartier"
+            },
+            {
+              "nom": "Équipe d'agents",
+              "effet": "Des agents patrouillent pour toi"
+            },
+            {
+              "nom": "Expansion régionale",
+              "effet": "Débloque de nouvelles villes"
+            }
+          ],
+          "environnement": "Poste de police Dogzy"
+        }
+      ]
+    },
+    {
+      "no": "02",
+      "metier": "Commis",
+      "slug": "commis",
+      "nom": "Biscuit",
+      "nom_statut": "proposé",
+      "sexe": "Mâle",
+      "race": "Beagle",
+      "personnalite": "Biscuit est enjoué et débrouillard. Il trouve toujours le bon produit sur la bonne tablette, même quand il est caché tout en haut. Son nez de beagle l'aide à repérer les nouveautés avant tout le monde.",
+      "phrase_signature": "« Pas de problème, j'ai une idée ! »",
+      "source_titres_accessoires": "Fiche Commis terminée 02-commis-beagle.jpg (titres, accessoires et environnements recopiés tels quels)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Commis",
+          "sous_titre": "Apprenti",
+          "description": "Biscuit reçoit les boîtes à l'entrepôt, les déballe et les classe pour que tout soit prêt pour le magasin.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Ma première journée à l'entrepôt ».",
+          "accessoires": [
+            {
+              "nom": "Tablier",
+              "effet": "Débloque le travail à l'entrepôt"
+            },
+            {
+              "nom": "Badge de nom",
+              "effet": "+ confiance des clients"
+            },
+            {
+              "nom": "Cutter",
+              "effet": "Ouvre les boîtes de livraison (prudemment !)"
+            },
+            {
+              "nom": "Chariot",
+              "effet": "Transporte plus de boîtes à la fois"
+            },
+            {
+              "nom": "Étiquettes",
+              "effet": "Classe les produits plus vite"
+            }
+          ],
+          "environnement": "Entrepôt"
+        },
+        {
+          "niveau": 2,
+          "titre": "Commis",
+          "sous_titre": "Spécialisé",
+          "description": "Biscuit s'occupe des rayons du magasin : il place les produits, vérifie les prix et aide les clients.",
+          "comment_debloquer": "Range 15 livraisons, aide 10 clients et collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Veste",
+              "effet": "+ style et + confiance"
+            },
+            {
+              "nom": "Lecteur de prix",
+              "effet": "Vérifie les prix en un clic"
+            },
+            {
+              "nom": "Étiqueteuse",
+              "effet": "Mets les prix plus vite"
+            },
+            {
+              "nom": "Gants",
+              "effet": "Manipule les boîtes sans te blesser"
+            },
+            {
+              "nom": "Inventaire",
+              "effet": "Repère les produits manquants"
+            }
+          ],
+          "environnement": "Rayons du magasin"
+        },
+        {
+          "niveau": 3,
+          "titre": "Gérant",
+          "sous_titre": "",
+          "description": "Biscuit gère toute l'équipe du magasin : les horaires, les clés, la caisse et les commandes.",
+          "comment_debloquer": "Réussis le défi « Grande vente du samedi » sans rayon vide et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Chemise et cravate",
+              "effet": "Débloque les décisions de gérant"
+            },
+            {
+              "nom": "Planchette",
+              "effet": "Note les tâches de l'équipe"
+            },
+            {
+              "nom": "Clés du magasin",
+              "effet": "Ouvre et ferme le magasin"
+            },
+            {
+              "nom": "Horaire d'équipe",
+              "effet": "Planifie les quarts"
+            },
+            {
+              "nom": "Caisse",
+              "effet": "Encaisse les ventes plus vite"
+            }
+          ],
+          "environnement": "Bureau du gérant"
+        },
+        {
+          "niveau": 4,
+          "titre": "Propriétaire",
+          "sous_titre": "De boutique",
+          "description": "Biscuit ouvre sa propre boutique, le Dogzy Market ! Il choisit les produits, la déco et l'ambiance.",
+          "comment_debloquer": "Économise des pièces Dogzy pour ta boutique, atteins une bonne réputation et réussis la mission « Grande ouverture ».",
+          "accessoires": [
+            {
+              "nom": "Blazer",
+              "effet": "Débloque les choix de patron"
+            },
+            {
+              "nom": "Tablette de gestion",
+              "effet": "Suis tes ventes et ton inventaire"
+            },
+            {
+              "nom": "Comptoir",
+              "effet": "Accueille tes clients avec style"
+            },
+            {
+              "nom": "Enseigne",
+              "effet": "Attire les passants"
+            },
+            {
+              "nom": "Contrat de bail",
+              "effet": "Ton local t'appartient pour de bon"
+            }
+          ],
+          "environnement": "Boutique Dogzy"
+        },
+        {
+          "niveau": 5,
+          "titre": "Franchise",
+          "sous_titre": "",
+          "description": "La boutique de Biscuit a tellement de succès que les Dogzy Market ouvrent partout dans la ville !",
+          "comment_debloquer": "Garde 5 étoiles de satisfaction pendant une saison, forme un gérant et réussis la mission « Deuxième magasin ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ta marque est reconnue partout"
+            },
+            {
+              "nom": "Camion de livraison",
+              "effet": "Débloque les livraisons à domicile"
+            },
+            {
+              "nom": "Nouveau magasin",
+              "effet": "Ouvre un magasin dans un nouveau quartier"
+            },
+            {
+              "nom": "Campagne marketing",
+              "effet": "Attire plus de clients"
+            },
+            {
+              "nom": "Contrat de franchise",
+              "effet": "Débloque l'expansion de la chaîne"
+            }
+          ],
+          "environnement": "Chaîne de magasins"
+        }
+      ]
+    },
+    {
+      "no": "03",
+      "metier": "Pompier",
+      "slug": "pompier",
+      "nom": "Bruno",
+      "nom_statut": "proposé",
+      "sexe": "Mâle",
+      "race": "Saint-Bernard",
+      "personnalite": "Bruno est courageux et protecteur. Grand et costaud, il a un cœur aussi gros que lui. Il rassure tout le monde avec son calme et sa voix douce.",
+      "phrase_signature": "« Pas de panique, Bruno est là ! »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Pompier",
+          "sous_titre": "Recrue",
+          "description": "Bruno s'entraîne à la caserne : il apprend à dérouler les boyaux, monter l'échelle et garder son équipement prêt.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Mon premier entraînement ».",
+          "accessoires": [
+            {
+              "nom": "Casque de pompier",
+              "effet": "Débloque les entraînements"
+            },
+            {
+              "nom": "Habit de feu",
+              "effet": "Protège pendant les missions"
+            },
+            {
+              "nom": "Bottes",
+              "effet": "+ vitesse sur les terrains difficiles"
+            },
+            {
+              "nom": "Gants",
+              "effet": "Manipule l'équipement en sécurité"
+            },
+            {
+              "nom": "Lampe frontale",
+              "effet": "Débloque les missions dans le noir"
+            }
+          ],
+          "environnement": "Cour d'entraînement"
+        },
+        {
+          "niveau": 2,
+          "titre": "Pompier",
+          "sous_titre": "Pompier",
+          "description": "Bruno part en mission : il éteint les feux, sauve les chats dans les arbres et aide les familles.",
+          "comment_debloquer": "Réussis 10 entraînements, sauve 5 citoyens et collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Boyau d'arrosage",
+              "effet": "Éteins les feux plus vite"
+            },
+            {
+              "nom": "Hache de pompier",
+              "effet": "Ouvre les passages bloqués"
+            },
+            {
+              "nom": "Extincteur",
+              "effet": "Éteins les petits feux en un clic"
+            },
+            {
+              "nom": "Masque à oxygène",
+              "effet": "Entre dans la fumée sans danger"
+            },
+            {
+              "nom": "Trousse de premiers soins",
+              "effet": "Soigne les petits bobos"
+            }
+          ],
+          "environnement": "Caserne de pompiers"
+        },
+        {
+          "niveau": 3,
+          "titre": "Superviseur",
+          "sous_titre": "Chef d'équipe",
+          "description": "Bruno dirige une équipe de pompiers. Il choisit qui fait quoi pendant chaque mission.",
+          "comment_debloquer": "Réussis le défi « Grand sauvetage » en équipe et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Casque blanc",
+              "effet": "Ton équipe te suit : + vitesse"
+            },
+            {
+              "nom": "Radio d'équipe",
+              "effet": "Coordonne les pompiers"
+            },
+            {
+              "nom": "Plan d'intervention",
+              "effet": "Prépare les missions"
+            },
+            {
+              "nom": "Sifflet",
+              "effet": "Rassemble l'équipe"
+            },
+            {
+              "nom": "Tablette de mission",
+              "effet": "Vois les alertes en direct"
+            }
+          ],
+          "environnement": "Centre d'intervention"
+        },
+        {
+          "niveau": 4,
+          "titre": "Capitaine",
+          "sous_titre": "De caserne",
+          "description": "Bruno est capitaine : il forme les recrues et organise toute la caserne.",
+          "comment_debloquer": "Forme 3 recrues et garde Dogzy Town en sécurité pendant 7 jours de jeu.",
+          "accessoires": [
+            {
+              "nom": "Uniforme de capitaine",
+              "effet": "Débloque les décisions de capitaine"
+            },
+            {
+              "nom": "Insigne d'or",
+              "effet": "+ réputation de la caserne"
+            },
+            {
+              "nom": "Bureau de capitaine",
+              "effet": "Ton quartier général"
+            },
+            {
+              "nom": "Cloche d'alarme",
+              "effet": "Réponds plus vite aux appels"
+            },
+            {
+              "nom": "Registre de caserne",
+              "effet": "Suis toutes les missions"
+            }
+          ],
+          "environnement": "Bureau du capitaine"
+        },
+        {
+          "niveau": 5,
+          "titre": "Chef de caserne",
+          "sous_titre": "Expansion",
+          "description": "Bruno ouvre de nouvelles casernes pour protéger chaque quartier de Dogzy Town.",
+          "comment_debloquer": "Économise des pièces Dogzy pour une nouvelle caserne et réussis la mission « Grande ouverture ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ta caserne est reconnue partout"
+            },
+            {
+              "nom": "Camion de pompier",
+              "effet": "Débloque les grandes interventions"
+            },
+            {
+              "nom": "Nouvelle caserne",
+              "effet": "Protège un nouveau quartier"
+            },
+            {
+              "nom": "Équipe de pompiers",
+              "effet": "Des pompiers t'aident en mission"
+            },
+            {
+              "nom": "Campagne de prévention",
+              "effet": "Moins de feux en ville"
+            }
+          ],
+          "environnement": "Caserne Dogzy"
+        }
+      ]
+    },
+    {
+      "no": "04",
+      "metier": "Infirmière",
+      "slug": "infirmiere",
+      "nom": "Clémence",
+      "nom_statut": "proposé",
+      "sexe": "Femelle",
+      "race": "Colley",
+      "personnalite": "Clémence est douce et attentive. Elle remarque tout de suite quand quelqu'un ne va pas bien et trouve toujours le mot qui réconforte. Ses patients l'adorent.",
+      "phrase_signature": "« Respire, je suis là. Tout va bien aller. »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Infirmière",
+          "sous_titre": "Soins de base",
+          "description": "Clémence prend soin des patients : elle prend la température, met des pansements et rassure tout le monde.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Ma première patiente ».",
+          "accessoires": [
+            {
+              "nom": "Uniforme d'infirmière",
+              "effet": "Débloque les soins de base"
+            },
+            {
+              "nom": "Stéthoscope",
+              "effet": "Écoute les cœurs : diagnostic plus rapide"
+            },
+            {
+              "nom": "Thermomètre",
+              "effet": "Repère la fièvre"
+            },
+            {
+              "nom": "Pansements",
+              "effet": "Soigne les petits bobos"
+            },
+            {
+              "nom": "Montre d'infirmière",
+              "effet": "+ vitesse des soins"
+            }
+          ],
+          "environnement": "Salle de soins"
+        },
+        {
+          "niveau": 2,
+          "titre": "Interne",
+          "sous_titre": "En formation",
+          "description": "Clémence apprend à devenir médecin. Elle suit les docteurs et pose plein de questions.",
+          "comment_debloquer": "Soigne 15 patients, réussis le quiz « Le corps humain » et collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Sarrau blanc",
+              "effet": "+ confiance des patients"
+            },
+            {
+              "nom": "Livre de médecine",
+              "effet": "Débloque les nouveaux diagnostics"
+            },
+            {
+              "nom": "Lampe d'examen",
+              "effet": "Examine les oreilles et la gorge"
+            },
+            {
+              "nom": "Tablette de dossiers",
+              "effet": "Retrouve l'historique des patients"
+            },
+            {
+              "nom": "Carte d'interne",
+              "effet": "Accès aux étages de l'hôpital"
+            }
+          ],
+          "environnement": "Corridor de l'hôpital"
+        },
+        {
+          "niveau": 3,
+          "titre": "Docteure",
+          "sous_titre": "Médecin",
+          "description": "Clémence est docteure ! Elle trouve ce qui ne va pas et choisit le bon traitement.",
+          "comment_debloquer": "Réussis le défi « Journée à l'urgence » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Stéthoscope doré",
+              "effet": "Diagnostics parfaits"
+            },
+            {
+              "nom": "Carnet d'ordonnances",
+              "effet": "Débloque les traitements"
+            },
+            {
+              "nom": "Écran de radiographie",
+              "effet": "Vois à l'intérieur"
+            },
+            {
+              "nom": "Trousse de médecin",
+              "effet": "Visites à domicile"
+            },
+            {
+              "nom": "Badge de docteure",
+              "effet": "+ réputation"
+            }
+          ],
+          "environnement": "Bureau de consultation"
+        },
+        {
+          "niveau": 4,
+          "titre": "Chirurgienne",
+          "sous_titre": "Spécialiste",
+          "description": "Clémence opère les patients pour les aider à guérir. Elle a besoin de mains très précises !",
+          "comment_debloquer": "Réussis 3 mini-jeux de précision « Opération délicate » sans erreur.",
+          "accessoires": [
+            {
+              "nom": "Blouse de chirurgienne",
+              "effet": "Débloque la salle d'opération"
+            },
+            {
+              "nom": "Masque et bonnet",
+              "effet": "Hygiène parfaite : + étoiles"
+            },
+            {
+              "nom": "Gants stériles",
+              "effet": "+ précision"
+            },
+            {
+              "nom": "Lampe chirurgicale",
+              "effet": "Vois chaque détail"
+            },
+            {
+              "nom": "Moniteur cardiaque",
+              "effet": "Surveille ton patient"
+            }
+          ],
+          "environnement": "Salle d'opération"
+        },
+        {
+          "niveau": 5,
+          "titre": "Directrice",
+          "sous_titre": "De clinique",
+          "description": "Clémence ouvre sa propre clinique pour soigner toutes les familles de Dogzy Town.",
+          "comment_debloquer": "Économise des pièces Dogzy pour ta clinique et réussis la mission « Grande ouverture ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ta clinique est reconnue partout"
+            },
+            {
+              "nom": "Ambulance",
+              "effet": "Débloque les missions d'urgence"
+            },
+            {
+              "nom": "Nouvelle clinique",
+              "effet": "Ouvre une clinique dans un nouveau quartier"
+            },
+            {
+              "nom": "Équipe médicale",
+              "effet": "Des infirmiers t'aident"
+            },
+            {
+              "nom": "Réseau de cliniques",
+              "effet": "Débloque de nouvelles villes"
+            }
+          ],
+          "environnement": "Clinique Dogzy"
+        }
+      ]
+    },
+    {
+      "no": "05",
+      "metier": "Avocat",
+      "slug": "avocat",
+      "nom": "Barnabé",
+      "nom_statut": "proposé",
+      "sexe": "Mâle",
+      "race": "Bouledogue anglais",
+      "personnalite": "Barnabé est sérieux et éloquent. Il parle avec de grands mots, mais il explique toujours les choses simplement. Il défend ceux qui n'osent pas parler.",
+      "phrase_signature": "« La justice, c'est pour tout le monde ! »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Assistant avocat",
+          "sous_titre": "Débutant",
+          "description": "Barnabé classe les dossiers, cherche dans les livres de lois et aide l'avocat à préparer les causes.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Mon premier dossier ».",
+          "accessoires": [
+            {
+              "nom": "Chemise et cravate",
+              "effet": "Débloque le travail au cabinet"
+            },
+            {
+              "nom": "Classeur",
+              "effet": "Range les dossiers plus vite"
+            },
+            {
+              "nom": "Livre de lois",
+              "effet": "Trouve les bonnes règles"
+            },
+            {
+              "nom": "Stylo plume",
+              "effet": "+ points de précision"
+            },
+            {
+              "nom": "Agenda",
+              "effet": "N'oublie aucun rendez-vous"
+            }
+          ],
+          "environnement": "Bureau du cabinet"
+        },
+        {
+          "niveau": 2,
+          "titre": "Avocat",
+          "sous_titre": "Plaideur",
+          "description": "Barnabé défend ses clients au tribunal. Il trouve les preuves et convainc avec de beaux discours.",
+          "comment_debloquer": "Prépare 10 dossiers, gagne le quiz « Les règles de Dogzy Town » et collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Toge d'avocat",
+              "effet": "Débloque le tribunal"
+            },
+            {
+              "nom": "Mallette",
+              "effet": "Transporte tes preuves"
+            },
+            {
+              "nom": "Dossier de preuves",
+              "effet": "+ chances de gagner"
+            },
+            {
+              "nom": "Lunettes de lecture",
+              "effet": "Lis les petits caractères"
+            },
+            {
+              "nom": "Micro de plaidoirie",
+              "effet": "Discours plus convaincants"
+            }
+          ],
+          "environnement": "Salle d'audience"
+        },
+        {
+          "niveau": 3,
+          "titre": "Juge",
+          "sous_titre": "Sage",
+          "description": "Barnabé écoute les deux côtés et prend des décisions justes pour tout le monde.",
+          "comment_debloquer": "Gagne 5 causes et réussis le défi « Écouter les deux côtés ».",
+          "accessoires": [
+            {
+              "nom": "Toge de juge",
+              "effet": "Débloque le banc du juge"
+            },
+            {
+              "nom": "Marteau de juge",
+              "effet": "Annonce tes décisions"
+            },
+            {
+              "nom": "Code de justice",
+              "effet": "Décisions plus justes"
+            },
+            {
+              "nom": "Balance de la justice",
+              "effet": "+ réputation d'équité"
+            },
+            {
+              "nom": "Siège du juge",
+              "effet": "Ton poste au tribunal"
+            }
+          ],
+          "environnement": "Tribunal"
+        },
+        {
+          "niveau": 4,
+          "titre": "Juge à la Cour suprême",
+          "sous_titre": "Expert",
+          "description": "Barnabé juge les causes les plus importantes du pays. Ses décisions servent d'exemple à tous.",
+          "comment_debloquer": "Rends 10 décisions justes et réussis la mission « La grande cause ».",
+          "accessoires": [
+            {
+              "nom": "Toge d'honneur",
+              "effet": "Débloque les grandes causes"
+            },
+            {
+              "nom": "Médaille d'excellence",
+              "effet": "+ réputation"
+            },
+            {
+              "nom": "Bibliothèque de lois",
+              "effet": "Débloque toutes les règles"
+            },
+            {
+              "nom": "Bureau de chêne",
+              "effet": "Ton quartier général"
+            },
+            {
+              "nom": "Sceau officiel",
+              "effet": "Rends tes décisions officielles"
+            }
+          ],
+          "environnement": "Cour suprême"
+        },
+        {
+          "niveau": 5,
+          "titre": "Tribunal / cabinet",
+          "sous_titre": "Expansion",
+          "description": "Barnabé ouvre son propre cabinet et aide des avocats partout à Dogzy Town.",
+          "comment_debloquer": "Forme 3 assistants et économise des pièces Dogzy pour le nouveau cabinet.",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ton cabinet est reconnu partout"
+            },
+            {
+              "nom": "Voiture de fonction",
+              "effet": "Va voir tes clients partout"
+            },
+            {
+              "nom": "Nouveau cabinet",
+              "effet": "Ouvre un bureau dans un nouveau quartier"
+            },
+            {
+              "nom": "Équipe d'avocats",
+              "effet": "Des avocats t'aident"
+            },
+            {
+              "nom": "Campagne « Justice pour tous »",
+              "effet": "Attire plus de clients"
+            }
+          ],
+          "environnement": "Cabinet Dogzy"
+        }
+      ]
+    },
+    {
+      "no": "06",
+      "metier": "Dentiste",
+      "slug": "dentiste",
+      "nom": "Perle",
+      "nom_statut": "proposé",
+      "sexe": "Femelle",
+      "race": "Caniche",
+      "personnalite": "Perle est méticuleuse et rassurante. Elle prend son temps, explique chaque étape et transforme la visite chez le dentiste en moment agréable. Avec elle, plus personne n'a peur !",
+      "phrase_signature": "« Montre-moi ton plus beau sourire ! »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Assistante dentaire",
+          "sous_titre": "Débutante",
+          "description": "Perle prépare les instruments, accueille les patients et leur montre comment bien se brosser les dents.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Mon premier sourire ».",
+          "accessoires": [
+            {
+              "nom": "Uniforme dentaire",
+              "effet": "Débloque la clinique"
+            },
+            {
+              "nom": "Brosse à dents géante",
+              "effet": "Montre les bons gestes"
+            },
+            {
+              "nom": "Gants",
+              "effet": "Hygiène parfaite"
+            },
+            {
+              "nom": "Plateau d'instruments",
+              "effet": "Prépare plus vite"
+            },
+            {
+              "nom": "Collants-sourires",
+              "effet": "Patients rassurés : + étoiles"
+            }
+          ],
+          "environnement": "Salle d'attente"
+        },
+        {
+          "niveau": 2,
+          "titre": "Dentiste",
+          "sous_titre": "Docteure des dents",
+          "description": "Perle examine les dents, répare les caries et fait briller les sourires.",
+          "comment_debloquer": "Aide 15 patients, réussis le mini-jeu « Chasse aux caries » et collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Sarrau de dentiste",
+              "effet": "+ confiance des patients"
+            },
+            {
+              "nom": "Miroir dentaire",
+              "effet": "Repère les caries cachées"
+            },
+            {
+              "nom": "Lampe frontale",
+              "effet": "Vois chaque dent"
+            },
+            {
+              "nom": "Fauteuil dentaire",
+              "effet": "Débloque les soins complets"
+            },
+            {
+              "nom": "Fil dentaire magique",
+              "effet": "Sourires plus brillants"
+            }
+          ],
+          "environnement": "Cabinet dentaire"
+        },
+        {
+          "niveau": 3,
+          "titre": "Chirurgienne ORL",
+          "sous_titre": "Spécialiste",
+          "description": "Perle fait les soins les plus délicats de la bouche et de la gorge. Ses gestes sont d'une grande précision.",
+          "comment_debloquer": "Réussis 3 mini-jeux de précision « Soin délicat » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Blouse de chirurgienne",
+              "effet": "Débloque les soins spécialisés"
+            },
+            {
+              "nom": "Loupes de précision",
+              "effet": "+ précision"
+            },
+            {
+              "nom": "Écran de radiographie",
+              "effet": "Vois sous les dents"
+            },
+            {
+              "nom": "Instruments spécialisés",
+              "effet": "Débloque les soins avancés"
+            },
+            {
+              "nom": "Masque chirurgical",
+              "effet": "Hygiène parfaite : + étoiles"
+            }
+          ],
+          "environnement": "Salle de chirurgie"
+        },
+        {
+          "niveau": 4,
+          "titre": "Propriétaire",
+          "sous_titre": "De clinique",
+          "description": "Perle ouvre sa propre clinique, toute douce et colorée, pour que les enfants n'aient plus jamais peur.",
+          "comment_debloquer": "Économise des pièces Dogzy pour ta clinique et réussis la mission « Grande ouverture ».",
+          "accessoires": [
+            {
+              "nom": "Tenue de propriétaire",
+              "effet": "Débloque les choix de patronne"
+            },
+            {
+              "nom": "Tablette de rendez-vous",
+              "effet": "Gère ton horaire"
+            },
+            {
+              "nom": "Clé de la clinique",
+              "effet": "Ouvre et décore la clinique"
+            },
+            {
+              "nom": "Coin jeux pour enfants",
+              "effet": "+ patients heureux"
+            },
+            {
+              "nom": "Carnet de comptes",
+              "effet": "Suis tes profits"
+            }
+          ],
+          "environnement": "Clinique de Perle"
+        },
+        {
+          "niveau": 5,
+          "titre": "Clinique dentaire",
+          "sous_titre": "Expansion",
+          "description": "Les cliniques de Perle s'installent dans tous les quartiers pour faire sourire Dogzy Town.",
+          "comment_debloquer": "Garde 5 étoiles pendant une saison et réussis la mission « Deuxième clinique ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ta clinique est reconnue partout"
+            },
+            {
+              "nom": "Autobus-sourire",
+              "effet": "Visites dans les écoles"
+            },
+            {
+              "nom": "Nouvelle clinique",
+              "effet": "Ouvre dans un nouveau quartier"
+            },
+            {
+              "nom": "Équipe dentaire",
+              "effet": "Des assistants t'aident"
+            },
+            {
+              "nom": "Réseau de cliniques",
+              "effet": "Débloque de nouvelles villes"
+            }
+          ],
+          "environnement": "Réseau de cliniques Dogzy"
+        }
+      ]
+    },
+    {
+      "no": "07",
+      "metier": "Fleuriste",
+      "slug": "fleuriste",
+      "nom": "Pétale",
+      "nom_statut": "proposé",
+      "sexe": "Femelle",
+      "race": "Yorkshire",
+      "personnalite": "Pétale est rêveuse et créative. Elle parle doucement à ses plantes et invente des bouquets qui ressemblent à des tableaux. Elle voit de la beauté partout.",
+      "phrase_signature": "« Chaque fleur raconte une histoire. »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Assistante fleuriste",
+          "sous_titre": "Débutante",
+          "description": "Pétale arrose les plantes, coupe les tiges et apprend le nom de chaque fleur.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Mon premier bouquet ».",
+          "accessoires": [
+            {
+              "nom": "Tablier fleuri",
+              "effet": "Débloque la boutique"
+            },
+            {
+              "nom": "Arrosoir",
+              "effet": "Plantes en santé"
+            },
+            {
+              "nom": "Sécateur",
+              "effet": "Coupe les tiges plus vite"
+            },
+            {
+              "nom": "Ruban",
+              "effet": "Bouquets plus jolis"
+            },
+            {
+              "nom": "Gants de jardin",
+              "effet": "Pas de piqûres d'épines"
+            }
+          ],
+          "environnement": "Petite boutique de fleurs"
+        },
+        {
+          "niveau": 2,
+          "titre": "Fleuriste",
+          "sous_titre": "Créatrice",
+          "description": "Pétale crée ses propres bouquets et décore les fêtes de Dogzy Town.",
+          "comment_debloquer": "Crée 15 bouquets, réussis le défi « Bouquet de mariage » et collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Tablier de fleuriste",
+              "effet": "+ style"
+            },
+            {
+              "nom": "Vases de cristal",
+              "effet": "Présentation 3 étoiles"
+            },
+            {
+              "nom": "Papier d'emballage",
+              "effet": "Débloque les bouquets cadeaux"
+            },
+            {
+              "nom": "Livre des fleurs",
+              "effet": "Débloque de nouvelles espèces"
+            },
+            {
+              "nom": "Panier de livraison",
+              "effet": "Livre les bouquets"
+            }
+          ],
+          "environnement": "Atelier floral"
+        },
+        {
+          "niveau": 3,
+          "titre": "Botaniste",
+          "sous_titre": "Experte",
+          "description": "Pétale étudie les plantes, crée de nouvelles variétés et soigne les fleurs malades.",
+          "comment_debloquer": "Fais pousser 5 variétés rares et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Sarrau de botaniste",
+              "effet": "Débloque le laboratoire"
+            },
+            {
+              "nom": "Loupe",
+              "effet": "Observe les plantes de près"
+            },
+            {
+              "nom": "Semences rares",
+              "effet": "Débloque les fleurs rares"
+            },
+            {
+              "nom": "Carnet d'herbier",
+              "effet": "Collectionne tes découvertes"
+            },
+            {
+              "nom": "Mini-serre",
+              "effet": "Fais pousser plus vite"
+            }
+          ],
+          "environnement": "Jardin botanique"
+        },
+        {
+          "niveau": 4,
+          "titre": "Propriétaire",
+          "sous_titre": "De boutique",
+          "description": "Pétale ouvre sa propre boutique de fleurs, remplie de couleurs et de parfums.",
+          "comment_debloquer": "Économise des pièces Dogzy pour ta boutique et réussis la mission « Grande ouverture ».",
+          "accessoires": [
+            {
+              "nom": "Tenue de propriétaire",
+              "effet": "Débloque les choix de patronne"
+            },
+            {
+              "nom": "Comptoir fleuri",
+              "effet": "Encaisse plus vite"
+            },
+            {
+              "nom": "Enseigne de boutique",
+              "effet": "Attire les passants"
+            },
+            {
+              "nom": "Contrat de producteur",
+              "effet": "Fleurs fraîches tous les jours"
+            },
+            {
+              "nom": "Carnet de comptes",
+              "effet": "Suis tes profits"
+            }
+          ],
+          "environnement": "Boutique de Pétale"
+        },
+        {
+          "niveau": 5,
+          "titre": "Serre",
+          "sous_titre": "Expansion",
+          "description": "Pétale bâtit une grande serre et livre ses fleurs dans toute la région.",
+          "comment_debloquer": "Garde 5 étoiles pendant une saison et réussis la mission « La grande serre ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ta marque est reconnue partout"
+            },
+            {
+              "nom": "Camionnette fleurie",
+              "effet": "Débloque les livraisons"
+            },
+            {
+              "nom": "Grande serre",
+              "effet": "Fais pousser des milliers de fleurs"
+            },
+            {
+              "nom": "Équipe de jardiniers",
+              "effet": "Des jardiniers t'aident"
+            },
+            {
+              "nom": "Expansion régionale",
+              "effet": "Débloque de nouvelles villes"
+            }
+          ],
+          "environnement": "Serre Dogzy"
+        }
+      ]
+    },
+    {
+      "no": "08",
+      "metier": "Ouvrier de chantier",
+      "slug": "ouvrier-chantier",
+      "nom": "Rocco",
+      "nom_statut": "proposé",
+      "sexe": "Mâle",
+      "race": "Rottweiler",
+      "personnalite": "Rocco est travaillant et fiable. Il arrive le premier sur le chantier et repart le dernier. Quand Rocco promet quelque chose, c'est fait, et bien fait !",
+      "phrase_signature": "« Brique par brique, on bâtit du solide ! »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Ouvrier de chantier",
+          "sous_titre": "Débutant",
+          "description": "Rocco transporte les matériaux, mélange le ciment et apprend à bâtir en toute sécurité.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Ma première brique ».",
+          "accessoires": [
+            {
+              "nom": "Casque de sécurité",
+              "effet": "Débloque le chantier"
+            },
+            {
+              "nom": "Veste fluo",
+              "effet": "Tout le monde te voit : + sécurité"
+            },
+            {
+              "nom": "Bottes à cap d'acier",
+              "effet": "Marche partout sans danger"
+            },
+            {
+              "nom": "Marteau",
+              "effet": "Construis plus vite"
+            },
+            {
+              "nom": "Brouette",
+              "effet": "Transporte plus de matériaux"
+            }
+          ],
+          "environnement": "Chantier de quartier"
+        },
+        {
+          "niveau": 2,
+          "titre": "Chef de chantier",
+          "sous_titre": "Spécialisé",
+          "description": "Rocco organise le travail des ouvriers et vérifie que tout est bien construit.",
+          "comment_debloquer": "Termine 10 petites constructions et collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Casque blanc",
+              "effet": "Ton équipe te suit : + vitesse"
+            },
+            {
+              "nom": "Plans de construction",
+              "effet": "Débloque les grands projets"
+            },
+            {
+              "nom": "Niveau à bulle",
+              "effet": "Constructions bien droites : + étoiles"
+            },
+            {
+              "nom": "Ruban à mesurer",
+              "effet": "+ précision"
+            },
+            {
+              "nom": "Walkie-talkie",
+              "effet": "Coordonne l'équipe"
+            }
+          ],
+          "environnement": "Grand chantier"
+        },
+        {
+          "niveau": 3,
+          "titre": "Contracteur",
+          "sous_titre": "Expert",
+          "description": "Rocco prend des contrats pour bâtir des maisons et des parcs dans Dogzy Town.",
+          "comment_debloquer": "Réussis le défi « Maison en 3 jours » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Veston de contracteur",
+              "effet": "Débloque les contrats"
+            },
+            {
+              "nom": "Tablette de soumission",
+              "effet": "Prépare les projets"
+            },
+            {
+              "nom": "Grue miniature",
+              "effet": "Soulève les charges lourdes"
+            },
+            {
+              "nom": "Coffre à outils complet",
+              "effet": "Débloque toutes les réparations"
+            },
+            {
+              "nom": "Calendrier de projet",
+              "effet": "Termine à temps : bonus"
+            }
+          ],
+          "environnement": "Quartier en construction"
+        },
+        {
+          "niveau": 4,
+          "titre": "Propriétaire",
+          "sous_titre": "D'entreprise",
+          "description": "Rocco ouvre sa propre entreprise de construction et engage ses ouvriers.",
+          "comment_debloquer": "Économise des pièces Dogzy pour ton entreprise et réussis la mission « Grande ouverture ».",
+          "accessoires": [
+            {
+              "nom": "Tenue de propriétaire",
+              "effet": "Débloque les choix de patron"
+            },
+            {
+              "nom": "Bureau de chantier",
+              "effet": "Ton quartier général"
+            },
+            {
+              "nom": "Clés de l'entrepôt",
+              "effet": "Accès à tous les matériaux"
+            },
+            {
+              "nom": "Contrat de fournisseur",
+              "effet": "Matériaux livrés plus vite"
+            },
+            {
+              "nom": "Carnet de comptes",
+              "effet": "Suis tes profits"
+            }
+          ],
+          "environnement": "Bureau de l'entreprise"
+        },
+        {
+          "niveau": 5,
+          "titre": "Expansion",
+          "sous_titre": "Grands projets",
+          "description": "L'entreprise de Rocco bâtit des quartiers complets et grandit dans toute la région.",
+          "comment_debloquer": "Bâtis 5 bâtiments avec 5 étoiles et réussis la mission « Nouveau quartier ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ton entreprise est reconnue partout"
+            },
+            {
+              "nom": "Camion de chantier",
+              "effet": "Débloque les grands transports"
+            },
+            {
+              "nom": "Nouveau dépôt",
+              "effet": "Ouvre une succursale"
+            },
+            {
+              "nom": "Équipe d'ouvriers",
+              "effet": "Des ouvriers bâtissent pour toi"
+            },
+            {
+              "nom": "Expansion régionale",
+              "effet": "Débloque de nouvelles villes"
+            }
+          ],
+          "environnement": "Quartier Dogzy bâti par Rocco"
+        }
+      ]
+    },
+    {
+      "no": "09",
+      "metier": "Électricienne",
+      "slug": "electricienne",
+      "nom": "Étincelle",
+      "nom_statut": "proposé",
+      "sexe": "Femelle",
+      "race": "Border collie",
+      "personnalite": "Étincelle est vive et ingénieuse. Elle comprend comment tout fonctionne et adore réparer ce qui est brisé. Quand elle trouve une solution, ses yeux s'allument comme des ampoules !",
+      "phrase_signature": "« Allume tes idées ! »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Assistante électricienne",
+          "sous_titre": "Débutante",
+          "description": "Étincelle porte les outils, change les ampoules et apprend les règles de sécurité.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Ma première lumière ».",
+          "accessoires": [
+            {
+              "nom": "Casque de sécurité",
+              "effet": "Débloque les chantiers"
+            },
+            {
+              "nom": "Gants isolants",
+              "effet": "Travaille en sécurité"
+            },
+            {
+              "nom": "Tournevis",
+              "effet": "Débloque les petites réparations"
+            },
+            {
+              "nom": "Ampoules",
+              "effet": "Rallume les maisons"
+            },
+            {
+              "nom": "Ceinture à outils",
+              "effet": "Garde tes outils à portée"
+            }
+          ],
+          "environnement": "Atelier d'électricité"
+        },
+        {
+          "niveau": 2,
+          "titre": "Électricienne",
+          "sous_titre": "Certifiée",
+          "description": "Étincelle installe les lumières, répare les pannes et branche les maisons de Dogzy Town.",
+          "comment_debloquer": "Répare 15 pannes et réussis le mini-jeu « Circuit parfait » ; collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Uniforme d'électricienne",
+              "effet": "+ confiance des clients"
+            },
+            {
+              "nom": "Testeur électrique",
+              "effet": "Trouve les pannes plus vite"
+            },
+            {
+              "nom": "Rouleau de fil",
+              "effet": "Débloque les grandes installations"
+            },
+            {
+              "nom": "Pince coupante",
+              "effet": "+ précision"
+            },
+            {
+              "nom": "Échelle",
+              "effet": "Atteins les plafonds"
+            }
+          ],
+          "environnement": "Maison à rénover"
+        },
+        {
+          "niveau": 3,
+          "titre": "Formatrice",
+          "sous_titre": "Experte",
+          "description": "Étincelle enseigne son métier aux apprentis et partage ses meilleurs trucs.",
+          "comment_debloquer": "Réussis le défi « Ville illuminée » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Veste de formatrice",
+              "effet": "Débloque l'école"
+            },
+            {
+              "nom": "Tableau blanc",
+              "effet": "Explique les circuits"
+            },
+            {
+              "nom": "Manuel de sécurité",
+              "effet": "Tes apprentis font moins d'erreurs"
+            },
+            {
+              "nom": "Maquette de circuit",
+              "effet": "Exercices pratiques"
+            },
+            {
+              "nom": "Badge de formatrice",
+              "effet": "+ réputation"
+            }
+          ],
+          "environnement": "Salle de formation"
+        },
+        {
+          "niveau": 4,
+          "titre": "Entrepreneure",
+          "sous_titre": "Propriétaire",
+          "description": "Étincelle lance sa propre entreprise d'électricité et engage son équipe.",
+          "comment_debloquer": "Forme 3 apprentis et économise des pièces Dogzy pour ton entreprise.",
+          "accessoires": [
+            {
+              "nom": "Tenue d'entrepreneure",
+              "effet": "Débloque les choix de patronne"
+            },
+            {
+              "nom": "Tablette de gestion",
+              "effet": "Suis tes contrats"
+            },
+            {
+              "nom": "Clés de l'atelier",
+              "effet": "Ouvre ton atelier"
+            },
+            {
+              "nom": "Contrat de service",
+              "effet": "Débloque les gros clients"
+            },
+            {
+              "nom": "Carnet de comptes",
+              "effet": "Suis tes profits"
+            }
+          ],
+          "environnement": "Bureau de l'entreprise"
+        },
+        {
+          "niveau": 5,
+          "titre": "Entreprise",
+          "sous_titre": "Expansion",
+          "description": "L'entreprise d'Étincelle illumine toute la ville, et même la région !",
+          "comment_debloquer": "Garde 5 étoiles pendant une saison et réussis la mission « Grande illumination ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ton entreprise est reconnue partout"
+            },
+            {
+              "nom": "Camion de service",
+              "effet": "Interventions partout en ville"
+            },
+            {
+              "nom": "Nouvel atelier",
+              "effet": "Ouvre une succursale"
+            },
+            {
+              "nom": "Équipe d'électriciens",
+              "effet": "Des électriciens t'aident"
+            },
+            {
+              "nom": "Campagne marketing",
+              "effet": "Attire plus de clients"
+            }
+          ],
+          "environnement": "Entreprise Dogzy Électrik"
+        }
+      ]
+    },
+    {
+      "no": "10",
+      "metier": "Plombier",
+      "slug": "plombier",
+      "nom": "Marcel",
+      "nom_statut": "proposé",
+      "sexe": "Mâle",
+      "race": "Bouledogue français",
+      "personnalite": "Marcel est jovial et pratique. Il siffle en travaillant et trouve toujours une solution simple aux problèmes compliqués. Les familles l'adorent parce qu'il laisse tout propre derrière lui.",
+      "phrase_signature": "« Une fuite ? Pas de panique, Marcel arrive ! »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Assistant plombier",
+          "sous_titre": "Débutant",
+          "description": "Marcel porte les tuyaux, passe les outils et apprend comment l'eau voyage dans une maison.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Ma première fuite ».",
+          "accessoires": [
+            {
+              "nom": "Salopette",
+              "effet": "Débloque les visites à domicile"
+            },
+            {
+              "nom": "Clé à molette",
+              "effet": "Serre les tuyaux"
+            },
+            {
+              "nom": "Ventouse",
+              "effet": "Débouche les éviers"
+            },
+            {
+              "nom": "Seau",
+              "effet": "Pas de dégâts d'eau"
+            },
+            {
+              "nom": "Lampe de poche",
+              "effet": "Vois sous les éviers"
+            }
+          ],
+          "environnement": "Sous-sol de maison"
+        },
+        {
+          "niveau": 2,
+          "titre": "Plombier",
+          "sous_titre": "Certifié",
+          "description": "Marcel répare les fuites, installe les robinets et débouche tout ce qui est bouché.",
+          "comment_debloquer": "Répare 15 fuites et réussis le mini-jeu « Tuyaux connectés » ; collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Uniforme de plombier",
+              "effet": "+ confiance des clients"
+            },
+            {
+              "nom": "Coffre à outils",
+              "effet": "Débloque les grandes réparations"
+            },
+            {
+              "nom": "Coupe-tuyau",
+              "effet": "+ précision"
+            },
+            {
+              "nom": "Ruban d'étanchéité",
+              "effet": "Réparations durables"
+            },
+            {
+              "nom": "Caméra d'inspection",
+              "effet": "Trouve les fuites cachées"
+            }
+          ],
+          "environnement": "Salle de bain à rénover"
+        },
+        {
+          "niveau": 3,
+          "titre": "Formateur",
+          "sous_titre": "Expert",
+          "description": "Marcel enseigne la plomberie aux apprentis avec humour et patience.",
+          "comment_debloquer": "Réussis le défi « Grand dégât d'eau » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Veste de formateur",
+              "effet": "Débloque l'école"
+            },
+            {
+              "nom": "Maquette de tuyaux",
+              "effet": "Exercices pratiques"
+            },
+            {
+              "nom": "Manuel de plomberie",
+              "effet": "Tes apprentis apprennent plus vite"
+            },
+            {
+              "nom": "Tableau blanc",
+              "effet": "Explique les circuits d'eau"
+            },
+            {
+              "nom": "Badge de formateur",
+              "effet": "+ réputation"
+            }
+          ],
+          "environnement": "Atelier-école"
+        },
+        {
+          "niveau": 4,
+          "titre": "Entrepreneur",
+          "sous_titre": "Propriétaire",
+          "description": "Marcel ouvre sa propre entreprise de plomberie et engage son équipe.",
+          "comment_debloquer": "Forme 3 apprentis et économise des pièces Dogzy pour ton entreprise.",
+          "accessoires": [
+            {
+              "nom": "Tenue d'entrepreneur",
+              "effet": "Débloque les choix de patron"
+            },
+            {
+              "nom": "Tablette de gestion",
+              "effet": "Suis tes appels de service"
+            },
+            {
+              "nom": "Clés de l'atelier",
+              "effet": "Ouvre ton atelier"
+            },
+            {
+              "nom": "Contrat de service",
+              "effet": "Débloque les gros clients"
+            },
+            {
+              "nom": "Carnet de comptes",
+              "effet": "Suis tes profits"
+            }
+          ],
+          "environnement": "Bureau de l'entreprise"
+        },
+        {
+          "niveau": 5,
+          "titre": "Entreprise",
+          "sous_titre": "Expansion",
+          "description": "L'entreprise de Marcel répare les tuyaux de toute la ville et ouvre de nouvelles succursales.",
+          "comment_debloquer": "Garde 5 étoiles pendant une saison et réussis la mission « Deuxième atelier ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ton entreprise est reconnue partout"
+            },
+            {
+              "nom": "Camion de service",
+              "effet": "Interventions partout en ville"
+            },
+            {
+              "nom": "Nouvel atelier",
+              "effet": "Ouvre une succursale"
+            },
+            {
+              "nom": "Équipe de plombiers",
+              "effet": "Des plombiers t'aident"
+            },
+            {
+              "nom": "Campagne marketing",
+              "effet": "Attire plus de clients"
+            }
+          ],
+          "environnement": "Entreprise Dogzy Plomberie"
+        }
+      ]
+    },
+    {
+      "no": "11",
+      "metier": "Décoratrice",
+      "slug": "decoratrice",
+      "nom": "Céleste",
+      "nom_statut": "proposé",
+      "sexe": "Femelle",
+      "race": "Lévrier afghan",
+      "personnalite": "Céleste est élégante et artistique. Elle voit tout de suite quelle couleur rendra une pièce heureuse. Elle aime transformer chaque maison en petit cocon unique.",
+      "phrase_signature": "« Une maison, c'est un rêve qu'on habite. »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Conseillère",
+          "sous_titre": "Débutante",
+          "description": "Céleste aide les clients à choisir des couleurs, des tissus et des petits objets déco.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Ma première palette ».",
+          "accessoires": [
+            {
+              "nom": "Tenue chic",
+              "effet": "Débloque la boutique déco"
+            },
+            {
+              "nom": "Nuancier de couleurs",
+              "effet": "Trouve la bonne couleur"
+            },
+            {
+              "nom": "Échantillons de tissus",
+              "effet": "Débloque les rideaux et coussins"
+            },
+            {
+              "nom": "Carnet de croquis",
+              "effet": "Note tes idées"
+            },
+            {
+              "nom": "Ruban à mesurer",
+              "effet": "+ précision"
+            }
+          ],
+          "environnement": "Boutique déco"
+        },
+        {
+          "niveau": 2,
+          "titre": "Décoratrice",
+          "sous_titre": "Créative",
+          "description": "Céleste décore des pièces complètes : salons, chambres et cuisines.",
+          "comment_debloquer": "Décore 10 pièces avec 3 étoiles et collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Tablier d'artiste",
+              "effet": "+ style"
+            },
+            {
+              "nom": "Pinceaux et rouleaux",
+              "effet": "Peins les murs plus vite"
+            },
+            {
+              "nom": "Coussins décoratifs",
+              "effet": "+ confort de la pièce"
+            },
+            {
+              "nom": "Lampe design",
+              "effet": "+ ambiance"
+            },
+            {
+              "nom": "Cadres et tableaux",
+              "effet": "Débloque les murs-galeries"
+            }
+          ],
+          "environnement": "Salon à décorer"
+        },
+        {
+          "niveau": 3,
+          "titre": "Designer",
+          "sous_titre": "Experte",
+          "description": "Céleste conçoit des maisons entières, du plancher au plafond.",
+          "comment_debloquer": "Réussis le défi « Maison de rêve » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Veste de designer",
+              "effet": "Débloque les grands projets"
+            },
+            {
+              "nom": "Tablette de dessin 3D",
+              "effet": "Montre ton projet avant de le faire"
+            },
+            {
+              "nom": "Mobilier sur mesure",
+              "effet": "Débloque les meubles uniques"
+            },
+            {
+              "nom": "Planche d'inspiration",
+              "effet": "+ créativité"
+            },
+            {
+              "nom": "Badge de designer",
+              "effet": "+ réputation"
+            }
+          ],
+          "environnement": "Maison de rêve"
+        },
+        {
+          "niveau": 4,
+          "titre": "Propriétaire",
+          "sous_titre": "De studio",
+          "description": "Céleste ouvre son propre studio de design et reçoit ses clients dans un décor magnifique.",
+          "comment_debloquer": "Économise des pièces Dogzy pour ton studio et réussis la mission « Grande ouverture ».",
+          "accessoires": [
+            {
+              "nom": "Tenue de propriétaire",
+              "effet": "Débloque les choix de patronne"
+            },
+            {
+              "nom": "Bureau de studio",
+              "effet": "Ton quartier général"
+            },
+            {
+              "nom": "Clés du studio",
+              "effet": "Ouvre et décore ton studio"
+            },
+            {
+              "nom": "Contrat de fournisseur",
+              "effet": "Débloque des meubles exclusifs"
+            },
+            {
+              "nom": "Carnet de comptes",
+              "effet": "Suis tes profits"
+            }
+          ],
+          "environnement": "Studio de Céleste"
+        },
+        {
+          "niveau": 5,
+          "titre": "Commerce",
+          "sous_titre": "Expansion",
+          "description": "Le style de Céleste devient une marque : boutiques, collections et studios dans toute la ville.",
+          "comment_debloquer": "Garde 5 étoiles pendant une saison et réussis la mission « Ma collection ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ta marque est reconnue partout"
+            },
+            {
+              "nom": "Camion de livraison",
+              "effet": "Livre les meubles"
+            },
+            {
+              "nom": "Nouvelle boutique",
+              "effet": "Ouvre un magasin déco"
+            },
+            {
+              "nom": "Campagne marketing",
+              "effet": "Attire plus de clients"
+            },
+            {
+              "nom": "Contrat de franchise",
+              "effet": "Débloque l'expansion"
+            }
+          ],
+          "environnement": "Boutiques Dogzy Déco"
+        }
+      ]
+    },
+    {
+      "no": "12",
+      "metier": "Technicien",
+      "slug": "technicien",
+      "nom": "Kodiak",
+      "nom_statut": "proposé",
+      "sexe": "Mâle",
+      "race": "Husky",
+      "personnalite": "Kodiak est méthodique et calme. Il ne s'énerve jamais, même quand tout va mal : il vérifie, il teste et il trouve. Ses amis l'appellent quand plus rien ne fonctionne.",
+      "phrase_signature": "« Étape par étape, tout se règle. »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Technicien",
+          "sous_titre": "Débutant",
+          "description": "Kodiak vérifie les machines, fait l'entretien et répare les petits bris sur les chantiers.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Ma première réparation ».",
+          "accessoires": [
+            {
+              "nom": "Combinaison de travail",
+              "effet": "Débloque l'atelier"
+            },
+            {
+              "nom": "Multimètre",
+              "effet": "Trouve les problèmes plus vite"
+            },
+            {
+              "nom": "Clé à cliquet",
+              "effet": "Répare les machines"
+            },
+            {
+              "nom": "Lunettes de sécurité",
+              "effet": "Travaille en sécurité"
+            },
+            {
+              "nom": "Liste de vérification",
+              "effet": "Aucun oubli : + étoiles"
+            }
+          ],
+          "environnement": "Atelier technique"
+        },
+        {
+          "niveau": 2,
+          "titre": "Chef de chantier",
+          "sous_titre": "Spécialisé",
+          "description": "Kodiak organise le travail des techniciens et surveille les machines du chantier.",
+          "comment_debloquer": "Fais 15 entretiens réussis et collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Casque blanc",
+              "effet": "Ton équipe te suit : + vitesse"
+            },
+            {
+              "nom": "Plans techniques",
+              "effet": "Débloque les grands projets"
+            },
+            {
+              "nom": "Walkie-talkie",
+              "effet": "Coordonne l'équipe"
+            },
+            {
+              "nom": "Tablette de suivi",
+              "effet": "Vois l'état des machines"
+            },
+            {
+              "nom": "Trousse de sécurité",
+              "effet": "Moins d'accidents"
+            }
+          ],
+          "environnement": "Chantier technique"
+        },
+        {
+          "niveau": 3,
+          "titre": "Contracteur",
+          "sous_titre": "Expert",
+          "description": "Kodiak prend des contrats pour installer et entretenir les équipements de Dogzy Town.",
+          "comment_debloquer": "Réussis le défi « Grande installation » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Veston de contracteur",
+              "effet": "Débloque les contrats"
+            },
+            {
+              "nom": "Tablette de soumission",
+              "effet": "Prépare les projets"
+            },
+            {
+              "nom": "Drone d'inspection",
+              "effet": "Inspecte les endroits difficiles"
+            },
+            {
+              "nom": "Coffre à outils complet",
+              "effet": "Débloque toutes les réparations"
+            },
+            {
+              "nom": "Calendrier de projet",
+              "effet": "Termine à temps : bonus"
+            }
+          ],
+          "environnement": "Centre technique"
+        },
+        {
+          "niveau": 4,
+          "titre": "Propriétaire",
+          "sous_titre": "D'entreprise",
+          "description": "Kodiak ouvre sa propre entreprise de services techniques.",
+          "comment_debloquer": "Économise des pièces Dogzy pour ton entreprise et réussis la mission « Grande ouverture ».",
+          "accessoires": [
+            {
+              "nom": "Tenue de propriétaire",
+              "effet": "Débloque les choix de patron"
+            },
+            {
+              "nom": "Bureau",
+              "effet": "Ton quartier général"
+            },
+            {
+              "nom": "Clés de l'atelier",
+              "effet": "Ouvre ton atelier"
+            },
+            {
+              "nom": "Contrat de service",
+              "effet": "Débloque les gros clients"
+            },
+            {
+              "nom": "Carnet de comptes",
+              "effet": "Suis tes profits"
+            }
+          ],
+          "environnement": "Bureau de l'entreprise"
+        },
+        {
+          "niveau": 5,
+          "titre": "Commerce",
+          "sous_titre": "Expansion",
+          "description": "L'entreprise de Kodiak s'installe partout et entretient les machines de toute la région.",
+          "comment_debloquer": "Garde 5 étoiles pendant une saison et réussis la mission « Deuxième centre ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ton entreprise est reconnue partout"
+            },
+            {
+              "nom": "Camion de service",
+              "effet": "Interventions partout en ville"
+            },
+            {
+              "nom": "Nouveau centre",
+              "effet": "Ouvre une succursale"
+            },
+            {
+              "nom": "Équipe de techniciens",
+              "effet": "Des techniciens t'aident"
+            },
+            {
+              "nom": "Expansion régionale",
+              "effet": "Débloque de nouvelles villes"
+            }
+          ],
+          "environnement": "Entreprise Dogzy Tech"
+        }
+      ]
+    },
+    {
+      "no": "13",
+      "metier": "Architecte",
+      "slug": "architecte",
+      "nom": "Victor",
+      "nom_statut": "proposé",
+      "sexe": "Mâle",
+      "race": "Dobermann",
+      "personnalite": "Victor est visionnaire et précis. Il imagine des bâtiments que personne n'a encore vus, puis il calcule chaque détail pour qu'ils tiennent debout. Pour lui, une belle ville rend les gens heureux.",
+      "phrase_signature": "« Tout grand rêve commence par un plan. »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Dessinateur",
+          "sous_titre": "Débutant",
+          "description": "Victor dessine des plans simples et apprend à mesurer et tracer avec précision.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Mon premier plan ».",
+          "accessoires": [
+            {
+              "nom": "Crayon de plomb",
+              "effet": "Débloque la table à dessin"
+            },
+            {
+              "nom": "Règle et équerre",
+              "effet": "+ précision"
+            },
+            {
+              "nom": "Gomme",
+              "effet": "Corrige tes erreurs"
+            },
+            {
+              "nom": "Rouleau de papier",
+              "effet": "Débloque les grands plans"
+            },
+            {
+              "nom": "Lampe de bureau",
+              "effet": "Travaille même le soir"
+            }
+          ],
+          "environnement": "Table à dessin"
+        },
+        {
+          "niveau": 2,
+          "titre": "Technicien",
+          "sous_titre": "En architecture",
+          "description": "Victor transforme les dessins en plans à l'ordinateur et prépare les maquettes.",
+          "comment_debloquer": "Dessine 10 plans et collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Ordinateur de dessin",
+              "effet": "Débloque les plans numériques"
+            },
+            {
+              "nom": "Souris de précision",
+              "effet": "+ précision"
+            },
+            {
+              "nom": "Maquette en carton",
+              "effet": "Montre ton projet en 3D"
+            },
+            {
+              "nom": "Casque de chantier",
+              "effet": "Visite les chantiers"
+            },
+            {
+              "nom": "Tube à plans",
+              "effet": "Transporte tes plans"
+            }
+          ],
+          "environnement": "Bureau technique"
+        },
+        {
+          "niveau": 3,
+          "titre": "Architecte",
+          "sous_titre": "Créateur",
+          "description": "Victor conçoit ses propres bâtiments : maisons, écoles et parcs pour Dogzy Town.",
+          "comment_debloquer": "Réussis le défi « École de rêve » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Veston d'architecte",
+              "effet": "+ confiance des clients"
+            },
+            {
+              "nom": "Tablette 3D",
+              "effet": "Fais visiter tes bâtiments"
+            },
+            {
+              "nom": "Grande maquette",
+              "effet": "Débloque les grands projets"
+            },
+            {
+              "nom": "Carnet d'idées",
+              "effet": "+ créativité"
+            },
+            {
+              "nom": "Sceau d'architecte",
+              "effet": "Rends tes plans officiels"
+            }
+          ],
+          "environnement": "Atelier d'architecture"
+        },
+        {
+          "niveau": 4,
+          "titre": "Associé",
+          "sous_titre": "De firme",
+          "description": "Victor devient associé : il dirige de grands projets avec une équipe d'architectes.",
+          "comment_debloquer": "Livre 3 bâtiments avec 5 étoiles et réussis la mission « Grand concours ».",
+          "accessoires": [
+            {
+              "nom": "Tenue d'associé",
+              "effet": "Débloque les décisions de firme"
+            },
+            {
+              "nom": "Salle de réunion",
+              "effet": "Présente tes projets"
+            },
+            {
+              "nom": "Tablette de gestion",
+              "effet": "Suis tous les projets"
+            },
+            {
+              "nom": "Contrat d'association",
+              "effet": "Débloque les gros projets"
+            },
+            {
+              "nom": "Trophée d'architecture",
+              "effet": "+ réputation"
+            }
+          ],
+          "environnement": "Salle de conférence"
+        },
+        {
+          "niveau": 5,
+          "titre": "Firme d'architectes",
+          "sous_titre": "Expansion",
+          "description": "La firme de Victor dessine les quartiers de demain dans toute la région.",
+          "comment_debloquer": "Économise des pièces Dogzy pour un nouveau bureau et réussis la mission « Ville de demain ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ta firme est reconnue partout"
+            },
+            {
+              "nom": "Voiture de fonction",
+              "effet": "Visite tous tes chantiers"
+            },
+            {
+              "nom": "Nouveau bureau",
+              "effet": "Ouvre une succursale"
+            },
+            {
+              "nom": "Équipe d'architectes",
+              "effet": "Des architectes t'aident"
+            },
+            {
+              "nom": "Campagne marketing",
+              "effet": "Attire de grands projets"
+            }
+          ],
+          "environnement": "Firme Dogzy Architecture"
+        }
+      ]
+    },
+    {
+      "no": "14",
+      "metier": "Banquière",
+      "slug": "banquiere",
+      "nom": "Pénélope",
+      "nom_statut": "proposé",
+      "sexe": "Femelle",
+      "race": "Teckel",
+      "personnalite": "Pénélope est prudente et organisée. Ses dossiers sont toujours bien classés et elle adore aider les familles à économiser pour leurs projets. Elle a la patience d'un vrai coffre-fort !",
+      "phrase_signature": "« Chaque petite pièce compte ! »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Caissière",
+          "sous_titre": "Débutante",
+          "description": "Pénélope accueille les clients au comptoir, compte les pièces Dogzy et aide à faire les dépôts.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Mon premier dépôt ».",
+          "accessoires": [
+            {
+              "nom": "Uniforme de banque",
+              "effet": "Débloque le comptoir"
+            },
+            {
+              "nom": "Compteuse de pièces",
+              "effet": "Compte plus vite"
+            },
+            {
+              "nom": "Calculatrice",
+              "effet": "Zéro erreur : + étoiles"
+            },
+            {
+              "nom": "Tampon officiel",
+              "effet": "Valide les dépôts"
+            },
+            {
+              "nom": "Porte-nom",
+              "effet": "+ confiance des clients"
+            }
+          ],
+          "environnement": "Comptoir de la banque"
+        },
+        {
+          "niveau": 2,
+          "titre": "Superviseure",
+          "sous_titre": "Spécialisée",
+          "description": "Pénélope supervise les caissiers et aide les clients avec les questions plus compliquées.",
+          "comment_debloquer": "Aide 15 clients sans erreur et collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Veston de superviseure",
+              "effet": "Ton équipe te suit : + vitesse"
+            },
+            {
+              "nom": "Tablette de suivi",
+              "effet": "Vois les files d'attente"
+            },
+            {
+              "nom": "Clé du tiroir-caisse",
+              "effet": "Accès aux tiroirs"
+            },
+            {
+              "nom": "Horaire d'équipe",
+              "effet": "Planifie les quarts"
+            },
+            {
+              "nom": "Guide des procédures",
+              "effet": "Moins d'erreurs"
+            }
+          ],
+          "environnement": "Salle des caissiers"
+        },
+        {
+          "niveau": 3,
+          "titre": "Banquière",
+          "sous_titre": "Conseillère",
+          "description": "Pénélope aide les familles à faire un plan d'épargne pour leurs projets.",
+          "comment_debloquer": "Réussis le défi « Plan d'épargne de la famille » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Tailleur de banquière",
+              "effet": "+ confiance des clients"
+            },
+            {
+              "nom": "Bureau de conseillère",
+              "effet": "Reçois les familles"
+            },
+            {
+              "nom": "Tirelire dorée",
+              "effet": "Débloque les plans d'épargne"
+            },
+            {
+              "nom": "Classeur de dossiers",
+              "effet": "Retrouve tout rapidement"
+            },
+            {
+              "nom": "Stylo plume",
+              "effet": "Signe les ententes"
+            }
+          ],
+          "environnement": "Bureau de conseillère"
+        },
+        {
+          "niveau": 4,
+          "titre": "Directrice",
+          "sous_titre": "De succursale",
+          "description": "Pénélope dirige toute la banque : l'équipe, la sécurité et le grand coffre-fort.",
+          "comment_debloquer": "Garde la succursale en ordre 7 jours de jeu et réussis la mission « Coffre bien gardé ».",
+          "accessoires": [
+            {
+              "nom": "Tailleur de directrice",
+              "effet": "Débloque les décisions de directrice"
+            },
+            {
+              "nom": "Clé du coffre-fort",
+              "effet": "Accès au grand coffre"
+            },
+            {
+              "nom": "Tablette de gestion",
+              "effet": "Suis toute la succursale"
+            },
+            {
+              "nom": "Téléphone",
+              "effet": "Reçois les appels importants"
+            },
+            {
+              "nom": "Insigne d'or",
+              "effet": "+ réputation"
+            }
+          ],
+          "environnement": "Bureau de la directrice"
+        },
+        {
+          "niveau": 5,
+          "titre": "Banque",
+          "sous_titre": "Expansion",
+          "description": "Pénélope ouvre la Banque Dogzy, avec des succursales dans tous les quartiers.",
+          "comment_debloquer": "Forme 3 conseillers et réussis la mission « Grande ouverture de la Banque Dogzy ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ta banque est reconnue partout"
+            },
+            {
+              "nom": "Camion blindé",
+              "effet": "Transporte les coffres en sécurité"
+            },
+            {
+              "nom": "Nouvelle succursale",
+              "effet": "Ouvre dans un nouveau quartier"
+            },
+            {
+              "nom": "Équipe de conseillers",
+              "effet": "Des conseillers t'aident"
+            },
+            {
+              "nom": "Expansion régionale",
+              "effet": "Débloque de nouvelles villes"
+            }
+          ],
+          "environnement": "Banque Dogzy"
+        }
+      ]
+    },
+    {
+      "no": "15",
+      "metier": "Vétérinaire",
+      "slug": "veterinaire",
+      "nom": "Cacao",
+      "nom_statut": "proposé",
+      "sexe": "Femelle",
+      "race": "Labrador chocolat",
+      "personnalite": "Cacao est bienveillante et patiente. Elle parle doucement à tous les animaux, des chatons aux tortues. Son calme rassure même les plus nerveux.",
+      "phrase_signature": "« Chaque petite patte mérite des soins doux. »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Technicienne vétérinaire",
+          "sous_titre": "Débutante",
+          "description": "Cacao nourrit les animaux, les pèse, les brosse et aide la vétérinaire.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Mon premier petit patient ».",
+          "accessoires": [
+            {
+              "nom": "Uniforme vétérinaire",
+              "effet": "Débloque la clinique"
+            },
+            {
+              "nom": "Balance",
+              "effet": "Pèse les animaux"
+            },
+            {
+              "nom": "Brosse douce",
+              "effet": "Animaux calmes : + étoiles"
+            },
+            {
+              "nom": "Bol et gâteries",
+              "effet": "+ amitié des animaux"
+            },
+            {
+              "nom": "Laisse",
+              "effet": "Promène les patients"
+            }
+          ],
+          "environnement": "Salle des animaux"
+        },
+        {
+          "niveau": 2,
+          "titre": "Vétérinaire",
+          "sous_titre": "Docteure",
+          "description": "Cacao examine les animaux, trouve ce qui ne va pas et les soigne.",
+          "comment_debloquer": "Soigne 15 animaux et réussis le quiz « Les animaux » ; collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Sarrau de vétérinaire",
+              "effet": "+ confiance des familles"
+            },
+            {
+              "nom": "Stéthoscope",
+              "effet": "Écoute les cœurs"
+            },
+            {
+              "nom": "Otoscope",
+              "effet": "Examine les oreilles"
+            },
+            {
+              "nom": "Trousse de soins",
+              "effet": "Débloque les traitements"
+            },
+            {
+              "nom": "Carnet de santé",
+              "effet": "Suis chaque patient"
+            }
+          ],
+          "environnement": "Salle d'examen"
+        },
+        {
+          "niveau": 3,
+          "titre": "Chirurgienne vétérinaire",
+          "sous_titre": "Spécialiste",
+          "description": "Cacao opère les animaux qui ont besoin de soins spéciaux.",
+          "comment_debloquer": "Réussis 3 mini-jeux de précision « Opération délicate » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Blouse de chirurgienne",
+              "effet": "Débloque la salle d'opération"
+            },
+            {
+              "nom": "Masque et bonnet",
+              "effet": "Hygiène parfaite"
+            },
+            {
+              "nom": "Lampe chirurgicale",
+              "effet": "Vois chaque détail"
+            },
+            {
+              "nom": "Instruments spécialisés",
+              "effet": "+ précision"
+            },
+            {
+              "nom": "Moniteur cardiaque",
+              "effet": "Surveille ton patient"
+            }
+          ],
+          "environnement": "Salle de chirurgie"
+        },
+        {
+          "niveau": 4,
+          "titre": "Propriétaire",
+          "sous_titre": "De clinique",
+          "description": "Cacao ouvre sa propre clinique vétérinaire, avec un coin jeux pour les animaux.",
+          "comment_debloquer": "Économise des pièces Dogzy pour ta clinique et réussis la mission « Grande ouverture ».",
+          "accessoires": [
+            {
+              "nom": "Tenue de propriétaire",
+              "effet": "Débloque les choix de patronne"
+            },
+            {
+              "nom": "Tablette de rendez-vous",
+              "effet": "Gère ton horaire"
+            },
+            {
+              "nom": "Clé de la clinique",
+              "effet": "Ouvre et décore la clinique"
+            },
+            {
+              "nom": "Parc de jeux",
+              "effet": "+ animaux heureux"
+            },
+            {
+              "nom": "Carnet de comptes",
+              "effet": "Suis tes profits"
+            }
+          ],
+          "environnement": "Clinique de Cacao"
+        },
+        {
+          "niveau": 5,
+          "titre": "Clinique vétérinaire",
+          "sous_titre": "Expansion",
+          "description": "Les cliniques de Cacao soignent les animaux de toute la région.",
+          "comment_debloquer": "Garde 5 étoiles pendant une saison et réussis la mission « Deuxième clinique ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ta clinique est reconnue partout"
+            },
+            {
+              "nom": "Ambulance vétérinaire",
+              "effet": "Débloque les urgences"
+            },
+            {
+              "nom": "Nouvelle clinique",
+              "effet": "Ouvre dans un nouveau quartier"
+            },
+            {
+              "nom": "Équipe vétérinaire",
+              "effet": "Des techniciens t'aident"
+            },
+            {
+              "nom": "Campagne d'adoption",
+              "effet": "Trouve des familles aux animaux"
+            }
+          ],
+          "environnement": "Clinique vétérinaire Dogzy"
+        }
+      ]
+    },
+    {
+      "no": "16",
+      "metier": "Coiffeur",
+      "slug": "coiffeur",
+      "nom": "Frisou",
+      "nom_statut": "proposé",
+      "sexe": "Mâle",
+      "race": "Shih Tzu",
+      "personnalite": "Frisou est flamboyant et stylé. Il a toujours une coupe parfaite et un compliment pour tout le monde. Il croit que chacun mérite de se sentir beau.",
+      "phrase_signature": "« Une nouvelle coupe, une nouvelle attitude ! »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Assistant coiffeur",
+          "sous_titre": "Débutant",
+          "description": "Frisou lave les cheveux, balaie le salon et prépare les serviettes.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Mon premier shampoing ».",
+          "accessoires": [
+            {
+              "nom": "Tablier de salon",
+              "effet": "Débloque le salon"
+            },
+            {
+              "nom": "Peigne",
+              "effet": "Démêle plus vite"
+            },
+            {
+              "nom": "Shampoing parfumé",
+              "effet": "+ satisfaction des clients"
+            },
+            {
+              "nom": "Serviettes",
+              "effet": "Clients au sec"
+            },
+            {
+              "nom": "Balai",
+              "effet": "Salon propre : + étoiles"
+            }
+          ],
+          "environnement": "Salon de quartier"
+        },
+        {
+          "niveau": 2,
+          "titre": "Coiffeur",
+          "sous_titre": "Créatif",
+          "description": "Frisou fait ses premières coupes, brushings et petites tresses.",
+          "comment_debloquer": "Réussis 15 coiffures et collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Ciseaux de coiffeur",
+              "effet": "Débloque les coupes"
+            },
+            {
+              "nom": "Séchoir",
+              "effet": "Brushing plus rapide"
+            },
+            {
+              "nom": "Brosse ronde",
+              "effet": "+ volume"
+            },
+            {
+              "nom": "Fer à friser",
+              "effet": "Débloque les boucles"
+            },
+            {
+              "nom": "Miroir à main",
+              "effet": "Montre le résultat au client"
+            }
+          ],
+          "environnement": "Station de coiffure"
+        },
+        {
+          "niveau": 3,
+          "titre": "Styliste",
+          "sous_titre": "Expert",
+          "description": "Frisou crée des looks complets pour les fêtes, les spectacles et les séances photo.",
+          "comment_debloquer": "Réussis le défi « Défilé de mode » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Veste de styliste",
+              "effet": "+ style"
+            },
+            {
+              "nom": "Palette de couleurs",
+              "effet": "Débloque les colorations"
+            },
+            {
+              "nom": "Barrettes brillantes",
+              "effet": "Débloque les coiffures de fête"
+            },
+            {
+              "nom": "Carnet de tendances",
+              "effet": "Débloque les nouveaux styles"
+            },
+            {
+              "nom": "Badge de styliste",
+              "effet": "+ réputation"
+            }
+          ],
+          "environnement": "Studio de mode"
+        },
+        {
+          "niveau": 4,
+          "titre": "Propriétaire",
+          "sous_titre": "De salon",
+          "description": "Frisou ouvre son propre salon, tout brillant et coloré.",
+          "comment_debloquer": "Économise des pièces Dogzy pour ton salon et réussis la mission « Grande ouverture ».",
+          "accessoires": [
+            {
+              "nom": "Tenue de propriétaire",
+              "effet": "Débloque les choix de patron"
+            },
+            {
+              "nom": "Fauteuil de luxe",
+              "effet": "+ confort des clients"
+            },
+            {
+              "nom": "Clés du salon",
+              "effet": "Ouvre et décore ton salon"
+            },
+            {
+              "nom": "Tablette de rendez-vous",
+              "effet": "Gère ton horaire"
+            },
+            {
+              "nom": "Carnet de comptes",
+              "effet": "Suis tes profits"
+            }
+          ],
+          "environnement": "Salon de Frisou"
+        },
+        {
+          "niveau": 5,
+          "titre": "Chaîne de salons",
+          "sous_titre": "Expansion",
+          "description": "Les salons de Frisou ouvrent partout : tout Dogzy Town veut son style !",
+          "comment_debloquer": "Garde 5 étoiles pendant une saison et réussis la mission « Deuxième salon ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ta marque est reconnue partout"
+            },
+            {
+              "nom": "Autobus-salon",
+              "effet": "Coiffe dans tous les quartiers"
+            },
+            {
+              "nom": "Nouveau salon",
+              "effet": "Ouvre un nouveau salon"
+            },
+            {
+              "nom": "Campagne marketing",
+              "effet": "Attire plus de clients"
+            },
+            {
+              "nom": "Contrat de franchise",
+              "effet": "Débloque l'expansion"
+            }
+          ],
+          "environnement": "Chaîne de salons Dogzy"
+        }
+      ]
+    },
+    {
+      "no": "17",
+      "metier": "Journaliste",
+      "slug": "journaliste",
+      "nom": "Zoé",
+      "nom_statut": "proposé",
+      "sexe": "Femelle",
+      "race": "Jack Russell",
+      "personnalite": "Zoé est curieuse et énergique. Elle pose mille questions et court partout pour trouver la bonne histoire. Elle vérifie toujours ses faits avant de parler.",
+      "phrase_signature": "« Les vraies nouvelles, en direct de Dogzy Town ! »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Assistante",
+          "sous_titre": "De rédaction",
+          "description": "Zoé aide l'équipe : elle fait des recherches, prend des notes et apporte les cafés de la rédaction.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Ma première nouvelle ».",
+          "accessoires": [
+            {
+              "nom": "Carte de presse",
+              "effet": "Débloque la salle de rédaction"
+            },
+            {
+              "nom": "Carnet de notes",
+              "effet": "Note les informations"
+            },
+            {
+              "nom": "Crayon",
+              "effet": "+ vitesse"
+            },
+            {
+              "nom": "Sac à bandoulière",
+              "effet": "Transporte ton matériel"
+            },
+            {
+              "nom": "Casque d'écoute",
+              "effet": "Écoute les entrevues"
+            }
+          ],
+          "environnement": "Salle de rédaction"
+        },
+        {
+          "niveau": 2,
+          "titre": "Journaliste",
+          "sous_titre": "Reporter",
+          "description": "Zoé part sur le terrain pour rencontrer les gens et raconter leurs histoires.",
+          "comment_debloquer": "Fais 10 entrevues et vérifie 5 faits ; collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Micro",
+              "effet": "Débloque les entrevues"
+            },
+            {
+              "nom": "Enregistreuse",
+              "effet": "Garde chaque mot"
+            },
+            {
+              "nom": "Appareil photo",
+              "effet": "Illustre tes articles"
+            },
+            {
+              "nom": "Imperméable",
+              "effet": "Reportages par tous les temps"
+            },
+            {
+              "nom": "Badge de presse",
+              "effet": "Accès aux événements"
+            }
+          ],
+          "environnement": "Reportage en ville"
+        },
+        {
+          "niveau": 3,
+          "titre": "Présentatrice",
+          "sous_titre": "Experte",
+          "description": "Zoé présente les nouvelles à la télé de Dogzy Town devant les caméras.",
+          "comment_debloquer": "Réussis le défi « Bulletin en direct » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Tailleur de présentatrice",
+              "effet": "+ confiance du public"
+            },
+            {
+              "nom": "Oreillette",
+              "effet": "Reçois les infos en direct"
+            },
+            {
+              "nom": "Téléprompteur",
+              "effet": "Plus d'oublis"
+            },
+            {
+              "nom": "Bureau de nouvelles",
+              "effet": "Débloque le studio"
+            },
+            {
+              "nom": "Projecteurs",
+              "effet": "+ visibilité"
+            }
+          ],
+          "environnement": "Studio de nouvelles"
+        },
+        {
+          "niveau": 4,
+          "titre": "Cheffe d'antenne",
+          "sous_titre": "Directrice",
+          "description": "Zoé dirige toute l'équipe de nouvelles et choisit les grandes histoires du jour.",
+          "comment_debloquer": "Anime 7 bulletins réussis et réussis la mission « Grande nouvelle ».",
+          "accessoires": [
+            {
+              "nom": "Tenue de cheffe",
+              "effet": "Débloque les décisions de cheffe"
+            },
+            {
+              "nom": "Régie de contrôle",
+              "effet": "Dirige les caméras"
+            },
+            {
+              "nom": "Tablette de production",
+              "effet": "Planifie les émissions"
+            },
+            {
+              "nom": "Horaire d'équipe",
+              "effet": "Organise les reporters"
+            },
+            {
+              "nom": "Trophée de journalisme",
+              "effet": "+ réputation"
+            }
+          ],
+          "environnement": "Régie de télévision"
+        },
+        {
+          "niveau": 5,
+          "titre": "Salle multimédia",
+          "sous_titre": "Expansion",
+          "description": "Zoé ouvre sa propre salle multimédia : télé, radio, balados et web pour toute la région.",
+          "comment_debloquer": "Économise des pièces Dogzy pour ta salle et réussis la mission « Grande ouverture ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ton média est reconnu partout"
+            },
+            {
+              "nom": "Camion de reportage",
+              "effet": "Diffuse en direct de partout"
+            },
+            {
+              "nom": "Nouveau studio",
+              "effet": "Ouvre un studio"
+            },
+            {
+              "nom": "Équipe de reporters",
+              "effet": "Des reporters t'aident"
+            },
+            {
+              "nom": "Réseau multimédia",
+              "effet": "Débloque de nouvelles villes"
+            }
+          ],
+          "environnement": "Salle multimédia Dogzy"
+        }
+      ]
+    },
+    {
+      "no": "18",
+      "metier": "Acteur",
+      "slug": "acteur",
+      "nom": "Léo",
+      "nom_statut": "proposé",
+      "sexe": "Mâle",
+      "race": "Boxer",
+      "personnalite": "Léo est charismatique et drôle. Il fait rire toute l'équipe entre les prises et transforme chaque scène en moment inoubliable. Sur scène, il donne toujours le meilleur de lui-même.",
+      "phrase_signature": "« Silence, on tourne… et on rit ! »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Figurant",
+          "sous_titre": "Débutant",
+          "description": "Léo joue dans le fond des scènes et apprend comment se passe un tournage.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Mon premier tournage ».",
+          "accessoires": [
+            {
+              "nom": "Costume simple",
+              "effet": "Débloque les tournages"
+            },
+            {
+              "nom": "Script",
+              "effet": "Apprends tes répliques"
+            },
+            {
+              "nom": "Badge d'équipe",
+              "effet": "Accès au plateau"
+            },
+            {
+              "nom": "Bouteille d'eau",
+              "effet": "+ énergie"
+            },
+            {
+              "nom": "Marque au sol",
+              "effet": "Place parfaite : + étoiles"
+            }
+          ],
+          "environnement": "Plateau de tournage"
+        },
+        {
+          "niveau": 2,
+          "titre": "Acteur",
+          "sous_titre": "Professionnel",
+          "description": "Léo obtient ses premiers vrais rôles et joue dans des films de Dogzy Town.",
+          "comment_debloquer": "Joue 10 scènes et réussis l'audition « Mon premier rôle » ; collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Costume de scène",
+              "effet": "+ présence"
+            },
+            {
+              "nom": "Chaise d'acteur",
+              "effet": "+ énergie entre les prises"
+            },
+            {
+              "nom": "Trousse de maquillage",
+              "effet": "Débloque les rôles de personnages"
+            },
+            {
+              "nom": "Clap de cinéma",
+              "effet": "Débloque les grandes scènes"
+            },
+            {
+              "nom": "Miroir de loge",
+              "effet": "Prépare-toi plus vite"
+            }
+          ],
+          "environnement": "Loge d'acteur"
+        },
+        {
+          "niveau": 3,
+          "titre": "Acteur international",
+          "sous_titre": "Expert",
+          "description": "Léo tourne partout dans le monde et apprend de nouvelles langues.",
+          "comment_debloquer": "Réussis le défi « Tournage à l'étranger » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Valise de voyage",
+              "effet": "Débloque les tournages à l'étranger"
+            },
+            {
+              "nom": "Passeport doré",
+              "effet": "Débloque de nouveaux pays"
+            },
+            {
+              "nom": "Lunettes fumées",
+              "effet": "+ style"
+            },
+            {
+              "nom": "Script traduit",
+              "effet": "Joue dans plusieurs langues"
+            },
+            {
+              "nom": "Carte du monde",
+              "effet": "Choisis tes destinations"
+            }
+          ],
+          "environnement": "Studio international"
+        },
+        {
+          "niveau": 4,
+          "titre": "Vedette",
+          "sous_titre": "Célèbre",
+          "description": "Léo est une vedette ! Il signe des autographes et marche sur le tapis rouge.",
+          "comment_debloquer": "Gagne la faveur du public dans 5 films et réussis la mission « Tapis rouge ».",
+          "accessoires": [
+            {
+              "nom": "Smoking",
+              "effet": "Débloque le tapis rouge"
+            },
+            {
+              "nom": "Étoile de célébrité",
+              "effet": "+ réputation"
+            },
+            {
+              "nom": "Stylo d'autographes",
+              "effet": "Rencontre tes fans"
+            },
+            {
+              "nom": "Agenda de vedette",
+              "effet": "Gère tes engagements"
+            },
+            {
+              "nom": "Limousine",
+              "effet": "Arrive avec style"
+            }
+          ],
+          "environnement": "Tapis rouge"
+        },
+        {
+          "niveau": 5,
+          "titre": "Remise de prix",
+          "sous_titre": "Gala",
+          "description": "Léo reçoit un grand prix et inspire toute une nouvelle génération d'acteurs.",
+          "comment_debloquer": "Termine les 5 films de ta carrière avec 5 étoiles et réussis la mission « La grande soirée ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ton nom est une marque"
+            },
+            {
+              "nom": "Limousine dorée",
+              "effet": "Arrive au gala en vedette"
+            },
+            {
+              "nom": "Trophée doré",
+              "effet": "Prix de la carrière"
+            },
+            {
+              "nom": "Équipe de production",
+              "effet": "Produis tes propres films"
+            },
+            {
+              "nom": "Campagne marketing",
+              "effet": "Fais connaître tes films"
+            }
+          ],
+          "environnement": "Gala des Dogzy d'or"
+        }
+      ]
+    },
+    {
+      "no": "19",
+      "metier": "Entraîneuse",
+      "slug": "entraineuse",
+      "nom": "Flèche",
+      "nom_statut": "proposé",
+      "sexe": "Femelle",
+      "race": "Whippet",
+      "personnalite": "Flèche est énergique et motivante. Elle court plus vite que le vent et encourage tout le monde à bouger. Pour elle, chaque petit progrès mérite une célébration.",
+      "phrase_signature": "« Bouge, souris, recommence ! »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Conseillère",
+          "sous_titre": "Débutante",
+          "description": "Flèche accueille les membres du gym et leur montre les exercices de base.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Mon premier échauffement ».",
+          "accessoires": [
+            {
+              "nom": "Tenue de sport",
+              "effet": "Débloque le gym"
+            },
+            {
+              "nom": "Espadrilles",
+              "effet": "+ vitesse"
+            },
+            {
+              "nom": "Bouteille d'eau",
+              "effet": "+ énergie"
+            },
+            {
+              "nom": "Serviette",
+              "effet": "Récupère plus vite"
+            },
+            {
+              "nom": "Chronomètre",
+              "effet": "Mesure tes progrès"
+            }
+          ],
+          "environnement": "Accueil du gym"
+        },
+        {
+          "niveau": 2,
+          "titre": "Entraîneuse",
+          "sous_titre": "Certifiée",
+          "description": "Flèche crée des entraînements pour aider chaque membre à atteindre son but.",
+          "comment_debloquer": "Entraîne 15 membres et collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Sifflet",
+              "effet": "Motive ton groupe"
+            },
+            {
+              "nom": "Haltères",
+              "effet": "Débloque la musculation"
+            },
+            {
+              "nom": "Tapis de yoga",
+              "effet": "Débloque les étirements"
+            },
+            {
+              "nom": "Corde à danser",
+              "effet": "Débloque le cardio"
+            },
+            {
+              "nom": "Planchette de suivi",
+              "effet": "Suis les progrès"
+            }
+          ],
+          "environnement": "Salle d'entraînement"
+        },
+        {
+          "niveau": 3,
+          "titre": "Physiothérapeute",
+          "sous_titre": "Experte",
+          "description": "Flèche aide les sportifs à guérir leurs blessures et à rebouger en douceur.",
+          "comment_debloquer": "Réussis le défi « Retour en forme » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Sarrau de physio",
+              "effet": "+ confiance des patients"
+            },
+            {
+              "nom": "Table de traitement",
+              "effet": "Débloque les soins"
+            },
+            {
+              "nom": "Ballon d'exercice",
+              "effet": "Rééducation plus douce"
+            },
+            {
+              "nom": "Bandes élastiques",
+              "effet": "Débloque les exercices doux"
+            },
+            {
+              "nom": "Sac de glace",
+              "effet": "Soulage les bobos"
+            }
+          ],
+          "environnement": "Clinique de physio"
+        },
+        {
+          "niveau": 4,
+          "titre": "Propriétaire",
+          "sous_titre": "De gym",
+          "description": "Flèche ouvre son propre gym, rempli d'énergie et de bonne humeur.",
+          "comment_debloquer": "Économise des pièces Dogzy pour ton gym et réussis la mission « Grande ouverture ».",
+          "accessoires": [
+            {
+              "nom": "Tenue de propriétaire",
+              "effet": "Débloque les choix de patronne"
+            },
+            {
+              "nom": "Appareils de cardio",
+              "effet": "Attire plus de membres"
+            },
+            {
+              "nom": "Clés du gym",
+              "effet": "Ouvre et décore ton gym"
+            },
+            {
+              "nom": "Tablette d'abonnements",
+              "effet": "Gère tes membres"
+            },
+            {
+              "nom": "Carnet de comptes",
+              "effet": "Suis tes profits"
+            }
+          ],
+          "environnement": "Gym de Flèche"
+        },
+        {
+          "niveau": 5,
+          "titre": "Chaîne de gyms",
+          "sous_titre": "Expansion",
+          "description": "Les gyms de Flèche font bouger toute la ville, et bientôt toute la région !",
+          "comment_debloquer": "Garde 5 étoiles pendant une saison et réussis la mission « Deuxième gym ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ta marque est reconnue partout"
+            },
+            {
+              "nom": "Autobus sportif",
+              "effet": "Cours dans les parcs"
+            },
+            {
+              "nom": "Nouveau gym",
+              "effet": "Ouvre un nouveau gym"
+            },
+            {
+              "nom": "Équipe d'entraîneurs",
+              "effet": "Des entraîneurs t'aident"
+            },
+            {
+              "nom": "Contrat de franchise",
+              "effet": "Débloque l'expansion"
+            }
+          ],
+          "environnement": "Chaîne de gyms Dogzy"
+        }
+      ]
+    },
+    {
+      "no": "20",
+      "metier": "Peintre",
+      "slug": "peintre",
+      "nom": "Aurore",
+      "nom_statut": "proposé",
+      "sexe": "Femelle",
+      "race": "Berger australien",
+      "personnalite": "Aurore est passionnée et libre. Elle peint avec son cœur et laisse les couleurs couler comme une rivière. Chaque toile raconte une émotion.",
+      "phrase_signature": "« Ose la couleur, ose rêver ! »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Peintre",
+          "sous_titre": "Débutante",
+          "description": "Aurore peint ses premières toiles et apprend à mélanger les couleurs.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Ma première toile ».",
+          "accessoires": [
+            {
+              "nom": "Tablier de peintre",
+              "effet": "Débloque l'atelier"
+            },
+            {
+              "nom": "Pinceaux",
+              "effet": "Débloque les techniques de base"
+            },
+            {
+              "nom": "Palette de couleurs",
+              "effet": "Mélange tes couleurs"
+            },
+            {
+              "nom": "Petite toile",
+              "effet": "Peins ta première œuvre"
+            },
+            {
+              "nom": "Chevalet",
+              "effet": "Peins plus confortablement"
+            }
+          ],
+          "environnement": "Coin d'atelier"
+        },
+        {
+          "niveau": 2,
+          "titre": "Peintre professionnelle",
+          "sous_titre": "Créatrice",
+          "description": "Aurore vend ses premières œuvres et expose dans les cafés de Dogzy Town.",
+          "comment_debloquer": "Peins 10 toiles et réussis le défi « Première exposition » ; collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Grandes toiles",
+              "effet": "Débloque les grands formats"
+            },
+            {
+              "nom": "Peintures fluides",
+              "effet": "Débloque la technique de coulée"
+            },
+            {
+              "nom": "Feuille d'or",
+              "effet": "Œuvres plus précieuses"
+            },
+            {
+              "nom": "Portfolio",
+              "effet": "Montre ton travail"
+            },
+            {
+              "nom": "Signature d'artiste",
+              "effet": "Tes œuvres valent plus"
+            }
+          ],
+          "environnement": "Atelier d'artiste"
+        },
+        {
+          "niveau": 3,
+          "titre": "Peintre internationale",
+          "sous_titre": "Experte",
+          "description": "Les toiles d'Aurore voyagent dans des expositions partout dans le monde.",
+          "comment_debloquer": "Réussis le défi « Exposition à l'étranger » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Valise d'artiste",
+              "effet": "Débloque les voyages"
+            },
+            {
+              "nom": "Passeport doré",
+              "effet": "Débloque de nouveaux pays"
+            },
+            {
+              "nom": "Caisse de transport",
+              "effet": "Tes toiles voyagent en sécurité"
+            },
+            {
+              "nom": "Catalogue d'exposition",
+              "effet": "+ réputation"
+            },
+            {
+              "nom": "Écran numérique",
+              "effet": "Montre tes œuvres partout"
+            }
+          ],
+          "environnement": "Exposition internationale"
+        },
+        {
+          "niveau": 4,
+          "titre": "Peintre célèbre",
+          "sous_titre": "Renommée",
+          "description": "Aurore est une artiste reconnue : les collectionneurs et les musées veulent ses œuvres.",
+          "comment_debloquer": "Crée 3 chefs-d'œuvre et réussis la mission « Grand vernissage ».",
+          "accessoires": [
+            {
+              "nom": "Béret doré",
+              "effet": "+ inspiration"
+            },
+            {
+              "nom": "Grand atelier",
+              "effet": "Débloque les murales"
+            },
+            {
+              "nom": "Certificat d'authenticité",
+              "effet": "Protège tes œuvres"
+            },
+            {
+              "nom": "Agenda d'artiste",
+              "effet": "Gère tes expositions"
+            },
+            {
+              "nom": "Trophée artistique",
+              "effet": "+ réputation"
+            }
+          ],
+          "environnement": "Grand vernissage"
+        },
+        {
+          "niveau": 5,
+          "titre": "Galerie",
+          "sous_titre": "Expansion",
+          "description": "Aurore ouvre sa propre galerie et aide les jeunes artistes à exposer leurs œuvres.",
+          "comment_debloquer": "Économise des pièces Dogzy pour ta galerie et réussis la mission « Grande ouverture ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ta galerie est reconnue partout"
+            },
+            {
+              "nom": "Camion d'œuvres d'art",
+              "effet": "Livre les toiles"
+            },
+            {
+              "nom": "Nouvelle galerie",
+              "effet": "Ouvre une galerie"
+            },
+            {
+              "nom": "Équipe de la galerie",
+              "effet": "Des guides t'aident"
+            },
+            {
+              "nom": "Expansion internationale",
+              "effet": "Débloque de nouvelles villes"
+            }
+          ],
+          "environnement": "Galerie Dogzy"
+        }
+      ]
+    },
+    {
+      "no": "21",
+      "metier": "Chanteur",
+      "slug": "chanteur",
+      "nom": "Hiro",
+      "nom_statut": "proposé",
+      "sexe": "Mâle",
+      "race": "Shiba Inu",
+      "personnalite": "Hiro est sensible et charismatique. Il écrit des chansons sur ce qu'il ressent et touche le cœur de tous ceux qui l'écoutent. Sur scène, son sourire illumine la salle.",
+      "phrase_signature": "« Chante avec ton cœur, le monde t'écoute ! »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Chanteur",
+          "sous_titre": "Débutant",
+          "description": "Hiro chante dans les cafés et les petites fêtes de Dogzy Town.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Ma première chanson ».",
+          "accessoires": [
+            {
+              "nom": "Micro",
+              "effet": "Débloque les petites scènes"
+            },
+            {
+              "nom": "Carnet de chansons",
+              "effet": "Écris tes paroles"
+            },
+            {
+              "nom": "Guitare",
+              "effet": "Débloque l'accompagnement"
+            },
+            {
+              "nom": "Bouteille d'eau",
+              "effet": "Protège ta voix"
+            },
+            {
+              "nom": "Écouteurs",
+              "effet": "Pratique partout"
+            }
+          ],
+          "environnement": "Café-spectacle"
+        },
+        {
+          "niveau": 2,
+          "titre": "Chanteur professionnel",
+          "sous_titre": "Créateur",
+          "description": "Hiro enregistre ses chansons en studio et donne de vrais spectacles.",
+          "comment_debloquer": "Chante 10 spectacles et réussis le mini-jeu « Note parfaite » ; collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Micro de studio",
+              "effet": "Enregistre tes chansons"
+            },
+            {
+              "nom": "Casque de studio",
+              "effet": "+ qualité du son"
+            },
+            {
+              "nom": "Veste de scène",
+              "effet": "+ présence"
+            },
+            {
+              "nom": "Pupitre à partitions",
+              "effet": "Débloque les nouvelles chansons"
+            },
+            {
+              "nom": "Disque d'or miniature",
+              "effet": "+ réputation"
+            }
+          ],
+          "environnement": "Studio d'enregistrement"
+        },
+        {
+          "niveau": 3,
+          "titre": "Chanteur international",
+          "sous_titre": "Expert",
+          "description": "Hiro chante partout dans le monde et dans plusieurs langues.",
+          "comment_debloquer": "Réussis le défi « Concert à l'étranger » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Valise de tournée",
+              "effet": "Débloque les voyages"
+            },
+            {
+              "nom": "Passeport doré",
+              "effet": "Débloque de nouveaux pays"
+            },
+            {
+              "nom": "Oreillettes de scène",
+              "effet": "Chante sans fausse note"
+            },
+            {
+              "nom": "Costume lumineux",
+              "effet": "+ spectacle"
+            },
+            {
+              "nom": "Carte du monde",
+              "effet": "Choisis tes concerts"
+            }
+          ],
+          "environnement": "Grande salle de concert"
+        },
+        {
+          "niveau": 4,
+          "titre": "Chanteur célèbre",
+          "sous_titre": "Vedette",
+          "description": "Hiro est une vedette : ses fans chantent ses chansons par cœur !",
+          "comment_debloquer": "Remplis 5 grandes salles et réussis la mission « Concert des fans ».",
+          "accessoires": [
+            {
+              "nom": "Micro doré",
+              "effet": "+ réputation"
+            },
+            {
+              "nom": "Stylo d'autographes",
+              "effet": "Rencontre tes fans"
+            },
+            {
+              "nom": "Lunettes de vedette",
+              "effet": "+ style"
+            },
+            {
+              "nom": "Agenda de vedette",
+              "effet": "Gère tes engagements"
+            },
+            {
+              "nom": "Trophée musical",
+              "effet": "Prix de la chanson"
+            }
+          ],
+          "environnement": "Scène des vedettes"
+        },
+        {
+          "niveau": 5,
+          "titre": "Tournée mondiale",
+          "sous_titre": "Expansion",
+          "description": "Hiro part en tournée mondiale et ouvre sa propre étiquette de disques pour les jeunes talents.",
+          "comment_debloquer": "Économise des pièces Dogzy pour ta tournée et réussis la mission « Première date de tournée ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ton nom est une marque"
+            },
+            {
+              "nom": "Autobus de tournée",
+              "effet": "Débloque la tournée"
+            },
+            {
+              "nom": "Nouvelle scène",
+              "effet": "Débloque de nouvelles villes"
+            },
+            {
+              "nom": "Équipe de tournée",
+              "effet": "Des musiciens t'accompagnent"
+            },
+            {
+              "nom": "Campagne marketing",
+              "effet": "Remplis les salles"
+            }
+          ],
+          "environnement": "Tournée mondiale Dogzy"
+        }
+      ]
+    },
+    {
+      "no": "22",
+      "metier": "Actrice",
+      "slug": "actrice",
+      "nom": "Paillette",
+      "nom_statut": "proposé",
+      "sexe": "Femelle",
+      "race": "Loulou de Poméranie",
+      "personnalite": "Paillette est glamour et expressive. Elle peut faire rire et pleurer en une seule scène. Derrière ses airs de star, elle est très généreuse avec ses amis.",
+      "phrase_signature": "« La scène, c'est ma maison ! »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Actrice",
+          "sous_titre": "Débutante",
+          "description": "Paillette joue dans des pièces de théâtre à l'école et dans des petites productions.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Ma première scène ».",
+          "accessoires": [
+            {
+              "nom": "Costume de théâtre",
+              "effet": "Débloque la scène"
+            },
+            {
+              "nom": "Script",
+              "effet": "Apprends tes répliques"
+            },
+            {
+              "nom": "Masque de théâtre",
+              "effet": "Débloque les émotions"
+            },
+            {
+              "nom": "Miroir",
+              "effet": "Prépare-toi plus vite"
+            },
+            {
+              "nom": "Bouteille d'eau",
+              "effet": "+ énergie"
+            }
+          ],
+          "environnement": "Petit théâtre"
+        },
+        {
+          "niveau": 2,
+          "titre": "Actrice professionnelle",
+          "sous_titre": "Créative",
+          "description": "Paillette obtient ses premiers rôles au cinéma et à la télé.",
+          "comment_debloquer": "Joue 10 scènes et réussis l'audition « Mon premier film » ; collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Robe de scène",
+              "effet": "+ présence"
+            },
+            {
+              "nom": "Chaise d'actrice",
+              "effet": "+ énergie entre les prises"
+            },
+            {
+              "nom": "Trousse de maquillage",
+              "effet": "Débloque les rôles de personnages"
+            },
+            {
+              "nom": "Clap de cinéma",
+              "effet": "Débloque les grandes scènes"
+            },
+            {
+              "nom": "Loge étoilée",
+              "effet": "Prépare-toi plus vite"
+            }
+          ],
+          "environnement": "Plateau de cinéma"
+        },
+        {
+          "niveau": 3,
+          "titre": "Actrice internationale",
+          "sous_titre": "Experte",
+          "description": "Paillette tourne dans des films partout dans le monde.",
+          "comment_debloquer": "Réussis le défi « Tournage à l'étranger » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Valise de voyage",
+              "effet": "Débloque les tournages à l'étranger"
+            },
+            {
+              "nom": "Passeport doré",
+              "effet": "Débloque de nouveaux pays"
+            },
+            {
+              "nom": "Lunettes de soleil",
+              "effet": "+ style"
+            },
+            {
+              "nom": "Script traduit",
+              "effet": "Joue dans plusieurs langues"
+            },
+            {
+              "nom": "Écharpe de soie",
+              "effet": "+ glamour"
+            }
+          ],
+          "environnement": "Studio international"
+        },
+        {
+          "niveau": 4,
+          "titre": "Actrice célèbre",
+          "sous_titre": "Vedette",
+          "description": "Paillette est une grande vedette : elle marche sur les tapis rouges et inspire ses fans.",
+          "comment_debloquer": "Gagne la faveur du public dans 5 films et réussis la mission « Tapis rouge ».",
+          "accessoires": [
+            {
+              "nom": "Robe de gala",
+              "effet": "Débloque le tapis rouge"
+            },
+            {
+              "nom": "Étoile de célébrité",
+              "effet": "+ réputation"
+            },
+            {
+              "nom": "Stylo d'autographes",
+              "effet": "Rencontre tes fans"
+            },
+            {
+              "nom": "Agenda de vedette",
+              "effet": "Gère tes engagements"
+            },
+            {
+              "nom": "Bijoux brillants",
+              "effet": "+ glamour"
+            }
+          ],
+          "environnement": "Tapis rouge"
+        },
+        {
+          "niveau": 5,
+          "titre": "Studio de cinéma",
+          "sous_titre": "Expansion",
+          "description": "Paillette ouvre son propre studio et produit des films pour toute la famille.",
+          "comment_debloquer": "Économise des pièces Dogzy pour ton studio et réussis la mission « Premier film du studio ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ton studio est reconnu partout"
+            },
+            {
+              "nom": "Camion de tournage",
+              "effet": "Tourne partout en ville"
+            },
+            {
+              "nom": "Nouveau plateau",
+              "effet": "Débloque de nouveaux décors"
+            },
+            {
+              "nom": "Équipe de tournage",
+              "effet": "Des techniciens t'aident"
+            },
+            {
+              "nom": "Campagne marketing",
+              "effet": "Fais connaître tes films"
+            }
+          ],
+          "environnement": "Studio de cinéma Dogzy"
+        }
+      ]
+    },
+    {
+      "no": "23",
+      "metier": "Pilote",
+      "slug": "pilote",
+      "nom": "Orion",
+      "nom_statut": "proposé",
+      "sexe": "Mâle",
+      "race": "Braque de Weimar",
+      "personnalite": "Orion est calme et sûr de lui. Même dans la tempête, il garde son sang-froid et rassure tous les passagers. Il rêve de faire découvrir le monde à tout le monde.",
+      "phrase_signature": "« Attachez vos ceintures, on décolle ! »",
+      "source_titres_accessoires": "Nouvelle fiche (accessoires proposés)",
+      "niveaux": [
+        {
+          "niveau": 1,
+          "titre": "Agent de bord",
+          "sous_titre": "Débutant",
+          "description": "Orion accueille les passagers, explique les consignes de sécurité et sert les collations.",
+          "comment_debloquer": "Disponible dès le départ. Termine le tutoriel « Mon premier vol ».",
+          "accessoires": [
+            {
+              "nom": "Uniforme d'agent de bord",
+              "effet": "Débloque les vols"
+            },
+            {
+              "nom": "Chariot de collations",
+              "effet": "+ satisfaction des passagers"
+            },
+            {
+              "nom": "Carte de sécurité",
+              "effet": "Explique les consignes"
+            },
+            {
+              "nom": "Badge d'équipage",
+              "effet": "Accès à l'avion"
+            },
+            {
+              "nom": "Valise à roulettes",
+              "effet": "Prêt pour chaque vol"
+            }
+          ],
+          "environnement": "Cabine d'avion"
+        },
+        {
+          "niveau": 2,
+          "titre": "Pilote",
+          "sous_titre": "Certifié",
+          "description": "Orion pilote l'avion avec le capitaine et apprend à lire tous les instruments.",
+          "comment_debloquer": "Réussis 10 vols sans retard et le quiz « Le ciel et la météo » ; collectionne les 5 accessoires du niveau 1.",
+          "accessoires": [
+            {
+              "nom": "Casquette de pilote",
+              "effet": "+ confiance des passagers"
+            },
+            {
+              "nom": "Casque d'écoute",
+              "effet": "Parle à la tour de contrôle"
+            },
+            {
+              "nom": "Carte de navigation",
+              "effet": "Débloque de nouvelles routes"
+            },
+            {
+              "nom": "Lunettes de soleil",
+              "effet": "Vole face au soleil"
+            },
+            {
+              "nom": "Ailes de pilote",
+              "effet": "Ton badge officiel"
+            }
+          ],
+          "environnement": "Cockpit"
+        },
+        {
+          "niveau": 3,
+          "titre": "Capitaine",
+          "sous_titre": "Expert",
+          "description": "Orion est le capitaine : il commande l'avion et prend les décisions importantes.",
+          "comment_debloquer": "Réussis le défi « Atterrissage dans la tempête » et collectionne les 5 accessoires du niveau 2.",
+          "accessoires": [
+            {
+              "nom": "Uniforme de capitaine",
+              "effet": "Débloque le siège du capitaine"
+            },
+            {
+              "nom": "Galons dorés",
+              "effet": "Ton équipage te suit"
+            },
+            {
+              "nom": "Tablette de vol",
+              "effet": "Planifie tes trajets"
+            },
+            {
+              "nom": "Radio de bord",
+              "effet": "Communication parfaite"
+            },
+            {
+              "nom": "Carnet de vol",
+              "effet": "Suis tes heures de vol"
+            }
+          ],
+          "environnement": "Avion de ligne"
+        },
+        {
+          "niveau": 4,
+          "titre": "Contrôleur aérien",
+          "sous_titre": "Tour de contrôle",
+          "description": "Orion guide tous les avions du ciel depuis la tour de contrôle.",
+          "comment_debloquer": "Fais atterrir 15 avions en sécurité dans le mini-jeu « Ciel occupé ».",
+          "accessoires": [
+            {
+              "nom": "Casque de contrôleur",
+              "effet": "Parle à tous les pilotes"
+            },
+            {
+              "nom": "Écran radar",
+              "effet": "Vois tous les avions"
+            },
+            {
+              "nom": "Jumelles",
+              "effet": "Surveille la piste"
+            },
+            {
+              "nom": "Horaire des vols",
+              "effet": "Organise les départs"
+            },
+            {
+              "nom": "Badge de la tour",
+              "effet": "Accès à la tour"
+            }
+          ],
+          "environnement": "Tour de contrôle"
+        },
+        {
+          "niveau": 5,
+          "titre": "Aéroport",
+          "sous_titre": "Expansion",
+          "description": "Orion ouvre l'aéroport Dogzy et crée de nouvelles routes vers le monde entier.",
+          "comment_debloquer": "Économise des pièces Dogzy pour ton aéroport et réussis la mission « Premier grand départ ».",
+          "accessoires": [
+            {
+              "nom": "Logo & enseigne",
+              "effet": "Ton aéroport est reconnu partout"
+            },
+            {
+              "nom": "Avion Dogzy",
+              "effet": "Débloque ta propre compagnie"
+            },
+            {
+              "nom": "Nouveau terminal",
+              "effet": "Accueille plus de passagers"
+            },
+            {
+              "nom": "Équipe d'aéroport",
+              "effet": "Des employés t'aident"
+            },
+            {
+              "nom": "Nouvelles destinations",
+              "effet": "Débloque de nouvelles villes"
+            }
+          ],
+          "environnement": "Aéroport Dogzy"
+        }
+      ]
+    }
+  ]
+}

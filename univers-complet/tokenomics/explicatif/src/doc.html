@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8">
+<title>DOGZY — Document explicatif pour conseillers</title>
+<style>
+@page { size: Letter; margin: 1.7cm 1.8cm 1.8cm 1.8cm;
+  @bottom-left { content: "Dogzy Family Universe — Document explicatif (confidentiel, document de travail)"; font-size: 7.5pt; color:#777; font-family: "Noto Sans", sans-serif; }
+  @bottom-right { content: "Page " counter(page) " / " counter(pages); font-size: 7.5pt; color:#777; font-family: "Noto Sans", sans-serif; } }
+body { font-family: "Noto Sans", "DejaVu Sans", sans-serif; font-size: 9.6pt; line-height: 1.36; color:#1d1d1d; }
+h1 { font-size: 19pt; color:#6b4a00; margin:0 0 4pt 0; }
+.sub { color:#555; font-size:10.5pt; margin-bottom:10pt; }
+h2 { font-size: 13pt; color:#fff; background:#2b2b2b; padding:3pt 7pt; margin:14pt 0 6pt 0; border-left:5pt solid #c9a227; }
+h3 { font-size: 10.8pt; color:#6b4a00; margin:9pt 0 3pt 0; }
+p { margin: 0 0 5pt 0; text-align: justify; }
+ul, ol { margin: 0 0 6pt 0; padding-left: 16pt; } li { margin-bottom: 2pt; }
+table { border-collapse: collapse; width:100%; margin: 4pt 0 8pt 0; font-size: 9.2pt; page-break-inside: avoid; }
+th { background:#c9a227; color:#1d1d1d; text-align:left; padding:3pt 5pt; }
+td { border-bottom: 0.5pt solid #ccc; padding:3pt 5pt; vertical-align: top; }
+.box { border:1pt solid #c9a227; background:#fbf6e6; padding:6pt 8pt; margin:6pt 0 8pt 0; page-break-inside: avoid; }
+.warn { border:1pt solid #b3261e; background:#fdecea; padding:6pt 8pt; margin:6pt 0 8pt 0; page-break-inside: avoid; }
+.ex { display:inline-block; background:#1d1d1d; color:#f2d36b; font-size:7.5pt; font-weight:bold; padding:0 4pt; border-radius:2pt; letter-spacing:.5pt; }
+.small { font-size: 8.6pt; color:#444; }
+.meta td:first-child { width:3.2cm; white-space:nowrap; } .meta td { border:none; padding:1pt 5pt 1pt 0; font-size:9.5pt; }
+</style></head><body>
+
+<h1>DOGZY, jetons Dogzy et Dogzy Family Universe</h1>
+<div class="sub">Document explicatif destiné aux conseillers (comptable, avocat·e spécialisé·e en cryptoactifs)</div>
+<table class="meta">
+<tr><td><b>Préparé pour&nbsp;:</b></td><td>Sania Labbé (Valkyrie), créatrice de l'univers Dogzy</td></tr>
+<tr><td><b>Date&nbsp;:</b></td><td>17 octobre 2026 — document de travail, à valider</td></tr>
+<tr><td><b>Sources&nbsp;:</b></td><td>« DOGZY Tokenomics » (juillet 2026, PDF interne) et documentation technique du jeu (README de la version actuelle)</td></tr>
+</table>
+
+<div class="box"><b>À lire d'abord.</b> Ce document explique, en langage simple, comment fonctionnent le jeu, ses « jetons Dogzy » et le futur cryptoactif DOGZY, puis présente les options possibles pour fixer une valeur de départ et vendre des paquets de jetons. Il <b>ne constitue ni un avis juridique ni un avis fiscal</b>&nbsp;: son but est de préparer la discussion avec des professionnels. Tous les montants marqués <span class="ex">EXEMPLE</span> sont <b>purement illustratifs</b>&nbsp;; aucun prix ni aucune valeur du DOGZY n'existe à ce jour.</div>
+
+<p><b>Un nouveau volet de l'ensemble Dogzy.</b> Dogzy Family Universe, le jeu en ligne de style Monopoly, est un nouveau volet créé et ajouté à l'ensemble Dogzy complet. Il s'ajoute à Dogzy Town (jeu sur console) et à The Adoles-chiant of Dogzy Town (jeu web3). Les trois jeux partageront le même cryptoactif, le DOGZY, qui n'est pas encore déployé. Ce document porte surtout sur Dogzy Family Universe et sur son lien avec le DOGZY.</p>
+
+<h2>1. Le jeu en bref</h2>
+<p><b>Dogzy Family Universe</b> est un jeu de plateau en ligne de style Monopoly, jouable sur mobile et ordinateur. Une version publique est en ligne à l'adresse <i>emm2026-tera.github.io/dogzy-family-universe/</i> (les plus récentes modifications ne sont encore que locales).</p>
+<ul>
+<li><b>Personnages&nbsp;:</b> 12 personnages adultes jouables (Bankzy, Lawzy, Securzy, Magiczy…).</li>
+<li><b>Deux roues&nbsp;:</b> la grande roue fait avancer de 1 à 8 cases&nbsp;; la roue bonus donne des visites de commerces, des vols de pièces, des multiplicateurs x2/x3, des cartes Chance et Carrière.</li>
+<li><b>4 niveaux</b> selon le nombre de commerces possédés (de Cuisinier de base jusqu'à Propriétaire/Maire).</li>
+<li><b>Modes&nbsp;:</b> contre des bots, ou à plusieurs sur le même appareil&nbsp;; le mode en ligne est annoncé «&nbsp;bientôt&nbsp;».</li>
+<li><b>Monnaie de jeu = « pièces ».</b> Le passage au DÉPART rapporte 300 pièces (600 si le joueur possède 3 accessoires or ou plus non utilisés). Le dernier joueur encore en lice gagne.</li>
+</ul>
+
+<h2>2. Trois « monnaies » à ne pas confondre</h2>
+<p>La clé pour les conseillers est de bien distinguer trois choses qui portent des noms proches&nbsp;:</p>
+<table>
+<tr><th style="width:18%">Élément</th><th style="width:27%">Où il existe</th><th>Comment on l'obtient / à quoi il sert</th><th style="width:20%">Valeur réelle&nbsp;?</th></tr>
+<tr><td><b>Pièces</b></td><td>Dans une partie seulement</td><td>Gagnées en jouant (loyers, DÉPART, vols…). Servent à acheter des commerces et à obtenir des jetons Dogzy.</td><td>Non</td></tr>
+<tr><td><b>Jetons Dogzy</b></td><td>Dans le jeu (base de données du jeu, hors blockchain)</td><td>Aujourd'hui&nbsp;: achetés avec des pièces dans la Boutique. Servent à acheter accessoires, personnages or et cartes NFT VIP. Pas de revente.</td><td>Non aujourd'hui (simulés). <b>Oui</b> dès qu'ils seront vendus contre du DOGZY.</td></tr>
+<tr><td><b>DOGZY</b> (cryptoactif)</td><td>Sur la blockchain Avalanche C-Chain (norme ERC-20)</td><td>Offre totale fixe prévue&nbsp;: 100 milliards (100 G). Commun aux trois jeux. <b>Pas encore déployé.</b></td><td>À déterminer — dépendra du marché</td></tr>
+</table>
+
+<h3>La Boutique actuelle (prix en jetons Dogzy)</h3>
+<table>
+<tr><th>Article</th><th>Prix</th><th>Effet</th></tr>
+<tr><td>Accessoires réguliers</td><td>5 jetons</td><td>Bonus permanents en partie (bouclier, +75 au DÉPART, +20 % loyers reçus…)</td></tr>
+<tr><td>Accessoires or</td><td>20 jetons</td><td>Usage unique&nbsp;: annulent un paiement de 50 pièces ou plus</td></tr>
+<tr><td>Personnages or (12)</td><td>50 jetons</td><td>Cosmétiques. Avantages annoncés&nbsp;: 15 % de rabais sur le même personnage dans <i>The Adoles-chiant of Dogzy Town</i> à son lancement + « 1 000 jetons Dogzy offerts » au lancement</td></tr>
+<tr><td>Cartes NFT VIP (4 ados&nbsp;: The Pyromaniac, Jouzy, Waltzy, Kelzy)</td><td>1 000 jetons</td><td>Non jouables ici&nbsp;; publicité pour le futur jeu web3.</td></tr>
+</table>
+<p><b>Comment on obtient des jetons aujourd'hui&nbsp;:</b> 100 pièces = 1 jeton au départ, le taux montant progressivement (+2 pièces tous les 5 jetons émis, plafond 200 pièces). Les jetons <b>repartent à zéro à chaque partie</b>. Conséquence&nbsp;: 1 000 jetons (une carte VIP) représentent environ 187 000 pièces, ce qui est hors d'atteinte en une seule partie. Les NFT et personnages or sont, eux, conservés d'une partie à l'autre dans le navigateur.</p>
+
+<h3>Ce qui est prévu</h3>
+<p>Des <b>paquets de jetons Dogzy achetés avec de vrais DOGZY</b>. Les prix des paquets seront ajustés quand la valeur réelle du DOGZY sera connue. Le DOGZY sera partagé par trois jeux&nbsp;: <b>Dogzy Family Universe</b> (Monopoly), <b>Dogzy Town</b> (console) et <b>The Adoles-chiant of Dogzy Town</b> (web3). Le document Tokenomics prévoit aussi un pont, <b>PontDogzy</b>, permettant d'exporter des jetons gagnés en jeu vers un portefeuille puis de les échanger contre des DOGZY (code à usage unique → validation par le serveur → création des DOGZY sur Avalanche). Le taux d'échange n'est pas fixé.</p>
+<div class="box"><b>En résumé&nbsp;:</b> DOGZY → (achat d'un paquet) → jetons Dogzy → (Boutique) → accessoires / personnages or / cartes VIP. Avec PontDogzy, le sens inverse (jetons → DOGZY) deviendrait aussi possible. <b>C'est ce sens inverse qui transforme une monnaie de jeu en quelque chose qui a une valeur de marché</b>, et c'est le point le plus sensible sur le plan juridique et fiscal.</div>
+
+<h2>3. Comment fixer une valeur de départ pour le DOGZY</h2>
+<p>Un cryptoactif n'a pas de valeur « officielle ». Il existe trois grandes façons d'en établir une première.</p>
+
+<h3>Option A — Prix de lancement fixe ou prévente</h3>
+<p>La créatrice annonce un prix (par ex. un montant en $ CA par 1 000 DOGZY) et vend un lot à ce prix, avant ou au moment du lancement.</p>
+<ul><li><b>Avantage&nbsp;:</b> simple et prévisible.</li>
+<li><b>Risque majeur&nbsp;:</b> vendre des jetons au public pour financer le projet est exactement ce que les autorités en valeurs mobilières examinent de plus près (voir section 6). Une prévente exigerait presque certainement un prospectus ou une dispense. À noter&nbsp;: le document Tokenomics affirme que le DOGZY entre en circulation « par l'engagement, et non par une vente publique de jetons »&nbsp;; une prévente contredirait ce principe.</li></ul>
+
+<h3>Option B — Pool de liquidité sur un échange décentralisé (DEX)</h3>
+<p>On dépose dans un pool, sur un DEX d'Avalanche comme <b>Trader Joe (aujourd'hui LFJ)</b> ou <b>Pharaoh</b>, une quantité de DOGZY et une quantité d'un autre actif (AVAX ou une cryptomonnaie stable adossée au dollar, comme l'USDC). <b>Le rapport entre les deux fixe le prix initial</b>&nbsp;; ensuite le marché le fait varier.</p>
+<p><span class="ex">EXEMPLE</span> Déposer 5 000 000 DOGZY et l'équivalent de 5 000 $ en USDC donne un prix initial d'environ 0,001 $ par DOGZY, soit 1 000 DOGZY ≈ 1 $. Remarques utiles pour les conseillers&nbsp;:</p>
+<ul>
+<li>Le Tokenomics réserve 5 % de l'offre (5 G DOGZY) à la « liquidité et inscriptions ». Mettre tout ce lot dans un pool à 0,001 $ exigerait environ 5 millions $ de l'autre côté&nbsp;: en pratique, on n'en déposerait qu'une petite partie.</li>
+<li>À 0,001 $, l'offre totale de 100 G représenterait une valeur théorique de 100 millions $ (« valeur entièrement diluée »). Ce chiffre est mécanique et <b>ne doit jamais être présenté comme la valeur du projet</b>.</li>
+<li>Un petit pool rend le prix très volatil&nbsp;: quelques achats ou ventes peuvent le faire bouger fortement.</li>
+<li>Questions à trancher&nbsp;: verrouillage des jetons de liquidité («&nbsp;LP tokens&nbsp;»), qui fournit l'argent de départ, traitement comptable de ce dépôt.</li></ul>
+
+<h3>Option C — Fixer les paquets en dollars, peu importe la valeur du DOGZY (recommandée)</h3>
+<p>Plutôt que de dire « un paquet coûte X DOGZY », on dit « un paquet coûte X $ CA, payables en DOGZY au cours du moment ». Le jeu calcule, au moment de l'achat, combien de DOGZY correspondent au prix en dollars (à partir d'une source de prix fiable, par ex. le prix du pool ou un oracle).</p>
+<table>
+<tr><th>Paquet <span class="ex">EXEMPLE</span></th><th>Prix affiché <span class="ex">EXEMPLE</span></th><th>DOGZY payés si 1 000 DOGZY ≈ 1 $</th><th>DOGZY payés si 1 000 DOGZY ≈ 2 $</th></tr>
+<tr><td>100 jetons</td><td>1,99 $</td><td>≈ 1 990 DOGZY</td><td>≈ 995 DOGZY</td></tr>
+<tr><td>500 jetons</td><td>8,99 $</td><td>≈ 8 990 DOGZY</td><td>≈ 4 495 DOGZY</td></tr>
+<tr><td>1 000 jetons</td><td>15,99 $</td><td>≈ 15 990 DOGZY</td><td>≈ 7 995 DOGZY</td></tr>
+<tr><td>5 000 jetons</td><td>69,99 $</td><td>≈ 69 990 DOGZY</td><td>≈ 34 995 DOGZY</td></tr>
+</table>
+<p class="small">Chiffres inventés uniquement pour illustrer le calcul&nbsp;; ils ne sont ni une recommandation de prix ni une estimation de valeur. À ces prix d'exemple, une carte NFT VIP (1 000 jetons) coûterait environ 16 $ et un personnage or (50 jetons) moins de 1 $&nbsp;: c'est le genre de cohérence à vérifier avant de fixer les vrais prix.</p>
+<p><b>Pourquoi c'est préférable&nbsp;:</b> le joueur paie toujours le même prix, compréhensible&nbsp;; la Boutique n'a pas à être réajustée à chaque variation du marché&nbsp;; la comptabilité (revenus, taxes de vente) se fait naturellement en dollars&nbsp;; et le message reste «&nbsp;j'achète un objet de jeu&nbsp;», pas «&nbsp;je spécule sur le DOGZY&nbsp;». Il faut toutefois prévoir une protection si la source de prix est manipulée ou indisponible (par ex. suspendre les achats).</p>
+
+<h2>4. Les jetons doivent-ils persister d'une partie à l'autre&nbsp;?</h2>
+<p>Aujourd'hui les jetons Dogzy repartent à zéro à chaque partie. <b>Dès qu'ils seront achetés avec de vrais DOGZY, cela ne pourra plus durer</b>&nbsp;: un joueur ne peut pas perdre ce qu'il a payé à la fin d'une partie. Il faudra&nbsp;:</p>
+<ul>
+<li>un <b>solde de jetons par compte</b>, conservé sur un serveur (et non seulement dans le navigateur, qui peut être effacé)&nbsp;;</li>
+<li>séparer clairement les jetons <b>achetés</b> (persistants) des jetons <b>gagnés en partie</b> avec des pièces (qui pourraient rester temporaires)&nbsp;;</li>
+<li>des conditions d'utilisation claires&nbsp;: les jetons sont-ils remboursables&nbsp;? expirent-ils&nbsp;? que se passe-t-il si le jeu ferme&nbsp;?</li>
+<li>un historique d'achats (utile pour la comptabilité, les remboursements et les vérifications).</li></ul>
+
+<h2>5. Ordre des étapes suggéré</h2>
+<ol>
+<li><b>Avis juridique écrit</b> (avocat·e en valeurs mobilières/cryptoactifs au Québec) sur la qualification du DOGZY, des jetons, des NFT et de PontDogzy, avant toute vente ou promesse publique.</li>
+<li><b>Consultation comptable/fiscale</b>&nbsp;: structure (entreprise individuelle ou société), traitement des revenus en crypto, TPS/TVQ.</li>
+<li><b>Audit indépendant</b>&nbsp;: faire auditer les 8 contrats intelligents par une firme indépendante avant tout déploiement, et conserver le rapport.</li>
+<li><b>Corriger les textes du jeu et du Tokenomics</b> selon l'avis juridique (voir section 6).</li>
+<li><b>Déploiement</b> des contrats sur le réseau de test (Fuji), puis sur Avalanche C-Chain, avec le partenaire technique.</li>
+<li><b>Liquidité</b>&nbsp;: création du pool, si l'avis juridique le permet, avec un montant prudent.</li>
+<li><b>Paquets de jetons</b>&nbsp;: lancement avec prix en dollars, comptes persistants, conditions d'utilisation, et vérification d'identité si requise.</li>
+<li><b>PontDogzy</b> (jetons → DOGZY) en dernier, car c'est l'élément le plus sensible.</li></ol>
+
+<h2>6. Conformité — section essentielle</h2>
+<div class="warn"><b>Principe de base&nbsp;:</b> le DOGZY doit rester un <b>jeton utilitaire</b>, qui sert à jouer. Il ne faut <b>jamais</b> présenter le DOGZY, les jetons ou les NFT comme un placement, ni promettre ou laisser entendre un rendement, une hausse de valeur ou un profit. Mots à éviter dans le jeu, le site et les réseaux sociaux&nbsp;: « investir », « rendement », « profit », « prendre de la valeur », « to the moon », « limité donc rare = valeur », etc.</div>
+
+<h3>Valeurs mobilières (AMF Québec et ACVM)</h3>
+<p>Au Canada, un jeton peut être considéré comme une valeur mobilière (« contrat d'investissement ») même s'il est appelé « utilitaire ». Les autorités regardent la réalité&nbsp;: y a-t-il un investissement d'argent, dans une entreprise commune, avec une attente de profit provenant surtout des efforts de l'équipe&nbsp;? Les Avis du personnel des ACVM <b>46-307</b> (offres de cryptomonnaies, 2017) et <b>46-308</b> (incidences des offres de jetons sur la législation en valeurs mobilières, 2018) donnent des exemples concrets. Au Québec, l'Autorité des marchés financiers (AMF) applique ces principes. Les plateformes qui offrent l'achat-vente de cryptoactifs sont aussi visées (Avis 21-327 et suivants).</p>
+<p><b>Points du dossier actuel qui méritent l'attention de l'avocat·e&nbsp;:</b></p>
+<ul>
+<li>Le Tokenomics parle de <b>staking « pour le rendement »</b>, de <b>trésorerie</b>, de <b>gouvernance DAO</b> et d'<b>inscriptions en bourse</b>&nbsp;: ce vocabulaire rapproche le DOGZY d'un placement.</li>
+<li>L'allocation à la fondatrice (15 %, acquisition sur 36 mois) et aux partenaires (10 %) est normale, mais devra être expliquée de façon transparente.</li>
+<li>Toute <b>prévente</b> ou vente publique de DOGZY (option A) est le cas le plus risqué.</li>
+<li><b>PontDogzy</b> (convertir des jetons gagnés en DOGZY échangeables) fait passer le jeu d'un système fermé à un système relié au marché.</li></ul>
+
+<h3>La mention « + 1 000 jetons Dogzy offerts »</h3>
+<p>La mention « + 1 000 jetons Dogzy offerts » pour les personnages or est risquée&nbsp;: une fois que les jetons auront une valeur réelle, un avantage promis au lancement peut ressembler à une promesse de rendement. Il y a aussi une ambiguïté&nbsp;: le Tokenomics parle de « 1 000 <b>DOGZY</b> » inclus avec les NFT, alors que le jeu parle de « 1 000 <b>jetons Dogzy</b> ». Ce ne sont pas la même chose. <b>Recommandation&nbsp;:</b> faire valider la formulation par l'avocat·e, préciser de quoi il s'agit (jetons de jeu, non transférables, uniquement utilisables dans le jeu), ou remplacer par un avantage clairement de jeu (ex. «&nbsp;bonus de bienvenue de X jetons de jeu dans le nouveau jeu&nbsp;»), et éviter toute formulation promettant de « doubler » des jetons.</p>
+
+<h3>Jeux de hasard et « loot boxes »</h3>
+<p>Payer (en DOGZY, donc en argent réel) pour obtenir un résultat aléatoire ayant une valeur peut être assimilé à une loterie ou à un jeu de hasard (Code criminel, et au Québec la Loi sur les loteries, les concours publicitaires et les appareils d'amusement, administrée par la RACJ). Aujourd'hui la Boutique vend des objets à prix fixe, ce qui est favorable. À surveiller&nbsp;: la roue bonus et les cartes Chance ne doivent jamais coûter de jetons achetés ni rapporter quelque chose d'échangeable contre des DOGZY. Le Tokenomics mentionne des « enchères Or hebdomadaires » et un futur mécanisme de tirage sous licence&nbsp;: à faire valider spécifiquement.</p>
+
+<h3>Vérification d'identité (KYC) et lutte au blanchiment</h3>
+<p>Une entreprise qui échange des monnaies virtuelles pour le compte de clients peut être une « entreprise de services monétaires » devant s'inscrire auprès du CANAFE (FINTRAC) et, au Québec, détenir un permis provincial&nbsp;; elle doit alors vérifier l'identité des clients et déclarer certaines opérations. Il faut savoir si la vente de paquets contre DOGZY, et surtout PontDogzy, déclenche ces obligations. La collecte de pièces d'identité implique aussi la Loi 25 (protection des renseignements personnels). Prévoir un âge minimal et des règles pour les mineurs (la Loi sur la protection du consommateur du Québec limite la publicité destinée aux moins de 13 ans).</p>
+
+<h3>Impôts et taxes</h3>
+<ul>
+<li>Pour l'ARC et Revenu Québec, les cryptoactifs sont généralement traités comme des biens&nbsp;; les DOGZY reçus pour des paquets seraient probablement un <b>revenu d'entreprise</b>, évalué en dollars au moment de la vente.</li>
+<li>Les DOGZY détenus par la créatrice (15 % de l'offre) et ceux remis en récompense ou avec les NFT soulèvent des questions de valeur et de moment d'imposition.</li>
+<li><b>TPS/TVQ</b>&nbsp;: la vente de biens numériques (jetons de jeu, NFT, accessoires) peut être taxable, même payée en crypto.</li>
+<li>Tenir un registre précis&nbsp;: date, quantité, valeur en $ de chaque transaction.</li></ul>
+<p><b>Recommandation ferme&nbsp;:</b> ne rien vendre contre de vrais DOGZY, ne pas déployer le jeton publiquement et ne pas publier le Tokenomics avant d'avoir obtenu un <b>avis écrit d'un·e avocat·e</b> en valeurs mobilières/cryptoactifs au Québec et l'avis d'un·e comptable.</p>
+
+<h2>7. Questions à poser aux conseillers</h2>
+<h3>À l'avocat·e (valeurs mobilières / cryptoactifs)</h3>
+<ol>
+<li>Le DOGZY, tel que décrit dans le Tokenomics (staking, trésorerie, gouvernance, allocation à la fondatrice), risque-t-il d'être une valeur mobilière au Québec et au Canada&nbsp;? Que faut-il changer pour rester utilitaire&nbsp;?</li>
+<li>Puis-je créer un pool de liquidité sur un DEX moi-même&nbsp;? Une prévente est-elle envisageable, et avec quelle dispense&nbsp;?</li>
+<li>Vendre des paquets de jetons de jeu contre des DOGZY, au prix fixé en dollars, crée-t-il des obligations particulières&nbsp;?</li>
+<li>PontDogzy (jetons gagnés → DOGZY) est-il acceptable&nbsp;? Sous quelles conditions&nbsp;?</li>
+<li>Comment reformuler « + 1 000 jetons Dogzy offerts »&nbsp;? Les acheteurs actuels (en jetons simulés) ont-ils des droits&nbsp;?</li>
+<li>Les roues, cartes Chance, enchères Or et tout futur tirage posent-ils un enjeu de loterie (RACJ)&nbsp;?</li>
+<li>Dois-je m'inscrire comme entreprise de services monétaires (CANAFE / Québec) et faire du KYC&nbsp;? À partir de quand&nbsp;?</li>
+<li>Quelles conditions d'utilisation, politique de remboursement, âge minimal et politique de confidentialité sont nécessaires&nbsp;?</li>
+<li>Quelles étapes de conformité (audit des contrats, démarches auprès de la RACJ, etc.) sont requises avant le lancement&nbsp;?</li>
+<li>Vaut-il mieux exploiter le projet par une société&nbsp;? Dans quelle juridiction&nbsp;?</li></ol>
+<h3>Au/à la comptable</h3>
+<ol>
+<li>Comment déclarer les revenus reçus en DOGZY et à quelle valeur&nbsp;?</li>
+<li>Comment traiter ma propre allocation de DOGZY (15 %, acquisition sur 36 mois) et les DOGZY déposés dans un pool de liquidité&nbsp;?</li>
+<li>Les paquets, accessoires et NFT sont-ils assujettis à la TPS/TVQ&nbsp;? Dois-je m'inscrire&nbsp;?</li>
+<li>Comment comptabiliser les jetons vendus mais pas encore utilisés (revenu reporté)&nbsp;?</li>
+<li>Entreprise individuelle ou société par actions&nbsp;: quelle structure est la plus avantageuse&nbsp;?</li>
+<li>Quels registres et outils de suivi des transactions crypto recommandez-vous&nbsp;?</li></ol>
+
+<div class="box small"><b>Avertissement.</b> Ce document résume des informations fournies par la créatrice et des principes généraux. Il ne constitue pas un avis juridique, fiscal ou financier, ni une offre de valeurs mobilières. Les références réglementaires sont données à titre indicatif et doivent être vérifiées par un professionnel. Le DOGZY n'est pas encore déployé et n'a aucune valeur établie&nbsp;; tous les montants marqués « EXEMPLE » sont fictifs.</div>
+</body></html>

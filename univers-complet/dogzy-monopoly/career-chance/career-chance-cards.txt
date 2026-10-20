@@ -1,0 +1,10 @@
+01. [PROMOTION] Promotion! (NEXT LEVEL): Your boss noticed your hard work. Move up to the next level of your career.
+02. [ACCESSORY] Employee of the Month (+1 CAREER ITEM): Your team voted for you. Win the next accessory of your career level.
+03. [PENALTY] Torn Uniform (-1 UNIFORM PIECE): Coffee spill on the job! Lose your last career accessory unless you have a shield.
+04. [BONUS] Training Day (+150 TOKENS): You aced a training course at the Dogzy Academy. Collect 150 tokens.
+05. [BONUS] Big Tip (+100 TOKENS): A VIP customer loved your service and leaves a generous tip.
+06. [ACTION] Job Interview (QUIZ): Answer a quiz. Pass it to win the next accessory of your career.
+07. [PENALTY] Late for Work (-75 TOKENS): You overslept after a night in Dogzy Town. Your boss docks 75 tokens from your pay.
+08. [BUSINESS] Franchise Deal (+50 PER BUSINESS): Your brand is growing. Collect 50 tokens for every business you own.
+09. [ACTION] Mentor a Rookie (+1 CAREER ITEM): You train a new apprentice. Give 50 tokens to the poorest player and win a career accessory.
+10. [PENALTY] Health Inspection (-25 PER BUSINESS): The inspector visits your shops. Pay 25 tokens for every business you own.

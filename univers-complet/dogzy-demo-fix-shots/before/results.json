@@ -1,0 +1,2107 @@
+[
+ {
+  "id": "00a-chef-golden-retriever",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong scale (0.82x face, too small)"
+  ]
+ },
+ {
+  "id": "00a-chef-golden-retriever",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong scale (0.82x face, too small)"
+  ]
+ },
+ {
+  "id": "00a-chef-golden-retriever",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong scale (0.82x face, too small)"
+  ]
+ },
+ {
+  "id": "00a-chef-golden-retriever",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "00a-chef-golden-retriever",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "00a-chef-golden-retriever",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "00a-chef-golden-retriever",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "00a-chef-golden-retriever",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 2.48,0.77 face-units)"
+  ]
+ },
+ {
+  "id": "00a-chef-golden-retriever",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 2.48,0.77 face-units)"
+  ]
+ },
+ {
+  "id": "00c-barmaid-cavalier",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.20,0.55 face-units)",
+   "wrong scale (0.55x face, too small)"
+  ]
+ },
+ {
+  "id": "00c-barmaid-cavalier",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.20,0.55 face-units)",
+   "wrong scale (0.55x face, too small)"
+  ]
+ },
+ {
+  "id": "00c-barmaid-cavalier",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.20,0.55 face-units)",
+   "wrong scale (0.55x face, too small)"
+  ]
+ },
+ {
+  "id": "00c-barmaid-cavalier",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.20,0.61 face-units)",
+   "wrong scale (0.55x face, too small)"
+  ]
+ },
+ {
+  "id": "00c-barmaid-cavalier",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.20,0.61 face-units)",
+   "wrong scale (0.55x face, too small)"
+  ]
+ },
+ {
+  "id": "00c-barmaid-cavalier",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "00c-barmaid-cavalier",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "00c-barmaid-cavalier",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 1.82,0.85 face-units)"
+  ]
+ },
+ {
+  "id": "00c-barmaid-cavalier",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 1.82,0.85 face-units)"
+  ]
+ },
+ {
+  "id": "01-police-officer-german-shepherd",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.06,0.77 face-units)"
+  ]
+ },
+ {
+  "id": "01-police-officer-german-shepherd",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.06,0.77 face-units)"
+  ]
+ },
+ {
+  "id": "01-police-officer-german-shepherd",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.06,0.77 face-units)"
+  ]
+ },
+ {
+  "id": "01-police-officer-german-shepherd",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "01-police-officer-german-shepherd",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "01-police-officer-german-shepherd",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.06,0.52 face-units)",
+   "wrong scale (1.44x face, too big)"
+  ]
+ },
+ {
+  "id": "01-police-officer-german-shepherd",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.06,0.52 face-units)",
+   "wrong scale (1.44x face, too big)"
+  ]
+ },
+ {
+  "id": "01-police-officer-german-shepherd",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 3.80,-0.92 face-units)",
+   "wrong scale (1.44x face, too big)"
+  ]
+ },
+ {
+  "id": "01-police-officer-german-shepherd",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 3.80,-0.92 face-units)",
+   "wrong scale (1.44x face, too big)"
+  ]
+ },
+ {
+  "id": "02-clerk-beagle",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "02-clerk-beagle",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "02-clerk-beagle",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "02-clerk-beagle",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "02-clerk-beagle",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "02-clerk-beagle",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong scale (1.20x face, too big)"
+  ]
+ },
+ {
+  "id": "02-clerk-beagle",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong scale (1.20x face, too big)"
+  ]
+ },
+ {
+  "id": "02-clerk-beagle",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.27,-0.76 face-units)"
+  ]
+ },
+ {
+  "id": "02-clerk-beagle",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.27,-0.76 face-units)"
+  ]
+ },
+ {
+  "id": "03-firefighter-saint-bernard",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "03-firefighter-saint-bernard",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "03-firefighter-saint-bernard",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "03-firefighter-saint-bernard",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong scale (1.80x face, too big)"
+  ]
+ },
+ {
+  "id": "03-firefighter-saint-bernard",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong scale (1.80x face, too big)"
+  ]
+ },
+ {
+  "id": "03-firefighter-saint-bernard",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.32,0.56 face-units)",
+   "wrong scale (1.80x face, too big)"
+  ]
+ },
+ {
+  "id": "03-firefighter-saint-bernard",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.32,0.56 face-units)",
+   "wrong scale (1.80x face, too big)"
+  ]
+ },
+ {
+  "id": "03-firefighter-saint-bernard",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 4.19,-0.31 face-units)",
+   "wrong scale (1.80x face, too big)"
+  ]
+ },
+ {
+  "id": "03-firefighter-saint-bernard",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 4.19,-0.31 face-units)",
+   "wrong scale (1.80x face, too big)"
+  ]
+ },
+ {
+  "id": "04-nurse-collie",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong scale (0.83x face, too small)"
+  ]
+ },
+ {
+  "id": "04-nurse-collie",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong scale (0.83x face, too small)"
+  ]
+ },
+ {
+  "id": "04-nurse-collie",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong scale (0.83x face, too small)"
+  ]
+ },
+ {
+  "id": "04-nurse-collie",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "04-nurse-collie",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "04-nurse-collie",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "04-nurse-collie",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "04-nurse-collie",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 2.57,0.66 face-units)"
+  ]
+ },
+ {
+  "id": "04-nurse-collie",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 2.57,0.66 face-units)"
+  ]
+ },
+ {
+  "id": "05-lawyer-bulldog",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "05-lawyer-bulldog",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "05-lawyer-bulldog",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "05-lawyer-bulldog",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "05-lawyer-bulldog",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "05-lawyer-bulldog",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "05-lawyer-bulldog",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "05-lawyer-bulldog",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 2.46,-0.35 face-units)"
+  ]
+ },
+ {
+  "id": "05-lawyer-bulldog",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 2.46,-0.35 face-units)"
+  ]
+ },
+ {
+  "id": "06-dentist-poodle",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "06-dentist-poodle",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "06-dentist-poodle",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "06-dentist-poodle",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "06-dentist-poodle",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "06-dentist-poodle",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong scale (1.13x face, too big)"
+  ]
+ },
+ {
+  "id": "06-dentist-poodle",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong scale (1.13x face, too big)"
+  ]
+ },
+ {
+  "id": "06-dentist-poodle",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 2.59,-0.46 face-units)"
+  ]
+ },
+ {
+  "id": "06-dentist-poodle",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 2.59,-0.46 face-units)"
+  ]
+ },
+ {
+  "id": "07-florist-yorkshire",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.48,0.10 face-units)"
+  ]
+ },
+ {
+  "id": "07-florist-yorkshire",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.48,0.10 face-units)"
+  ]
+ },
+ {
+  "id": "07-florist-yorkshire",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.48,0.10 face-units)"
+  ]
+ },
+ {
+  "id": "07-florist-yorkshire",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "beside character (off 0.48,-0.39 face-units)"
+  ]
+ },
+ {
+  "id": "07-florist-yorkshire",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "beside character (off 0.48,-0.39 face-units)"
+  ]
+ },
+ {
+  "id": "07-florist-yorkshire",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "in mouth/face (too high) (off 0.48,-0.01 face-units)",
+   "wrong scale (1.35x face, too big)"
+  ]
+ },
+ {
+  "id": "07-florist-yorkshire",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "in mouth/face (too high) (off 0.48,-0.01 face-units)",
+   "wrong scale (1.35x face, too big)"
+  ]
+ },
+ {
+  "id": "07-florist-yorkshire",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 3.56,0.76 face-units)",
+   "wrong scale (1.35x face, too big)"
+  ]
+ },
+ {
+  "id": "07-florist-yorkshire",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 3.56,0.76 face-units)",
+   "wrong scale (1.35x face, too big)"
+  ]
+ },
+ {
+  "id": "08-construction-rottweiler",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.45,0.12 face-units)"
+  ]
+ },
+ {
+  "id": "08-construction-rottweiler",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.45,0.12 face-units)"
+  ]
+ },
+ {
+  "id": "08-construction-rottweiler",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.45,0.12 face-units)"
+  ]
+ },
+ {
+  "id": "08-construction-rottweiler",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.45,-0.48 face-units)",
+   "wrong scale (1.66x face, too big)"
+  ]
+ },
+ {
+  "id": "08-construction-rottweiler",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.45,-0.48 face-units)",
+   "wrong scale (1.66x face, too big)"
+  ]
+ },
+ {
+  "id": "08-construction-rottweiler",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.45,0.21 face-units)",
+   "wrong scale (1.66x face, too big)"
+  ]
+ },
+ {
+  "id": "08-construction-rottweiler",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.45,0.21 face-units)",
+   "wrong scale (1.66x face, too big)"
+  ]
+ },
+ {
+  "id": "08-construction-rottweiler",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.67,-0.29 face-units)",
+   "wrong scale (1.66x face, too big)"
+  ]
+ },
+ {
+  "id": "08-construction-rottweiler",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.67,-0.29 face-units)",
+   "wrong scale (1.66x face, too big)"
+  ]
+ },
+ {
+  "id": "09-electrician-border-collie",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.26,-0.56 face-units)"
+  ]
+ },
+ {
+  "id": "09-electrician-border-collie",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.26,-0.56 face-units)"
+  ]
+ },
+ {
+  "id": "09-electrician-border-collie",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.26,-0.56 face-units)"
+  ]
+ },
+ {
+  "id": "09-electrician-border-collie",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.26,-0.95 face-units)"
+  ]
+ },
+ {
+  "id": "09-electrician-border-collie",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.26,-0.95 face-units)"
+  ]
+ },
+ {
+  "id": "09-electrician-border-collie",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "in mouth/face (too high) (off 0.26,-0.48 face-units)",
+   "wrong scale (1.44x face, too big)"
+  ]
+ },
+ {
+  "id": "09-electrician-border-collie",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "in mouth/face (too high) (off 0.26,-0.48 face-units)",
+   "wrong scale (1.44x face, too big)"
+  ]
+ },
+ {
+  "id": "09-electrician-border-collie",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 1.09,-0.85 face-units)",
+   "wrong scale (1.44x face, too big)"
+  ]
+ },
+ {
+  "id": "09-electrician-border-collie",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 1.09,-0.85 face-units)",
+   "wrong scale (1.44x face, too big)"
+  ]
+ },
+ {
+  "id": "10-plumber-french-bulldog",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.06,-0.78 face-units)"
+  ]
+ },
+ {
+  "id": "10-plumber-french-bulldog",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.06,-0.78 face-units)"
+  ]
+ },
+ {
+  "id": "10-plumber-french-bulldog",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.06,-0.78 face-units)"
+  ]
+ },
+ {
+  "id": "10-plumber-french-bulldog",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.06,-1.20 face-units)"
+  ]
+ },
+ {
+  "id": "10-plumber-french-bulldog",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.06,-1.20 face-units)"
+  ]
+ },
+ {
+  "id": "10-plumber-french-bulldog",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "in mouth/face (too high) (off -0.06,-0.83 face-units)",
+   "wrong scale (1.35x face, too big)"
+  ]
+ },
+ {
+  "id": "10-plumber-french-bulldog",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "in mouth/face (too high) (off -0.06,-0.83 face-units)",
+   "wrong scale (1.35x face, too big)"
+  ]
+ },
+ {
+  "id": "10-plumber-french-bulldog",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 3.99,0.33 face-units)",
+   "wrong scale (1.35x face, too big)"
+  ]
+ },
+ {
+  "id": "10-plumber-french-bulldog",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 3.99,0.33 face-units)",
+   "wrong scale (1.35x face, too big)"
+  ]
+ },
+ {
+  "id": "11-decorator-afghan-hound",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.04,0.77 face-units)",
+   "wrong scale (0.90x face, too small)"
+  ]
+ },
+ {
+  "id": "11-decorator-afghan-hound",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.04,0.77 face-units)",
+   "wrong scale (0.90x face, too small)"
+  ]
+ },
+ {
+  "id": "11-decorator-afghan-hound",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.04,0.77 face-units)",
+   "wrong scale (0.90x face, too small)"
+  ]
+ },
+ {
+  "id": "11-decorator-afghan-hound",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "11-decorator-afghan-hound",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "11-decorator-afghan-hound",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "11-decorator-afghan-hound",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "11-decorator-afghan-hound",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 1.41,-0.07 face-units)"
+  ]
+ },
+ {
+  "id": "11-decorator-afghan-hound",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 1.41,-0.07 face-units)"
+  ]
+ },
+ {
+  "id": "12-technician-husky",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.90,0.90 face-units)"
+  ]
+ },
+ {
+  "id": "12-technician-husky",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.90,0.90 face-units)"
+  ]
+ },
+ {
+  "id": "12-technician-husky",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.90,0.90 face-units)"
+  ]
+ },
+ {
+  "id": "12-technician-husky",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "beside character (off -0.90,-0.15 face-units)"
+  ]
+ },
+ {
+  "id": "12-technician-husky",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "beside character (off -0.90,-0.15 face-units)"
+  ]
+ },
+ {
+  "id": "12-technician-husky",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.90,0.32 face-units)",
+   "wrong scale (1.44x face, too big)"
+  ]
+ },
+ {
+  "id": "12-technician-husky",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.90,0.32 face-units)",
+   "wrong scale (1.44x face, too big)"
+  ]
+ },
+ {
+  "id": "12-technician-husky",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 3.09,2.02 face-units)",
+   "wrong scale (1.44x face, too big)"
+  ]
+ },
+ {
+  "id": "12-technician-husky",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 3.09,2.02 face-units)",
+   "wrong scale (1.44x face, too big)"
+  ]
+ },
+ {
+  "id": "13-architect-doberman",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "13-architect-doberman",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "13-architect-doberman",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "13-architect-doberman",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "13-architect-doberman",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "13-architect-doberman",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong scale (1.20x face, too big)"
+  ]
+ },
+ {
+  "id": "13-architect-doberman",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong scale (1.20x face, too big)"
+  ]
+ },
+ {
+  "id": "13-architect-doberman",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 2.63,-0.76 face-units)"
+  ]
+ },
+ {
+  "id": "13-architect-doberman",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 2.63,-0.76 face-units)"
+  ]
+ },
+ {
+  "id": "14-banker-dachshund",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.00,0.71 face-units)"
+  ]
+ },
+ {
+  "id": "14-banker-dachshund",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.00,0.71 face-units)"
+  ]
+ },
+ {
+  "id": "14-banker-dachshund",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.00,0.71 face-units)"
+  ]
+ },
+ {
+  "id": "14-banker-dachshund",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "14-banker-dachshund",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "14-banker-dachshund",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.00,0.51 face-units)",
+   "wrong scale (1.13x face, too big)"
+  ]
+ },
+ {
+  "id": "14-banker-dachshund",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.00,0.51 face-units)",
+   "wrong scale (1.13x face, too big)"
+  ]
+ },
+ {
+  "id": "14-banker-dachshund",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.61,0.22 face-units)"
+  ]
+ },
+ {
+  "id": "14-banker-dachshund",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.61,0.22 face-units)"
+  ]
+ },
+ {
+  "id": "15-veterinarian-labrador",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.46,0.91 face-units)"
+  ]
+ },
+ {
+  "id": "15-veterinarian-labrador",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.46,0.91 face-units)"
+  ]
+ },
+ {
+  "id": "15-veterinarian-labrador",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.46,0.91 face-units)"
+  ]
+ },
+ {
+  "id": "15-veterinarian-labrador",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "beside character (off 0.46,0.28 face-units)"
+  ]
+ },
+ {
+  "id": "15-veterinarian-labrador",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "beside character (off 0.46,0.28 face-units)"
+  ]
+ },
+ {
+  "id": "15-veterinarian-labrador",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.46,0.57 face-units)",
+   "wrong scale (1.27x face, too big)"
+  ]
+ },
+ {
+  "id": "15-veterinarian-labrador",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.46,0.57 face-units)",
+   "wrong scale (1.27x face, too big)"
+  ]
+ },
+ {
+  "id": "15-veterinarian-labrador",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.74,-0.05 face-units)"
+  ]
+ },
+ {
+  "id": "15-veterinarian-labrador",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.74,-0.05 face-units)"
+  ]
+ },
+ {
+  "id": "16-hairstylist-shih-tzu",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.05,0.64 face-units)"
+  ]
+ },
+ {
+  "id": "16-hairstylist-shih-tzu",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.05,0.64 face-units)"
+  ]
+ },
+ {
+  "id": "16-hairstylist-shih-tzu",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.05,0.64 face-units)"
+  ]
+ },
+ {
+  "id": "16-hairstylist-shih-tzu",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "16-hairstylist-shih-tzu",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "16-hairstylist-shih-tzu",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong scale (1.20x face, too big)"
+  ]
+ },
+ {
+  "id": "16-hairstylist-shih-tzu",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong scale (1.20x face, too big)"
+  ]
+ },
+ {
+  "id": "16-hairstylist-shih-tzu",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 2.74,1.18 face-units)"
+  ]
+ },
+ {
+  "id": "16-hairstylist-shih-tzu",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 2.74,1.18 face-units)"
+  ]
+ },
+ {
+  "id": "17-journalist-jack-russell",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "17-journalist-jack-russell",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "17-journalist-jack-russell",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "17-journalist-jack-russell",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "17-journalist-jack-russell",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "17-journalist-jack-russell",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "17-journalist-jack-russell",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "17-journalist-jack-russell",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 2.61,-0.39 face-units)"
+  ]
+ },
+ {
+  "id": "17-journalist-jack-russell",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 2.61,-0.39 face-units)"
+  ]
+ },
+ {
+  "id": "18-actor-boxer",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "18-actor-boxer",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "18-actor-boxer",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "18-actor-boxer",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "18-actor-boxer",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "18-actor-boxer",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong scale (1.13x face, too big)"
+  ]
+ },
+ {
+  "id": "18-actor-boxer",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong scale (1.13x face, too big)"
+  ]
+ },
+ {
+  "id": "18-actor-boxer",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 3.00,-0.41 face-units)"
+  ]
+ },
+ {
+  "id": "18-actor-boxer",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 3.00,-0.41 face-units)"
+  ]
+ },
+ {
+  "id": "19-fitness-coach-whippet",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "19-fitness-coach-whippet",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "19-fitness-coach-whippet",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "19-fitness-coach-whippet",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "19-fitness-coach-whippet",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "19-fitness-coach-whippet",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "19-fitness-coach-whippet",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "19-fitness-coach-whippet",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 3.58,-0.59 face-units)"
+  ]
+ },
+ {
+  "id": "19-fitness-coach-whippet",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 3.58,-0.59 face-units)"
+  ]
+ },
+ {
+  "id": "20-painter-australian-shepherd",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.75,0.75 face-units)"
+  ]
+ },
+ {
+  "id": "20-painter-australian-shepherd",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.75,0.75 face-units)"
+  ]
+ },
+ {
+  "id": "20-painter-australian-shepherd",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.75,0.75 face-units)"
+  ]
+ },
+ {
+  "id": "20-painter-australian-shepherd",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "beside character (off -0.75,0.32 face-units)"
+  ]
+ },
+ {
+  "id": "20-painter-australian-shepherd",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "beside character (off -0.75,0.32 face-units)"
+  ]
+ },
+ {
+  "id": "20-painter-australian-shepherd",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.75,0.54 face-units)",
+   "wrong scale (1.20x face, too big)"
+  ]
+ },
+ {
+  "id": "20-painter-australian-shepherd",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.75,0.54 face-units)",
+   "wrong scale (1.20x face, too big)"
+  ]
+ },
+ {
+  "id": "20-painter-australian-shepherd",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 1.99,-0.10 face-units)"
+  ]
+ },
+ {
+  "id": "20-painter-australian-shepherd",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 1.99,-0.10 face-units)"
+  ]
+ },
+ {
+  "id": "21-singer-shiba",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.21,0.82 face-units)"
+  ]
+ },
+ {
+  "id": "21-singer-shiba",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.21,0.82 face-units)"
+  ]
+ },
+ {
+  "id": "21-singer-shiba",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.21,0.82 face-units)"
+  ]
+ },
+ {
+  "id": "21-singer-shiba",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.21,0.48 face-units)"
+  ]
+ },
+ {
+  "id": "21-singer-shiba",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.21,0.48 face-units)"
+  ]
+ },
+ {
+  "id": "21-singer-shiba",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.21,1.06 face-units)",
+   "wrong scale (1.54x face, too big)"
+  ]
+ },
+ {
+  "id": "21-singer-shiba",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.21,1.06 face-units)",
+   "wrong scale (1.54x face, too big)"
+  ]
+ },
+ {
+  "id": "21-singer-shiba",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 1.03,2.59 face-units)",
+   "wrong scale (1.54x face, too big)"
+  ]
+ },
+ {
+  "id": "21-singer-shiba",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 1.03,2.59 face-units)",
+   "wrong scale (1.54x face, too big)"
+  ]
+ },
+ {
+  "id": "22-actress-pomeranian",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.45,-1.11 face-units)"
+  ]
+ },
+ {
+  "id": "22-actress-pomeranian",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.45,-1.11 face-units)"
+  ]
+ },
+ {
+  "id": "22-actress-pomeranian",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.45,-1.11 face-units)"
+  ]
+ },
+ {
+  "id": "22-actress-pomeranian",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.45,-1.56 face-units)",
+   "wrong scale (1.66x face, too big)"
+  ]
+ },
+ {
+  "id": "22-actress-pomeranian",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.45,-1.56 face-units)",
+   "wrong scale (1.66x face, too big)"
+  ]
+ },
+ {
+  "id": "22-actress-pomeranian",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "in mouth/face (too high) (off -0.45,-0.86 face-units)",
+   "wrong scale (1.66x face, too big)"
+  ]
+ },
+ {
+  "id": "22-actress-pomeranian",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "in mouth/face (too high) (off -0.45,-0.86 face-units)",
+   "wrong scale (1.66x face, too big)"
+  ]
+ },
+ {
+  "id": "22-actress-pomeranian",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 1.04,0.40 face-units)",
+   "wrong scale (1.66x face, too big)"
+  ]
+ },
+ {
+  "id": "22-actress-pomeranian",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 1.04,0.40 face-units)",
+   "wrong scale (1.66x face, too big)"
+  ]
+ },
+ {
+  "id": "23-pilot-weimaraner",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "23-pilot-weimaraner",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "23-pilot-weimaraner",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "23-pilot-weimaraner",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.28,-0.37 face-units)"
+  ]
+ },
+ {
+  "id": "23-pilot-weimaraner",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.28,-0.37 face-units)"
+  ]
+ },
+ {
+  "id": "23-pilot-weimaraner",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong scale (1.54x face, too big)"
+  ]
+ },
+ {
+  "id": "23-pilot-weimaraner",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong scale (1.54x face, too big)"
+  ]
+ },
+ {
+  "id": "23-pilot-weimaraner",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 3.66,0.45 face-units)",
+   "wrong scale (1.54x face, too big)"
+  ]
+ },
+ {
+  "id": "23-pilot-weimaraner",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 3.66,0.45 face-units)",
+   "wrong scale (1.54x face, too big)"
+  ]
+ },
+ {
+  "id": "24-teacher-bernese",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "24-teacher-bernese",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "24-teacher-bernese",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "24-teacher-bernese",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.24,-0.44 face-units)",
+   "wrong scale (1.80x face, too big)"
+  ]
+ },
+ {
+  "id": "24-teacher-bernese",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.24,-0.44 face-units)",
+   "wrong scale (1.80x face, too big)"
+  ]
+ },
+ {
+  "id": "24-teacher-bernese",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.24,0.40 face-units)",
+   "wrong scale (1.80x face, too big)"
+  ]
+ },
+ {
+  "id": "24-teacher-bernese",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong position (off -0.24,0.40 face-units)",
+   "wrong scale (1.80x face, too big)"
+  ]
+ },
+ {
+  "id": "24-teacher-bernese",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 3.38,0.35 face-units)",
+   "wrong scale (1.80x face, too big)"
+  ]
+ },
+ {
+  "id": "24-teacher-bernese",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 3.38,0.35 face-units)",
+   "wrong scale (1.80x face, too big)"
+  ]
+ },
+ {
+  "id": "25-sound-tech-corgi",
+  "acc": "chef-hat",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "25-sound-tech-corgi",
+  "acc": "crown",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "25-sound-tech-corgi",
+  "acc": "cap",
+  "slot": "hat",
+  "pass": true,
+  "issues": []
+ },
+ {
+  "id": "25-sound-tech-corgi",
+  "acc": "shades",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.00,-0.51 face-units)"
+  ]
+ },
+ {
+  "id": "25-sound-tech-corgi",
+  "acc": "specs",
+  "slot": "glasses",
+  "pass": false,
+  "issues": [
+   "wrong position (off 0.00,-0.51 face-units)"
+  ]
+ },
+ {
+  "id": "25-sound-tech-corgi",
+  "acc": "bowtie",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong scale (1.35x face, too big)"
+  ]
+ },
+ {
+  "id": "25-sound-tech-corgi",
+  "acc": "medal",
+  "slot": "neck",
+  "pass": false,
+  "issues": [
+   "wrong scale (1.35x face, too big)"
+  ]
+ },
+ {
+  "id": "25-sound-tech-corgi",
+  "acc": "mic",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 2.54,0.51 face-units)",
+   "wrong scale (1.35x face, too big)"
+  ]
+ },
+ {
+  "id": "25-sound-tech-corgi",
+  "acc": "brush",
+  "slot": "hand",
+  "pass": false,
+  "issues": [
+   "wrong position (off 2.54,0.51 face-units)",
+   "wrong scale (1.35x face, too big)"
+  ]
+ }
+]

@@ -1,0 +1,103 @@
+<link rel=stylesheet href=base.css><style>
+body{background:url(/home/box/agent-data/agents/26426c55-a805-42ac-a891-44a5a67c3661/attachments/ea09286f2d882b8e182632048afc4aa6cc6d11717f83ff4b42880502ce7afe75.png) center/cover}
+.dim{position:absolute;inset:0;background:rgba(0,0,0,.72)}
+.board{position:absolute;left:600px;top:0;width:720px;height:1080px;border-left:2px solid #c9a24a;border-right:2px solid #c9a24a;box-shadow:0 0 60px rgba(230,180,80,.35)}
+.board img{width:720px;height:1080px;display:block}
+.pawn{position:absolute;left:mkdir -p /workspace/dogzy-gameplay-concepts && cd /workspace/dogzy-gameplay-concepts
+A=/home/box/agent-data/agents/26426c55-a805-42ac-a891-44a5a67c3661/attachments
+C=/workspace/dogzy-demo/assets/characters
+cat > base.css <<'E'
+*{box-sizing:border-box;margin:0;padding:0}body{width:1920px;height:1080px;overflow:hidden;background:#07060a;font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#f3e3b3}
+.g{background:linear-gradient(180deg,#fff2c2,#e3b24f 45%,#9a6a1c);-webkit-background-clip:text;color:transparent}
+.panel{background:linear-gradient(160deg,rgba(24,20,14,.92),rgba(6,5,8,.94));border:2px solid #c9a24a;border-radius:18px;box-shadow:0 0 0 1px #5a4318 inset,0 10px 40px rgba(0,0,0,.7),0 0 24px rgba(230,180,80,.25)}
+.btn{display:inline-block;padding:16px 34px;border-radius:40px;font-weight:700;letter-spacing:2px;font-size:22px;text-transform:uppercase}
+.gold{background:linear-gradient(180deg,#ffe9a8,#d9a441 50%,#8a5d16);color:#1a1206;box-shadow:0 0 25px rgba(255,200,90,.6),0 4px 0 #5c3d0c}
+.ghost{border:2px solid #c9a24a;color:#f3e3b3;background:rgba(0,0,0,.5)}
+.s{font-family:Helvetica,Arial,sans-serif}
+E
+cat > c1.html <<E
+<link rel=stylesheet href=base.css><style>
+body{background:url($A/ea09286f2d882b8e182632048afc4aa6cc6d11717f83ff4b42880502ce7afe75.png) center/cover}
+.dim{position:absolute;inset:0;background:rgba(0,0,0,.72)}
+.board{position:absolute;left:600px;top:0;width:720px;height:1080px;border-left:2px solid #c9a24a;border-right:2px solid #c9a24a;box-shadow:0 0 60px rgba(230,180,80,.35)}
+.board img{width:720px;height:1080px;display:block}
+0px;}
+</style><body><div class=dim></div>
+<div class=board><img src="$A/1d38f4e5c6bd790f63a9bec22d2db3d793b640b75260911bf1242cb1170bf271.png">
+<div style="position:absolute;left:244px;top:151px;width:44px;height:44px;border-radius:50%;border:4px solid #ffe28a;box-shadow:0 0 30px 10px rgba(255,210,100,.9);animation:none"></div>
+<img src="$C/00a-chef-golden-retriever.jpg" style="position:absolute;left:236px;top:75px;width:60px;height:60px;border-radius:50%;border:3px solid #ffe28a;object-fit:cover;box-shadow:0 6px 16px #000">
+</div>
+<!-- left -->
+<div class=panel style="position:absolute;left:40px;top:40px;width:520px;padding:24px;display:flex;gap:20px;align-items:center">
+<img src="$C/00a-chef-golden-retriever.jpg" style="width:150px;height:200px;object-fit:cover;border-radius:12px;border:2px solid #c9a24a">
+<div><div class="g" style="font-size:34px;font-weight:700">CHEF GOLDIE</div><div class=s style="font-size:17px;opacity:.8;margin:4px 0 14px">Golden Retriever · Level 1 Chef</div>
+<div class=s style="font-size:15px">XP</div><div style="height:12px;width:300px;background:#222;border-radius:8px;border:1px solid #6b5220"><div style="width:62%;height:100%;background:linear-gradient(90deg,#8a5d16,#ffe28a);border-radius:8px"></div></div>
+<div class=s style="margin-top:14px;font-size:22px">🪙 <b>12,450</b> &nbsp; 💎 <b>38</b></div></div></div>
+<div class=panel style="position:absolute;left:40px;top:320px;width:520px;padding:22px">
+<div class=g style="font-size:24px;font-weight:700;margin-bottom:14px">TURN ORDER · ROUND 7</div>
+$(for p in "00a-chef-golden-retriever|Chef Goldie (You)|1" "01-police-officer-german-shepherd|Officer Rex|0" "05-lawyer-bulldog|Lawyer Bruno|0" "07-florist-yorkshire|Florist Lily|0"; do IFS='|' read f n a <<<"$p"; [ $a = 1 ] && st="background:rgba(201,162,74,.25);border:2px solid #ffe28a" || st="border:1px solid #4a3a1a"; echo "<div class=s style='display:flex;align-items:center;gap:14px;padding:8px 12px;margin:6px 0;border-radius:12px;$st;font-size:19px'><img src='$C/$f.jpg' style='width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid #c9a24a'>$n$( [ $a = 1 ] && echo "<span style='margin-left:auto;color:#ffe28a;font-weight:700'>▶ YOUR TURN</span>")</div>"; done)
+</div>
+<div class=panel style="position:absolute;left:40px;top:720px;width:520px;padding:26px;text-align:center">
+<div style="display:flex;justify-content:center;gap:24px;margin-bottom:20px">
+<div style="width:90px;height:90px;border-radius:16px;background:linear-gradient(145deg,#fff8e0,#d8c28a);color:#1a1206;font-size:60px;line-height:90px;font-weight:900;box-shadow:0 6px 0 #6b5220,0 0 20px rgba(255,220,120,.6)">4</div>
+<div style="width:90px;height:90px;border-radius:16px;background:linear-gradient(145deg,#fff8e0,#d8c28a);color:#1a1206;font-size:60px;line-height:90px;font-weight:900;box-shadow:0 6px 0 #6b5220,0 0 20px rgba(255,220,120,.6)">3</div></div>
+<div class=s style="font-size:20px;margin-bottom:16px">You rolled <b style="color:#ffe28a">7</b> — move 7 spaces</div>
+<span class="btn gold">🎲 Roll Dice</span></div>
+<!-- right -->
+<div class=panel style="position:absolute;right:40px;top:40px;width:520px;padding:24px">
+<div class=g style="font-size:24px;font-weight:700;margin-bottom:12px">SPACE TYPES</div>
+$(for p in "🐾|Exploration" "🔍|Hidden Objects" "🛒|Shop" "❓|Surprise Event" "⚔️|Raid / Attack" "🛡️|Protection" "🎲|Progression" "👑|Level Up"; do IFS='|' read i n <<<"$p"; echo "<div class=s style='display:inline-flex;width:225px;align-items:center;gap:10px;margin:6px 0;font-size:18px'><span style='width:38px;height:38px;border-radius:50%;border:2px solid #c9a24a;background:#000;display:inline-flex;align-items:center;justify-content:center'>$i</span>$n</div>"; done)
+</div>
+<div class=panel style="position:absolute;right:40px;top:400px;width:520px;padding:34px;text-align:center;border-width:3px;box-shadow:0 0 60px rgba(255,200,90,.55),0 10px 40px #000">
+<div style="font-size:70px">🔍</div>
+<div class=g style="font-size:42px;font-weight:900;letter-spacing:2px">SEARCH SPACE!</div>
+<div class=s style="font-size:22px;margin:12px 0 6px">Hidden-object map unlocked</div>
+<div class=s style="font-size:18px;opacity:.75;margin-bottom:26px">Jewelry Street · Find 5 objects · 2:00</div>
+<span class="btn gold">Enter Map</span> &nbsp; <span class="btn ghost">Later</span></div>
+<div class=s style="position:absolute;right:40px;bottom:40px;width:520px;text-align:center;opacity:.7;font-size:16px;letter-spacing:3px">DOGZY TOWN · LEVEL 1 · CONCEPT</div>
+E
+sed -i 's/]*}//' c1.html
+google-chrome --headless --no-sandbox --hide-scrollbars --allow-file-access-from-files --window-size=1920,1080 --screenshot=concept1.png file://$PWD/c1.html 2>/dev/null; ls -la concept1.png0px;}
+</style><body><div class=dim></div>
+<div class=board><img src="/home/box/agent-data/agents/26426c55-a805-42ac-a891-44a5a67c3661/attachments/1d38f4e5c6bd790f63a9bec22d2db3d793b640b75260911bf1242cb1170bf271.png">
+<div style="position:absolute;left:244px;top:151px;width:44px;height:44px;border-radius:50%;border:4px solid #ffe28a;box-shadow:0 0 30px 10px rgba(255,210,100,.9);animation:none"></div>
+<img src="/workspace/dogzy-demo/assets/characters/00a-chef-golden-retriever.jpg" style="position:absolute;left:236px;top:75px;width:60px;height:60px;border-radius:50%;border:3px solid #ffe28a;object-fit:cover;box-shadow:0 6px 16px #000">
+</div>
+<!-- left -->
+<div class=panel style="position:absolute;left:40px;top:40px;width:520px;padding:24px;display:flex;gap:20px;align-items:center">
+<img src="/workspace/dogzy-demo/assets/characters/00a-chef-golden-retriever.jpg" style="width:150px;height:200px;object-fit:cover;border-radius:12px;border:2px solid #c9a24a">
+<div><div class="g" style="font-size:34px;font-weight:700">CHEF GOLDIE</div><div class=s style="font-size:17px;opacity:.8;margin:4px 0 14px">Golden Retriever · Level 1 Chef</div>
+<div class=s style="font-size:15px">XP</div><div style="height:12px;width:300px;background:#222;border-radius:8px;border:1px solid #6b5220"><div style="width:62%;height:100%;background:linear-gradient(90deg,#8a5d16,#ffe28a);border-radius:8px"></div></div>
+<div class=s style="margin-top:14px;font-size:22px">🪙 <b>12,450</b> &nbsp; 💎 <b>38</b></div></div></div>
+<div class=panel style="position:absolute;left:40px;top:320px;width:520px;padding:22px">
+<div class=g style="font-size:24px;font-weight:700;margin-bottom:14px">TURN ORDER · ROUND 7</div>
+<div class=s style='display:flex;align-items:center;gap:14px;padding:8px 12px;margin:6px 0;border-radius:12px;background:rgba(201,162,74,.25);border:2px solid #ffe28a;font-size:19px'><img src='/workspace/dogzy-demo/assets/characters/00a-chef-golden-retriever.jpg' style='width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid #c9a24a'>Chef Goldie (You)<span style='margin-left:auto;color:#ffe28a;font-weight:700'>▶ YOUR TURN</span></div>
+<div class=s style='display:flex;align-items:center;gap:14px;padding:8px 12px;margin:6px 0;border-radius:12px;border:1px solid #4a3a1a;font-size:19px'><img src='/workspace/dogzy-demo/assets/characters/01-police-officer-german-shepherd.jpg' style='width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid #c9a24a'>Officer Rex</div>
+<div class=s style='display:flex;align-items:center;gap:14px;padding:8px 12px;margin:6px 0;border-radius:12px;border:1px solid #4a3a1a;font-size:19px'><img src='/workspace/dogzy-demo/assets/characters/05-lawyer-bulldog.jpg' style='width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid #c9a24a'>Lawyer Bruno</div>
+<div class=s style='display:flex;align-items:center;gap:14px;padding:8px 12px;margin:6px 0;border-radius:12px;border:1px solid #4a3a1a;font-size:19px'><img src='/workspace/dogzy-demo/assets/characters/07-florist-yorkshire.jpg' style='width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid #c9a24a'>Florist Lily</div>
+</div>
+<div class=panel style="position:absolute;left:40px;top:720px;width:520px;padding:26px;text-align:center">
+<div style="display:flex;justify-content:center;gap:24px;margin-bottom:20px">
+<div style="width:90px;height:90px;border-radius:16px;background:linear-gradient(145deg,#fff8e0,#d8c28a);color:#1a1206;font-size:60px;line-height:90px;font-weight:900;box-shadow:0 6px 0 #6b5220,0 0 20px rgba(255,220,120,.6)">4</div>
+<div style="width:90px;height:90px;border-radius:16px;background:linear-gradient(145deg,#fff8e0,#d8c28a);color:#1a1206;font-size:60px;line-height:90px;font-weight:900;box-shadow:0 6px 0 #6b5220,0 0 20px rgba(255,220,120,.6)">3</div></div>
+<div class=s style="font-size:20px;margin-bottom:16px">You rolled <b style="color:#ffe28a">7</b> — move 7 spaces</div>
+<span class="btn gold">🎲 Roll Dice</span></div>
+<!-- right -->
+<div class=panel style="position:absolute;right:40px;top:40px;width:520px;padding:24px">
+<div class=g style="font-size:24px;font-weight:700;margin-bottom:12px">SPACE TYPES</div>
+<div class=s style='display:inline-flex;width:225px;align-items:center;gap:10px;margin:6px 0;font-size:18px'><span style='width:38px;height:38px;border-radius:50%;border:2px solid #c9a24a;background:#000;display:inline-flex;align-items:center;justify-content:center'>🐾</span>Exploration</div>
+<div class=s style='display:inline-flex;width:225px;align-items:center;gap:10px;margin:6px 0;font-size:18px'><span style='width:38px;height:38px;border-radius:50%;border:2px solid #c9a24a;background:#000;display:inline-flex;align-items:center;justify-content:center'>🔍</span>Hidden Objects</div>
+<div class=s style='display:inline-flex;width:225px;align-items:center;gap:10px;margin:6px 0;font-size:18px'><span style='width:38px;height:38px;border-radius:50%;border:2px solid #c9a24a;background:#000;display:inline-flex;align-items:center;justify-content:center'>🛒</span>Shop</div>
+<div class=s style='display:inline-flex;width:225px;align-items:center;gap:10px;margin:6px 0;font-size:18px'><span style='width:38px;height:38px;border-radius:50%;border:2px solid #c9a24a;background:#000;display:inline-flex;align-items:center;justify-content:center'>❓</span>Surprise Event</div>
+<div class=s style='display:inline-flex;width:225px;align-items:center;gap:10px;margin:6px 0;font-size:18px'><span style='width:38px;height:38px;border-radius:50%;border:2px solid #c9a24a;background:#000;display:inline-flex;align-items:center;justify-content:center'>⚔️</span>Raid / Attack</div>
+<div class=s style='display:inline-flex;width:225px;align-items:center;gap:10px;margin:6px 0;font-size:18px'><span style='width:38px;height:38px;border-radius:50%;border:2px solid #c9a24a;background:#000;display:inline-flex;align-items:center;justify-content:center'>🛡️</span>Protection</div>
+<div class=s style='display:inline-flex;width:225px;align-items:center;gap:10px;margin:6px 0;font-size:18px'><span style='width:38px;height:38px;border-radius:50%;border:2px solid #c9a24a;background:#000;display:inline-flex;align-items:center;justify-content:center'>🎲</span>Progression</div>
+<div class=s style='display:inline-flex;width:225px;align-items:center;gap:10px;margin:6px 0;font-size:18px'><span style='width:38px;height:38px;border-radius:50%;border:2px solid #c9a24a;background:#000;display:inline-flex;align-items:center;justify-content:center'>👑</span>Level Up</div>
+</div>
+<div class=panel style="position:absolute;right:40px;top:400px;width:520px;padding:34px;text-align:center;border-width:3px;box-shadow:0 0 60px rgba(255,200,90,.55),0 10px 40px #000">
+<div style="font-size:70px">🔍</div>
+<div class=g style="font-size:42px;font-weight:900;letter-spacing:2px">SEARCH SPACE!</div>
+<div class=s style="font-size:22px;margin:12px 0 6px">Hidden-object map unlocked</div>
+<div class=s style="font-size:18px;opacity:.75;margin-bottom:26px">Jewelry Street · Find 5 objects · 2:00</div>
+<span class="btn gold">Enter Map</span> &nbsp; <span class="btn ghost">Later</span></div>
+<div class=s style="position:absolute;right:40px;bottom:40px;width:520px;text-align:center;opacity:.7;font-size:16px;letter-spacing:3px">DOGZY TOWN · LEVEL 1 · CONCEPT</div>

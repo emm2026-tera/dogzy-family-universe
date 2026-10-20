@@ -1,0 +1,227 @@
+=== page 0
+  DR f (0.043, 0.043, 0.051) None None (0.0, 0.0, 612.0, 792.0)
+  DR s None (0.831, 0.686, 0.216) 1.0 (186.0, 560.0, 426.0, 560.0)
+  IMG (141.0, 150.0, 471.0, 480.0)
+  Times-Bold|40.0|d4af37|87.6,500.6,524.4,556.0|542.32|DOGZY TOKENOMICS
+  Helvetica-Oblique|13.0|f5f0e6|173.3,573.4,438.7,591.0|587.33|L'économie de jeton qui alimente Dogzy Town
+  Helvetica|10.0|b3a98f|162.5,661.4,449.5,675.2|672.18|The Dogzy Family Universe  |  Avalanche C-Chain  |  Juillet 2026
+  Helvetica|10.0|b3a98f|247.1,677.4,364.9,691.2|688.18|thedogzyfamilyuniverse.ca
+  Helvetica|9.0|b3a98f|190.4,708.8,421.6,721.2|718.46|© 2026 The Dogzy Family Universe. Tous droits réservés.
+  Helvetica|9.0|b3a98f|139.2,722.8,472.8,735.2|732.46|Document confidentiel — reproduction ou diffusion interdite sans autorisation écrite.
+=== page 1
+  DR f (0.043, 0.043, 0.051) None None (0.0, 0.0, 612.0, 792.0)
+  DR s None (0.831, 0.686, 0.216) 1.0 (54.0, 94.0, 114.0, 94.0)
+  DR s None (0.165, 0.165, 0.188) 0.5 (54.0, 748.0, 558.0, 748.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 190.0, 558.0, 218.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 224.0, 558.0, 252.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 258.0, 558.0, 286.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 292.0, 558.0, 320.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 326.0, 558.0, 354.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 360.0, 558.0, 388.0)
+  Times-Bold|24.0|d4af37|54.0,55.3,220.7,88.6|80.39|Aperçu du jeton
+  Helvetica|8.0|b3a98f|54.0,753.1,434.8,764.1|761.74|© 2026 The Dogzy Family Universe  |  DOGZY Tokenomics  |  Tous droits réservés - Document confidentiel
+  Helvetica|8.0|b3a98f|553.6,753.1,558.0,764.1|761.74|2
+  Helvetica|11.0|f5f0e6|54.0,110.1,554.9,125.2|121.90|$DOGZY est le jeton utilitaire natif du Dogzy Family Universe, déployé sur Avalanche C-Chain. C'est la
+  Helvetica|11.0|f5f0e6|54.0,126.1,556.6,141.2|137.90|monnaie de Dogzy Town : chaque achat, récompense, mise en staking et vote de gouvernance dans la
+  Helvetica|11.0|f5f0e6|54.0,142.1,187.3,157.2|153.90|ville fonctionne au DOGZY.
+  Helvetica-Bold|10.0|d4af37|68.0,196.5,131.9,210.2|207.18|Nom du jeton
+  Helvetica|10.0|f5f0e6|224.0,196.4,259.6,210.2|207.18|DOGZY
+  Helvetica-Bold|10.0|d4af37|68.0,230.5,91.3,244.2|241.18|Type
+  Helvetica|10.0|f5f0e6|224.0,230.4,361.8,244.2|241.18|Jeton utilitaire (norme ERC-20)
+  Helvetica-Bold|10.0|d4af37|68.0,264.5,103.6,278.2|275.18|Réseau
+  Helvetica|10.0|f5f0e6|224.0,264.4,382.4,278.2|275.18|Avalanche C-Chain (chainId 43114)
+  Helvetica-Bold|10.0|d4af37|68.0,298.5,121.3,312.2|309.18|Offre totale
+  Helvetica|10.0|f5f0e6|224.0,298.4,415.2,312.2|309.18|1 000 000 000 DOGZY (fixe, sans inflation)
+  Helvetica-Bold|10.0|d4af37|68.0,332.5,179.7,346.2|343.18|Début de la distribution
+  Helvetica|10.0|f5f0e6|224.0,332.4,491.9,346.2|343.18|Inclus avec chaque NFT Jetset VIP - 1 000 DOGZY par NFT
+  Helvetica-Bold|10.0|d4af37|68.0,366.5,149.1,380.2|377.18|Suite de contrats
+  Helvetica|10.0|f5f0e6|224.0,366.4,468.6,380.2|377.18|8 contrats intelligents audités - score de sécurité 9,3/10
+  Helvetica-Oblique|10.5|b3a98f|54.0,392.3,532.7,406.5|403.54|Principe de conception : le DOGZY se gagne et s'utilise à l'intérieur d'un écosystème de divertissement
+  Helvetica-Oblique|10.5|b3a98f|54.0,407.3,529.6,421.5|418.54|vivant. Sa proposition de valeur repose sur l'utilité et l'engagement - non sur une émission spéculative.
+=== page 2
+  DR f (0.043, 0.043, 0.051) None None (0.0, 0.0, 612.0, 792.0)
+  DR s None (0.831, 0.686, 0.216) 1.0 (54.0, 94.0, 114.0, 94.0)
+  DR s None (0.165, 0.165, 0.188) 0.5 (54.0, 748.0, 558.0, 748.0)
+  DR f (0.831, 0.686, 0.216) None None (309.0, 125.0, 319.0, 135.0)
+  DR f (0.722, 0.569, 0.18) None None (309.0, 149.0, 319.0, 159.0)
+  DR f (0.561, 0.435, 0.137) None None (309.0, 173.0, 319.0, 183.0)
+  DR f (0.42, 0.325, 0.106) None None (309.0, 197.0, 319.0, 207.0)
+  DR f (0.906, 0.788, 0.392) None None (309.0, 221.0, 319.0, 231.0)
+  DR f (0.29, 0.227, 0.075) None None (309.0, 245.0, 319.0, 255.0)
+  DR s None (0.659, 0.537, 0.227) 0.75 (54.0, 397.0, 558.0, 397.0)
+  DR s None (0.165, 0.165, 0.188) 0.4000000059604645 (54.0, 429.0, 558.0, 429.0)
+  DR s None (0.165, 0.165, 0.188) 0.4000000059604645 (54.0, 451.0, 558.0, 451.0)
+  DR s None (0.165, 0.165, 0.188) 0.4000000059604645 (54.0, 473.0, 558.0, 473.0)
+  DR s None (0.165, 0.165, 0.188) 0.4000000059604645 (54.0, 495.0, 558.0, 495.0)
+  DR s None (0.165, 0.165, 0.188) 0.4000000059604645 (54.0, 517.0, 558.0, 517.0)
+  DR s None (0.165, 0.165, 0.188) 0.4000000059604645 (54.0, 539.0, 558.0, 539.0)
+  Times-Bold|24.0|d4af37|54.0,55.3,279.3,88.6|80.39|Répartition des jetons
+  Helvetica|8.0|b3a98f|54.0,753.1,434.8,764.1|761.74|© 2026 The Dogzy Family Universe  |  DOGZY Tokenomics  |  Tous droits réservés - Document confidentiel
+  Helvetica|8.0|b3a98f|553.6,753.1,558.0,764.1|761.74|3
+  IMG (46.0, 124.0, 281.0, 359.0)
+  Helvetica|10.0|f5f0e6|327.0,121.4,483.2,135.2|132.18|Communauté et récompenses NFT
+  Helvetica-Bold|10.0|d4af37|535.2,121.5,558.0,135.2|132.18|30 %
+  Helvetica|10.0|f5f0e6|327.0,145.4,439.3,159.2|156.18|Récompenses de staking
+  Helvetica-Bold|10.0|d4af37|535.2,145.5,558.0,159.2|156.18|20 %
+  Helvetica|10.0|f5f0e6|327.0,169.4,446.7,183.2|180.18|Trésorerie de l'écosystème
+  Helvetica-Bold|10.0|d4af37|535.2,169.5,558.0,183.2|180.18|20 %
+  Helvetica|10.0|f5f0e6|327.0,193.4,468.7,207.2|204.18|Fondatrice (acquisition 36 mois)
+  Helvetica-Bold|10.0|d4af37|535.2,193.5,558.0,207.2|204.18|15 %
+  Helvetica|9.75|f5f0e6|327.0,217.5,524.8,230.9|228.00|Partenaires stratégiques (acquisition 24 mois)
+  Helvetica-Bold|10.0|d4af37|535.2,217.5,558.0,231.2|228.18|10 %
+  Helvetica|10.0|f5f0e6|327.0,241.4,428.1,255.2|252.18|Liquidité et inscriptions
+  Helvetica-Bold|10.0|d4af37|540.8,241.5,558.0,255.2|252.18|5 %
+  Helvetica-Bold|9.5|d4af37|54.0,378.7,118.4,391.7|388.82|RÉPARTITION
+  Helvetica-Bold|9.5|d4af37|229.0,378.7,267.0,391.7|388.82|JETONS
+  Helvetica-Bold|9.5|d4af37|339.0,378.7,386.0,391.7|388.82|OBJECTIF
+  Helvetica-Bold|9.0|f5f0e6|54.0,407.8,202.5,420.2|417.46|Communauté et récompenses NFT
+  Helvetica|9.0|d4af37|229.0,407.8,279.0,420.2|417.46|300 000 000
+  Helvetica|7.5|b3a98f|339.0,408.8,557.6,419.1|416.89|Distribués via l'inclusion NFT, le jeu et les récompenses de la ville
+  Helvetica-Bold|9.0|f5f0e6|54.0,429.8,162.0,442.2|439.46|Récompenses de staking
+  Helvetica|9.0|d4af37|229.0,429.8,279.0,442.2|439.46|200 000 000
+  Helvetica|7.75|b3a98f|339.0,430.7,553.9,441.4|439.06|Distribuées via DogzyStaking sur des émissions pluriannuelles
+  Helvetica-Bold|9.0|f5f0e6|54.0,451.8,169.7,464.2|461.46|Trésorerie de l'écosystème
+  Helvetica|9.0|d4af37|229.0,451.8,279.0,464.2|461.46|200 000 000
+  Helvetica|7.0|b3a98f|339.0,453.0,553.4,462.6|460.53|Réserve gouvernée par la DAO : croissance, partenariats, opérations
+  Helvetica-Bold|9.0|f5f0e6|54.0,473.8,100.0,486.2|483.46|Fondatrice
+  Helvetica|9.0|d4af37|229.0,473.8,279.0,486.2|483.46|150 000 000
+  Helvetica|8.5|b3a98f|339.0,474.5,524.2,486.1|483.60|Acquisition linéaire sur 36 mois via DogzyVesting
+  Helvetica-Bold|9.0|f5f0e6|54.0,495.8,159.0,508.2|505.46|Partenaires stratégiques
+  Helvetica|9.0|d4af37|229.0,495.8,279.0,508.2|505.46|100 000 000
+  Helvetica|8.5|b3a98f|339.0,496.5,524.2,508.1|505.60|Acquisition linéaire sur 24 mois via DogzyVesting
+  Helvetica-Bold|9.0|f5f0e6|54.0,517.8,155.5,530.2|527.46|Liquidité et inscriptions
+  Helvetica|9.0|d4af37|229.0,517.8,274.0,530.2|527.46|50 000 000
+  Helvetica|8.5|b3a98f|339.0,518.5,485.0,530.1|527.60|Liquidité DEX et inscriptions en bourse
+=== page 3
+  DR f (0.043, 0.043, 0.051) None None (0.0, 0.0, 612.0, 792.0)
+  DR s None (0.831, 0.686, 0.216) 1.0 (54.0, 94.0, 114.0, 94.0)
+  DR s None (0.165, 0.165, 0.188) 0.5 (54.0, 748.0, 558.0, 748.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 156.0, 558.0, 206.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 214.0, 558.0, 264.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 272.0, 558.0, 322.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 330.0, 558.0, 380.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 388.0, 558.0, 438.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 446.0, 558.0, 496.0)
+  Times-Bold|24.0|d4af37|54.0,55.3,208.7,88.6|80.39|Utilité du jeton
+  Helvetica|8.0|b3a98f|54.0,753.1,434.8,764.1|761.74|© 2026 The Dogzy Family Universe  |  DOGZY Tokenomics  |  Tous droits réservés - Document confidentiel
+  Helvetica|8.0|b3a98f|553.6,753.1,558.0,764.1|761.74|4
+  Helvetica|11.0|f5f0e6|54.0,110.1,538.4,125.2|121.90|Le DOGZY est conçu pour circuler constamment à l'intérieur de Dogzy Town. Six utilités principales
+  Helvetica|11.0|f5f0e6|54.0,126.1,171.4,141.2|137.90|alimentent la demande :
+  Helvetica-Bold|11.0|d4af37|68.0,160.1,165.2,175.3|171.90|Commerce en ville
+  Helvetica|9.0|f5f0e6|68.0,177.8,525.6,190.2|187.46|Acheter accessoires, bâtiments et services dans Dogzy Town. Toute la progression d'un personnage - d'employé à
+  Helvetica|9.0|f5f0e6|68.0,189.8,261.8,202.2|199.46|propriétaire d'entreprise - fonctionne au DOGZY.
+  Helvetica-Bold|11.0|d4af37|68.0,218.1,107.7,233.3|229.90|Staking
+  Helvetica|9.0|f5f0e6|68.0,235.8,542.2,248.2|245.46|Bloquer des DOGZY dans le contrat DogzyStaking pour gagner des récompenses et débloquer des privilèges premium
+  Helvetica|9.0|f5f0e6|68.0,247.8,117.5,260.2|257.46|dans la ville.
+  Helvetica-Bold|11.0|d4af37|68.0,276.1,138.3,291.3|287.90|Gouvernance
+  Helvetica|9.0|f5f0e6|68.0,293.8,509.7,306.2|303.46|Voter sur les décisions de la ville via DogzyGovernance, protégé par un verrou temporel on-chain. Les rôles de
+  Helvetica|9.0|f5f0e6|68.0,305.8,262.6,318.2|315.46|conseiller et de maire amplifient le poids du vote.
+  Helvetica-Bold|11.0|d4af37|68.0,334.1,106.5,349.3|345.90|Marché
+  Helvetica|9.0|f5f0e6|68.0,351.8,541.4,364.2|361.46|La monnaie native du DogzyMarketplace pour les échanges de personnages, d'accessoires et de bâtiments - avec des
+  Helvetica|9.0|f5f0e6|68.0,363.8,243.1,376.2|373.46|redevances perpétuelles pour les créateurs.
+  Helvetica-Bold|11.0|d4af37|68.0,392.1,217.8,407.3|403.90|Enchères Or hebdomadaires
+  Helvetica|9.0|f5f0e6|68.0,409.8,539.7,422.2|419.46|Les cartes du palier Or sont mises aux enchères chaque semaine ; le DOGZY est la monnaie de mise, ce qui crée des
+  Helvetica|9.0|f5f0e6|68.0,421.8,191.0,434.2|431.46|cycles de demande récurrents.
+  Helvetica-Bold|11.0|d4af37|68.0,450.1,194.5,465.3|461.90|Moteur de récompenses
+  Helvetica|9.0|f5f0e6|68.0,467.8,513.7,480.2|477.46|DogzyRewards distribue des récompenses garanties en jetons aux collectionneurs - un mécanisme entièrement
+  Helvetica|9.0|f5f0e6|68.0,479.8,227.6,492.2|489.46|conforme (aucun tirage, aucune loterie).
+=== page 4
+  DR f (0.043, 0.043, 0.051) None None (0.0, 0.0, 612.0, 792.0)
+  DR s None (0.831, 0.686, 0.216) 1.0 (54.0, 94.0, 114.0, 94.0)
+  DR s None (0.165, 0.165, 0.188) 0.5 (54.0, 748.0, 558.0, 748.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 160.0, 558.0, 224.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 234.0, 558.0, 298.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 308.0, 558.0, 372.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 382.0, 558.0, 446.0)
+  Times-Bold|24.0|d4af37|54.0,55.3,324.7,88.6|80.39|Mécanique de distribution
+  Helvetica|8.0|b3a98f|54.0,753.1,434.8,764.1|761.74|© 2026 The Dogzy Family Universe  |  DOGZY Tokenomics  |  Tous droits réservés - Document confidentiel
+  Helvetica|8.0|b3a98f|553.6,753.1,558.0,764.1|761.74|5
+  Helvetica|11.0|f5f0e6|54.0,110.1,494.5,125.2|121.90|Le DOGZY entre en circulation par l'engagement, et non par une vente publique de jetons.
+  Times-Bold|26.0|d4af37|72.0,168.6,85.0,204.6|195.76|1
+  Helvetica-Bold|11.5|d4af37|106.0,164.0,182.0,179.8|176.26|Inclusion NFT
+  Helvetica|9.0|f5f0e6|106.0,182.8,533.7,195.2|192.46|Chaque NFT Jetset VIP est livré avec 1 000 DOGZY. La première collection à elle seule (58 personnages x
+  Helvetica|9.0|f5f0e6|106.0,194.8,402.6,207.2|204.46|20 éditions) achemine 1 160 000 DOGZY directement aux collectionneurs.
+  Times-Bold|26.0|d4af37|72.0,242.6,85.0,278.6|269.76|2
+  Helvetica-Bold|11.5|d4af37|106.0,238.0,214.0,253.8|250.26|Jouer et progresser
+  Helvetica|9.0|f5f0e6|106.0,256.8,532.7,269.2|266.46|Les personnages gagnent des DOGZY en travaillant, en progressant et en possédant des entreprises dans
+  Helvetica|9.0|f5f0e6|106.0,268.8,332.6,281.2|278.46|Dogzy Town - une récompense de la participation active.
+  Times-Bold|26.0|d4af37|72.0,316.6,85.0,352.6|343.76|3
+  Helvetica-Bold|11.5|d4af37|106.0,312.0,214.0,327.8|324.26|Staker et gouverner
+  Helvetica|9.0|f5f0e6|106.0,330.8,542.4,343.2|340.46|Les collectionneurs mettent leurs gains en staking pour le rendement et le pouvoir de vote, ce qui réduit l'offre
+  Helvetica|9.0|f5f0e6|106.0,342.8,314.3,355.2|352.46|en circulation tout en approfondissant l'engagement.
+  Times-Bold|26.0|d4af37|72.0,390.6,85.0,426.6|417.76|4
+  Helvetica-Bold|11.5|d4af37|106.0,386.0,244.1,401.8|398.26|Dépenser et faire circuler
+  Helvetica|9.0|f5f0e6|106.0,404.8,523.6,417.2|414.46|Le DOGZY revient dans le circuit par le commerce de la ville, les enchères et le marché - les redevances
+  Helvetica|9.0|f5f0e6|106.0,416.8,270.1,429.2|426.46|alimentant la trésorerie pour la pérennité.
+  Helvetica-Oblique|9.5|b3a98f|54.0,439.7,543.0,452.5|449.82|Note de conformité : le modèle de récompense au lancement utilise des récompenses garanties en jetons plutôt que
+  Helvetica-Oblique|9.5|b3a98f|54.0,452.7,542.4,465.5|462.82|des tirages au hasard. Un mécanisme de tirage sous licence distinct (demande déposée à la RACJ, Québec) pourra
+  Helvetica-Oblique|9.5|b3a98f|54.0,465.7,164.9,478.5|475.82|suivre après le lancement.
+=== page 5
+  DR f (0.043, 0.043, 0.051) None None (0.0, 0.0, 612.0, 792.0)
+  DR s None (0.831, 0.686, 0.216) 1.0 (54.0, 94.0, 114.0, 94.0)
+  DR s None (0.165, 0.165, 0.188) 0.5 (54.0, 748.0, 558.0, 748.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 189.0, 298.0, 233.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (314.0, 189.0, 558.0, 233.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 241.0, 298.0, 285.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (314.0, 241.0, 558.0, 285.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 293.0, 298.0, 337.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (314.0, 293.0, 558.0, 337.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 345.0, 298.0, 389.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (314.0, 345.0, 558.0, 389.0)
+  Times-Bold|24.0|d4af37|54.0,55.3,431.9,88.6|80.39|Architecture des contrats intelligents
+  Helvetica|8.0|b3a98f|54.0,753.1,434.8,764.1|761.74|© 2026 The Dogzy Family Universe  |  DOGZY Tokenomics  |  Tous droits réservés - Document confidentiel
+  Helvetica|8.0|b3a98f|553.6,753.1,558.0,764.1|761.74|6
+  Helvetica|10.5|f5f0e6|54.0,110.3,541.3,124.7|121.54|Huit contrats interconnectés forment une économie on-chain complète, auditée à un score de sécurité de
+  Helvetica|10.5|f5f0e6|54.0,125.3,553.0,139.7|136.54|9,3/10 avec trois protections critiques : verrou temporel de gouvernance DAO, vérification des approbations
+  Helvetica|10.5|f5f0e6|54.0,140.3,241.9,154.7|151.54|du marché et oracle de staking renforcé.
+  Helvetica-Bold|11.0|d4af37|67.0,193.1,132.4,208.3|204.90|DogzyToken
+  Helvetica|8.5|b3a98f|67.0,210.0,220.1,221.6|219.10|Jeton utilitaire ERC-20 - offre fixe de 1 G
+  Helvetica-Bold|11.0|d4af37|327.0,193.1,381.4,208.3|204.90|DogzyNFT
+  Helvetica|8.5|b3a98f|327.0,210.0,541.0,221.6|219.10|Collections de personnages - 6 sous-collections, éditions
+  Helvetica|8.5|b3a98f|327.0,220.0,366.7,231.6|229.10|par paliers
+  Helvetica-Bold|11.0|d4af37|67.0,245.1,163.6,260.3|256.90|DogzyMarketplace
+  Helvetica|8.5|b3a98f|67.0,262.0,253.8,273.6|271.10|Plateforme d'échange native avec application des
+  Helvetica|8.5|b3a98f|67.0,272.0,110.9,283.6|281.10|redevances
+  Helvetica-Bold|11.0|d4af37|327.0,245.1,406.5,260.3|256.90|DogzyTreasury
+  Helvetica|8.5|b3a98f|327.0,262.0,508.6,273.6|271.10|Réserve de l'écosystème gouvernée par la DAO
+  Helvetica-Bold|11.0|d4af37|67.0,297.1,139.7,312.3|308.90|DogzyStaking
+  Helvetica|8.5|b3a98f|67.0,314.0,273.5,325.6|323.10|Staking de rendement et de privilèges avec flux de prix
+  Helvetica|8.5|b3a98f|67.0,324.0,102.9,335.6|333.10|sécurisés
+  Helvetica-Bold|11.0|d4af37|327.0,297.1,423.6,312.3|308.90|DogzyGovernance
+  Helvetica|8.5|b3a98f|327.0,314.0,513.1,325.6|323.10|Vote communautaire protégé par verrou temporel
+  Helvetica-Bold|11.0|d4af37|67.0,349.1,139.7,364.3|360.90|DogzyVesting
+  Helvetica|8.5|b3a98f|67.0,366.0,273.4,377.6|375.10|Acquisition linéaire pour la fondatrice et les partenaires
+  Helvetica-Bold|11.0|d4af37|327.0,349.1,405.8,364.3|360.90|DogzyRewards
+  Helvetica|8.5|b3a98f|327.0,366.0,511.2,377.6|375.10|Moteur de distribution de récompenses garanties
+  Helvetica-Oblique|9.5|b3a98f|54.0,388.7,512.9,401.5|398.82|Réseau : Avalanche C-Chain (mainnet 43114 / testnet Fuji 43113), EVM « paris ». Déploiement géré avec un
+  Helvetica-Oblique|9.5|b3a98f|54.0,401.7,202.4,414.5|411.82|partenaire professionnel à Québec.
+=== page 6
+  DR f (0.043, 0.043, 0.051) None None (0.0, 0.0, 612.0, 792.0)
+  DR s None (0.831, 0.686, 0.216) 1.0 (54.0, 94.0, 114.0, 94.0)
+  DR s None (0.165, 0.165, 0.188) 0.5 (54.0, 748.0, 558.0, 748.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 132.0, 558.0, 184.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 194.0, 558.0, 246.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 256.0, 558.0, 308.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 318.0, 558.0, 370.0)
+  DR fs (0.09, 0.09, 0.11) (0.165, 0.165, 0.188) 0.75 (54.0, 380.0, 558.0, 432.0)
+  Times-Bold|24.0|d4af37|54.0,55.3,292.6,88.6|80.39|Pérennité et garde-fous
+  Helvetica|8.0|b3a98f|54.0,753.1,434.8,764.1|761.74|© 2026 The Dogzy Family Universe  |  DOGZY Tokenomics  |  Tous droits réservés - Document confidentiel
+  Helvetica|8.0|b3a98f|553.6,753.1,558.0,764.1|761.74|7
+  Helvetica-Bold|11.0|d4af37|68.0,135.1,193.3,150.3|146.90|Offre fixe, sans inflation
+  Helvetica|9.0|f5f0e6|68.0,153.8,511.9,166.2|163.46|Plafond strict de 1 G. La nouvelle circulation provient uniquement des réserves allouées - jamais d'une nouvelle
+  Helvetica|9.0|f5f0e6|68.0,165.8,106.0,178.2|175.46|émission.
+  Helvetica-Bold|11.0|d4af37|68.0,197.1,217.1,212.3|208.90|Alignement des acquisitions
+  Helvetica|9.0|f5f0e6|68.0,215.8,538.9,228.2|225.46|Les jetons de la fondatrice (36 mois) et des partenaires (24 mois) s'acquièrent linéairement on-chain via DogzyVesting
+  Helvetica|9.0|f5f0e6|68.0,227.8,273.6,240.2|237.46|- aucun déblocage massif, vérifiable par quiconque.
+  Helvetica-Bold|11.0|d4af37|68.0,259.1,222.1,274.3|270.90|Trésorerie sous gouvernance
+  Helvetica|9.0|f5f0e6|68.0,277.8,438.4,290.2|287.46|Les fonds de l'écosystème ne bougent que par des votes DAO protégés par verrou temporel.
+  Helvetica-Bold|11.0|d4af37|68.0,321.1,226.5,336.3|332.90|Roue d'inertie des redevances
+  Helvetica|9.0|f5f0e6|68.0,339.8,503.7,352.2|349.46|Les redevances perpétuelles du marché réalimentent continuellement la trésorerie, finançant récompenses et
+  Helvetica|9.0|f5f0e6|68.0,351.8,236.6,364.2|361.46|développement sans nouvelles émissions.
+  Helvetica-Bold|11.0|d4af37|68.0,383.1,248.3,398.3|394.90|Conception axée sur la conformité
+  Helvetica|9.0|f5f0e6|68.0,401.8,512.7,414.2|411.46|Mécaniques de lancement à récompenses garanties ; demande de licence de tirage déposée (RACJ, Québec) ;
+  Helvetica|9.0|f5f0e6|68.0,413.8,317.6,426.2|423.46|révision juridique complétée pour les modèles de récompense.
+  Helvetica-Oblique|8.5|b3a98f|54.0,431.0,557.6,442.5|440.10|Avertissement : le DOGZY est un jeton utilitaire destiné à être utilisé au sein du Dogzy Family Universe. Ce document est fourni à titre
+  Helvetica-Oblique|8.5|b3a98f|54.0,443.0,556.2,454.5|452.10|informatif et ne constitue ni un conseil financier ni une offre de valeurs mobilières. Les chiffres reflètent le modèle de jeton au moment
+  Helvetica-Oblique|8.5|b3a98f|54.0,455.0,285.5,466.5|464.10|de la rédaction et seront finalisés au déploiement en mainnet.
+  Times-Bold|13.0|d4af37|133.2,694.3,478.8,712.3|707.88|Le ciel n'est pas la limite. C'est là que commence Dogzy Town.

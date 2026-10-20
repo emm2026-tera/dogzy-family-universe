@@ -1,0 +1,37 @@
+{
+ "note": "Configurable DOGZY price table, same for every character. fee = price to unlock the level (level 1 fee = character unlock). item = items 1-4. gold = item 5 (GOLD). Owning all 5 items of a level completes it and allows paying the next level's fee. business = price of each purchasable business (Businesses tab).",
+ "startingBalance": 100,
+ "levels": [
+  {
+   "level": 1,
+   "fee": 15,
+   "item": 5,
+   "gold": 10
+  },
+  {
+   "level": 2,
+   "fee": 10,
+   "item": 5,
+   "gold": 10
+  },
+  {
+   "level": 3,
+   "fee": 15,
+   "item": 5,
+   "gold": 10
+  },
+  {
+   "level": 4,
+   "fee": 15,
+   "item": 5,
+   "gold": 10
+  },
+  {
+   "level": 5,
+   "fee": 15,
+   "item": 5,
+   "gold": 20
+  }
+ ],
+ "business": 50
+}
