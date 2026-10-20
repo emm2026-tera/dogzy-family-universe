@@ -199,10 +199,11 @@
     },
     {
       "id": "PE24",
-      "titre": "Vêtements à la sécheuse",
-      "texte": "Ton accessoire a rétréci. Perds un accessoire.",
+      "titre": "Accessoire perdu",
+      "texte": "Tu perds le dernier accessoire que tu as acquis, et pendant 3 tours tu ne peux pas faire évoluer tes accessoires.",
       "effet": {
-        "lose_accessory": 1
+        "lose_last_accessory": 1,
+        "no_accessory_upgrade_turns": 3
       }
     },
     {
