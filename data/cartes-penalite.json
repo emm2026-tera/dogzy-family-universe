@@ -1,0 +1,16 @@
+{
+  "pack": "Pénalité",
+  "couleur": "rouge",
+  "jeu": "The Adoles-chiant of Dogzy Town",
+  "copyright": "© 2026 Sania Labbé (Valkyrie)",
+  "cartes": [
+    {
+      "id": "PE01",
+      "titre": "Remboursement de taxe",
+      "texte": "Rembourse la taxe prélevée au joueur à ta gauche.",
+      "effet": {
+        "refund_last_tax_to": "left_player"
+      }
+    }
+  ]
+}
