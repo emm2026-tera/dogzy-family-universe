@@ -365,6 +365,15 @@
         "nft_random": 1,
         "pool": "vip-23"
       }
+    },
+    {
+      "id": "CH44",
+      "titre": "Loyer boosté +50 %",
+      "texte": "Pendant 3 tours, chaque joueur qui tombe sur un de tes commerces paie 50 % de plus que le prix habituel !",
+      "effet": {
+        "commerce_rent_multiplier": 1.5,
+        "duration_turns": 3
+      }
     }
   ]
 }
