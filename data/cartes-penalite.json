@@ -109,7 +109,6 @@
       "titre": "Pickpocket Philzy",
       "texte": "Philzy te vole 60 pièces. Classique.",
       "effet": {
-        "lose_to_player": "philzy_owner_or_bank",
         "coins": -60
       }
     },
