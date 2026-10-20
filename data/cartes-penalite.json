@@ -342,11 +342,11 @@
     {
       "id": "PE41",
       "titre": "Même case !",
-      "texte": "Si un autre joueur se trouve sur la même case que toi, donne-lui 50 tokens.",
+      "texte": "Jusqu'à ton prochain tour, chaque joueur qui se trouve ou arrive sur ta case reçoit 50 tokens de ta part.",
       "effet": {
-        "if_shared_square_pay": 50,
-        "to": "player_on_same_square",
-        "timing": "immediate"
+        "pay_on_shared_square": 50,
+        "to": "each_player_on_or_arriving_square",
+        "duration": "until_next_own_turn"
       }
     }
   ]
