@@ -356,6 +356,15 @@
       "effet": {
         "coins": 300
       }
+    },
+    {
+      "id": "CH43",
+      "titre": "Carte NFT surprise",
+      "texte": "Tu gagnes au hasard une des 23 cartes NFT VIP Dogzy !",
+      "effet": {
+        "nft_random": 1,
+        "pool": "vip-23"
+      }
     }
   ]
 }
