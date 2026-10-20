@@ -382,6 +382,15 @@
         "move": 4,
         "pay_commerce_tax_each_square_passed": true
       }
+    },
+    {
+      "id": "PE46",
+      "titre": "Au tribunal !",
+      "texte": "Un contracteur te traîne au tribunal pour faute. Paie 500 tokens à la Banque.",
+      "effet": {
+        "coins": -500,
+        "to": "bank"
+      }
     }
   ]
 }
