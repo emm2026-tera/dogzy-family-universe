@@ -332,6 +332,14 @@
     },
     {
       "id": "CH40",
+      "titre": "Accessoire bonus gratuit",
+      "texte": "Reçois un accessoire gratuit pour ton personnage.",
+      "effet": {
+        "free_accessory": 1
+      }
+    },
+    {
+      "id": "CH41",
       "titre": "Jackpot Dogzy",
       "texte": "Le jackpot de Dogzy Town est à toi : 300 pièces !",
       "effet": {
