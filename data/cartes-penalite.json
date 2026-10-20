@@ -394,8 +394,8 @@
     },
     {
       "id": "PE47",
-      "titre": "Vol au commerce",
-      "texte": "Ton commerce a subi un vol ! Tu dois racheter l'équipement manquant grâce à un prêt : rembourse 250 tokens à la Banque.",
+      "titre": "Vol cette nuit",
+      "texte": "Tu as subi un vol cette nuit. Tu dois racheter le matériel qui a été volé. Paie à la Banque 250 tokens.",
       "effet": {
         "coins": -250,
         "to": "bank"
