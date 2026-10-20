@@ -375,6 +375,14 @@
         "duration_turns": 3,
         "once_per_player_per_turn": true
       }
+    },
+    {
+      "id": "CH45",
+      "titre": "Gagnant à la loto",
+      "texte": "Tu viens de gagner à la loto ! Reçois 500 tokens.",
+      "effet": {
+        "coins": 500
+      }
     }
   ]
 }
