@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0905">
+<title>Tetris Dogzy | Mini-jeux Dogzy</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="mj.css">
+<style>
+body{--bg:url(img/tile-fond.jpg)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 20% 10%,rgba(255,60,180,.25),transparent 55%),radial-gradient(ellipse at 80% 90%,rgba(255,200,60,.22),transparent 55%)}
+h1.gt{font-family:"Arial Black",Arial,sans-serif;color:#ffd23a;text-shadow:0 3px 0 #a0400a,0 0 16px rgba(255,180,40,.7)}
+h1.gt em{font-style:normal;color:#ff6ad0;text-shadow:0 3px 0 #6a0a4a,0 0 16px rgba(255,80,200,.7)}
+.tw{display:flex;gap:12px;justify-content:center;align-items:flex-start}
+#cv{display:block;border-radius:10px;background:rgba(8,4,14,.82);box-shadow:0 0 0 2px #d4af37,0 0 22px rgba(255,90,200,.55),inset 0 0 30px rgba(255,90,200,.15)}
+.side{display:flex;flex-direction:column;gap:8px;min-width:84px;font-size:13px;color:#e7d397;text-align:center}
+.side .bx{border:1px solid #d4af37;border-radius:10px;padding:6px;background:rgba(10,6,16,.75);box-shadow:0 0 10px rgba(255,90,200,.3)}
+.side b{display:block;color:#ffd23a;font-size:18px}
+#nx{display:block;margin:4px auto 0}
+.pad{display:flex;gap:8px;justify-content:center;margin:10px 0;flex-wrap:wrap}
+.pad button{width:56px;height:52px;border-radius:12px;border:2px solid #d4af37;background:linear-gradient(#3a1a3a,#150a18);color:#ffd23a;font-size:22px;box-shadow:0 0 10px rgba(255,90,200,.4);touch-action:manipulation;user-select:none}
+.pad button:active{background:#ff6ad0;color:#fff}
+.help{font-size:12px;color:#bfa55c;text-align:center;margin:6px 0}
+</style>
+</head>
+<body>
+<header class="top"><a href="./">← Mini-jeux</a><div class="brand">DOGZY <span>Family</span> UNIVERSE</div><a href="../">Démo</a></header>
+<main>
+  <h1 class="gt">TETRIS <em>DOGZY</em></h1>
+  <div class="arena">
+    <div class="players" id="players"></div>
+    <div class="board">
+      <div class="timerBox"><span class="pawb"><i class="paw"></i></span><span class="t" id="timer">01:00</span><span class="pawb"><i class="paw"></i></span></div>
+      <div class="tw">
+        <canvas id="cv" width="300" height="600"></canvas>
+        <div class="side">
+          <div class="bx">Suivante<canvas id="nx" width="72" height="72"></canvas></div>
+          <div class="bx">Score<b id="sc">0</b></div>
+          <div class="bx">Lignes<b id="ln">0</b></div>
+          <div class="bx">Level<b id="lv">1</b></div>
+        </div>
+      </div>
+      <div class="pad" id="pad">
+        <button data-a="left" aria-label="Gauche">◀</button><button data-a="rot" aria-label="Tourner">⟳</button>
+        <button data-a="right" aria-label="Droite">▶</button><button data-a="soft" aria-label="Descendre">▼</button>
+        <button data-a="hard" aria-label="Chute">⤓</button>
+      </div>
+      <p class="help">Clavier : ← → bouger, ↑ ou X tourner, ↓ descendre, Espace chute directe. Souris : clic gauche/droite sur la grille pour bouger, molette pour tourner.</p>
+    </div>
+  </div>
+</main>
+<footer>© 2026 Sania Labbé (Valkyrie). Tous droits réservés.</footer>
+
+<div class="ov" id="ovStart"><div class="sheet">
+  <h2><i class="paw"></i> Tetris Dogzy</h2>
+  <ul>
+    <li>Les 7 pièces Dogzy tombent : <b>tourne-les</b> et place-les pour compléter des <b>lignes</b>.</li>
+    <li>Une ligne complète disparaît : 1 ligne = 100, 2 = 300, 3 = 500, 4 (Tetris !) = 800 points × level.</li>
+    <li>Toutes les 10 lignes, le level monte et les pièces tombent plus vite.</li>
+    <li>Tu as <b>60 secondes</b> : le meilleur score gagne. Si ta pile touche le haut, c'est fini !</li>
+  </ul>
+  <div class="row"><button class="btn primary" id="go">JOUER</button></div>
+</div></div>
+<div class="ov hidden" id="ovEnd"><div class="sheet">
+  <h2></h2><p class="msg" style="text-align:center"></p><ol class="rank"></ol>
+  <div class="row"><button class="btn primary replay">REJOUER</button><a class="btn" href="./">MINI-JEUX</a></div>
+</div></div>
+
+<script src="mj.js"></script>
+<script src="intro.js"></script>
+<script src="mj-duel.js"></script>
+<script>
+(() => {
+  const COLS = 10, ROWS = 20, DUR = 60;
+  const START_LV = Math.max(1, Math.min(10, parseInt(new URLSearchParams(location.search).get('level'),10) || 1));
+  const BOT_TARGET = 1200 + START_LV*400;
+  const SHAPES = {I:[[0,0,0,0],[1,1,1,1],[0,0,0,0],[0,0,0,0]],O:[[1,1],[1,1]],T:[[0,1,0],[1,1,1],[0,0,0]],S:[[0,1,1],[1,1,0],[0,0,0]],Z:[[1,1,0],[0,1,1],[0,0,0]],J:[[1,0,0],[1,1,1],[0,0,0]],L:[[0,0,1],[1,1,1],[0,0,0]]};
+  const KEYS = Object.keys(SHAPES);
+  const COL = {I:'#3af0ff',O:'#ffd23a',T:'#ff4ad0',S:'#5aff7a',Z:'#ff4a5a',J:'#6a7aff',L:'#ffa03a'};
+  const ICO = {I:'🦴',O:'👑',T:'🐾',S:'🦴',Z:'🐾',J:'👑',L:'🐾'};
+  const cv = document.getElementById('cv'), ctx = cv.getContext('2d'), nx = document.getElementById('nx'), nctx = nx.getContext('2d');
+  const G = MJDuel.setup(document.getElementById('players')), OPP = G.ids.filter(i => i !== G.human);
+  let S, grid, cur, next, bag = [], score, lines, lv, playing = false, ended, clock, bots, acc = 0, last = 0, flash = [];
+
+  function layout(){
+    const h = Math.max(300, Math.min(600, window.innerHeight - (window.innerWidth>=860 ? 300 : 420)));
+    S = Math.floor(Math.min(h/ROWS, (Math.min(window.innerWidth,520)-130)/COLS));
+    cv.width = S*COLS; cv.height = S*ROWS; draw();
+  }
+  function newBag(){ const b = KEYS.slice(); for (let i=b.length-1;i>0;i--){ const j=Math.random()*(i+1)|0; [b[i],b[j]]=[b[j],b[i]]; } return b; }
+  function take(){ if (!bag.length) bag = newBag(); const k = bag.pop(); return {k, m:SHAPES[k].map(r=>r.slice()), x:0, y:0}; }
+  function spawn(){
+    cur = next || take(); next = take();
+    cur.x = ((COLS - cur.m.length)/2)|0; cur.y = cur.k==='I' ? -1 : 0;
+    drawNext();
+    if (hit(cur.m, cur.x, cur.y)) gameOver();
+  }
+  function hit(m, x, y){
+    for (let r=0;r<m.length;r++) for (let c=0;c<m.length;c++) if (m[r][c]){
+      const X=x+c, Y=y+r;
+      if (X<0||X>=COLS||Y>=ROWS) return true;
+      if (Y>=0 && grid[Y][X]) return true;
+    }
+    return false;
+  }
+  const rotM = m => m.map((_,i)=>m.map(r=>r[i]).reverse());
+  function move(dx){ if (playing && !hit(cur.m,cur.x+dx,cur.y)){ cur.x+=dx; draw(); } }
+  function rotate(){
+    if (!playing) return; const m = rotM(cur.m);
+    for (const k of [0,-1,1,-2,2]) if (!hit(m,cur.x+k,cur.y)){ cur.m=m; cur.x+=k; draw(); return; }
+  }
+  function soft(){ if (!playing) return; if (!hit(cur.m,cur.x,cur.y+1)){ cur.y++; score+=1; } else lock(); acc=0; hud(); draw(); }
+  function hard(){ if (!playing) return; let n=0; while(!hit(cur.m,cur.x,cur.y+1)){ cur.y++; n++; } score+=2*n; lock(); hud(); draw(); }
+  function lock(){
+    for (let r=0;r<cur.m.length;r++) for (let c=0;c<cur.m.length;c++) if (cur.m[r][c]){
+      if (cur.y+r < 0) return gameOver();
+      grid[cur.y+r][cur.x+c] = cur.k;
+    }
+    clearLines(); if (playing) spawn();
+  }
+  function clearLines(){
+    const full = []; for (let r=0;r<ROWS;r++) if (grid[r].every(Boolean)) full.push(r);
+    if (!full.length) return;
+    full.forEach(r => { grid.splice(r,1); grid.unshift(Array(COLS).fill(null)); });
+    score += [0,100,300,500,800][full.length] * lv; lines += full.length;
+    flash = full.map(r=>({r,t:12}));
+    const nl = START_LV + Math.floor(lines/10); if (nl>lv){ lv=nl; MJ.toast(cv.parentNode,'Level '+lv+' !','#ff6ad0'); }
+    MJ.toast(cv.parentNode, full.length===4 ? 'TETRIS DOGZY !' : full.length+' ligne'+(full.length>1?'s':'')+' !', '#ffd23a');
+    hud();
+  }
+  const speed = () => Math.max(70, 800 - (lv-1)*75);
+  function cell(c2, x, y, k, s, ghost){
+    const col = COL[k];
+    c2.save();
+    if (ghost){ c2.strokeStyle=col; c2.globalAlpha=.35; c2.lineWidth=2; c2.strokeRect(x+2,y+2,s-4,s-4); c2.restore(); return; }
+    c2.shadowColor = col; c2.shadowBlur = s*.4;
+    const g = c2.createLinearGradient(x,y,x,y+s); g.addColorStop(0,'#fff'); g.addColorStop(.25,col); g.addColorStop(1,'#1a0a20');
+    c2.fillStyle = g; c2.beginPath(); c2.roundRect(x+1,y+1,s-2,s-2,s*.22); c2.fill();
+    c2.shadowBlur=0; c2.strokeStyle='rgba(255,240,180,.7)'; c2.lineWidth=1; c2.stroke();
+    c2.font = Math.round(s*.55)+'px sans-serif'; c2.textAlign='center'; c2.textBaseline='middle'; c2.fillText(ICO[k], x+s/2, y+s/2+1);
+    c2.restore();
+  }
+  function draw(){
+    if (!grid) return;
+    ctx.clearRect(0,0,cv.width,cv.height);
+    ctx.strokeStyle='rgba(212,175,55,.12)'; ctx.lineWidth=1;
+    for (let c=1;c<COLS;c++){ ctx.beginPath(); ctx.moveTo(c*S,0); ctx.lineTo(c*S,cv.height); ctx.stroke(); }
+    for (let r=1;r<ROWS;r++){ ctx.beginPath(); ctx.moveTo(0,r*S); ctx.lineTo(cv.width,r*S); ctx.stroke(); }
+    for (let r=0;r<ROWS;r++) for (let c=0;c<COLS;c++) if (grid[r][c]) cell(ctx,c*S,r*S,grid[r][c],S);
+    flash = flash.filter(f => { ctx.fillStyle='rgba(255,220,120,'+(f.t/12*.6)+')'; ctx.fillRect(0,f.r*S,cv.width,S); return --f.t>0; });
+    if (cur && playing){
+      let gy = cur.y; while(!hit(cur.m,cur.x,gy+1)) gy++;
+      for (let r=0;r<cur.m.length;r++) for (let c=0;c<cur.m.length;c++) if (cur.m[r][c]){
+        cell(ctx,(cur.x+c)*S,(gy+r)*S,cur.k,S,true);
+        if (cur.y+r>=0) cell(ctx,(cur.x+c)*S,(cur.y+r)*S,cur.k,S);
+      }
+    }
+  }
+  function drawNext(){
+    nctx.clearRect(0,0,72,72); if (!next) return;
+    const m = next.m, s = 16, n = m.length, off = (72 - n*s)/2;
+    for (let r=0;r<n;r++) for (let c=0;c<n;c++) if (m[r][c]) cell(nctx, off+c*s, off+r*s, next.k, s);
+  }
+  function hud(){
+    document.getElementById('sc').textContent = score; document.getElementById('ln').textContent = lines; document.getElementById('lv').textContent = lv;
+    refreshPlayers();
+  }
+  function refreshPlayers(){
+    if (!bots) return;
+    const ids = [G.human, ...OPP], all = [score, ...bots.map(b=>b.v)], mx = Math.max(...all, 1);
+    all.forEach((v,i) => MJ.setPlayer(ids[i], v, v/Math.max(mx,BOT_TARGET)*100, v+' pts'));
+    MJ.setLeader(Math.max(...all)>0 ? ids[all.indexOf(Math.max(...all))] : 0);
+  }
+  function loop(t){
+    if (!playing) return;
+    acc += t - last; last = t;
+    if (acc >= speed()){ acc = 0; if (!hit(cur.m,cur.x,cur.y+1)) cur.y++; else lock(); }
+    draw(); requestAnimationFrame(loop);
+  }
+  function gameOver(){ MJ.toast(cv.parentNode,'Pile au sommet !','#ff4a5a'); finish(true); }
+  function finish(toppedOut){
+    if (ended) return; ended = true; playing = false; clock && clock.stop();
+    refreshPlayers(); draw();
+    const res = [{id:G.human,v:score}, ...bots.map((b,i)=>({id:OPP[i],v:b.v}))];
+    res.sort((a,b)=>b.v-a.v || a.id-b.id); res.forEach(x=>x.label=x.v+' pts');
+    const won = res[0].id === G.human;
+    window.MJ_RESULT = {game:'tetris', won, score, lines, level:lv, toppedOut:!!toppedOut, duel:G.duel, player:G.human, ranking:res.map(x=>({id:x.id,score:x.v}))};
+    MJ.showEnd(won ? 'Tu gagnes la manche !' : 'Manche terminée', (toppedOut?'Ta pile a touché le haut. ':'Temps écoulé ! ')+'P'+res[0].id+' a le meilleur score.', res, launch);
+  }
+  function reset(){
+    grid = Array.from({length:ROWS},()=>Array(COLS).fill(null));
+    score = 0; lines = 0; lv = START_LV; ended = false; bag = []; next = null; flash = [];
+    bots = OPP.map(() => MJ.bot(BOT_TARGET*(0.6+Math.random()*0.7), DUR));
+  }
+  function start(){
+    reset(); window.MJ_RESULT = null; layout(); spawn(); hud();
+    playing = true; acc = 0; last = performance.now(); requestAnimationFrame(loop);
+    clock = MJ.timer(document.getElementById('timer'), DUR, el => { bots.forEach(b=>b.tick(el)); refreshPlayers(); }, () => finish(false));
+  }
+  function launch(){ MJIntro.play({titre:'TETRIS DOGZY', onDone:start}); }
+  reset(); layout(); hud(); MJIntro.decor();
+  document.getElementById('go').onclick = () => { document.getElementById('ovStart').classList.add('hidden'); launch(); };
+
+  const ACT = {left:()=>move(-1), right:()=>move(1), rot:rotate, soft, hard};
+  window.addEventListener('keydown', e => {
+    const a = {ArrowLeft:'left',ArrowRight:'right',ArrowUp:'rot',x:'rot',X:'rot',ArrowDown:'soft',' ':'hard'}[e.key];
+    if (a && playing){ e.preventDefault(); ACT[a](); }
+  });
+  document.querySelectorAll('#pad button').forEach(b => {
+    let rep;
+    b.addEventListener('pointerdown', e => { e.preventDefault(); const a=b.dataset.a; ACT[a](); if (a!=='rot'&&a!=='hard') rep=setInterval(ACT[a], 110); });
+    ['pointerup','pointerleave','pointercancel'].forEach(ev => b.addEventListener(ev, () => clearInterval(rep)));
+  });
+  cv.addEventListener('pointerdown', e => {
+    if (!playing || e.pointerType==='touch') return;
+    const r = cv.getBoundingClientRect(), col = Math.floor((e.clientX-r.left)/S);
+    if (e.button===2) return rotate();
+    if (col < cur.x) move(-1); else if (col >= cur.x+cur.m.length) move(1); else rotate();
+  });
+  cv.addEventListener('contextmenu', e => e.preventDefault());
+  cv.addEventListener('wheel', e => { if (playing){ e.preventDefault(); rotate(); } }, {passive:false});
+  window.addEventListener('resize', layout);
+  window.__mjTetris = { get grid(){return grid;}, set grid(g){grid=g;}, get cur(){return cur;}, get score(){return score;}, get lines(){return lines;}, get playing(){return playing;}, hard, move, rotate, clearLines, draw };
+})();
+</script>
+</body>
+</html>
