@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8"><link rel="icon" href="data:,">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0b0905">
 <title>Tile Match | Mini-jeux Dogzy</title>
@@ -58,6 +58,7 @@ h1.gt em{font-style:normal;color:#6ad8ff;text-shadow:0 3px 0 #0a3a8a,0 0 14px rg
 
 <script src="mj.js"></script>
 <script src="intro.js"></script>
+<script src="mj-duel.js"></script>
 <script>
 (() => {
   const COLS = 7, ROWS = 7, DUR = 45, GOAL = 80, RAINBOW = 5;
@@ -67,7 +68,7 @@ h1.gt em{font-style:normal;color:#6ad8ff;text-shadow:0 3px 0 #0a3a8a,0 0 14px rg
   let B, SZ, GAP, busy, playing, ended, cleared, clock, bots, sel, nextId = 1, combo = 1;
   const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-  MJ.renderPlayers(document.getElementById('players'));
+  const G = MJDuel.setup(document.getElementById('players')), OPP = G.ids.filter(i => i !== G.human);
 
   function layout(){
     const maxW = Math.min(window.innerWidth - 50, 480);
@@ -199,35 +200,35 @@ h1.gt em{font-style:normal;color:#6ad8ff;text-shadow:0 3px 0 #0a3a8a,0 0 14px rg
     cleared += n;
     document.getElementById('cleared').textContent = Math.min(cleared, GOAL);
     refreshPlayers();
-    if (cleared >= GOAL) finish(1);
+    if (cleared >= GOAL) finish(G.human);
   }
   function refreshPlayers(){
     const all = [cleared, ...bots.map(b=>b.v)];
-    all.forEach((v,i) => MJ.setPlayer(i+1, v, v/GOAL*100, Math.min(v,GOAL)+' / '+GOAL));
-    const mx = Math.max(...all); MJ.setLeader(mx>0 ? all.indexOf(mx)+1 : 0);
+    all.forEach((v,i) => MJ.setPlayer([G.human,...OPP][i], v, v/GOAL*100, Math.min(v,GOAL)+' / '+GOAL));
+    const mx = Math.max(...all); MJ.setLeader(mx>0 ? [G.human,...OPP][all.indexOf(mx)] : 0);
   }
   function finish(winnerId){
     if (ended) return; ended = true; playing = false; clock && clock.stop(); unselect();
     refreshPlayers();
-    const res = [{id:1,v:cleared}, ...bots.map((b,i)=>({id:i+2,v:b.v}))].map(x=>({...x, v:Math.min(x.v,GOAL)}));
+    const res = [{id:G.human,v:cleared}, ...bots.map((b,i)=>({id:OPP[i],v:b.v}))].map(x=>({...x, v:Math.min(x.v,GOAL)}));
     res.sort((x,y) => (y.id===winnerId)-(x.id===winnerId) || y.v-x.v || x.id-y.id);
     res.forEach(x => x.label = x.v+' / '+GOAL);
     const w = res[0].id, msg = winnerId ? 'P'+w+' atteint l\'objectif en premier.' : 'Temps écoulé : P'+w+' est le plus avancé.';
-    MJ.showEnd(w===1 ? 'Tu gagnes la manche !' : 'Manche terminée', msg, res, launch);
+    MJ.showEnd(w===G.human ? 'Tu gagnes la manche !' : 'Manche terminée', msg, res, launch);
   }
   function unselect(){ if (sel){ const t=B[sel[0]][sel[1]]; t && t.el.classList.remove('sel'); sel=null; } }
   function start(){
     cleared = 0; ended = false; busy = false; sel = null;
     document.getElementById('cleared').textContent = 0; document.getElementById('combo').textContent = 'x1';
-    bots = [0,1,2].map(() => MJ.bot(GOAL, 36 + Math.random()*36));
+    bots = OPP.map(() => MJ.bot(GOAL, 36 + Math.random()*36));
     layout(); fill(); refreshPlayers();
     playing = true;
     clock = MJ.timer(document.getElementById('timer'), DUR, el => {
       bots.forEach(b=>b.tick(el)); refreshPlayers();
-      const done = bots.findIndex(b => b.v >= GOAL); if (done>=0) finish(done+2);
+      const done = bots.findIndex(b => b.v >= GOAL); if (done>=0) finish(OPP[done]);
     }, () => finish(0));
   }
-  bots = [0,1,2].map(()=>MJ.bot(GOAL,DUR)); cleared = 0; layout(); fill(); refreshPlayers();
+  bots = OPP.map(()=>MJ.bot(GOAL,DUR)); cleared = 0; layout(); fill(); refreshPlayers();
   function launch(){ MJIntro.play({titre:'TILE MATCH', onDone:start}); }
   MJIntro.decor();
   document.getElementById('go').onclick = () => { document.getElementById('ovStart').classList.add('hidden'); launch(); };

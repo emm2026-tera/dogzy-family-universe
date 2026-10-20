@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8"><link rel="icon" href="data:,">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0b0905">
 <title>2048 en hexagones | Mini-jeux Dogzy</title>
@@ -75,6 +75,7 @@ body{--bg:url(img/2048-fond.jpg)}
 
 <script src="mj.js"></script>
 <script src="intro.js"></script>
+<script src="mj-duel.js"></script>
 <script>
 (() => {
   const R = 2, DUR = 60;
@@ -86,7 +87,7 @@ body{--bg:url(img/2048-fond.jpg)}
   const gridEl = document.getElementById('grid'), frame = document.getElementById('frame');
   let S, W, H, grid, tiles, nextId, score, playing, clock, bots, ended;
 
-  MJ.renderPlayers(document.getElementById('players'));
+  const G = MJDuel.setup(document.getElementById('players')), OPP = G.ids.filter(i => i !== G.human);
 
   function layout(){
     const maxW = Math.min(window.innerWidth - 50, 470);
@@ -169,16 +170,16 @@ body{--bg:url(img/2048-fond.jpg)}
   }
   function refreshPlayers(){
     const all = [score, ...bots.map(b=>b.v)], mx = Math.max(1, ...all);
-    all.forEach((v,i) => MJ.setPlayer(i+1, v, v/mx*100));
-    const lead = all.indexOf(mx); MJ.setLeader(mx>0 ? lead+1 : 0);
+    all.forEach((v,i) => MJ.setPlayer([G.human,...OPP][i], v, v/mx*100));
+    const lead = all.indexOf(mx); MJ.setLeader(mx>0 ? [G.human,...OPP][lead] : 0);
   }
   function finish(stuck){
     if (ended) return; ended = true; playing = false; clock && clock.stop();
     if (stuck) bots.forEach(b => b.tick(DUR));  // les bots terminent leurs 60 s
     refreshPlayers();
-    const res = [{id:1,v:score}, ...bots.map((b,i)=>({id:i+2,v:b.v}))].sort((a,b)=>b.v-a.v || a.id-b.id);
+    const res = [{id:G.human,v:score}, ...bots.map((b,i)=>({id:OPP[i],v:b.v}))].sort((a,b)=>b.v-a.v || a.id-b.id);
     res.forEach(r => r.label = r.v + ' pts');
-    const win = res[0].id === 1;
+    const win = res[0].id === G.human;
     MJ.showEnd(win ? 'Tu gagnes la manche !' : 'Manche terminée',
       (stuck ? 'Plus aucun mouvement possible. ' : 'Temps écoulé. ') + (win ? 'Meilleur score des 4 joueurs.' : 'P'+res[0].id+' a le meilleur score.'),
       res, launch);
@@ -186,13 +187,13 @@ body{--bg:url(img/2048-fond.jpg)}
   function start(){
     gridEl.querySelectorAll('.tile').forEach(e=>e.remove());
     grid = {}; tiles = []; nextId = 1; score = 0; ended = false; hold = false;
-    bots = [0,1,2].map(() => MJ.bot(Math.round((1400 + Math.random()*2400)/4)*4, DUR));
+    bots = OPP.map(() => MJ.bot(Math.round((1400 + Math.random()*2400)/4)*4, DUR));
     layout(); spawn(); spawn(); updateHud();
     playing = true;
     clock = MJ.timer(document.getElementById('timer'), DUR, el => { bots.forEach(b=>b.tick(el)); refreshPlayers(); }, () => finish(false));
   }
   tiles = []; layout();
-  bots = [0,1,2].map(()=>MJ.bot(0,DUR)); refreshPlayers();
+  bots = OPP.map(()=>MJ.bot(0,DUR)); refreshPlayers();
   function launch(){ MJIntro.play({titre:'2048 HEXA', onDone:start}); }
   MJIntro.decor();
   document.getElementById('go').onclick = () => { document.getElementById('ovStart').classList.add('hidden'); launch(); };

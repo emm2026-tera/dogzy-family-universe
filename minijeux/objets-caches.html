@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Objets cachés | Mini-jeux Dogzy</title><link rel="icon" href="data:,"><link rel="stylesheet" href="mj.css">
+<style>
+.hs{position:relative;max-width:900px;margin:6px auto;overflow:auto;border:2px solid #c9a24a;border-radius:10px}
+.sc{position:relative}.sc img{width:100%;display:block}
+.zone{position:absolute;cursor:pointer}.zone.found{outline:3px solid #5af05a;background:rgba(90,240,90,.25);border-radius:6px}
+.hl{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:6px}.hl div{padding:3px 8px;border:1px solid #c9a24a;border-radius:8px;color:#e7d397;font-size:13px}.hl .done{background:#2a6a2a;text-decoration:line-through}
+.goal{text-align:center;color:#e7d397}
+</style></head><body>
+<header class="top"><a href="./">← Mini-jeux</a><div class="brand">DOGZY <span>Family</span> UNIVERSE</div><a href="../">Démo</a></header>
+<h1 class="gt">OBJETS CACHÉS</h1>
+<div class="players" id="players"></div>
+<div class="goal">Temps : <b id="timer">01:00</b> · Trouvés : <b id="nf">0</b> / <b id="nt">0</b></div>
+<div class="hs"><div class="sc" id="sc"></div></div><div class="hl" id="hl"></div>
+<div class="ov hidden" id="ovEnd"><div class="sheet"><h2></h2><p class="msg"></p><ol class="rank"></ol><button class="btn replay">REJOUER</button></div></div>
+<footer style="text-align:center;font-size:12px;color:#bfa55c;margin:10px">© 2026 Sania Labbé (Valkyrie)</footer>
+<script src="../data.js"></script><script src="mj.js"></script><script src="mj-duel.js"></script>
+<script>
+(() => {
+  const H = window.DZ_DATA.hidden, DUR = 60, G = MJDuel.setup(document.getElementById('players')), OPP = G.ids.filter(i => i !== G.human);
+  const sc = document.getElementById('sc'); let objs, bots, found, clock, ended;
+  function start(){
+    ended = false; found = 0; objs = H.objects.map(o => ({name:o.name, total:o.zones.length, f:0}));
+    const tot = objs.reduce((s,o)=>s+o.total,0); document.getElementById('nt').textContent = tot;
+    let z = ''; H.objects.forEach((o,oi)=>o.zones.forEach(r => z += `<div class="zone" data-o="${oi}" style="left:${r[0]/H.w*100}%;top:${r[1]/H.h*100}%;width:${(r[2]-r[0])/H.w*100}%;height:${(r[3]-r[1])/H.h*100}%"></div>`));
+    sc.innerHTML = `<img src="../${H.img}" alt="${H.title}" draggable="false">` + z;
+    bots = OPP.map(() => MJ.bot(Math.round(tot*(.5+Math.random()*.45)), DUR)); list(); refresh();
+    clock = MJ.timer(document.getElementById('timer'), DUR, el => { bots.forEach(b=>b.tick(el)); refresh(); }, finish);
+    window.MJ_HO = {tot, zones: () => sc.querySelectorAll('.zone:not(.found)')};
+  }
+  function list(){ document.getElementById('hl').innerHTML = objs.map(o=>`<div class="${o.f===o.total?'done':''}">${o.name} ${o.f}/${o.total}</div>`).join(''); document.getElementById('nf').textContent = found; }
+  function refresh(){ const t = window.MJ_HO ? window.MJ_HO.tot : 1, ids=[G.human,...OPP], all=[found,...bots.map(b=>b.v)]; all.forEach((v,i)=>MJ.setPlayer(ids[i], v, v/t*100, v+' / '+t)); const mx=Math.max(...all); MJ.setLeader(mx>0?ids[all.indexOf(mx)]:0); }
+  sc.addEventListener('click', e => { if (ended) return; const z = e.target.closest('.zone'); if (!z || z.classList.contains('found')) return;
+    z.classList.add('found'); objs[+z.dataset.o].f++; found++; list(); refresh(); if (found >= window.MJ_HO.tot) finish(); });
+  function finish(){ if (ended) return; ended = true; clock.stop();
+    const res = [{id:G.human,v:found},...bots.map((b,i)=>({id:OPP[i],v:b.v}))].sort((a,b)=>b.v-a.v || (b.id===G.human)-(a.id===G.human)); res.forEach(r=>r.label=r.v+' objets');
+    MJ.showEnd(res[0].id===G.human?'Tu gagnes la manche !':'Manche terminée', `Tu as trouvé ${found} objets.`, res, start); }
+  start();
+})();
+</script></body></html>
