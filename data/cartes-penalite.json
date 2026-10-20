@@ -348,6 +348,14 @@
         "to": "each_player_on_or_arriving_square",
         "duration": "until_next_own_turn"
       }
+    },
+    {
+      "id": "PE42",
+      "titre": "Recul de 5 cases",
+      "texte": "Recule de 5 cases.",
+      "effet": {
+        "move": -5
+      }
     }
   ]
 }
