@@ -693,9 +693,12 @@ async function quiz(p, mult, careerOnly){
     pass = force.quiz != null ? force.quiz : chance(bp(p).quiz); delete force.quiz;
     say(p, pass ? 'passes the quiz' : 'fails the quiz'); await pause(p, 600);
   } else {
-    const qs = [...QUIZ].sort(() => Math.random() - .5).slice(0, 3); let score = 0;
+    const POOL = (window.DZ_QUIZ && DZ_QUIZ.length) ? (DZ_QUIZ.filter(x => x.level === (S.levelKeys >= 1 ? 2 : 1)).length ? DZ_QUIZ.filter(x => x.level === (S.levelKeys >= 1 ? 2 : 1)) : DZ_QUIZ) : QUIZ;
+    const qs = [...POOL].sort(() => Math.random() - .5).slice(0, 3); let score = 0;
     for (let k = 0; k < qs.length; k++) {
-      const q0 = qs[k], ord = [0,1,2].sort(() => Math.random() - .5), q = {q:q0.q, o:ord.map(i => q0.o[i]), a:ord.indexOf(q0.a)};
+      const q0 = qs[k];
+      if (q0.memo) { open(`<span class="tag warn">QUIZ · ${k + 1}/3</span><h2>MÉMORISE !</h2><p style="font-size:34px;font-weight:bold;letter-spacing:4px">${q0.memo.show}</p>`); await sleep(q0.memo.seconds * 1000); }
+      const ord = q0.o.map((_, i) => i).sort(() => Math.random() - .5), q = {q:q0.q, o:ord.map(i => q0.o[i]), a:ord.indexOf(q0.a)};
       open(`<span class="tag warn">QUIZ · ${k + 1}/3</span><h2>${careerOnly ? 'JOB INTERVIEW' : 'QUIZ'}</h2><p style="font-size:17px">${q.q}</p>
         <div class="opts">${q.o.map((o, i) => `<button class="btn" data-i="${i}">${o}</button>`).join('')}</div>`);
       const i = await new Promise(r => sheet.querySelectorAll('.opts .btn').forEach(b => b.addEventListener('click', () => r(+b.dataset.i), {once:true})));

@@ -1,0 +1,514 @@
+{
+ "pack": "Quiz",
+ "couleur": "bleu",
+ "jeu": "The Adoles-chiant of Dogzy Town",
+ "copyright": "© 2026 Sania Labbé (Valkyrie)",
+ "questions": [
+  {
+   "id": "QZ01",
+   "level": 1,
+   "type": "matrice",
+   "q": "Quelle pièce complète le motif ?<br><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 220 170\" width=\"220\" height=\"170\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"220\" height=\"170\" fill=\"#fff\"/><polygon points=\"30.0,10 50,30.0 30.0,50 10,30.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"20.0\" y1=\"20.0\" x2=\"40.0\" y2=\"40.0\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"40.0\" y1=\"20.0\" x2=\"20.0\" y2=\"40.0\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"30.0\" cy=\"30.0\" r=\"3.5\"/><polygon points=\"80.0,10 100,30.0 80.0,50 60,30.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"70.0\" y1=\"20.0\" x2=\"90.0\" y2=\"40.0\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"90.0\" y1=\"20.0\" x2=\"70.0\" y2=\"40.0\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"80.0\" cy=\"30.0\" r=\"3.5\"/><polygon points=\"130.0,10 150,30.0 130.0,50 110,30.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"120.0\" y1=\"20.0\" x2=\"140.0\" y2=\"40.0\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"140.0\" y1=\"20.0\" x2=\"120.0\" y2=\"40.0\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"130.0\" cy=\"30.0\" r=\"3.5\"/><polygon points=\"180.0,10 200,30.0 180.0,50 160,30.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"170.0\" y1=\"20.0\" x2=\"190.0\" y2=\"40.0\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"190.0\" y1=\"20.0\" x2=\"170.0\" y2=\"40.0\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"180.0\" cy=\"30.0\" r=\"3.5\"/><polygon points=\"30.0,60 50,80.0 30.0,100 10,80.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"20.0\" y1=\"70.0\" x2=\"40.0\" y2=\"90.0\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"40.0\" y1=\"70.0\" x2=\"20.0\" y2=\"90.0\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"30.0\" cy=\"80.0\" r=\"3.5\"/><polygon points=\"80.0,60 100,80.0 80.0,100 60,80.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"70.0\" y1=\"70.0\" x2=\"90.0\" y2=\"90.0\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"90.0\" y1=\"70.0\" x2=\"70.0\" y2=\"90.0\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"80.0\" cy=\"80.0\" r=\"3.5\"/><polygon points=\"130.0,60 150,80.0 130.0,100 110,80.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"120.0\" y1=\"70.0\" x2=\"140.0\" y2=\"90.0\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"140.0\" y1=\"70.0\" x2=\"120.0\" y2=\"90.0\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"130.0\" cy=\"80.0\" r=\"3.5\"/><polygon points=\"180.0,60 200,80.0 180.0,100 160,80.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"170.0\" y1=\"70.0\" x2=\"190.0\" y2=\"90.0\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"190.0\" y1=\"70.0\" x2=\"170.0\" y2=\"90.0\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"180.0\" cy=\"80.0\" r=\"3.5\"/><polygon points=\"30.0,110 50,130.0 30.0,150 10,130.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"20.0\" y1=\"120.0\" x2=\"40.0\" y2=\"140.0\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"40.0\" y1=\"120.0\" x2=\"20.0\" y2=\"140.0\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"30.0\" cy=\"130.0\" r=\"3.5\"/><polygon points=\"80.0,110 100,130.0 80.0,150 60,130.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"70.0\" y1=\"120.0\" x2=\"90.0\" y2=\"140.0\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"90.0\" y1=\"120.0\" x2=\"70.0\" y2=\"140.0\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"80.0\" cy=\"130.0\" r=\"3.5\"/><polygon points=\"130.0,110 150,130.0 130.0,150 110,130.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"120.0\" y1=\"120.0\" x2=\"140.0\" y2=\"140.0\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"140.0\" y1=\"120.0\" x2=\"120.0\" y2=\"140.0\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"130.0\" cy=\"130.0\" r=\"3.5\"/><rect x=\"160\" y=\"110\" width=\"48\" height=\"48\" fill=\"#fff\" stroke=\"#2f6fd1\" stroke-width=\"3\"/><text x=\"184.0\" y=\"148.0\" font-size=\"40\" text-anchor=\"middle\" fill=\"#2f6fd1\" font-family=\"Arial\" font-weight=\"bold\">?</text></svg>",
+   "o": [
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 44 44\" width=\"44\" height=\"44\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"44\" height=\"44\" fill=\"#fff\"/><polygon points=\"22.0,2 42,22.0 22.0,42 2,22.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"12.0\" y1=\"12.0\" x2=\"32.0\" y2=\"32.0\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"32.0\" y1=\"12.0\" x2=\"12.0\" y2=\"32.0\" stroke=\"#000\" stroke-width=\"2\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 44 44\" width=\"44\" height=\"44\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"44\" height=\"44\" fill=\"#fff\"/><polygon points=\"22.0,2 42,22.0 22.0,42 2,22.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"12.0\" y1=\"12.0\" x2=\"32.0\" y2=\"32.0\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"32.0\" y1=\"12.0\" x2=\"12.0\" y2=\"32.0\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"22.0\" cy=\"22.0\" r=\"3.5\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 44 44\" width=\"44\" height=\"44\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"44\" height=\"44\" fill=\"#fff\"/><polygon points=\"22.0,2 42,22.0 22.0,42 2,22.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"22.0\" cy=\"22.0\" r=\"3.5\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 44 44\" width=\"44\" height=\"44\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"44\" height=\"44\" fill=\"#fff\"/><polygon points=\"22.0,2 42,22.0 22.0,42 2,22.0\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/></svg>"
+   ],
+   "a": 1,
+   "reward": 50,
+   "timer": 45
+  },
+  {
+   "id": "QZ02",
+   "level": 1,
+   "type": "forme",
+   "q": "Quelle figure complète la série ?<br><div class=\"ana\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 40\" width=\"60\" height=\"40\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"60\" height=\"40\" fill=\"#fff\"/><rect x=\"4\" y=\"3\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"22\" y=\"3\" width=\"16\" height=\"16\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"40\" y=\"3\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"22\" y=\"21\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"40\" y=\"21\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/></svg><span>→</span><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 40\" width=\"60\" height=\"40\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"60\" height=\"40\" fill=\"#fff\"/><rect x=\"4\" y=\"3\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"22\" y=\"3\" width=\"16\" height=\"16\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"40\" y=\"3\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"4\" y=\"21\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"22\" y=\"21\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/></svg><br><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 40\" width=\"60\" height=\"40\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"60\" height=\"40\" fill=\"#fff\"/><rect x=\"22\" y=\"3\" width=\"16\" height=\"16\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"40\" y=\"3\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"4\" y=\"21\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"22\" y=\"21\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"40\" y=\"21\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/></svg><span>→</span>?</div>",
+   "o": [
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 40\" width=\"60\" height=\"40\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"60\" height=\"40\" fill=\"#fff\"/><rect x=\"22\" y=\"3\" width=\"16\" height=\"16\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"40\" y=\"3\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"4\" y=\"21\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"22\" y=\"21\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"40\" y=\"21\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 40\" width=\"60\" height=\"40\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"60\" height=\"40\" fill=\"#fff\"/><rect x=\"4\" y=\"3\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"22\" y=\"3\" width=\"16\" height=\"16\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"4\" y=\"21\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"22\" y=\"21\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"40\" y=\"21\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 40\" width=\"60\" height=\"40\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"60\" height=\"40\" fill=\"#fff\"/><rect x=\"4\" y=\"3\" width=\"16\" height=\"16\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"22\" y=\"3\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"4\" y=\"21\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"22\" y=\"21\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"40\" y=\"21\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 40\" width=\"60\" height=\"40\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"60\" height=\"40\" fill=\"#fff\"/><rect x=\"4\" y=\"3\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"22\" y=\"3\" width=\"16\" height=\"16\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"22\" y=\"21\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"40\" y=\"21\" width=\"16\" height=\"16\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/></svg>"
+   ],
+   "a": 1,
+   "reward": 50,
+   "timer": 45
+  },
+  {
+   "id": "QZ03",
+   "level": 1,
+   "type": "forme",
+   "q": "Quelle figure complète la série ?<br><div class=\"ana\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 84 60\" width=\"84\" height=\"60\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"84\" height=\"60\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"80\" height=\"56\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"56\" y=\"32\" width=\"26\" height=\"26\" fill=\"#000\"/></svg><span>→</span><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 84 60\" width=\"84\" height=\"60\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"84\" height=\"60\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"80\" height=\"56\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><path d=\"M2,58 L28,58 A26,26 0 0 0 2,32 Z\" fill=\"#000\"/></svg><br><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 84 60\" width=\"84\" height=\"60\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"84\" height=\"60\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"80\" height=\"56\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"56\" y=\"2\" width=\"26\" height=\"26\" fill=\"#000\"/></svg><span>→</span>?</div>",
+   "o": [
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 84 60\" width=\"84\" height=\"60\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"84\" height=\"60\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"80\" height=\"56\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><path d=\"M82,2 L56,2 A26,26 0 0 0 82,28 Z\" fill=\"#000\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 84 60\" width=\"84\" height=\"60\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"84\" height=\"60\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"80\" height=\"56\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><path d=\"M2,2 L28,2 A26,26 0 0 1 2,28 Z\" fill=\"#000\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 84 60\" width=\"84\" height=\"60\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"84\" height=\"60\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"80\" height=\"56\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"2\" y=\"2\" width=\"26\" height=\"26\" fill=\"#000\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 84 60\" width=\"84\" height=\"60\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"84\" height=\"60\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"80\" height=\"56\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><path d=\"M82,58 L56,58 A26,26 0 0 1 82,32 Z\" fill=\"#000\"/></svg>"
+   ],
+   "a": 1,
+   "reward": 50,
+   "timer": 45
+  },
+  {
+   "id": "QZ04",
+   "level": 1,
+   "type": "memoire",
+   "q": "Quel était le 2e chiffre ?",
+   "o": [
+    "7",
+    "3",
+    "8",
+    "1",
+    "5"
+   ],
+   "a": 1,
+   "reward": 50,
+   "timer": 30,
+   "memo": {
+    "show": "7 3 8 5",
+    "seconds": 2
+   }
+  },
+  {
+   "id": "QZ05",
+   "level": 1,
+   "type": "symboles",
+   "q": "■ + ■ + ■ = 12<br>■ + ● = 9<br><b>● = ?</b>",
+   "o": [
+    "3",
+    "4",
+    "5",
+    "6"
+   ],
+   "a": 2,
+   "reward": 50,
+   "timer": 45
+  },
+  {
+   "id": "QZ06",
+   "level": 1,
+   "type": "symboles",
+   "q": "● + ● = 6<br>● + ▲ = 7<br><b>▲ = ?</b>",
+   "o": [
+    "2",
+    "3",
+    "4",
+    "5"
+   ],
+   "a": 2,
+   "reward": 50,
+   "timer": 45
+  },
+  {
+   "id": "QZ07",
+   "level": 1,
+   "type": "suite",
+   "q": "Quel nombre manque-t-il ? 3, 6, 9, 12, ___, 18",
+   "o": [
+    "13",
+    "14",
+    "15",
+    "16",
+    "17"
+   ],
+   "a": 2,
+   "reward": 50,
+   "timer": 30
+  },
+  {
+   "id": "QZ08",
+   "level": 1,
+   "type": "suite",
+   "q": "Quel nombre vient ensuite ? 2, 4, 8, 16, ___",
+   "o": [
+    "20",
+    "24",
+    "30",
+    "32",
+    "36"
+   ],
+   "a": 3,
+   "reward": 50,
+   "timer": 30
+  },
+  {
+   "id": "QZ09",
+   "level": 1,
+   "type": "piege",
+   "q": "Tu dépasses la personne en 3e position. À quelle place es-tu ?",
+   "o": [
+    "1",
+    "4",
+    "3",
+    "2",
+    "5"
+   ],
+   "a": 2,
+   "reward": 50,
+   "timer": 20
+  },
+  {
+   "id": "QZ10",
+   "level": 1,
+   "type": "piege",
+   "q": "Un agriculteur a 15 moutons. Tous meurent sauf 8. Combien en reste-t-il ?",
+   "o": [
+    "7",
+    "8",
+    "15",
+    "0",
+    "3"
+   ],
+   "a": 1,
+   "reward": 50,
+   "timer": 20
+  },
+  {
+   "id": "QZ11",
+   "level": 2,
+   "type": "matrice",
+   "q": "Matrice Dogzy : quelle case manque ?<br><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 170 170\" width=\"170\" height=\"170\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"170\" height=\"170\" fill=\"#fff\"/><g transform=\"translate(0,0)\"><svg x=\"0\" y=\"0\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 50 50\" width=\"50\" height=\"50\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"50\" height=\"50\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"48\" height=\"48\" fill=\"#fff\" stroke=\"#000\"/><circle cx=\"10\" cy=\"25.0\" r=\"5.5\"/></svg></g><g transform=\"translate(56,0)\"><svg x=\"0\" y=\"0\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 50 50\" width=\"50\" height=\"50\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"50\" height=\"50\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"48\" height=\"48\" fill=\"#fff\" stroke=\"#000\"/><rect x=\"5\" y=\"20.0\" width=\"11\" height=\"11\"/><rect x=\"19\" y=\"20.0\" width=\"11\" height=\"11\"/></svg></g><g transform=\"translate(112,0)\"><svg x=\"0\" y=\"0\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 50 50\" width=\"50\" height=\"50\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"50\" height=\"50\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"48\" height=\"48\" fill=\"#fff\" stroke=\"#000\"/><polygon points=\"4,30.0 16,30.0 10,19.0\"/><polygon points=\"18,30.0 30,30.0 24,19.0\"/><polygon points=\"32,30.0 44,30.0 38,19.0\"/></svg></g><g transform=\"translate(0,56)\"><svg x=\"0\" y=\"0\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 50 50\" width=\"50\" height=\"50\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"50\" height=\"50\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"48\" height=\"48\" fill=\"#fff\" stroke=\"#000\"/><circle cx=\"10\" cy=\"25.0\" r=\"5.5\"/><circle cx=\"24\" cy=\"25.0\" r=\"5.5\"/></svg></g><g transform=\"translate(56,56)\"><svg x=\"0\" y=\"0\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 50 50\" width=\"50\" height=\"50\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"50\" height=\"50\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"48\" height=\"48\" fill=\"#fff\" stroke=\"#000\"/><rect x=\"5\" y=\"20.0\" width=\"11\" height=\"11\"/><rect x=\"19\" y=\"20.0\" width=\"11\" height=\"11\"/><rect x=\"33\" y=\"20.0\" width=\"11\" height=\"11\"/></svg></g><g transform=\"translate(112,56)\"><svg x=\"0\" y=\"0\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 50 50\" width=\"50\" height=\"50\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"50\" height=\"50\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"48\" height=\"48\" fill=\"#fff\" stroke=\"#000\"/><polygon points=\"4,30.0 16,30.0 10,19.0\"/></svg></g><g transform=\"translate(0,112)\"><svg x=\"0\" y=\"0\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 50 50\" width=\"50\" height=\"50\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"50\" height=\"50\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"48\" height=\"48\" fill=\"#fff\" stroke=\"#000\"/><circle cx=\"10\" cy=\"25.0\" r=\"5.5\"/><circle cx=\"24\" cy=\"25.0\" r=\"5.5\"/><circle cx=\"38\" cy=\"25.0\" r=\"5.5\"/></svg></g><g transform=\"translate(56,112)\"><svg x=\"0\" y=\"0\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 50 50\" width=\"50\" height=\"50\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"50\" height=\"50\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"48\" height=\"48\" fill=\"#fff\" stroke=\"#000\"/><rect x=\"5\" y=\"20.0\" width=\"11\" height=\"11\"/></svg></g><g transform=\"translate(112,112)\"><rect x=\"0\" y=\"0\" width=\"50\" height=\"50\" fill=\"#fff\" stroke=\"#2f6fd1\" stroke-width=\"3\"/><text x=\"25.0\" y=\"39.0\" font-size=\"40\" text-anchor=\"middle\" fill=\"#2f6fd1\" font-family=\"Arial\" font-weight=\"bold\">?</text></g></svg>",
+   "o": [
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 50 50\" width=\"50\" height=\"50\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"50\" height=\"50\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"48\" height=\"48\" fill=\"#fff\" stroke=\"#000\"/><polygon points=\"4,30.0 16,30.0 10,19.0\"/><polygon points=\"18,30.0 30,30.0 24,19.0\"/><polygon points=\"32,30.0 44,30.0 38,19.0\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 50 50\" width=\"50\" height=\"50\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"50\" height=\"50\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"48\" height=\"48\" fill=\"#fff\" stroke=\"#000\"/><polygon points=\"4,30.0 16,30.0 10,19.0\"/><polygon points=\"18,30.0 30,30.0 24,19.0\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 50 50\" width=\"50\" height=\"50\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"50\" height=\"50\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"48\" height=\"48\" fill=\"#fff\" stroke=\"#000\"/><rect x=\"5\" y=\"20.0\" width=\"11\" height=\"11\"/><rect x=\"19\" y=\"20.0\" width=\"11\" height=\"11\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 50 50\" width=\"50\" height=\"50\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"50\" height=\"50\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"48\" height=\"48\" fill=\"#fff\" stroke=\"#000\"/><polygon points=\"4,30.0 16,30.0 10,19.0\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 50 50\" width=\"50\" height=\"50\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"50\" height=\"50\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"48\" height=\"48\" fill=\"#fff\" stroke=\"#000\"/><circle cx=\"10\" cy=\"25.0\" r=\"5.5\"/><circle cx=\"24\" cy=\"25.0\" r=\"5.5\"/></svg>"
+   ],
+   "a": 1,
+   "reward": 120,
+   "timer": 60
+  },
+  {
+   "id": "QZ12",
+   "level": 2,
+   "type": "matrice",
+   "q": "La flèche de la boussole de Kelzy tourne selon une règle. Quelle case manque ?<br><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 150 150\" width=\"150\" height=\"150\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"150\" height=\"150\" fill=\"#fff\"/><g transform=\"translate(0,0)\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 44 44\" width=\"44\" height=\"44\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"44\" height=\"44\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"42\" height=\"42\" fill=\"#fff\" stroke=\"#000\"/><g transform=\"rotate(0 22.0 22.0)\"><line x1=\"22.0\" y1=\"36\" x2=\"22.0\" y2=\"10\" stroke=\"#000\" stroke-width=\"4\"/><polygon points=\"14.0,16 22.0,4 30.0,16\" fill=\"#000\"/></g></svg></g><g transform=\"translate(50,0)\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 44 44\" width=\"44\" height=\"44\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"44\" height=\"44\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"42\" height=\"42\" fill=\"#fff\" stroke=\"#000\"/><g transform=\"rotate(90 22.0 22.0)\"><line x1=\"22.0\" y1=\"36\" x2=\"22.0\" y2=\"10\" stroke=\"#000\" stroke-width=\"4\"/><polygon points=\"14.0,16 22.0,4 30.0,16\" fill=\"#000\"/></g></svg></g><g transform=\"translate(100,0)\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 44 44\" width=\"44\" height=\"44\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"44\" height=\"44\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"42\" height=\"42\" fill=\"#fff\" stroke=\"#000\"/><g transform=\"rotate(180 22.0 22.0)\"><line x1=\"22.0\" y1=\"36\" x2=\"22.0\" y2=\"10\" stroke=\"#000\" stroke-width=\"4\"/><polygon points=\"14.0,16 22.0,4 30.0,16\" fill=\"#000\"/></g></svg></g><g transform=\"translate(0,50)\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 44 44\" width=\"44\" height=\"44\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"44\" height=\"44\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"42\" height=\"42\" fill=\"#fff\" stroke=\"#000\"/><g transform=\"rotate(45 22.0 22.0)\"><line x1=\"22.0\" y1=\"36\" x2=\"22.0\" y2=\"10\" stroke=\"#000\" stroke-width=\"4\"/><polygon points=\"14.0,16 22.0,4 30.0,16\" fill=\"#000\"/></g></svg></g><g transform=\"translate(50,50)\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 44 44\" width=\"44\" height=\"44\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"44\" height=\"44\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"42\" height=\"42\" fill=\"#fff\" stroke=\"#000\"/><g transform=\"rotate(135 22.0 22.0)\"><line x1=\"22.0\" y1=\"36\" x2=\"22.0\" y2=\"10\" stroke=\"#000\" stroke-width=\"4\"/><polygon points=\"14.0,16 22.0,4 30.0,16\" fill=\"#000\"/></g></svg></g><g transform=\"translate(100,50)\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 44 44\" width=\"44\" height=\"44\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"44\" height=\"44\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"42\" height=\"42\" fill=\"#fff\" stroke=\"#000\"/><g transform=\"rotate(225 22.0 22.0)\"><line x1=\"22.0\" y1=\"36\" x2=\"22.0\" y2=\"10\" stroke=\"#000\" stroke-width=\"4\"/><polygon points=\"14.0,16 22.0,4 30.0,16\" fill=\"#000\"/></g></svg></g><g transform=\"translate(0,100)\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 44 44\" width=\"44\" height=\"44\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"44\" height=\"44\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"42\" height=\"42\" fill=\"#fff\" stroke=\"#000\"/><g transform=\"rotate(90 22.0 22.0)\"><line x1=\"22.0\" y1=\"36\" x2=\"22.0\" y2=\"10\" stroke=\"#000\" stroke-width=\"4\"/><polygon points=\"14.0,16 22.0,4 30.0,16\" fill=\"#000\"/></g></svg></g><g transform=\"translate(50,100)\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 44 44\" width=\"44\" height=\"44\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"44\" height=\"44\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"42\" height=\"42\" fill=\"#fff\" stroke=\"#000\"/><g transform=\"rotate(180 22.0 22.0)\"><line x1=\"22.0\" y1=\"36\" x2=\"22.0\" y2=\"10\" stroke=\"#000\" stroke-width=\"4\"/><polygon points=\"14.0,16 22.0,4 30.0,16\" fill=\"#000\"/></g></svg></g><g transform=\"translate(100,100)\"><rect x=\"0\" y=\"0\" width=\"44\" height=\"44\" fill=\"#fff\" stroke=\"#2f6fd1\" stroke-width=\"3\"/><text x=\"22.0\" y=\"36.0\" font-size=\"40\" text-anchor=\"middle\" fill=\"#2f6fd1\" font-family=\"Arial\" font-weight=\"bold\">?</text></g></svg>",
+   "o": [
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 44 44\" width=\"44\" height=\"44\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"44\" height=\"44\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"42\" height=\"42\" fill=\"#fff\" stroke=\"#000\"/><g transform=\"rotate(0 22.0 22.0)\"><line x1=\"22.0\" y1=\"36\" x2=\"22.0\" y2=\"10\" stroke=\"#000\" stroke-width=\"4\"/><polygon points=\"14.0,16 22.0,4 30.0,16\" fill=\"#000\"/></g></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 44 44\" width=\"44\" height=\"44\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"44\" height=\"44\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"42\" height=\"42\" fill=\"#fff\" stroke=\"#000\"/><g transform=\"rotate(90 22.0 22.0)\"><line x1=\"22.0\" y1=\"36\" x2=\"22.0\" y2=\"10\" stroke=\"#000\" stroke-width=\"4\"/><polygon points=\"14.0,16 22.0,4 30.0,16\" fill=\"#000\"/></g></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 44 44\" width=\"44\" height=\"44\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"44\" height=\"44\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"42\" height=\"42\" fill=\"#fff\" stroke=\"#000\"/><g transform=\"rotate(180 22.0 22.0)\"><line x1=\"22.0\" y1=\"36\" x2=\"22.0\" y2=\"10\" stroke=\"#000\" stroke-width=\"4\"/><polygon points=\"14.0,16 22.0,4 30.0,16\" fill=\"#000\"/></g></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 44 44\" width=\"44\" height=\"44\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"44\" height=\"44\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"42\" height=\"42\" fill=\"#fff\" stroke=\"#000\"/><g transform=\"rotate(270 22.0 22.0)\"><line x1=\"22.0\" y1=\"36\" x2=\"22.0\" y2=\"10\" stroke=\"#000\" stroke-width=\"4\"/><polygon points=\"14.0,16 22.0,4 30.0,16\" fill=\"#000\"/></g></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 44 44\" width=\"44\" height=\"44\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"44\" height=\"44\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"42\" height=\"42\" fill=\"#fff\" stroke=\"#000\"/><g transform=\"rotate(225 22.0 22.0)\"><line x1=\"22.0\" y1=\"36\" x2=\"22.0\" y2=\"10\" stroke=\"#000\" stroke-width=\"4\"/><polygon points=\"14.0,16 22.0,4 30.0,16\" fill=\"#000\"/></g></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 44 44\" width=\"44\" height=\"44\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"44\" height=\"44\" fill=\"#fff\"/><rect x=\"1\" y=\"1\" width=\"42\" height=\"42\" fill=\"#fff\" stroke=\"#000\"/><g transform=\"rotate(315 22.0 22.0)\"><line x1=\"22.0\" y1=\"36\" x2=\"22.0\" y2=\"10\" stroke=\"#000\" stroke-width=\"4\"/><polygon points=\"14.0,16 22.0,4 30.0,16\" fill=\"#000\"/></g></svg>"
+   ],
+   "a": 3,
+   "reward": 120,
+   "timer": 60
+  },
+  {
+   "id": "QZ13",
+   "level": 2,
+   "type": "forme",
+   "q": "Même transformation (rotation) : quelle figure complète ?<br><div class=\"ana\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"52\" height=\"52\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"24\" height=\"24\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"2\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/></svg><span>→</span><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"52\" height=\"52\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"2\" width=\"24\" height=\"24\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"2\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/></svg><br><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"52\" height=\"52\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"38.0\" cy=\"14.0\" r=\"5\"/><rect x=\"2\" y=\"26\" width=\"24\" height=\"24\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/></svg><span>→</span>?</div>",
+   "o": [
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"52\" height=\"52\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"24\" height=\"24\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"2\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"38.0\" cy=\"38.0\" r=\"5\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"52\" height=\"52\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"24\" height=\"24\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"2\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"26\" width=\"24\" height=\"24\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"52\" height=\"52\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"14.0\" cy=\"14.0\" r=\"5\"/><rect x=\"26\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"2\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"26\" width=\"24\" height=\"24\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"52\" height=\"52\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"2\" width=\"24\" height=\"24\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"2\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"14.0\" cy=\"38.0\" r=\"5\"/><rect x=\"26\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"52\" height=\"52\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"38.0\" cy=\"14.0\" r=\"5\"/><rect x=\"2\" y=\"26\" width=\"24\" height=\"24\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/></svg>"
+   ],
+   "a": 0,
+   "reward": 120,
+   "timer": 60
+  },
+  {
+   "id": "QZ14",
+   "level": 2,
+   "type": "forme",
+   "q": "Double rotation (2 × un quart de tour) : quelle figure complète ?<br><div class=\"ana\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"52\" height=\"52\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"24\" height=\"24\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"38.0\" cy=\"14.0\" r=\"5\"/><rect x=\"2\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/></svg><span>→</span><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"52\" height=\"52\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"2\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"14.0\" cy=\"38.0\" r=\"5\"/><rect x=\"26\" y=\"26\" width=\"24\" height=\"24\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/></svg><br><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"52\" height=\"52\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"2\" width=\"24\" height=\"24\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"2\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"38.0\" cy=\"38.0\" r=\"5\"/></svg><span>→</span>?</div>",
+   "o": [
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"52\" height=\"52\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"2\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"14.0\" cy=\"38.0\" r=\"5\"/><rect x=\"26\" y=\"26\" width=\"24\" height=\"24\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"52\" height=\"52\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"2\" width=\"24\" height=\"24\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"2\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"38.0\" cy=\"38.0\" r=\"5\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"52\" height=\"52\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"2\" width=\"24\" height=\"24\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"2\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"14.0\" cy=\"38.0\" r=\"5\"/><rect x=\"26\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"52\" height=\"52\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"14.0\" cy=\"14.0\" r=\"5\"/><rect x=\"26\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"2\" y=\"26\" width=\"24\" height=\"24\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/></svg>",
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\" width=\"52\" height=\"52\" style=\"background:#fff;border-radius:4px;display:inline-block;vertical-align:middle;margin:3px\"><rect width=\"52\" height=\"52\" fill=\"#fff\"/><rect x=\"2\" y=\"2\" width=\"24\" height=\"24\" fill=\"#000\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"26\" y=\"2\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><rect x=\"2\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/><circle cx=\"14.0\" cy=\"38.0\" r=\"5\"/><rect x=\"26\" y=\"26\" width=\"24\" height=\"24\" fill=\"#fff\" stroke=\"#000\" stroke-width=\"2\"/></svg>"
+   ],
+   "a": 3,
+   "reward": 150,
+   "timer": 60
+  },
+  {
+   "id": "QZ15",
+   "level": 2,
+   "type": "memoire",
+   "q": "Quel était le 4e chiffre ?",
+   "o": [
+    "1",
+    "9",
+    "7",
+    "2",
+    "6",
+    "4"
+   ],
+   "a": 2,
+   "reward": 100,
+   "timer": 30,
+   "memo": {
+    "show": "9 4 1 7 2 6",
+    "seconds": 3
+   }
+  },
+  {
+   "id": "QZ16",
+   "level": 2,
+   "type": "memoire",
+   "q": "Quelle est la somme du 1er et du dernier chiffre ?",
+   "o": [
+    "11",
+    "12",
+    "8",
+    "14",
+    "13"
+   ],
+   "a": 1,
+   "reward": 120,
+   "timer": 30,
+   "memo": {
+    "show": "3 8 5 1 9",
+    "seconds": 3
+   }
+  },
+  {
+   "id": "QZ17",
+   "level": 2,
+   "type": "memoire",
+   "q": "Qui était en 3e position ?",
+   "o": [
+    "Waltzy",
+    "Kelzy",
+    "Jouzy",
+    "Philzy",
+    "Brandzy"
+   ],
+   "a": 2,
+   "reward": 120,
+   "timer": 30,
+   "memo": {
+    "show": "Kelzy · Philzy · Jouzy · Brandzy · Waltzy",
+    "seconds": 3
+   }
+  },
+  {
+   "id": "QZ18",
+   "level": 2,
+   "type": "symboles",
+   "q": "🦴 + 🦴 + 🦴 = 21<br>🦴 + 🐾 = 11<br>🐾 + 👑 = 10<br><b>👑 × 🦴 = ?</b>",
+   "o": [
+    "36",
+    "42",
+    "48",
+    "35",
+    "49"
+   ],
+   "a": 1,
+   "reward": 150,
+   "timer": 60
+  },
+  {
+   "id": "QZ19",
+   "level": 2,
+   "type": "symboles",
+   "q": "👑 + 👑 = 🐾<br>🐾 + 👑 = 18<br><b>🐾 − 👑 = ?</b>",
+   "o": [
+    "3",
+    "6",
+    "9",
+    "12"
+   ],
+   "a": 1,
+   "reward": 120,
+   "timer": 60
+  },
+  {
+   "id": "QZ20",
+   "level": 2,
+   "type": "symboles",
+   "q": "🦴 × 🦴 = 36<br>🦴 + 🐾 = 10<br><b>🐾 × 🐾 − 🦴 = ?</b>",
+   "o": [
+    "10",
+    "16",
+    "22",
+    "4",
+    "12"
+   ],
+   "a": 0,
+   "reward": 150,
+   "timer": 60
+  },
+  {
+   "id": "QZ21",
+   "level": 2,
+   "type": "suite",
+   "q": "2, 6, 12, 20, 30, ___",
+   "o": [
+    "40",
+    "42",
+    "36",
+    "44",
+    "48"
+   ],
+   "a": 1,
+   "reward": 100,
+   "timer": 45
+  },
+  {
+   "id": "QZ22",
+   "level": 2,
+   "type": "suite",
+   "q": "Les os de Brandzy : 1, 1, 2, 3, 5, 8, ___",
+   "o": [
+    "11",
+    "12",
+    "13",
+    "16",
+    "10"
+   ],
+   "a": 2,
+   "reward": 100,
+   "timer": 45
+  },
+  {
+   "id": "QZ23",
+   "level": 2,
+   "type": "suite",
+   "q": "3, 4, 8, 17, 33, ___",
+   "o": [
+    "49",
+    "58",
+    "66",
+    "54",
+    "50"
+   ],
+   "a": 1,
+   "reward": 150,
+   "timer": 45
+  },
+  {
+   "id": "QZ24",
+   "level": 2,
+   "type": "suite",
+   "q": "100, 96, 88, 72, ___",
+   "o": [
+    "56",
+    "64",
+    "40",
+    "48",
+    "36"
+   ],
+   "a": 2,
+   "reward": 120,
+   "timer": 45
+  },
+  {
+   "id": "QZ25",
+   "level": 2,
+   "type": "suite",
+   "q": "Les tokens de Jouzy : 5, 10, 20, 35, 55, ___",
+   "o": [
+    "75",
+    "80",
+    "70",
+    "85",
+    "90"
+   ],
+   "a": 1,
+   "reward": 100,
+   "timer": 45
+  },
+  {
+   "id": "QZ26",
+   "level": 2,
+   "type": "piege",
+   "q": "Tu dépasses le DERNIER joueur de la course. À quelle place es-tu ?",
+   "o": [
+    "Dernier",
+    "Avant-dernier",
+    "1er",
+    "C'est impossible"
+   ],
+   "a": 3,
+   "reward": 100,
+   "timer": 20
+  },
+  {
+   "id": "QZ27",
+   "level": 2,
+   "type": "piege",
+   "q": "Waltzy a 3 sœurs. Chaque sœur a 1 frère. Combien d'enfants dans la famille ?",
+   "o": [
+    "4",
+    "5",
+    "6",
+    "7",
+    "3"
+   ],
+   "a": 0,
+   "reward": 100,
+   "timer": 20
+  },
+  {
+   "id": "QZ28",
+   "level": 2,
+   "type": "piege",
+   "q": "Brandzy a 20 tokens. Il les dépense tous sauf 7, puis gagne le double de ce qui lui reste. Combien en a-t-il ?",
+   "o": [
+    "27",
+    "21",
+    "14",
+    "34",
+    "7"
+   ],
+   "a": 1,
+   "reward": 120,
+   "timer": 30
+  },
+  {
+   "id": "QZ29",
+   "level": 2,
+   "type": "piege",
+   "q": "Combien de mois ont 28 jours ?",
+   "o": [
+    "1",
+    "2",
+    "6",
+    "12"
+   ],
+   "a": 3,
+   "reward": 100,
+   "timer": 20
+  },
+  {
+   "id": "QZ30",
+   "level": 2,
+   "type": "piege",
+   "q": "5 machines font 5 os en 5 minutes. Combien de minutes pour que 100 machines fassent 100 os ?",
+   "o": [
+    "100",
+    "20",
+    "5",
+    "50",
+    "1"
+   ],
+   "a": 2,
+   "reward": 150,
+   "timer": 30
+  },
+  {
+   "id": "QZ31",
+   "level": 2,
+   "type": "piege",
+   "q": "Un os et une balle coûtent 110 tokens. L'os coûte 100 tokens de plus que la balle. Combien coûte la balle ?",
+   "o": [
+    "10",
+    "5",
+    "1",
+    "15",
+    "20"
+   ],
+   "a": 1,
+   "reward": 150,
+   "timer": 30
+  }
+ ]
+}
