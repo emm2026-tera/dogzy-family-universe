@@ -31,8 +31,8 @@ const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { c
 const draw = k => { if (!decks[k] || !decks[k].length) decks[k] = shuffle(D[k]); return decks[k].pop(); };
 function log(m){ const d = document.createElement('div'); d.innerHTML = m; $('#log').prepend(d); }
 function open(h, wide){ $('#sheet').className = wide ? 'wide' : ''; $('#sheet').innerHTML = h; $('#modal').classList.remove('hidden'); }
-function close(){ $('#modal').classList.add('hidden'); $('#sheet').innerHTML = ''; }
-const click = (sel, botMs) => new Promise(r => { const b = $(sel); b.onclick = () => r(b); if (P[cur] && P[cur].bot && botMs != null) setTimeout(() => b.isConnected && r(b), FAST ? 40 : botMs); });
+function close(){ if (over) return; $('#modal').classList.add('hidden'); $('#sheet').innerHTML = ''; }
+const click = (sel, botMs) => new Promise(r => { const b = $(sel); if (!b) return; b.onclick = () => r(b); if (P[cur] && P[cur].bot && botMs != null) setTimeout(() => b.isConnected && r(b), FAST ? 40 : botMs); });
 function add(p, n, why){ p.tokens += n; log(`<b style="color:${p.color}">${p.name}</b> ${n >= 0 ? '+' : ''}${n} tokens (${why})`); render(); }
 
 /* ---------- rendu ---------- */
@@ -62,13 +62,18 @@ async function rollDie(el, faces, forced){
   if (forced != null) v = forced; el.textContent = v; el.classList.remove('roll'); return v;
 }
 async function nextTurn(){
+  try { await turnBody(); } catch (err){ console.warn('tour récupéré après erreur', err); if (over) return; close(); render(); endTurn(); }
+}
+async function turnBody(){
   if (over) return; render(); const p = P[cur];
   $('#turnInfo').innerHTML = `Tour ${turn} — <b style="color:${p.color}">${p.name}</b>`;
   if (p.skip > 0){ p.skip--; log(`${p.name} passe son tour.`); await sleep(600); return endTurn(); }
   $('#btnRoll').disabled = p.bot; await click('#btnRoll', 500); $('#btnRoll').disabled = true;
   const fd = !p.bot && force.force.die && force.force.die.length ? force.force.die.shift() : null;
   const n = await rollDie($('#dieBig'), 6, fd); log(`${p.name} lance le dé : <b>${n}</b>`);
-  await move(p, n); await resolve(p); endTurn();
+  await move(p, n); await resolve(p);
+  if (p.extra && !over){ p.extra = 0; log(`${p.name} rejoue !`); return nextTurn(); }
+  endTurn();
 }
 async function move(p, n){
   const dir = n < 0 ? -1 : 1;
@@ -79,7 +84,7 @@ function endTurn(){
   if (turn > MAX_TURNS) return endGame(); nextTurn();
 }
 function endGame(){
-  if (over) return; over = true; render();
+  if (over) return; over = true; render(); $('#btnRoll').disabled = true;
   const score = p => p.tokens + CASES.filter(c => c.owner === P.indexOf(p)).reduce((s, c) => s + c.price, 0);
   const r = P.slice().sort((a, b) => score(b) - score(a));
   open(`<h2>🏆 Fin de partie</h2><ol style="text-align:left">${r.map(p => `<li><b style="color:${p.color}">${p.name}</b> : ${p.tokens} tokens + commerces = <b>${score(p)}</b></li>`).join('')}</ol><p><b>${r[0].name}</b> gagne The Adoles-chiant of Dogzy Town !</p><button class="btn primary" id="again">REJOUER</button><p style="font-size:10px">© 2026 Sania Labbé (Valkyrie)</p>`);
@@ -104,21 +109,39 @@ async function resolve(p){
 const PACK = {chance:['g','CHANCE','🍀'], penalite:['r','PÉNALITÉ','⚠️'], quiz:['b','QUIZ','❓']};
 function cardHTML(k, front){ const [cl, nm, ic] = PACK[k];
   return `<div class="deckZone ${cl}"><div class="card" id="card"><div class="face back"><span class="lg">${ic}</span>${nm}<small>The Adoles-chiant of Dogzy Town · © Sania Labbé (Valkyrie)</small></div><div class="face front">${front}<span class="cp">© 2026 Sania Labbé (Valkyrie)</span></div></div></div>`; }
-async function flip(p){ await new Promise(r => { $('#card').onclick = r; $('#flip').onclick = r; if (p.bot) setTimeout(r, FAST ? 40 : 800); }); $('#card').classList.add('flipped'); $('#flip').remove(); await sleep(950); }
+async function flip(p){ await new Promise(r => { if (!$('#card')) return; $('#card').onclick = r; $('#flip').onclick = r; if (p.bot) setTimeout(r, FAST ? 40 : 800); }); if (over || !$('#card')) return new Promise(() => {}); $('#card').classList.add('flipped'); $('#flip') && $('#flip').remove(); await sleep(950); }
 async function cardFlow(p, k){
   const ch = force.force.card ? D[k].find(x => x.id === force.force.card) : null; delete force.force.card;
   const card = ch || draw(k), who = rnd(CHARS);
   open(`<h2>Paquet ${PACK[k][1]}</h2>${cardHTML(k, `<h3>${card.id} · ${card.titre}</h3><img src="${IMG(who)}" alt="${NM(who)}"><p>${card.texte}</p>`)}<button class="btn primary" id="flip">RETOURNER LA CARTE</button><div id="after"></div>`);
   await flip(p);
-  const e = card.effet || {}; let msg = [];
-  if (typeof e.coins === 'number' && (!e.to || e.to === 'bank') && !e.duration_turns){ add(p, e.coins, card.titre); msg.push(`${e.coins >= 0 ? '+' : ''}${e.coins} tokens`); }
+  const e = card.effet || {}; let msg = []; const me = P.indexOf(p), others = P.filter(x => x !== p);
+  const left = P[(me + 1) % P.length], pay = (from, to, n, why) => { add(from, -n, why); add(to, n, why); };
+  let go = null, extra = null;
+  if (typeof e.coins === 'number' && !e.pay_player && !e.duration_turns){ add(p, e.coins, card.titre); msg.push(`${e.coins >= 0 ? '+' : ''}${e.coins} tokens`); }
+  if (e.pay_player){ pay(p, left, Math.abs(e.coins || 0), card.titre); msg.push(`paie ${Math.abs(e.coins || 0)} tokens à ${left.name}`); }
   if (typeof e.lose_coins === 'number'){ add(p, -Math.abs(e.lose_coins), card.titre); msg.push(`-${Math.abs(e.lose_coins)} tokens`); }
-  if (e.skip_turn){ p.skip = 1; msg.push('passe son prochain tour'); }
+  if (e.all_coins){ others.forEach(x => add(x, e.all_coins, card.titre)); msg.push(`les autres +${e.all_coins}`); }
+  if (e.steal || e.steal_richest){ const n = e.steal || e.steal_richest, v = others.slice().sort((x, y) => y.tokens - x.tokens)[0]; pay(v, p, n, card.titre); msg.push(`vole ${n} tokens à ${v.name}`); }
+  if (e.steal_each || e.collect_each){ const n = e.steal_each || e.collect_each; others.forEach(x => pay(x, p, n, card.titre)); msg.push(`reçoit ${n} tokens de chaque joueur`); }
+  if (e.pay_each){ others.forEach(x => pay(p, x, e.pay_each, card.titre)); msg.push(`paie ${e.pay_each} tokens à chaque joueur`); }
+  if (e.give_poorest){ const v = others.slice().sort((x, y) => x.tokens - y.tokens)[0]; pay(p, v, e.give_poorest, card.titre); msg.push(`donne ${e.give_poorest} tokens à ${v.name}`); }
+  if (e.pay_percent){ const n = Math.round(p.tokens * e.pay_percent); add(p, -n, card.titre); msg.push(`-${n} tokens`); }
+  if (e.lose_half_coins){ const n = Math.min(Math.floor(p.tokens / 2), e.max || 1e9); add(p, -n, card.titre); msg.push(`-${n} tokens`); }
+  if (e.pay_per_building){ const n = e.pay_per_building * CASES.filter(c => c.owner === me).length; add(p, -n, card.titre); msg.push(`-${n} tokens (commerces)`); }
+  if (e.skip_turn || e.no_move_next){ p.skip = 1; msg.push('passe son prochain tour'); }
+  if (e.extra_turn || e.double_roll){ extra = true; msg.push('rejoue tout de suite'); }
+  if (e.swap_position || e.swap_with){ const v = e.swap_with ? others.slice().sort((x, y) => x.tokens - y.tokens)[0] : rnd(others); [p.pos, v.pos] = [v.pos, p.pos]; render(); msg.push(`échange sa place avec ${v.name}`); }
+  if (e.goto){ const t = {banque:'start', depart:'start', duel:'duel', commerce:'commerce'}[e.goto] || 'start';
+    let k = 1; while (k <= CASES.length && CASES[(p.pos + k) % CASES.length].t !== t) k++; go = k % CASES.length; msg.push(`va à la case ${LBL[t] || 'Commerce'}`); }
   if (typeof e.move === 'number'){ msg.push(`déplacement ${e.move}`); }
   if (!msg.length) msg.push('effet affiché (règle complète à venir dans le jeu final)');
   $('#after').innerHTML = `<p><b>${p.name}</b> : ${msg.join(', ')}</p><button class="btn primary" id="ok">CONTINUER</button>`;
   await click('#ok', 600); close();
-  if (typeof e.move === 'number'){ await move(p, e.move); if (CASES[p.pos].t !== 'chance' && CASES[p.pos].t !== 'penalite') await resolve(p); }
+  const steps = typeof e.move === 'number' ? e.move : go;
+  if (steps){ if (e.no_bonus || e.goto === 'depart'){ p.pos = (p.pos + steps) % CASES.length; render(); } else await move(p, steps);
+    if (!['chance','penalite','start'].includes(CASES[p.pos].t)) await resolve(p); }
+  if (extra && !over){ p.extra = 1; }
 }
 async function quizFlow(p){
   const q = force.force.quiz ? D.quiz.find(x => x.id === force.force.quiz) : draw('quiz'); delete force.force.quiz;
@@ -170,6 +193,6 @@ function playGame(g, human, opp){
     $('#gBack').onclick = () => { clearInterval(iv); res(!!(result && result.won)); };
   });
 }
-$('#btnEnd').onclick = () => endGame();
+$('#btnEnd').onclick = () => { if (P.length) endGame(); };
 setup();
 })();
