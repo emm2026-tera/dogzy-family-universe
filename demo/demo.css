@@ -33,3 +33,17 @@ main{display:flex;gap:14px;padding:10px;flex-wrap:wrap;justify-content:center;fl
 .strip{display:flex;will-change:transform}.it{flex:0 0 130px;height:140px;margin:6px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#2a1e0a;border:2px solid #5a4a2a;font-weight:bold;font-size:13px}.it .th{font-size:44px;width:100px;height:80px;border-radius:8px;display:flex;align-items:center;justify-content:center;background-size:cover;background-position:center}.it.win{background:#1f6a2a}.it.lose{background:#7a1a1a}.it.hl{border-color:#ffd23a;box-shadow:0 0 22px #ffd23a;transform:scale(1.08)}
 iframe.game{flex:1;width:100%;border:2px solid #c9a24a;border-radius:10px;background:#000}
 footer{text-align:center;font-size:12px;color:#bfa55c;padding:8px}
+/* Plateau = image officielle Niveau 1 */
+#boardWrap{width:min(96vw,900px);overflow-x:auto}
+#board{display:block;position:relative;width:100%;min-width:520px;aspect-ratio:1536/1024;background:none}
+#board .bimg{position:absolute;inset:0;width:100%;height:100%;border-radius:14px;display:block}
+#board .cell{position:absolute;width:7.5%;height:11%;transform:translate(-50%,-50%);padding:0;border:none;background:none;box-shadow:none;border-radius:10px}
+#board .cell.active{outline:3px solid #fff;box-shadow:0 0 18px 6px #ffd23a;animation:pulse 1s infinite alternate}
+@keyframes pulse{to{box-shadow:0 0 28px 10px #ff7ad0}}
+#board .cell .pr{position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);background:#000c;color:#ffd23a;border-radius:6px;padding:0 4px;font-size:clamp(7px,1.2vw,10px);white-space:nowrap}
+#board .cell .own{position:absolute;top:-4px;left:10%;right:10%;height:5px;border-radius:3px}
+#board .pawns{position:absolute;inset:0;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1px}
+#board .pawn{width:clamp(10px,2vw,18px);height:clamp(10px,2vw,18px);border:2px solid #fff;box-shadow:0 0 6px #000}
+#bank{position:absolute;left:50%;top:2%;transform:translateX(-50%);border:none;background:none}
+#bank .b3{background:#000b;border:2px solid #ffd23a;border-radius:8px;padding:2px 10px;font-size:clamp(9px,1.5vw,13px);color:#ffd23a}
+.rot{display:none;text-align:center;font-size:12px;color:#ff7ad0}@media(max-width:560px) and (orientation:portrait){.rot{display:block}}

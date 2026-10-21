@@ -7,10 +7,12 @@ const rnd = a => a[Math.floor(Math.random() * a.length)];
 const CHARS = ['chefzy','waitzy','barzy','doczy','bankzy','buildzy','cashzy','gentlezy','lawzy','magiczy','securzy','sportzy'];
 const NM = c => c[0].toUpperCase() + c.slice(1), IMG = c => `../assets/charcards/${c}.jpg`;
 const COLORS = ['#ffd23a','#3ab0ff','#5af05a','#ff7ad0'];
-const COM = [['Resto Chefzy',180],['Café Waitzy',150],['Bar Barzy',200],['Clinique Doczy',260],['Chantier Buildzy',220],['Gym Sportzy',170],['Cabinet Lawzy',280],['Magie Magiczy',240],['Sécurité Securzy',300]];
-const T = ['start','commerce','chance','commerce','quiz','commerce','penalite','commerce','duel','commerce','chance','commerce','quiz','commerce','penalite','commerce','chance','duel','commerce','penalite','quiz','chance'];
+const COM = [['Resto Chefzy',180],['Café Waitzy',150],['Bar Barzy',200],['Clinique Doczy',260],['Chantier Buildzy',220],['Gym Sportzy',170],['Cabinet Lawzy',280],['Magie Magiczy',240],['Sécurité Securzy',300],['Banque Bankzy',320],['Boutique Cashzy',190]];
+/* ordre et types = plateau officiel Niveau 1 (image plateau-niveau1.jpg), départ en bas, sens horaire */
+const T = ['start','commerce','chance','commerce','duel','commerce','penalite','commerce','chance','commerce','quiz','commerce','penalite','commerce','commerce','commerce','duel','commerce','quiz','commerce','chance','penalite'];
+const XY = [[230,380],[185,340],[120,305],[80,260],[65,205],[85,135],[160,105],[225,85],[290,65],[355,60],[415,58],[475,62],[538,72],[595,88],[652,112],[712,138],[758,205],[770,265],[740,310],[695,350],[628,365],[540,385]].map(([x,y]) => [x / 8.19, y / 5.46]);
 let ci = 0; const CASES = T.map((t, i) => ({i, t, ...(t === 'commerce' ? {nm:COM[ci][0], price:COM[ci][1], rent:Math.round(COM[ci++][1] * .3), owner:null} : {})}));
-const ICON = {start:'🏁', commerce:'🏪', chance:'🍀', quiz:'❓', penalite:'⚠️', duel:'⚔️'}, LBL = {start:'DÉPART', chance:'CHANCE', quiz:'QUIZ', penalite:'PÉNALITÉ', duel:'DUEL'};
+const ICON = {start:'🏁', commerce:'🏪', chance:'🍀', quiz:'❓', penalite:'⚠️', duel:'🐶⚔️'}, LBL = {start:'DÉPART', chance:'CHANCE', quiz:'QUIZ', penalite:'PÉNALITÉ', duel:'DUEL'};
 const GAMES = [
   {id:'memoire', nm:'Mémoire NFT', th:'🃏', img:'../minijeux/img/nft/01-philzy.jpg'},
   {id:'objets-caches', nm:'Objets cachés', th:'🔍', img:'../assets/scene-diamond-heist.png'},
@@ -36,8 +38,9 @@ function add(p, n, why){ p.tokens += n; log(`<b style="color:${p.color}">${p.nam
 /* ---------- rendu ---------- */
 const POS = []; for (let c = 0; c < 7; c++) POS.push([0, c]); for (let r = 1; r < 6; r++) POS.push([r, 6]); for (let c = 5; c >= 0; c--) POS.push([5, c]); for (let r = 4; r >= 1; r--) POS.push([r, 0]);
 function render(){
-  $('#board').innerHTML = CASES.map((c, i) => `<div class="cell t-${c.t}" data-i="${i}" style="grid-row:${POS[i][0] + 1};grid-column:${POS[i][1] + 1}"><span class="ic">${ICON[c.t]}</span>${c.nm || LBL[c.t]}${c.price ? `<span class="pr">${c.price} t · loyer ${c.rent}</span>` : ''}${c.owner != null ? `<span class="own" style="background:${P[c.owner].color}"></span>` : ''}<div class="pawns">${P.filter(p => p.pos === i).map(p => `<span class="pawn" style="background:${p.color}" title="${p.name}"></span>`).join('')}</div></div>`).join('')
-    + `<div id="bank"><div class="b1">🏦</div><div class="b2">BANQUE</div><div class="b3">Monnaie : tokens · Tour ${Math.min(turn, MAX_TURNS)} / ${MAX_TURNS}</div></div>`;
+  const act = P[cur] ? P[cur].pos : -1;
+  $('#board').innerHTML = `<img class="bimg" src="plateau-niveau1.jpg" alt="Plateau Dogzy Town Niveau 1">` + CASES.map((c, i) => `<div class="cell t-${c.t}${i === act ? ' active' : ''}" data-i="${i}" title="${c.nm || LBL[c.t]}" style="left:${XY[i][0]}%;top:${XY[i][1]}%">${c.price ? `<span class="pr">${c.price}</span>` : ''}${c.owner != null ? `<span class="own" style="background:${P[c.owner].color}"></span>` : ''}<div class="pawns">${P.filter(p => p.pos === i).map(p => `<span class="pawn" style="background:${p.color}" title="${p.name}"></span>`).join('')}</div></div>`).join('')
+    + `<div id="bank"><div class="b3">Tour ${Math.min(turn, MAX_TURNS)} / ${MAX_TURNS}</div></div>`;
   $('#players').innerHTML = P.map((p, i) => `<div class="pl ${i === cur ? 'cur' : ''}" id="pl${i + 1}"><img src="${IMG(p.char)}" alt=""><span>P${i + 1} ${p.name}${p.bot ? ' (bot)' : ' (toi)'}</span><b>${p.tokens}</b></div>`).join('');
   force.state = {P, cur, turn, over, CASES};
 }
