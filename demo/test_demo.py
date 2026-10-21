@@ -59,12 +59,12 @@ with sync_playwright() as pw:
     pg.screenshot(path=SH+'demo-09-penalite-face-cachee.png'); t0 = pg.evaluate('DEMO.state.P[0].tokens'); pg.click('#flip'); pg.clock.run_for(1200)
     pg.wait_for_timeout(1300); pg.screenshot(path=SH+'demo-10-penalite-face-visible.png')
     ok('carte Pénalité retournée, PE46 -500', pg.locator('#card.flipped').count() == 1 and pg.evaluate('DEMO.state.P[0].tokens') == t0 - 500); pg.click('#ok'); human_turn(pg)
-    pg.evaluate("DEMO.force.die=[4]; DEMO.force.opp=2; DEMO.force.duelGame='win'"); pg.click('#btnRoll')
+    pg.evaluate("DEMO.force.die=[4]; DEMO.force.opp=2; DEMO.force.duelGame='corde'"); pg.click('#btnRoll')
     ok('Duel : écran du dé', until(pg, "!!document.querySelector('#dRoll')"))
     t0 = pg.evaluate('DEMO.state.P[0].tokens')
     pg.click('#dRoll'); pg.clock.run_for(400); pg.screenshot(path=SH+'demo-11-duel-de.png')
     until(pg, "!!document.querySelector('#strip')", 50); pg.clock.run_for(250); pg.screenshot(path=SH+'demo-12-duel-carrousel.png')
-    ok('carrousel -> Gagnant tout de suite (+100)', until(pg, "!!document.querySelector('#duelRes')") and pg.evaluate('DEMO.state.P[0].tokens') == t0 + 100)
+    ok('carrousel -> mini-jeu lancé (La Corde), abandon = -100', until(pg, "!!document.querySelector('#gframe')") and (pg.click('#gQuit') or True) and until(pg, "!!document.querySelector('#duelRes')") and pg.evaluate('DEMO.state.P[0].tokens') == t0 - 100)
     pg.screenshot(path=SH+'demo-12b-duel-resultat.png'); pg.click('#ok'); human_turn(pg)
     pg.evaluate("DEMO.force.die=[2]; DEMO.force.quiz='QZ10'"); pg.click('#btnRoll')
     until(pg, "!!document.querySelector('#flip')"); pg.click('#flip'); pg.clock.run_for(1200); pg.click('.opts button[data-i="0"]'); pg.clock.run_for(100)
@@ -86,7 +86,7 @@ with sync_playwright() as pw:
             except Exception: pass
         pg.clock.run_for(800)
     ok("partie de 3 tours jouée jusqu'à la fin naturelle", pg.locator('#again').count() == 1); pg.close()
-    for g in ['memoire','objets-caches','bubbles','corde','match3','hexa-puzzle','tetris','tile-match','2048-hex','lose']:
+    for g in ['memoire','objets-caches','bubbles','corde','match3','hexa-puzzle','tetris','tile-match','2048-hex']:
         pg = new(b, 6); pick(pg)
         pg.evaluate(f"DEMO.force.die=[4]; DEMO.force.opp=3; DEMO.force.duelGame='{g}'"); human_turn(pg); pg.click('#btnRoll')
         until(pg, "!!document.querySelector('#dRoll')"); t0 = pg.evaluate('DEMO.state.P[0].tokens'); pg.click('#dRoll')

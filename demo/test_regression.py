@@ -8,6 +8,14 @@ def until(pg, js, n=300):
         if pg.evaluate(js): return True
         pg.clock.run_for(200)
     return False
+def ready(pg):
+    for _ in range(400):
+        if pg.evaluate(READY): return True
+        for s in ['#gBack:not([disabled])','#gQuit']:
+            l = pg.locator(s)
+            if l.count() and l.first.is_visible(): l.first.click(); break
+        pg.clock.run_for(200)
+    print('   bloqué sur:', pg.evaluate("document.querySelector('#sheet').innerText.slice(0,150)")); return False
 READY = "!document.querySelector('#btnRoll').disabled && DEMO.state.cur===0 && document.querySelector('#modal').classList.contains('hidden')"
 def new(b, vp=None, tours=8):
     pg = b.new_page(viewport=vp or {'width':1280,'height':900}); errs = []
@@ -50,5 +58,27 @@ with sync_playwright() as pw:
         ok(f"partie complète {vp['width']}px (double-clics) sans blocage ni erreur", pg.evaluate('DEMO.state.over') and not errs and pg.locator('#again').is_visible())
         if errs: print('  ', errs[:3])
         pg.close()
+    # 5. Duels : scénario exact (dé 4 -> Duel, adversaire P4) -> toujours un mini-jeu, la partie continue à 4
+    for vp in [{'width':390,'height':844}, {'width':533,'height':900}, {'width':1280,'height':900}]:
+        pg, errs = new(b, vp); pg.evaluate("DEMO.force.die=[4]; DEMO.force.opp=4"); pg.click('#btnRoll')
+        until(pg, "!!document.querySelector('#dRoll')"); pg.click('#dRoll')
+        car = until(pg, "!!document.querySelector('#strip')") and pg.evaluate("[...document.querySelectorAll('#strip .it')].every(e=>!/tout de suite/.test(e.textContent))")
+        ifr = until(pg, "!!document.querySelector('#gframe')")
+        vs = 'Chefzy' in pg.inner_text('.vs') and pg.evaluate("DEMO.state.P[3].name") in pg.inner_text('.vs')
+        pg.clock.run_for(1500); f = [x for x in pg.frames if 'duel=1' in x.url][0]
+        links = f.evaluate("document.querySelectorAll('a[href]').length")
+        pg.click('#gQuit'); until(pg, "!!document.querySelector('#duelRes')"); pg.click('#ok')
+        cont = ready(pg) and not pg.evaluate('DEMO.state.over') and len(pg.evaluate('DEMO.state.P')) == 4
+        ok(f"duel {vp['width']}px : carrousel sans victoire auto={car}, mini-jeu lancé={ifr}, joueurs affichés={vs}, liens de sortie neutralisés={links==0}, partie continue à 4={cont}", car and ifr and vs and links == 0 and cont and not errs)
+        if errs: print('  ', errs[:3])
+        pg.close()
+    pg, errs = new(b); pg.evaluate("DEMO.state.P; window.__d=[]"); bad = 0
+    for k in range(4):
+        pg.evaluate(f"DEMO.force.die=[4]; DEMO.force.opp=1"); ready(pg); pg.click('#btnRoll')
+        until(pg, "!!document.querySelector('#dRoll')"); pg.click('#dRoll'); until(pg, "!!document.querySelector('.vs')")
+        if pg.inner_text('#dOpp .vs').count('Chefzy') != 1: bad += 1
+        until(pg, "!!document.querySelector('#gframe')"); pg.click('#gQuit'); until(pg, "!!document.querySelector('#ok')"); pg.click('#ok')
+        pg.evaluate("DEMO.state.P[0].pos=0")
+    ok('dé du duel : ne choisit jamais le joueur lui-même', bad == 0); pg.close()
     b.close()
 print('RÉSULTAT', sum(R), '/', len(R))

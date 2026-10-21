@@ -22,9 +22,7 @@ const GAMES = [
   {id:'hexa-puzzle', nm:'Hexa Puzzle', th:'⬢'},
   {id:'tetris', nm:'Tetris Dogzy', th:'🧱'},
   {id:'tile-match', nm:'Tile Match', th:'🀄', img:'../minijeux/img/tile-vignette.jpg'},
-  {id:'2048-hex', nm:'2048 Hex', th:'🔢', img:'../minijeux/img/2048-vignette.jpg'},
-  {id:'win', nm:'Gagnant tout de suite', th:'🏆', cls:'win'},
-  {id:'lose', nm:'Perdant tout de suite', th:'💀', cls:'lose'}];
+  {id:'2048-hex', nm:'2048 Hex', th:'🔢', img:'../minijeux/img/2048-vignette.jpg'}]; /* chaque duel = un mini-jeu (plus de victoire/défaite automatique) */
 const force = window.DEMO = {force:{}, state:null, GAMES, CASES};
 let P = [], cur = 0, turn = 1, over = false, decks = {};
 const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
@@ -104,7 +102,7 @@ async function resolve(p){
     else log(`${p.name} est chez lui (${c.nm}).`);
   } else if (c.t === 'chance' || c.t === 'penalite') await cardFlow(p, c.t);
   else if (c.t === 'quiz') await quizFlow(p);
-  else if (c.t === 'duel') await duelFlow(p);
+  else if (c.t === 'duel') return await duelFlow(p);
 }
 const PACK = {chance:['g','CHANCE','🍀'], penalite:['r','PÉNALITÉ','⚠️'], quiz:['b','QUIZ','❓']};
 function cardHTML(k, front){ const [cl, nm, ic] = PACK[k];
@@ -120,7 +118,7 @@ async function cardFlow(p, k){
   let go = null, extra = null;
   if (typeof e.coins === 'number' && !e.pay_player && !e.duration_turns){ add(p, e.coins, card.titre); msg.push(`${e.coins >= 0 ? '+' : ''}${e.coins} tokens`); }
   if (e.pay_player){ pay(p, left, Math.abs(e.coins || 0), card.titre); msg.push(`paie ${Math.abs(e.coins || 0)} tokens à ${left.name}`); }
-  if (typeof e.lose_coins === 'number'){ add(p, -Math.abs(e.lose_coins), card.titre); msg.push(`-${Math.abs(e.lose_coins)} tokens`); }
+  if (typeof e.lose_coins === 'number' && e.goto !== 'duel'){ add(p, -Math.abs(e.lose_coins), card.titre); msg.push(`-${Math.abs(e.lose_coins)} tokens`); }
   if (e.all_coins){ others.forEach(x => add(x, e.all_coins, card.titre)); msg.push(`les autres +${e.all_coins}`); }
   if (e.steal || e.steal_richest){ const n = e.steal || e.steal_richest, v = others.slice().sort((x, y) => y.tokens - x.tokens)[0]; pay(v, p, n, card.titre); msg.push(`vole ${n} tokens à ${v.name}`); }
   if (e.steal_each || e.collect_each){ const n = e.steal_each || e.collect_each; others.forEach(x => pay(x, p, n, card.titre)); msg.push(`reçoit ${n} tokens de chaque joueur`); }
@@ -140,7 +138,8 @@ async function cardFlow(p, k){
   await click('#ok', 600); close();
   const steps = typeof e.move === 'number' ? e.move : go;
   if (steps){ if (e.no_bonus || e.goto === 'depart'){ p.pos = (p.pos + steps) % CASES.length; render(); } else await move(p, steps);
-    if (!['chance','penalite','start'].includes(CASES[p.pos].t)) await resolve(p); }
+    if (!['chance','penalite','start'].includes(CASES[p.pos].t)){ const r = await resolve(p);
+      if (e.goto === 'duel' && typeof e.lose_coins === 'number' && r === false) add(p, -Math.abs(e.lose_coins), `${card.titre} (duel perdu)`); } }
   if (extra && !over){ p.extra = 1; }
 }
 async function quizFlow(p){
@@ -159,35 +158,43 @@ async function quizFlow(p){
 /* ---------- Duel : dé 1-4 + carrousel ---------- */
 async function duelFlow(p){
   const me = P.indexOf(p);
-  open(`<h2>⚔️ DUEL !</h2><p>Mise : <b>${DUEL_STAKE}</b> tokens. Lance le dé pour savoir qui t'affronte.</p><div class="die" id="dDie">?</div><div id="dOpp"></div><button class="btn primary" id="dRoll">LANCER LE DÉ</button><div id="dCar"></div>`, true);
+  open(`<div class="duelBox"><h2>⚔️ DUEL !</h2><p>Mise : <b>${DUEL_STAKE}</b> tokens. Lance le dé pour savoir qui ${p.bot ? `${p.name} affronte` : "t'affronte"}.</p><div class="die" id="dDie">?</div><div id="dOpp"></div><button class="btn primary" id="dRoll">LANCER LE DÉ</button><div id="dCar"></div></div>`);
   await click('#dRoll', 500); $('#dRoll').remove();
-  let o; do { o = await rollDie($('#dDie'), 4, force.force.opp != null && force.force.opp !== me + 1 ? force.force.opp : null) - 1; } while (o === me);
-  delete force.force.opp; const q = P[o];
-  $('#dOpp').innerHTML = `<p>Adversaire : <b style="color:${q.color}">P${o + 1} ${q.name}</b></p>`; log(`${p.name} affronte ${q.name} en duel.`);
+  /* le dé 1-4 ne s'arrête jamais sur le joueur qui provoque le duel */
+  const fo = force.force.opp, cand = P.map((x, i) => i).filter(i => i !== me);
+  const o = fo != null && fo - 1 !== me && P[fo - 1] ? fo - 1 : rnd(cand);
+  await rollDie($('#dDie'), P.length, o + 1); delete force.force.opp; const q = P[o];
+  $('#dOpp').innerHTML = `<p class="vs"><b style="color:${p.color}">P${me + 1} ${p.name}</b> ⚔️ <b style="color:${q.color}">P${o + 1} ${q.name}</b></p>`; log(`${p.name} affronte ${q.name} en duel.`);
   await sleep(700);
   const items = []; for (let k = 0; k < 6; k++) items.push(...shuffle(GAMES));
   let target = 4 * GAMES.length + Math.floor(Math.random() * GAMES.length);
   if (force.force.duelGame){ for (let k = 4 * GAMES.length; k < items.length; k++) if (items[k].id === force.force.duelGame){ target = k; break; } delete force.force.duelGame; }
-  $('#dCar').innerHTML = `<div class="carWrap" id="carWrap"><div class="strip" id="strip">${items.map(g => `<div class="it ${g.cls || ''}"><div class="th" ${g.img ? `style="background-image:url('${g.img}')"` : ''}>${g.img ? '' : g.th}</div>${g.nm}</div>`).join('')}</div></div>`;
+  $('#dCar').innerHTML = `<p>Le carrousel choisit le mini-jeu…</p><div class="carWrap" id="carWrap"><div class="strip" id="strip">${items.map(g => `<div class="it"><div class="th" ${g.img ? `style="background-image:url('${g.img}')"` : ''}>${g.img ? '' : g.th}</div>${g.nm}</div>`).join('')}</div></div>`;
   const W = 142, cw = $('#carWrap').clientWidth, x = target * W + 71 - cw / 2 + 6, st = $('#strip');
   st.style.transition = `transform ${FAST ? 0.4 : 4.5}s cubic-bezier(.12,.75,.15,1)`; await sleep(30); st.style.transform = `translateX(${-x}px)`;
   await new Promise(r => setTimeout(r, FAST ? 450 : 4600));
   st.children[target].classList.add('hl'); const g = items[target]; window.DEMO.lastGame = g.id; log(`Carrousel : <b>${g.nm}</b>`);
   await sleep(900);
   let won;
-  if (g.id === 'win' || g.id === 'lose') won = g.id === 'win';
-  else if (p.bot && q.bot) { won = Math.random() < .5; log('(duel entre bots simulé)'); }
-  else won = await playGame(g, p.bot ? o : me, p.bot ? me : o) === (p.bot ? false : true) ;
+  if (p.bot && q.bot){
+    open(`<div class="duelBox"><h2>⚔️ ${g.nm}</h2><p class="vs"><b style="color:${p.color}">${p.name}</b> ⚔️ <b style="color:${q.color}">${q.name}</b></p><p>Les deux bots jouent au mini-jeu…</p></div>`);
+    await sleep(1500); won = Math.random() < .5; log(`(duel entre bots : ${g.nm})`);
+  } else won = await playGame(g, p.bot ? o : me, p.bot ? me : o) === !p.bot;
   const W1 = won ? p : q, L1 = won ? q : p;
   add(L1, -DUEL_STAKE, 'duel perdu'); add(W1, DUEL_STAKE, 'duel gagné');
-  open(`<h2>⚔️ Résultat du duel</h2><p id="duelRes"><b>${W1.name}</b> gagne contre ${L1.name} (${g.nm}) : +${DUEL_STAKE} / -${DUEL_STAKE} tokens</p><button class="btn primary" id="ok">RETOUR AU PLATEAU</button>`);
-  await click('#ok', 600); close();
+  open(`<div class="duelBox"><h2>⚔️ Résultat du duel</h2><p>${g.nm}</p><p id="duelRes">🏆 <b style="color:${W1.color}">${W1.name}</b> gagne : +${DUEL_STAKE} tokens<br>💔 <b style="color:${L1.color}">${L1.name}</b> perd : -${DUEL_STAKE} tokens</p><button class="btn primary" id="ok">RETOUR AU PLATEAU</button></div>`);
+  await click('#ok', 600); close(); return won;
 }
 /* human = index du joueur humain (toujours P1), retourne true si l'humain gagne */
 function playGame(g, human, opp){
   return new Promise(res => {
-    open(`<h2>⚔️ ${g.nm}</h2><iframe class="game" id="gframe" src="../minijeux/${g.id}.html?duel=1&j=${human + 1}&vs=${opp + 1}"></iframe><div><span id="gStat">Partie en cours…</span> <button class="btn" id="gQuit">ABANDONNER</button> <button class="btn primary" id="gBack" disabled>RETOUR AU PLATEAU</button></div>`, true);
+    const src = `../minijeux/${g.id}.html?duel=1&j=${human + 1}&vs=${opp + 1}`, A = P[human], B = P[opp];
+    open(`<h2>⚔️ ${g.nm}</h2><p class="vs"><b style="color:${A.color}">${A.name} (toi)</b> ⚔️ <b style="color:${B.color}">${B.name}</b> — mise ${DUEL_STAKE} tokens</p><iframe class="game" id="gframe" src="${src}"></iframe><div><span id="gStat">Partie en cours…</span> <button class="btn" id="gQuit">ABANDONNER</button> <button class="btn primary" id="gBack" disabled>RETOUR AU PLATEAU</button></div>`, true);
     let result = null;
+    /* les liens « Mini-jeux » / « Démo » du mini-jeu faisaient sortir de la partie : on les neutralise */
+    $('#gframe').onload = () => { try { const f = $('#gframe'), w = f.contentWindow;
+      if (!w.location.pathname.endsWith(`/${g.id}.html`)){ f.src = src; return; }
+      w.document.querySelectorAll('a[href]').forEach(a => { a.removeAttribute('href'); a.style.display = 'none'; }); } catch (e) {} };
     const iv = setInterval(() => { try { const r = $('#gframe') && $('#gframe').contentWindow.MJ_RESULT; if (r && !result){ result = r; $('#gStat').textContent = r.won ? 'Tu as gagné !' : (r.tie ? 'Égalité (compte comme perdu)' : 'Tu as perdu.'); $('#gBack').disabled = false; } } catch (e) {} }, 400);
     $('#gQuit').onclick = () => { clearInterval(iv); res(false); };
     $('#gBack').onclick = () => { clearInterval(iv); res(!!(result && result.won)); };
