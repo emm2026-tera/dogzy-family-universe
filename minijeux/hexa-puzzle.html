@@ -23,8 +23,9 @@ h1.gt em{font-style:normal;color:#ff7ad0;text-shadow:0 3px 0 #6a0a4a,0 0 14px rg
 .c6{background:linear-gradient(#6affea,#0aa08a)}.c7{background:linear-gradient(#ffd23a,#a06a00)}
 #bd{filter:drop-shadow(0 0 6px rgba(255,64,176,.55)) drop-shadow(0 0 12px rgba(212,175,55,.35))}
 .hx.cell{background:radial-gradient(#ffd23a,#8a6a12)}
-#tray{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:10px auto 0;max-width:520px;min-height:80px;touch-action:none}
-.pz{position:relative;padding:4px;border-radius:12px;border:1px dashed rgba(212,175,55,.35);background:rgba(10,8,4,.6);cursor:grab;touch-action:none}
+#tray{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;margin:8px auto 0;max-width:520px;min-height:80px}
+/* pièce = grande zone tactile ; aucun défilement ni zoom quand on la touche */
+.pz{position:relative;padding:4px;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;border-radius:12px;border:1px dashed rgba(212,175,55,.35);background:rgba(10,8,4,.6);cursor:grab;touch-action:none}
 .pz.hide{visibility:hidden}
 .drag{position:fixed;left:0;top:0;z-index:40;pointer-events:none;filter:drop-shadow(0 8px 10px rgba(0,0,0,.6))}
 .goal{text-align:center;font-size:14px;color:#e7d397;margin:4px 0}.goal b{color:var(--gold2)}
@@ -42,7 +43,7 @@ h1.gt em{font-style:normal;color:#ff7ad0;text-shadow:0 3px 0 #6a0a4a,0 0 14px rg
       <div class="frame"><div class="inner" style="padding:12px"><div id="bd"></div></div></div>
       <div class="goal">Niveau <b id="lvl">1</b> &nbsp; Cases : <b id="fill">0</b> / <b id="tot">0</b> &nbsp; Réussis : <b id="won">0</b></div>
       <div id="tray"></div>
-      <p class="help">Glisse les pièces sur le plateau pour remplir toute la forme hexagonale. Touche une pièce posée pour la reprendre.</p>
+      <p class="help">Glisse les pièces sur le plateau pour remplir toute la forme hexagonale. Touche une pièce pour la tourner. Touche une pièce posée pour la reprendre.</p>
     </div>
   </div>
 </main>
@@ -52,8 +53,8 @@ h1.gt em{font-style:normal;color:#ff7ad0;text-shadow:0 3px 0 #6a0a4a,0 0 14px rg
   <h2><i class="paw"></i> Hexa Puzzle</h2>
   <ul>
     <li>Glisse les <b>pièces hexagonales</b> du bas sur le plateau.</li>
-    <li>Remplis <b>toutes les cases</b> de la forme pour réussir le niveau. Les pièces ne tournent pas : trouve leur bonne place !</li>
-    <li>Touche une pièce déjà posée pour la reprendre.</li>
+    <li>Remplis <b>toutes les cases</b> de la forme pour réussir le niveau. <b>Touche</b> une pièce pour la tourner.</li>
+    <li>Touche une pièce déjà posée pour la reprendre, ou glisse-la ailleurs.</li>
     <li>Réussis le plus de niveaux possible en <b>2 minutes</b>. Les plateaux ont la forme d'un cœur, d'un os, d'une patte, d'une couronne et d'une tête de chien Dogzy.</li>
   </ul>
   <div class="row"><button class="btn primary" id="go">JOUER</button></div>
@@ -120,7 +121,7 @@ h1.gt em{font-style:normal;color:#ff7ad0;text-shadow:0 3px 0 #6a0a4a,0 0 14px rg
     return e;
   }
   function layout(){
-    const side = Math.max(240, Math.min(window.innerWidth - 60, 440, window.innerHeight - (window.innerWidth>=860?360:520)));
+    const side = Math.max(220, Math.min(window.innerWidth - 40, 460, window.innerHeight - (window.innerWidth>=860?330:360)));
     const [a,b,c,d] = bbox(cells, 1), uw = c-a+Math.sqrt(3), uh = d-b+2;
     S = Math.min(side/uw, side/uh); R = [a,b,uw,uh];
     render();
@@ -133,9 +134,9 @@ h1.gt em{font-style:normal;color:#ff7ad0;text-shadow:0 3px 0 #6a0a4a,0 0 14px rg
     cells.forEach(([q,r]) => { const [x,y] = px(q,r,S); const e = hexEl('cell', S, ox+x, oy+y); e.dataset.k = K(q,r); bd.appendChild(e); });
     pieces.forEach(p => { if (!p.at) return;
       p.cells.forEach(([dq,dr]) => { const q = p.at[0]+dq, r = p.at[1]+dr, [x,y] = px(q,r,S);
-        const e = hexEl('pc c'+p.col, S, ox+x, oy+y, ICO[p.col]); e.dataset.pid = p.id; bd.appendChild(e); }); });
+        const e = hexEl('pc c'+p.col, S, ox+x, oy+y, ICO[p.col]); e.dataset.pid = p.id; e.dataset.k2 = K(q,r); bd.appendChild(e); }); });
     tray.innerHTML = '';
-    const ts = Math.min(S*0.62, 20);
+    const ts = Math.max(13, Math.min(S*0.72, 24)); /* pièces assez grosses pour le doigt */
     pieces.forEach(p => { if (p.at) return;
       const [x0,y0,x1,y1] = bbox(p.cells, ts), box = document.createElement('div');
       box.className = 'pz'; box.dataset.pid = p.id;
@@ -152,6 +153,14 @@ h1.gt em{font-style:normal;color:#ff7ad0;text-shadow:0 3px 0 #6a0a4a,0 0 14px rg
     cells.forEach(([q,r]) => { const [hx,hy] = px(q,r,S), d = Math.hypot(hx-x, hy-y); if (d < bdist){ bdist = d; best = [q,r]; } });
     return best;
   }
+  /* cases du plateau les plus proches du point de dépôt (tolérance pour le doigt) */
+  function boardCellsNear(cx, cy){
+    const rc = bd.getBoundingClientRect(), x = cx - rc.left - OX, y = cy - rc.top - OY;
+    return cells.map(([q,r]) => { const [hx,hy] = px(q,r,S); return [Math.hypot(hx-x, hy-y), q, r]; })
+      .filter(c => c[0] < S*1.9).sort((a,b) => a[0]-b[0]).slice(0, 7).map(c => [c[1], c[2]]);
+  }
+  /* rotation de 60° (coordonnées axiales) */
+  function rotate(p){ const cs = p.cells.map(([q,r]) => [-r, q+r]); p.cells = cs.map(([q,r]) => [q-cs[0][0], r-cs[0][1]]); p.rot = ((p.rot||0)+1)%6; }
   function fits(p, at){
     const set = new Set(cells.map(c=>K(...c)));
     return p.cells.every(([dq,dr]) => { const k = K(at[0]+dq, at[1]+dr); return set.has(k) && owner[k]===undefined; });
@@ -163,24 +172,31 @@ h1.gt em{font-style:normal;color:#ff7ad0;text-shadow:0 3px 0 #6a0a4a,0 0 14px rg
   }
   function unplace(p){ p.cells.forEach(([dq,dr]) => delete owner[K(p.at[0]+dq, p.at[1]+dr)]); p.at = null; render(); }
   function solved(){
+    if (drag){ drag.el.remove(); drag = null; }
     won++; $('won').textContent = won; refresh();
     MJ.toast(bd, 'Parfait ! ⬢', '#ffd23a');
     setTimeout(() => { level++; playing && newLevel(); }, 700);
   }
   // Glisser-déposer (souris et tactile via Pointer Events)
-  function startDrag(p, ev, grabIdx){
+  function startDrag(p, ev, grabIdx, fromTray, src){
     const el = document.createElement('div'); el.className = 'drag';
     const [x0,y0,x1,y1] = bbox(p.cells, S);
     p.cells.forEach(([q,r]) => { const [x,y] = px(q,r,S); el.appendChild(hexEl('pc c'+p.col, S, x-x0+S*Math.sqrt(3)/2, y-y0+S, ICO[p.col])); });
     const g = px(...p.cells[grabIdx], S);
-    drag = {p, el, grabIdx, offX: g[0]-x0+S*Math.sqrt(3)/2, offY: g[1]-y0+S};
-    document.body.appendChild(el); moveDrag(ev);
+    drag = {p, el, grabIdx, offX: g[0]-x0+S*Math.sqrt(3)/2, offY: g[1]-y0+S, sx: ev.clientX, sy: ev.clientY, moved: false, fromTray, src};
+    el.style.visibility = 'hidden'; document.body.appendChild(el);
+    try { ev.target.releasePointerCapture && ev.target.hasPointerCapture && ev.target.hasPointerCapture(ev.pointerId) && ev.target.releasePointerCapture(ev.pointerId); } catch (e) {}
+    moveDrag(ev);
   }
-  function moveDrag(ev){ if (!drag) return; drag.el.style.transform = `translate(${ev.clientX-drag.offX}px,${ev.clientY-drag.offY-S*1.6}px)`; drag.cx = ev.clientX; drag.cy = ev.clientY - S*1.6; }
+  function moveDrag(ev){ if (!drag) return;
+    if (!drag.moved){ if (Math.hypot(ev.clientX-drag.sx, ev.clientY-drag.sy) < 6) return; drag.moved = true; drag.el.style.visibility = ''; drag.src && drag.src.classList.add('hide'); }
+    ev.cancelable && ev.preventDefault();
+    drag.el.style.transform = `translate(${ev.clientX-drag.offX}px,${ev.clientY-drag.offY-S*1.6}px)`; drag.cx = ev.clientX; drag.cy = ev.clientY - S*1.6; }
   function endDrag(){
     if (!drag) return; const d = drag; drag = null; d.el.remove();
-    const tgt = boardCellAt(d.cx, d.cy);
-    if (tgt){ const g = d.p.cells[d.grabIdx], at = [tgt[0]-g[0], tgt[1]-g[1]]; if (fits(d.p, at)) return place(d.p, at); }
+    if (!d.moved){ if (d.fromTray) rotate(d.p); render(); return; } /* simple toucher = tourner la pièce */
+    const g = d.p.cells[d.grabIdx];
+    for (const tgt of boardCellsNear(d.cx, d.cy)){ const at = [tgt[0]-g[0], tgt[1]-g[1]]; if (fits(d.p, at)) return place(d.p, at); }
     render();
   }
   tray.addEventListener('pointerdown', ev => {
@@ -189,13 +205,18 @@ h1.gt em{font-style:normal;color:#ff7ad0;text-shadow:0 3px 0 #6a0a4a,0 0 14px rg
     // case de la pièce la plus proche du doigt
     const hs = [...box.children]; let gi = 0, bdd = 1e9;
     hs.forEach((h,i) => { const r = h.getBoundingClientRect(), dd = Math.hypot(r.left+r.width/2-ev.clientX, r.top+r.height/2-ev.clientY); if (dd < bdd){ bdd = dd; gi = i; } });
-    box.classList.add('hide'); startDrag(p, ev, gi);
+    startDrag(p, ev, gi, true, box);
   });
   bd.addEventListener('pointerdown', ev => {
     if (!playing) return; const h = ev.target.closest('.pc'); if (!h) return; ev.preventDefault();
-    unplace(pieces.find(x => x.id === +h.dataset.pid));
+    const p = pieces.find(x => x.id === +h.dataset.pid), k = h.dataset.k2, at = p.at;
+    const gi = Math.max(0, p.cells.findIndex(([dq,dr]) => K(at[0]+dq, at[1]+dr) === k));
+    unplace(p); startDrag(p, ev, gi, false, null);
   });
-  window.addEventListener('pointermove', moveDrag);
+  window.addEventListener('pointermove', moveDrag, {passive:false});
+  /* iOS/Android : bloque le défilement de la page pendant qu'on glisse une pièce */
+  document.addEventListener('touchmove', ev => { if (drag) ev.preventDefault(); }, {passive:false});
+  document.addEventListener('touchstart', ev => { if (ev.target.closest && ev.target.closest('.pz,#bd .pc')) ev.preventDefault(); }, {passive:false});
   window.addEventListener('pointerup', endDrag); window.addEventListener('pointercancel', endDrag);
 
   function scores(){ return G.ids.map((id,i) => id===G.human ? won : bots[i].v); }
