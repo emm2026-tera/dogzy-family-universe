@@ -1,9 +1,9 @@
 # Version anglaise : aucun texte français visible (plateau, cartes, quiz, duel, 9 mini-jeux). © 2026 Sania Labbé (Valkyrie)
 import re, json
 from playwright.sync_api import sync_playwright
-B = 'http://localhost:8811'
+import os; B = os.environ.get('B','http://localhost:8811')
 FR = re.compile(r"[éèêàçùûôœ]|\b(le|la|les|des|du|tu|ton|ta|tes|joueur|joueurs|carte|paie|gagne|recule|avance|tour|tours|toi|pour|avec|sans|une|est|sur|dans|chaque|partie|PASSER|ACHETER|LANCER|RETOUR|JOUER|Niveau|Trouvés|Essais|Paires)\b", re.I)
-OKW = re.compile(r"Tax tour|Sania Labbé|Adoles-chiant|Valkyrie|Café|Securzy|Doczy|é{0}$")
+OKW = re.compile(r"Tax tour|Sania Labbé|Adoles-chiant|Dogzy Family Universe|Valkyrie|Café|Securzy|Doczy|é{0}$")
 R = []; bad = {}
 def ok(n, c): R.append(bool(c)); print('OK  ' if c else 'FAIL', n, flush=True)
 def scan(where, txt):

@@ -1,4 +1,4 @@
-/* The Adoles-chiant of Dogzy Town — FR/EN. © 2026 Sania Labbé (Valkyrie)
+/* Dogzy Family Universe — FR/EN. © 2026 Sania Labbé (Valkyrie)
    Français = comportement inchangé. Anglais : ?lang=en (mémorisé) ou bouton FR/EN. */
 (() => {
 const q = new URLSearchParams(location.search);
@@ -16,7 +16,7 @@ const X = {
 'La partie commence !':'The game begins!','Partie terminée.':'Game over.','🏆 Fin de partie':'🏆 Game over','⚔️ DUEL !':'⚔️ DUEL!','⚔️ Résultat du duel':'⚔️ Duel result','Le carrousel choisit le mini-jeu…':'The carousel is picking the mini-game…',
 'Les deux bots jouent au mini-jeu…':'Both bots are playing the mini-game…','✅ Bonne réponse !':'✅ Correct answer!','❌ Mauvaise réponse':'❌ Wrong answer','Paquet CHANCE':'CHANCE deck','Paquet PÉNALITÉ':'PENALTY deck','Paquet QUIZ':'QUIZ deck',
 '📱↻ Tourne ton téléphone pour un plus grand plateau':'📱↻ Turn your phone sideways for a bigger board','Plateau Dogzy Town Niveau 1':'Dogzy Town Level 1 board',
-'© 2026 Sania Labbé (Valkyrie). Tous droits réservés. — The Adoles-chiant of Dogzy Town':'© 2026 Sania Labbé (Valkyrie). All rights reserved. — The Adoles-chiant of Dogzy Town',
+'© 2026 Sania Labbé (Valkyrie). Tous droits réservés. — Dogzy Family Universe':'© 2026 Sania Labbé (Valkyrie). All rights reserved. — Dogzy Family Universe',
 '© 2026 Sania Labbé (Valkyrie). Tous droits réservés.':'© 2026 Sania Labbé (Valkyrie). All rights reserved.','effet affiché (règle complète à venir dans le jeu final)':'effect shown (full rule coming in the final game)',
 'Mémoire NFT':'NFT Memory','Objets cachés':'Hidden Objects','La Corde':'The Rope','Gagnant tout de suite':'Instant win','Perdant tout de suite':'Instant loss',
 'Resto Chefzy':'Chefzy Restaurant','Café Waitzy':'Waitzy Café','Bar Barzy':'Barzy Bar','Clinique Doczy':'Doczy Clinic','Chantier Buildzy':'Buildzy Construction Site','Gym Sportzy':'Sportzy Gym','Cabinet Lawzy':'Lawzy Law Firm','Magie Magiczy':'Magiczy Magic Shop','Sécurité Securzy':'Securzy Security','Banque Bankzy':'Bankzy Bank','Boutique Cashzy':'Cashzy Boutique',
@@ -65,7 +65,7 @@ const R = [
 [/^Mise :$/, 'Stake: '], [/^tokens\. Lance le dé pour savoir qui t'affronte\.$/, 'tokens. Roll the die to find out who you face.'], [/^tokens\. Lance le dé pour savoir qui (.+) affronte\.$/, 'tokens. Roll the die to find out who $1 faces.'],
 [/^— mise (\d+) tokens$/, '— stake $1 tokens'],
 [/^gagne : \+(\d+) tokens$/, 'wins: +$1 tokens'], [/^perd : -(\d+) tokens$/, 'loses: -$1 tokens'],
-[/^: (\d+) tokens \+ commerces =$/, ': $1 tokens + shops = '], [/^gagne The Adoles-chiant of Dogzy Town !$/, 'wins The Adoles-chiant of Dogzy Town!'],
+[/^: (\d+) tokens \+ commerces =$/, ': $1 tokens + shops = '], [/^gagne Dogzy Family Universe !$/, 'wins Dogzy Family Universe!'],
 [/^Réponds à la question pour gagner (\d+) tokens\.$/, 'Answer the question to win $1 tokens.'], [/^(QZ\d+) · Quiz niveau 1$/, '$1 · Level 1 quiz'],
 [/^(\+|-)?(-?\d+) tokens \((.+)\)$/, (m, s, n, w) => ` ${s || ''}${n} tokens (${tr(w)})`],
 [/^lance le dé :$/, 'rolls the die: '], [/^affronte (.+) en duel\.$/, 'faces $1 in a duel.'], [/^(.+) affronte (.+) en duel\.$/, '$1 faces $2 in a duel.'],

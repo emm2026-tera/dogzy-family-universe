@@ -1,4 +1,4 @@
-/* The Adoles-chiant of Dogzy Town — démo niveau 1. © 2026 Sania Labbé (Valkyrie) */
+/* Dogzy Family Universe — démo niveau 1. © 2026 Sania Labbé (Valkyrie) */
 (() => {
 const D = window.DEMO_DATA, Q = new URLSearchParams(location.search), FAST = Q.get('fast') === '1';
 const MAX_TURNS = +Q.get('tours') || 8, START_TOKENS = 1500, PASS_START = 200, DUEL_STAKE = 100;
@@ -85,7 +85,7 @@ function endGame(){
   if (over) return; over = true; render(); $('#btnRoll').disabled = true;
   const score = p => p.tokens + CASES.filter(c => c.owner === P.indexOf(p)).reduce((s, c) => s + c.price, 0);
   const r = P.slice().sort((a, b) => score(b) - score(a));
-  open(`<h2>🏆 Fin de partie</h2><ol style="text-align:left">${r.map(p => `<li><b style="color:${p.color}">${p.name}</b> : ${p.tokens} tokens + commerces = <b>${score(p)}</b></li>`).join('')}</ol><p><b>${r[0].name}</b> gagne The Adoles-chiant of Dogzy Town !</p><button class="btn primary" id="again">REJOUER</button><p style="font-size:10px">© 2026 Sania Labbé (Valkyrie)</p>`);
+  open(`<h2>🏆 Fin de partie</h2><ol style="text-align:left">${r.map(p => `<li><b style="color:${p.color}">${p.name}</b> : ${p.tokens} tokens + commerces = <b>${score(p)}</b></li>`).join('')}</ol><p><b>${r[0].name}</b> gagne Dogzy Family Universe !</p><button class="btn primary" id="again">REJOUER</button><p style="font-size:10px">© 2026 Sania Labbé (Valkyrie)</p>`);
   $('#again').onclick = () => location.reload(); log('Partie terminée.');
 }
 
@@ -106,7 +106,7 @@ async function resolve(p){
 }
 const PACK = {chance:['g','CHANCE','🍀'], penalite:['r','PÉNALITÉ','⚠️'], quiz:['b','QUIZ','❓']};
 function cardHTML(k, front){ const [cl, nm, ic] = PACK[k];
-  return `<div class="deckZone ${cl}"><div class="card" id="card"><div class="face back"><span class="lg">${ic}</span>${nm}<small>The Adoles-chiant of Dogzy Town · © Sania Labbé (Valkyrie)</small></div><div class="face front">${front}<span class="cp">© 2026 Sania Labbé (Valkyrie)</span></div></div></div>`; }
+  return `<div class="deckZone ${cl}"><div class="card" id="card"><div class="face back"><span class="lg">${ic}</span>${nm}<small>Dogzy Family Universe · © Sania Labbé (Valkyrie)</small></div><div class="face front">${front}<span class="cp">© 2026 Sania Labbé (Valkyrie)</span></div></div></div>`; }
 async function flip(p){ await new Promise(r => { if (!$('#card')) return; $('#card').onclick = r; $('#flip').onclick = r; if (p.bot) setTimeout(r, FAST ? 40 : 800); }); if (over || !$('#card')) return new Promise(() => {}); $('#card').classList.add('flipped'); $('#flip') && $('#flip').remove(); await sleep(950); }
 async function cardFlow(p, k){
   const ch = force.force.card ? D[k].find(x => x.id === force.force.card) : null; delete force.force.card;
