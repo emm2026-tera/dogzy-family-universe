@@ -188,7 +188,7 @@ async function duelFlow(p){
 /* human = index du joueur humain (toujours P1), retourne true si l'humain gagne */
 function playGame(g, human, opp){
   return new Promise(res => {
-    const src = `../minijeux/${g.id}.html?duel=1&j=${human + 1}&vs=${opp + 1}`, A = P[human], B = P[opp];
+    const src = `../minijeux/${g.id}.html?duel=1&j=${human + 1}&vs=${opp + 1}&lang=${window.DOGZY_LANG || 'fr'}`, A = P[human], B = P[opp];
     open(`<h2>⚔️ ${g.nm}</h2><p class="vs"><b style="color:${A.color}">${A.name} (toi)</b> ⚔️ <b style="color:${B.color}">${B.name}</b> — mise ${DUEL_STAKE} tokens</p><iframe class="game" id="gframe" src="${src}"></iframe><div><span id="gStat">Partie en cours…</span> <button class="btn" id="gQuit">ABANDONNER</button> <button class="btn primary" id="gBack" disabled>RETOUR AU PLATEAU</button></div>`, true);
     let result = null;
     /* les liens « Mini-jeux » / « Démo » du mini-jeu faisaient sortir de la partie : on les neutralise */
