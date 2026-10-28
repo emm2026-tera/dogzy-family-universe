@@ -12,7 +12,7 @@ BASE = "https://api.meshy.ai/openapi/v1/image-to-3d"
 
 def image_vers_glb(image: str, sortie: str = "personnage.glb") -> Path:
     """Convertit l'image d'un personnage en modèle 3D au format GLB."""
-    h = {"Authorization": f"******'MESHY_API_KEY')}"}
+    h = {"Authorization": "Bearer " + cle("MESHY_API_KEY")}
     mime = "image/jpeg" if image.lower().endswith((".jpg", ".jpeg")) else "image/png"
     uri = f"data:{mime};base64,{base64.b64encode(Path(image).read_bytes()).decode()}"
     r = requests.post(BASE, headers=h, timeout=120, json={

@@ -12,7 +12,7 @@ def image_cle_openai(image: str, directive: str, sortie: str = "image_cle.png") 
     with open(image, "rb") as f:
         r = requests.post(
             "https://api.openai.com/v1/images/edits",
-            headers={"Authorization": f"******'OPENAI_API_KEY')}"},
+            headers={"Authorization": "Bearer " + cle("OPENAI_API_KEY")},
             files={"image": (Path(image).name, f)},
             data={"model": "gpt-image-1", "prompt": directive, "size": "1024x1536"},
             timeout=300,

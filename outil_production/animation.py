@@ -30,7 +30,7 @@ def _jeton_kling() -> str:
 def clip_kling(image: str, prompt_mouvement: str, duree: int = 5, sortie: str = "clip.mp4") -> Path:
     """Image-to-video Kling. duree en secondes (5 ou 10)."""
     base = "https://api.klingai.com/v1/videos/image2video"
-    h = {"Authorization": f"******"}
+    h = {"Authorization": "Bearer " + _jeton_kling()}
     brut = base64.b64encode(Path(image).read_bytes()).decode()  # Kling attend du base64 sans préfixe
     r = requests.post(base, headers=h, timeout=120, json={
         "model_name": "kling-v2-master", "image": brut,
@@ -39,7 +39,7 @@ def clip_kling(image: str, prompt_mouvement: str, duree: int = 5, sortie: str = 
     tache = r.json()["data"]["task_id"]
     while True:
         time.sleep(10)
-        h = {"Authorization": f"******"}  # jeton rafraîchi
+        h = {"Authorization": "Bearer " + _jeton_kling()}  # jeton rafraîchi
         d = requests.get(f"{base}/{tache}", headers=h, timeout=60).json()["data"]
         if d["task_status"] == "succeed":
             return _telecharger(d["task_result"]["videos"][0]["url"], sortie)
@@ -49,7 +49,7 @@ def clip_kling(image: str, prompt_mouvement: str, duree: int = 5, sortie: str = 
 
 def clip_runway(image: str, prompt_mouvement: str, duree: int = 5, sortie: str = "clip.mp4") -> Path:
     """Variante Runway Gen-4 Turbo (durée 5 ou 10 s)."""
-    h = {"Authorization": f"******'RUNWAY_API_KEY')}", "X-Runway-Version": "2024-11-06"}
+    h = {"Authorization": "Bearer " + cle("RUNWAY_API_KEY"), "X-Runway-Version": "2024-11-06"}
     r = requests.post("https://api.dev.runwayml.com/v1/image_to_video", headers=h, timeout=120, json={
         "model": "gen4_turbo", "promptImage": _data_uri(image),
         "promptText": prompt_mouvement, "ratio": "720:1280", "duration": duree})
