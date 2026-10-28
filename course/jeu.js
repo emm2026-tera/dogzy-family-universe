@@ -100,6 +100,7 @@ function maj(dt) {
   const dir = (droite() ? 1 : 0) - (gauche() ? 1 : 0);
   p.x += dir * C.braquage * dt * Math.min(1, pct * 1.4);
   p.x -= seg.courbe * C.adherenceCourbe * pct * pct * dt * 0.18;
+  p.x = Math.max(-2.6, Math.min(2.6, p.x));
   p.angle += ((dir * 0.35) - p.angle) * Math.min(1, dt * 8);
   // Drift : on braque fort à haute vitesse -> remplit le boost
   p.drift = dir !== 0 && pct > 0.6 && !hors;
