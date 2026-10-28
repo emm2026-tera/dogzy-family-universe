@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11100f">
+  <title>Dogzy Studio — Atelier de préproduction</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Dogzy Studio, accueil">
+      <span class="brand-mark" aria-hidden="true">D</span>
+      <span>DOGZY <b>STUDIO</b><small>ATELIER DE PRÉPRODUCTION</small></span>
+    </a>
+    <div class="top-actions">
+      <span id="saveStatus" class="save-status" role="status">Enregistré sur cet appareil</span>
+      <button id="exportButton" class="button button-outline" type="button">Exporter le projet</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar" aria-label="Scènes du projet">
+      <div class="sidebar-heading">
+        <div>
+          <span class="eyebrow">VOTRE PROJET</span>
+          <h1>Découpage</h1>
+        </div>
+        <span id="sceneCount" class="count-badge">0 scène</span>
+      </div>
+      <div id="sceneList" class="scene-list"></div>
+      <button id="addSceneButton" class="add-scene" type="button"><span aria-hidden="true">＋</span> Ajouter une scène</button>
+      <p class="sidebar-note">Vos modifications sont sauvegardées automatiquement dans ce navigateur.</p>
+    </aside>
+
+    <section class="workspace" aria-label="Espace de création">
+      <div class="workspace-heading">
+        <div>
+          <span class="eyebrow">ESPACE DE CRÉATION</span>
+          <h2>Préparez votre prochain film</h2>
+        </div>
+        <span class="local-badge"><span aria-hidden="true">●</span> PROJET LOCAL</span>
+      </div>
+
+      <section class="project-card" aria-labelledby="projectTitle">
+        <div class="section-title">
+          <div>
+            <span class="eyebrow">01 — INTENTION</span>
+            <h3 id="projectTitle">L'identité du film</h3>
+          </div>
+          <span id="totalDuration" class="duration-total">Durée estimée · 0 min</span>
+        </div>
+        <div class="project-fields">
+          <label class="field field-title">Titre du projet
+            <input id="projectName" maxlength="100" type="text" placeholder="Le titre de votre film">
+          </label>
+          <label class="field">Format
+            <select id="projectFormat">
+              <option>Film court</option>
+              <option>Long métrage</option>
+              <option>Épisode de série</option>
+              <option>Clip vidéo</option>
+              <option>Publicité</option>
+              <option>Documentaire</option>
+              <option>Autre</option>
+            </select>
+          </label>
+          <label class="field">Genre
+            <input id="projectGenre" maxlength="60" type="text" placeholder="Ex. aventure, comédie">
+          </label>
+          <label class="field field-logline">L'idée en une phrase
+            <textarea id="projectLogline" maxlength="500" rows="2" placeholder="De quoi parle votre film ?"></textarea>
+          </label>
+        </div>
+      </section>
+
+      <section class="scene-card" aria-labelledby="sceneHeading">
+        <div class="section-title">
+          <div>
+            <span class="eyebrow">02 — SCÉNARIO &amp; PLANS</span>
+            <h3 id="sceneHeading">Détail de la scène</h3>
+          </div>
+          <button id="deleteSceneButton" class="text-button" type="button">Supprimer la scène</button>
+        </div>
+        <div id="sceneEmpty" class="empty-state" hidden>
+          <span aria-hidden="true">✦</span>
+          <p>Votre découpage commence ici.</p>
+          <button id="firstSceneButton" class="button button-primary" type="button">Créer la première scène</button>
+        </div>
+        <div id="sceneEditor">
+          <div class="scene-fields">
+            <label class="field field-title">Nom de la scène
+              <input id="sceneTitle" data-scene-field="title" maxlength="100" type="text">
+            </label>
+            <label class="field">Lieu
+              <input id="sceneLocation" data-scene-field="location" maxlength="100" type="text" placeholder="Ex. rue principale">
+            </label>
+            <label class="field">Moment
+              <select id="sceneTime" data-scene-field="time">
+                <option>Jour</option>
+                <option>Nuit</option>
+                <option>Aube</option>
+                <option>Crépuscule</option>
+                <option>Intérieur</option>
+              </select>
+            </label>
+            <label class="field">Durée (min)
+              <input id="sceneDuration" data-scene-field="duration" min="1" max="999" type="number">
+            </label>
+          </div>
+          <div class="scene-writing">
+            <label class="field">Action &amp; ambiance
+              <textarea id="sceneDescription" data-scene-field="description" maxlength="1200" rows="4" placeholder="Que se passe-t-il ? Décrivez l'action, l'émotion et l'ambiance visuelle."></textarea>
+            </label>
+            <label class="field">Dialogue &amp; notes
+              <textarea id="sceneDialogue" data-scene-field="dialogue" maxlength="1200" rows="4" placeholder="Répliques, voix off, sons ou notes de réalisation…"></textarea>
+            </label>
+          </div>
+          <div class="shot-section">
+            <div class="shot-heading">
+              <div>
+                <h4>Liste de plans</h4>
+                <p>Donnez un cap visuel à chaque prise de vue.</p>
+              </div>
+              <button id="addShotButton" class="button button-small" type="button">＋ Ajouter un plan</button>
+            </div>
+            <div id="shotList" class="shot-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="storyboard-card" aria-labelledby="storyboardHeading">
+        <div class="section-title">
+          <div>
+            <span class="eyebrow">03 — VUE D'ENSEMBLE</span>
+            <h3 id="storyboardHeading">Storyboard &amp; séquence</h3>
+          </div>
+          <span class="section-hint">Sélectionnez une vignette pour la modifier</span>
+        </div>
+        <div id="storyboard" class="storyboard"></div>
+        <div class="timeline-heading"><span>ORDRE DU FILM</span><span id="timelineDuration">0 MIN</span></div>
+        <div id="timeline" class="timeline" aria-label="Chronologie des scènes"></div>
+      </section>
+
+      <p class="disclaimer">Dogzy Studio est un outil de préparation créative : il organise votre scénario et vos plans, sans montage ni rendu vidéo.</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
