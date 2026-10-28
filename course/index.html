@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Dogzy Burnout — Course arcade</title>
+<style>
+  html,body{margin:0;height:100%;background:#000;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none;font-family:system-ui,sans-serif}
+  canvas{display:block;width:100vw;height:100vh}
+  .btn{position:fixed;bottom:4vh;width:22vmin;height:22vmin;max-width:120px;max-height:120px;border-radius:50%;border:3px solid #fff8;background:#0008;color:#fff;font-size:8vmin;display:flex;align-items:center;justify-content:center}
+  #g{left:3vw}#d{left:calc(3vw + 26vmin)}#b{right:3vw;background:#e8401cbb;font-size:4vmin;font-weight:700}
+  .btn:active,.btn.on{background:#fff6}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div class="btn" id="g">◀</div><div class="btn" id="d">▶</div><div class="btn" id="b">BOOST</div>
+<script src="config.js"></script>
+<script src="jeu.js"></script>
+</body>
+</html>
